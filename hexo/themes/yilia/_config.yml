@@ -10,6 +10,7 @@ timezone:
 menu:
   HOME: http://xieguigang.me/
   Archives: /archives
+  Works: /nuget
   About: /about
 
 # SubNav
