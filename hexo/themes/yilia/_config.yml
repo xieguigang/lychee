@@ -8,7 +8,7 @@ timezone:
 
 # Header
 menu:
-  HOME: /
+  HOME: http://xieguigang.me/
   Archives: /archives
   # 随笔: /tags/随笔
 
@@ -66,5 +66,4 @@ friends:
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 
-  Personal Resume: http://xieguigang.me/resume.html
+aboutme: 大神在此！
