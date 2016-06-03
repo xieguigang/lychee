@@ -28,7 +28,7 @@ subnav:
 rss: /atom.xml
 
 # Content
-excerpt_link: more
+excerpt_link: "Full Article"
 fancybox: true
 mathjax: true
 
