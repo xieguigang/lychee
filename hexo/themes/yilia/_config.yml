@@ -10,7 +10,7 @@ timezone:
 menu:
   HOME: http://xieguigang.me/
   Archives: /archives
-  # 随笔: /tags/随笔
+  About: /about
 
 # SubNav
 subnav:

@@ -1,10 +1,8 @@
 ---
 title: VB.NET是怎样做到的（搬家版）
-tag: VB.NET
+tags: [VB.NET,转载搬运]
 date: 2016.06.04
 ---
-
-# VB.NET是怎样做到的（搬家版）
 
 VB.net能够实现很多C#不能做到的功能，如**When**语句、**Optional**参数、局部**Static**变量、对象实例访问静态方法、**Handles**绑定事件、**On Error**处理异常、**Object**直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
 
