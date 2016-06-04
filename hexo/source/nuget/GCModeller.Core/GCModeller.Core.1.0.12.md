@@ -1,12 +1,12 @@
 ---
 title: GCModeller base core modules
-date: 6/5/2016 1:58:14 AM
+date: 6/5/2016 1:58:15 AM
 ---
 
 [<< Back to Index](../index.html)
 # GCModeller base core modules
 
-Version: **1.0.11**
+Version: **1.0.12**
 
 Project URL: https://github.com/SMRUCC/GCModeller.Core
 
@@ -29,7 +29,7 @@ Common Fasta sequence database I/O
 DOOR database reader
 etc.
 ## Release Notes
-update app framework
+Improvements on the genomics context model
 ## Owners
 xie.guigang@live.com
 ## Authors
@@ -51,16 +51,28 @@ xie.guigang@gcmodeller.org
 + x64\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.dll<br />
 + x64\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.pdb<br />
 + x64\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.xml<br />
++ x64\LANS.SystemsBiology.Repository.dll<br />
++ x64\LANS.SystemsBiology.Repository.pdb<br />
++ x64\LANS.SystemsBiology.Repository.xml<br />
 + x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
 + x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
 + x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ x64\Microsoft.VisualBasic.DocumentFormat.Csv.dll<br />
++ x64\Microsoft.VisualBasic.DocumentFormat.Csv.pdb<br />
++ x64\Microsoft.VisualBasic.DocumentFormat.Csv.xml<br />
 + x86\Resources\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.dll<br />
 + x86\Resources\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.pdb<br />
 + x86\Resources\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.xml<br />
 + x86\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.dll<br />
 + x86\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.pdb<br />
 + x86\LANS.SystemsBiology.Assembly.Components_v2.0_33.0.0.0__89845dcd8080cc91.xml<br />
++ x86\LANS.SystemsBiology.Repository.dll<br />
++ x86\LANS.SystemsBiology.Repository.pdb<br />
++ x86\LANS.SystemsBiology.Repository.xml<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ x86\Microsoft.VisualBasic.DocumentFormat.Csv.dll<br />
++ x86\Microsoft.VisualBasic.DocumentFormat.Csv.pdb<br />
++ x86\Microsoft.VisualBasic.DocumentFormat.Csv.xml<br />
 

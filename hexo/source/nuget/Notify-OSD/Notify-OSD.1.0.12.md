@@ -1,12 +1,12 @@
 ---
 title: Ubuntu like on screen display notification
-date: 6/5/2016 1:58:25 AM
+date: 6/5/2016 1:58:26 AM
 ---
 
 [<< Back to Index](../index.html)
 # Ubuntu like on screen display notification
 
-Version: **1.0.11**
+Version: **1.0.12**
 
 Project URL: https://github.com/xieguigang/Notify_OSD
 
@@ -24,10 +24,7 @@ https://github.com/xieguigang/Notify_OSD
 
 Ubuntu like on screen notifications component for .NET winform
 ## Release Notes
-Add a limit of min size of message bubble size:
-ubuntu notify-osd is limit to (352,73)
-
-notify message bubble will not get focus and disturb your current work
+update vb.net app framework to version 1.0.35
 ## Owners
 xie.guigang@live.com
 ## Authors
@@ -43,11 +40,11 @@ gpl3
 
 
 ## File includes
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\notify_osd.exe<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\notify_osd.exe.config<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\notify_osd.pdb<br />
-+ C:\Users\xieguigang\Source\Repos\Notify_OSD\bin\x86\Release\notify_osd.xml<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ x86\notify_osd.exe<br />
++ x86\notify_osd.exe.config<br />
++ x86\notify_osd.pdb<br />
++ x86\notify_osd.xml<br />
 

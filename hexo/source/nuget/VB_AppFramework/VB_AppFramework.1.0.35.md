@@ -1,12 +1,12 @@
 ---
 title: VisualBasic App Framework
-date: 6/5/2016 1:58:36 AM
+date: 6/5/2016 1:58:39 AM
 ---
 
 [<< Back to Index](../index.html)
 # VisualBasic App Framework
 
-Version: **1.0.26**
+Version: **1.0.35**
 
 Project URL: https://github.com/xieguigang/VisualBasic_AppFramework
 
@@ -26,7 +26,7 @@ Code style guideline for VisualBasic of this runtime library at codeproject arti
 
 Article about manipulate these document at codeproject: http://www.codeproject.com/Articles/1099296/Easy-Document-in-VisualBasic
 ## Release Notes
-fix a bugs on the colorful console output for the debugger on multiple threads
+Improvements on the Multiple Process batch task parallel and multiple thread parallel API
 ## Owners
 xie.guigang@live.com
 ## Authors

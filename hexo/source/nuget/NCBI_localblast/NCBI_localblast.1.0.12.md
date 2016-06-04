@@ -6,7 +6,7 @@ date: 6/5/2016 1:58:22 AM
 [<< Back to Index](../index.html)
 # NCBI localblast tool library for .NET
 
-Version: **1.0.11**
+Version: **1.0.12**
 
 Project URL: https://github.com/SMRUCC/ncbi-localblast
 
@@ -24,7 +24,7 @@ This package also provides a batch schedule extension for the large scale localb
 project source code can be download from github:
 https://github.com/SMRUCC/ncbi-localblast
 ## Release Notes
-update vb.net app framework
+Improvements on the thread model of the batch task
 ## Owners
 xie.guigang@live.com
 ## Authors

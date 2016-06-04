@@ -1,12 +1,12 @@
 ---
 title: VisualBasic WinForm Feature API
-date: 6/5/2016 1:58:29 AM
+date: 6/5/2016 1:58:30 AM
 ---
 
 [<< Back to Index](../index.html)
 # VisualBasic WinForm Feature API
 
-Version: **1.0.1**
+Version: **1.0.13**
 
 Project URL: https://github.com/xieguigang/Microsoft.VisualBasic.Windows.Forms
 
@@ -22,6 +22,8 @@ To install **[VisualBasic WinForm Feature API](https://www.nuget.org/packages/Vi
 This library provides windows shell extension feature API, example as the taskbar API, etc
 ## Release Notes
 x86
+
+Update the vb app framework to v1.0.35
 ## Owners
 xie.guigang@live.com
 ## Authors

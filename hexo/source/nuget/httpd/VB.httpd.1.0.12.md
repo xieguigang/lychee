@@ -1,14 +1,14 @@
 ---
 title: VisualBasic light http server library
-date: 6/5/2016 1:58:16 AM
+date: 6/5/2016 1:58:18 AM
 ---
 
 [<< Back to Index](../index.html)
 # VisualBasic light http server library
 
-Version: **1.0.0**
+Version: **1.0.12**
 
-Project URL: https://github.com/SMRUCC/REST_Framework
+Project URL: https://github.com/xieguigang/REST_Framework
 
 License: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,7 +19,7 @@ To install **[VisualBasic light http server library](https://www.nuget.org/packa
 ## Summary
 A lite version of http server, currently not support https
 source code can be download from github:
-https://github.com/SMRUCC/REST_Framework
+https://github.com/xieguigang/REST_Framework
 
 Platform:  Win32/Linux  .NET 4.6/mono x64
 
@@ -28,7 +28,7 @@ A lite version of http server, currently not support https
 for commandline usage, type in terminal:
 httpd ?
 ## Release Notes
-can running on linux, but some file path case sensitive could case problem of file not found
+Improvements on the multiple thread task model in the framework
 ## Owners
 xie.guigang@live.com
 ## Authors
@@ -44,22 +44,15 @@ xie.guigang@gcmodeller.org
 
 
 ## File includes
-+ D:\httpd\httpd<br />
-+ D:\httpd\httpd.exe<br />
-+ D:\httpd\httpd.exe.config<br />
-+ D:\httpd\httpd.json<br />
-+ D:\httpd\httpd.pdb<br />
-+ D:\httpd\httpd.txt<br />
-+ D:\httpd\httpd.vshost.exe<br />
-+ D:\httpd\httpd.vshost.exe.config<br />
-+ D:\httpd\httpd.vshost.exe.manifest<br />
-+ D:\httpd\httpd.xml<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ httpd.exe<br />
++ httpd.exe.config<br />
++ httpd.pdb<br />
++ httpd.xml<br />
++ Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
++ Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
++ Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
 + D:\httpd\Microsoft.VisualBasic.dll<br />
-+ D:\httpd\readme.txt<br />
-+ D:\httpd\SMRUCC.HTTPInternal.dll<br />
-+ D:\httpd\SMRUCC.HTTPInternal.pdb<br />
-+ D:\httpd\SMRUCC.HTTPInternal.xml<br />
++ SMRUCC.HTTPInternal.dll<br />
++ SMRUCC.HTTPInternal.pdb<br />
++ SMRUCC.HTTPInternal.xml<br />
 
