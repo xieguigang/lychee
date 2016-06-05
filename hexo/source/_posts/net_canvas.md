@@ -14,7 +14,7 @@ In my recent work on the GCModeller, I want to developing a module for the biolo
 One of the solution is using d3js for this data visualization and the another solution is the Cytoscape software.
 
 The [Cytoscape](http://cytoscape.org/) software is doing the best in the network visualization as it provides a lot of style mapping and data imports and exports function. And in my recent work, the cytoscape software was used for visualize the biological network data frequently. But there is problem that the cytoscape software can only generate the statics image of the network, and just can only export a interactive output in web app format. And the cytoscape software is also can not programming with VB.NET. And as I want to build a inner interactive module for the biological network visualization, so that I should try another way for the job. There is another important tools for visualize the network data in the HTML programming: [d3js](https://github.com/d3/d3). And the d3js is one of my favorite tools in the data visualization.
-
+<!--more-->
 Here is my most favorite project from Mr. whichlight's work: a project for visualize the reddit discussion network by using d3js.
 
 >![](https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/tumblr_inline_mqvdlydGCp1qz4rgp.png)
@@ -88,7 +88,7 @@ The VB.NET language was programming hybrids with javascript as the server side o
 
 And after search on the github, I found a solution for this interactive network visualization work in the .NET language its own way.
 
-<!--more-->
+
 
 ![](https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/canvas_screenshot.png)
 
