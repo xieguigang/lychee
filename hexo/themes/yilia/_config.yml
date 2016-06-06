@@ -29,7 +29,7 @@ subnav:
 rss: /atom.xml
 
 # Content
-excerpt_link: "Full Article"
+excerpt_link: "閱讀全文"
 fancybox: true
 mathjax: true
 
@@ -53,6 +53,7 @@ share_addthis: false
 duoshuo: false
 #是否开启云标签
 tagcloud: true
+
 
 #是否开启友情链接
 #不开启——
