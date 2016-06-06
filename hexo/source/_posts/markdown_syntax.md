@@ -7,7 +7,9 @@ date: 2016.06.07
 Markdown: Syntax
 ================
 
-Source from: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
+> Source from: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
+
+<!--more-->
 
 >*   [Overview](#overview)
     *   [Philosophy](#philosophy)
