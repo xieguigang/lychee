@@ -3,6 +3,12 @@ title: 谢桂纲的个人简历
 date: 1989-10-02 02:43:32
 ---
 
+```vbnet
+Public Function xieguigang() As String
+    Return "Hey, there. Hello world!!"
+End Function
+```
+
 ## 联系方式
 + 个人邮箱:  [xie.guigang@gmail.com](mailto://xie.guigang@gmail.com)
 + 工作邮箱:
