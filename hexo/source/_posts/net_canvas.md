@@ -1,6 +1,6 @@
 ---
 title: Canvas for Network visualization
-tags: [d3js,VB.NET,my works]
+tags: [d3js,vb.net,my works]
 date: 2016.06.06
 ---
 

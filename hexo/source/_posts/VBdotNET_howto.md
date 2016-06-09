@@ -1,6 +1,6 @@
 ---
 title: VB.NET是怎样做到的（搬家版）
-tags: [VB.NET,转载搬运]
+tags: [vb.net,转载搬运]
 date: 2016.06.04
 ---
 
