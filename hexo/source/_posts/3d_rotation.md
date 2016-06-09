@@ -8,7 +8,6 @@ date: 2016-06-10
 
 ![](https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg)
 
-
 3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation. In 2D the axis of rotation is always perpendicular to the **x,y** plane, i.e., the Z axis, but in 3D the axis of rotation can have any spatial orientation. We will first look at rotation around the three principle axes **(X, Y, Z)** and then about an arbitrary axis. Note that for Inverse Rotation: **replace q with -q and then R(R-1) = 1**
 
 > 1. Z-Axis Rotation
@@ -17,6 +16,11 @@ date: 2016-06-10
 > 4. Rotation about an Arbitrary Axis
 
 <!--more-->
+
+Example Demo:
+
+> ![](https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/3d_demo.gif)
+> [**3D network rotation in my project on github**](https://github.com/xieguigang/VisualBasic_AppFramework/tree/master/Datavisualization/Datavisualization.Network)
 
 # Z-Axis Rotation
 
