@@ -175,7 +175,7 @@ Total Fail: 8
 
 In Interceptor in the Wild, Silva also demonstrated caching can be injected to methods via a PoorMansCacheProvider and a CacheInterceptor. The same result can be achieved with the Action Interceptor pattern.
 
-```csharp
+```php
 <Extension>
 Public Function GetOrCache(Of TArg, TResult, TCache As {Class, IDictionary(Of TArg, TResult)})(func As Func(Of TArg, TResult), cache As TCache) As Func(Of TArg, TResult)
     Return _
