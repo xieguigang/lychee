@@ -78,3 +78,6 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 18. [Develop a Plugin extension for your VisualBasic application](http://www.codeproject.com/Articles/703590/Develop-a-Plugin-extension-for-your-VisualBasic-ap)
 19. [Levenshtein Edit Distance [Technical Blog]](http://www.codeproject.com/Articles/1055849/Levenshtein-Edit-Distance)
 20. [Generate Color Mappings on Circos plot for prokaryote comparative genomics [Technical Blog]](http://www.codeproject.com/Articles/1055851/Generate-Color-Mappings-on-Circos-plot-for-prokary)
+
+
+![]()
