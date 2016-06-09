@@ -56,7 +56,7 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 
 本分布式计算环境是GCModeller计算系统的在线服务模块的组件之一，目标是构建一个高性能的在线分析计算平台。
 
--------------------------
+--------------------------------------------------
 ### **谢桂纲的CodeProject社区文章列表**
 1. [R Statics Language API to VB.NET Language](http://www.codeproject.com/Articles/1083875/R-Statics-Language-API-to-VB-NET-Language)
 2. [Venn Diagram in VisualBasic](http://www.codeproject.com/Articles/1090178/Venn-Diagram-in-VisualBasic)
@@ -79,5 +79,5 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 19. [Levenshtein Edit Distance [Technical Blog]](http://www.codeproject.com/Articles/1055849/Levenshtein-Edit-Distance)
 20. [Generate Color Mappings on Circos plot for prokaryote comparative genomics [Technical Blog]](http://www.codeproject.com/Articles/1055851/Generate-Color-Mappings-on-Circos-plot-for-prokary)
 
-
-![]()
+------------------------------------------------------------------------------------------------------------------------------------------------------
+>![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/CIMG0452.JPG)
