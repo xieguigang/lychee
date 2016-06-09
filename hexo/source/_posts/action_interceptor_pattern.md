@@ -11,7 +11,7 @@ source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Patte
 
 In Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementations. In this article, we will see an old-school yet beneficial way to reach the same goal, but without messing around with IoC frameworks.
 
-![]()
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/Class.png)
 
 <!--more-->
 
