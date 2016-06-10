@@ -1,12 +1,12 @@
 ---
 title: VisualBasic App Framework
-date: 6/10/2016 5:25:30 PM
+date: 6/10/2016 5:25:31 PM
 ---
 
 [<< Back to Index](../index.html)
 # VisualBasic App Framework
 
-Version: **1.0.35**
+Version: **1.0.40**
 
 Project URL: https://github.com/xieguigang/VisualBasic_AppFramework
 
@@ -26,7 +26,10 @@ Code style guideline for VisualBasic of this runtime library at codeproject arti
 
 Article about manipulate these document at codeproject: http://www.codeproject.com/Articles/1099296/Easy-Document-in-VisualBasic
 ## Release Notes
-Improvements on the Multiple Process batch task parallel and multiple thread parallel API
+Add a canvas object for the network visualization and export svg image
+
+codeproject article about this canvas object:
+http://www.codeproject.com/Articles/1104741/NET-Canvas-for-Network-visualization
 ## Owners
 xie.guigang@live.com
 ## Authors
@@ -47,33 +50,45 @@ xie.guigang@gcmodeller.org
 + x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
 + x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
 + x64\Microsoft.VisualBasic.DataMining.Framework.dll<br />
++ x64\Microsoft.VisualBasic.DataMining.Framework.DynamicProgramming.dll<br />
 + x64\Microsoft.VisualBasic.DataMining.Framework.pdb<br />
 + x64\Microsoft.VisualBasic.DataMining.Framework.xml<br />
++ x64\Microsoft.VisualBasic.DataVisualization.Network.Canvas.dll<br />
++ x64\Microsoft.VisualBasic.DataVisualization.Network.Canvas.dll.config<br />
++ x64\Microsoft.VisualBasic.DataVisualization.Network.Canvas.pdb<br />
++ x64\Microsoft.VisualBasic.DataVisualization.Network.Canvas.xml<br />
 + x64\Microsoft.VisualBasic.DataVisualization.Network.dll<br />
 + x64\Microsoft.VisualBasic.DataVisualization.Network.pdb<br />
 + x64\Microsoft.VisualBasic.DataVisualization.Network.xml<br />
 + x64\Microsoft.VisualBasic.DocumentFormat.Csv.dll<br />
 + x64\Microsoft.VisualBasic.DocumentFormat.Csv.pdb<br />
 + x64\Microsoft.VisualBasic.DocumentFormat.Csv.xml<br />
-+ x64\Microsoft.VisualBasic.Mathematical.dll<br />
-+ x64\Microsoft.VisualBasic.Mathematical.dll.config<br />
-+ x64\Microsoft.VisualBasic.Mathematical.pdb<br />
-+ x64\Microsoft.VisualBasic.Mathematical.xml<br />
++ x64\Microsoft.VisualBasic.Imaging.dll<br />
++ x64\Microsoft.VisualBasic.Imaging.pdb<br />
++ x64\Microsoft.VisualBasic.Imaging.xml<br />
++ x64\Microsoft.VisualBasic.MarkupLanguage.dll<br />
++ x64\Microsoft.VisualBasic.MarkupLanguage.pdb<br />
++ x64\Microsoft.VisualBasic.MarkupLanguage.xml<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll.config<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
 + x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
 + x86\Microsoft.VisualBasic.DataMining.Framework.dll<br />
++ x86\Microsoft.VisualBasic.DataMining.Framework.DynamicProgramming.dll<br />
 + x86\Microsoft.VisualBasic.DataMining.Framework.pdb<br />
 + x86\Microsoft.VisualBasic.DataMining.Framework.xml<br />
++ x86\Microsoft.VisualBasic.DataVisualization.Network.Canvas.dll<br />
++ x86\Microsoft.VisualBasic.DataVisualization.Network.Canvas.dll.config<br />
 + x86\Microsoft.VisualBasic.DataVisualization.Network.dll<br />
 + x86\Microsoft.VisualBasic.DataVisualization.Network.pdb<br />
 + x86\Microsoft.VisualBasic.DataVisualization.Network.xml<br />
 + x86\Microsoft.VisualBasic.DocumentFormat.Csv.dll<br />
 + x86\Microsoft.VisualBasic.DocumentFormat.Csv.pdb<br />
 + x86\Microsoft.VisualBasic.DocumentFormat.Csv.xml<br />
-+ x86\Microsoft.VisualBasic.Mathematical.dll<br />
-+ x86\Microsoft.VisualBasic.Mathematical.dll.config<br />
-+ x86\Microsoft.VisualBasic.Mathematical.pdb<br />
-+ x86\Microsoft.VisualBasic.Mathematical.xml<br />
++ x86\Microsoft.VisualBasic.Imaging.dll<br />
++ x86\Microsoft.VisualBasic.Imaging.pdb<br />
++ x86\Microsoft.VisualBasic.Imaging.xml<br />
++ x86\Microsoft.VisualBasic.MarkupLanguage.dll<br />
++ x86\Microsoft.VisualBasic.MarkupLanguage.pdb<br />
++ x86\Microsoft.VisualBasic.MarkupLanguage.xml<br />
 

@@ -1,12 +1,12 @@
 ---
 title: VisualBasic light http server library
-date: 6/10/2016 5:25:07 PM
+date: 6/10/2016 5:25:09 PM
 ---
 
 [<< Back to Index](../index.html)
 # VisualBasic light http server library
 
-Version: **1.0.1**
+Version: **1.0.13**
 
 Project URL: https://github.com/xieguigang/REST_Framework
 
@@ -28,9 +28,7 @@ A lite version of http server, currently not support https
 for commandline usage, type in terminal:
 httpd ?
 ## Release Notes
-can running on linux, but some file path case sensitive could case problem of file not found.
-
-fix a bugs of colorful printing on the terminal console
+fix a bug on the file index.html when the url is in format like:  http://host/sub
 ## Owners
 xie.guigang@live.com
 ## Authors
@@ -46,15 +44,24 @@ xie.guigang@gcmodeller.org
 
 
 ## File includes
-+ D:\httpd\httpd.exe<br />
-+ D:\httpd\httpd.exe.config<br />
-+ D:\httpd\httpd.pdb<br />
-+ D:\httpd\httpd.xml<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
-+ D:\httpd\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
-+ D:\httpd\Microsoft.VisualBasic.dll<br />
-+ D:\httpd\SMRUCC.HTTPInternal.dll<br />
-+ D:\httpd\SMRUCC.HTTPInternal.pdb<br />
-+ D:\httpd\SMRUCC.HTTPInternal.xml<br />
++ x64\httpd.exe<br />
++ x64\httpd.exe.config<br />
++ x64\httpd.pdb<br />
++ x64\httpd.xml<br />
++ x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
++ x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
++ x64\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ x64\SMRUCC.HTTPInternal.dll<br />
++ x64\SMRUCC.HTTPInternal.pdb<br />
++ x64\SMRUCC.HTTPInternal.xml<br />
++ x86\httpd.exe<br />
++ x86\httpd.exe.config<br />
++ x86\httpd.pdb<br />
++ x86\httpd.xml<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.dll<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.pdb<br />
++ x86\Microsoft.VisualBasic.Architecture.Framework_v3.0_22.0.76.201__8da45dcd8060cc9a.xml<br />
++ x86\SMRUCC.HTTPInternal.dll<br />
++ x86\SMRUCC.HTTPInternal.pdb<br />
++ x86\SMRUCC.HTTPInternal.xml<br />
 
