@@ -1,8 +1,10 @@
 ---
 title: Simple SVG
 tags: [vb.net, note, svg, document]
-date: 2016-06-10
+date: 2016-06-11
 ---
+
+Recently I works on a [**network visualization solution**](http://www.codeproject.com/Articles/1104741/NET-Canvas-for-Network-visualization) in vb.net language, and want to export the image of my network in svg document format as the high quality publication material. And as the svg image is a kind of XML file, so that by using xml serialization technology, this makes the svg image generates easily.
 
 ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/SVG_TestOutput.png)
 Example svg output on github: https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/SVG_TestOutput.svg
@@ -70,7 +72,7 @@ Public Class line : Inherits node
 End Class
 ```
 
-Almost all of the diagram object includes the circle and line object that used in the d3js svg is defined in the namespace: , and you can found the entire source code at here: **[Microsoft.VisualBasic.Imaging/SVG/Xml.vb](https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Microsoft.VisualBasic.Imaging/SVG/Xml.vb)**.
+Almost all of the diagram object includes the circle and line object that used in the d3js svg is defined in the namespace: **Microsoft.VisualBasic.Imaging.SVG**, and you can found the entire source code at here: **[Microsoft.VisualBasic.Imaging/SVG/Xml.vb](https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Microsoft.VisualBasic.Imaging/SVG/Xml.vb)**.
 
 By define these graphics diagram object for the xml serialization, that this makes the program generates the svg image by simply using two Linq expression, and here is the code of generates the svg image for my network visualize canvas object:
 
