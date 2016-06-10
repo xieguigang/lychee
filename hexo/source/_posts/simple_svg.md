@@ -1,10 +1,10 @@
 ---
 title: Simple SVG
-tags: [vb.net, note, svg, document]
+tags: [vb.net, note, svg, document, d3js]
 date: 2016-06-11
 ---
 
-Recently I works on a [**network visualization solution**](http://www.codeproject.com/Articles/1104741/NET-Canvas-for-Network-visualization) in vb.net language, and want to export the image of my network in svg document format as the high quality publication material. And as the svg image is a kind of XML file, so that by using xml serialization technology, this makes the svg image generates easily.
+Recently I works on a [**network visualization solution**](http://www.codeproject.com/Articles/1104741/NET-Canvas-for-Network-visualization) in vb.net language, and want to export the image of my network in svg document format as the high quality publication material. And as the svg image is a kind of XML file, so that by using xml serialization technology, this makes the svg image generates so easily.
 
 ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/SVG_TestOutput.png)
 Example svg output on github: https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/SVG_TestOutput.svg
@@ -159,7 +159,8 @@ Public Class CSSStyles
 End Class
 ```
 
-And the **XmlMeta.CSS** object is a simple object define the css styles data in namespace []():
+And the **XmlMeta.CSS** object is a simple object define the css styles data in namespace [Microsoft.VisualBasic.HTML.XmlMeta](https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/DocumentFormats/VB_HTML/VB_HTML/HTML/Xml/Meta.vb):
+
 ```vbnet
 Imports System.Xml.Serialization
 Imports Microsoft.VisualBasic.Serialization
@@ -185,6 +186,7 @@ Namespace HTML.XmlMeta
     End Class
 End Namespace
 ```
+
 Define the CSS style is based on your specific application situation, and here is the CSS generated code for the network canvas objects in my work: nodes and edges:
 
 ```vbnet
@@ -238,7 +240,8 @@ Namespace SVG.CSS
 End Namespace
 ```
 
-which it defines the HTML element styles, and this HTML CSS definition is also works in SVG. The source show above generates such CSS definition for rendering the elements which it has a class id named **"node" or "link"**:
+Which it defines the HTML element styles, and this HTML CSS definition is also works in SVG. The source show above generates such CSS definition for rendering the elements which it has a class id named **"node" or "link"**:
+
 ```php
     Public Function DefaultStyle() As CSS.DirectedForceGraph
         Return New DirectedForceGraph With {
