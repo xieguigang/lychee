@@ -242,7 +242,7 @@ End Namespace
 
 Which it defines the HTML element styles, and this HTML CSS definition is also works in SVG. The source show above generates such CSS definition for rendering the elements which it has a class id named **"node" or "link"**:
 
-```php
+```java
     Public Function DefaultStyle() As CSS.DirectedForceGraph
         Return New DirectedForceGraph With {
             .link = New CssValue With {
