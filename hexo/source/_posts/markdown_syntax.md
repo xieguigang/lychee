@@ -4,12 +4,8 @@ tags: [Markdown,Syntax,转载搬运]
 date: 2016.06.07
 ---
 
-Markdown: Syntax
-================
-
 > Source from: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
 
-<!--more-->
 
 >*   [Overview](#overview)
     *   [Philosophy](#philosophy)
@@ -36,6 +32,8 @@ Markdown: Syntax
 
   [src]: http://daringfireball.net/projects/markdown/syntax.text
 
+<!--more-->
+  
 * * *
 
 <h2 id="overview">Overview</h2>

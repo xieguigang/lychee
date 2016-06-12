@@ -4,8 +4,6 @@ tags: [github,note]
 date: 2016.06.07
 ---
 
-# Deal with the github merge conflicts
-
 ### First: checkout branch
 
 >```bash
@@ -16,13 +14,13 @@ git pull git://github.com/{username}/{<repo>.git} master
 ### Second: edits the conflict file
 
 After edits in your text editor, then commit the changes:
->```batch
+>```bash
 git commit -a
 ```
 
 ### Last: Push and merge
 
->```batch
+>```bash
 git checkout master
 git merge --no-ff <branch-name>
 git push origin master
