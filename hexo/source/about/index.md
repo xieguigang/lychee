@@ -32,6 +32,7 @@ End Function
 > **开发时间**	2013.08 - 至今
 > **项目主页**	http://gcmodeller.org
 > **在线服务**	http://services.gcmodeller.org/
+> **API 文档**  http://docs.gcmodeller.org/
 
 GCModeller主要提供了一系列的免费开源工具用于进行原核生物的全基因组的生物网络系统模块的注释建模以及计算数据分析。目前GCModeller主要为国内外的大学以及生物测序公司提供收费的服务支持和数据分析服务。
 
@@ -74,7 +75,7 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 ### Microsoft VisualBasic App运行时环境
 > **开发时间**   2015.11 - 至今
 > **Github项目**  https://github.com/xieguigang/VisualBasic_AppFramework
-> **API文档库**   http://framework-docs.xieguigang.me/
+> **API 文档库**  http://framework-docs.xieguigang.me/
 
 **NuGet包安装**
 >```
