@@ -1,0 +1,71 @@
+# Site
+title: 谢桂纲的专栏客
+subtitle:
+description:
+author: しゃけい よしつな
+language: en-US
+timezone:
+
+# Header
+menu:
+  HOME: http://xieguigang.me/
+  Archives: /archives
+  Works: /nuget
+  About: /about
+
+# SubNav
+subnav:
+  github: "https://github.com/xieguigang"
+  weibo: "http://weibo.com/ineat"
+  #rss: "#"
+  #zhihu: "#"
+  #douban: "#"
+  mail: "mailto://I@xieguigang.me"
+  #facebook: "#"
+  #google: "#"
+  twitter: "https://twitter.com/xieguigang"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# Content
+excerpt_link: "閱讀全文"
+fancybox: true
+mathjax: true
+
+# 是否开启动画效果
+animate: true
+
+# 是否在新窗口打开链接
+open_in_new: false
+
+# Miscellaneous
+google_analytics: ''
+favicon: "http://xieguigang.me/favicon.ico"
+
+#你的头像url
+avatar: https://avatars1.githubusercontent.com/u/9410171?v=3&s=460
+#是否开启分享
+share_jia: false
+share_addthis: false
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: false
+#是否开启云标签
+tagcloud: true
+
+
+#是否开启友情链接
+#不开启——
+#friends: false
+#开启——
+friends:
+  Code Project: http://codeproject.com/
+  GCModeller: http://gcmodeller.org/
+
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 大神在此！
