@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Language
-date: 6/15/2016 12:52:03 AM
+date: 6/15/2016 1:49:34 AM
 ---
 
 [Class`1](T-Microsoft.VisualBasic.Language.Class`1.html)

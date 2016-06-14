@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Language.UnixBash
-date: 6/15/2016 12:52:03 AM
+date: 6/15/2016 1:49:34 AM
 ---
 
 [CowsayTricks](T-Microsoft.VisualBasic.Language.UnixBash.CowsayTricks.html)

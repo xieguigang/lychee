@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Linq.Framework.ObjectModel
-date: 6/15/2016 12:52:02 AM
+date: 6/15/2016 1:49:33 AM
 ---
 
 [Linq](T-Microsoft.VisualBasic.Linq.Framework.ObjectModel.Linq.html)

@@ -1,6 +1,6 @@
 ﻿---
 title: Oracle.LinuxCompatibility.MySQL.Reflection.SQL
-date: 6/15/2016 12:52:03 AM
+date: 6/15/2016 1:49:35 AM
 ---
 
 [CreateTableSQL](T-Oracle.LinuxCompatibility.MySQL.Reflection.SQL.CreateTableSQL.html)

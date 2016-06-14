@@ -21,26 +21,28 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Matrix](N-Microsoft.VisualBasic.
  of matrices, permutation vectors, and the like, produce results in five
  decomposition classes. These decompositions are accessed by the GeneralMatrix
  class to compute solutions of simultaneous linear equations, determinants,
- inverses and other matrix functions. The five decompositions are:
- <P><UL>
- <LI>Cholesky Decomposition of symmetric, positive definite matrices.
- <LI>LU Decomposition of rectangular matrices.
- <LI>QR Decomposition of rectangular matrices.
- <LI>Singular Value Decomposition of rectangular matrices.
- <LI>Eigenvalue Decomposition of both symmetric and nonsymmetric square matrices.
- <DL>
- <DT><B>Example of use:</B></DT></DL></LI></LI></LI></LI></LI></UL></P>
- <P>
- <DD>Solve a linear system A x = b and compute the residual norm, ||b - A x||.
- <P><PRE>
+ inverses and other matrix functions. 
+ 
+ The five decompositions are:
+ 
+ + Cholesky Decomposition of symmetric, positive definite matrices.
+ + LU Decomposition of rectangular matrices.
+ + QR Decomposition of rectangular matrices.
+ + Singular Value Decomposition of rectangular matrices.
+ + Eigenvalue Decomposition of both symmetric and nonsymmetric square matrices.
+ 
+ Example of use:
+ 
+ Solve a linear system A x = b and compute the residual norm, ||b - A x||.
+ 
+ ```csharp
  double[][] vals = {{1.,2.,3},{4.,5.,6.},{7.,8.,10.}};
  GeneralMatrix A = new GeneralMatrix(vals);
  GeneralMatrix b = GeneralMatrix.Random(3,1);
  GeneralMatrix x = A.Solve(b);
  GeneralMatrix r = A.Multiply(x).Subtract(b);
  double rnorm = r.NormInf();
- </PRE></DD>
- </DL></P></DD></P>
+ ```
 
 ### Methods
 

@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataMining.Framework.KMeans
-date: 6/15/2016 12:52:03 AM
+date: 6/15/2016 1:49:35 AM
 ---
 
 [Cluster`1](T-Microsoft.VisualBasic.DataMining.Framework.KMeans.Cluster`1.html)

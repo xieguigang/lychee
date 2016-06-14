@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComponentModel.DataSourceModel
-date: 6/15/2016 12:52:02 AM
+date: 6/15/2016 1:49:33 AM
 ---
 
 [DataFramework](T-Microsoft.VisualBasic.ComponentModel.DataSourceModel.DataFramework.html)

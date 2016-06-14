@@ -9,9 +9,8 @@ timezone:
 # Header
 menu:
   HOME: http://xieguigang.me/
-  Archives: /archives
-  Works: /nuget
-  About: /about
+  API: /API
+  About: http://blog.xieguigang.me/about
 
 # SubNav
 subnav:

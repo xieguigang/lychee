@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComponentModel.Collection.Generic
-date: 6/15/2016 12:52:02 AM
+date: 6/15/2016 1:49:34 AM
 ---
 
 [HashDictionary`1](T-Microsoft.VisualBasic.ComponentModel.Collection.Generic.HashDictionary`1.html)

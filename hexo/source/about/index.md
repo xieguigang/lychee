@@ -74,6 +74,7 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 ### Microsoft VisualBasic App运行时环境
 > **开发时间**   2015.11 - 至今
 > **Github项目**  https://github.com/xieguigang/VisualBasic_AppFramework
+> **API文档库**   http://framework-docs.xieguigang.me/
 
 **NuGet包安装**
 >```
