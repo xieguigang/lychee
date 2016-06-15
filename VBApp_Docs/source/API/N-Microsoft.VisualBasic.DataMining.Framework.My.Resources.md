@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataMining.Framework.My.Resources
-date: 6/15/2016 1:49:35 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [Resources](T-Microsoft.VisualBasic.DataMining.Framework.My.Resources.Resources.html)

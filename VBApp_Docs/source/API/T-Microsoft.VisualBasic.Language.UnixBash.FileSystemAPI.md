@@ -17,7 +17,7 @@ Microsoft.VisualBasic.Language.UnixBash.FileSystemAPI.wildcards(System.String[])
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|__wildcards|可以为文件拓展或者对文件名的通配符的表达式|
+|__wildcards|可以为文件拓展或者对文件名的通配符的表达式，假若这个是空的，则会默认搜索所有文件*.*|
 
 
 

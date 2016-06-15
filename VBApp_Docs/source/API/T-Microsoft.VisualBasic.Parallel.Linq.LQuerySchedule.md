@@ -24,7 +24,7 @@ Microsoft.VisualBasic.Parallel.Linq.LQuerySchedule.AutoConfig(System.Int32)
 
 #### LQuery``2
 ```csharp
-Microsoft.VisualBasic.Parallel.Linq.LQuerySchedule.LQuery``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Int32)
+Microsoft.VisualBasic.Parallel.Linq.LQuerySchedule.LQuery``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,System.Boolean},System.Int32)
 ```
 将大量的短时间的任务进行分区，合并，然后再执行并行化
 

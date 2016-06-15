@@ -50,6 +50,17 @@ Check if the target file object is exists on your file system or not.(这个函�
 |path|-|
 
 
+#### FileLength
+```csharp
+Microsoft.VisualBasic.ProgramPathSearchTool.FileLength(System.String)
+```
+Gets the file length, if the path is not exists, then returns -1.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|path|-|
+
+
 #### FileOpened
 ```csharp
 Microsoft.VisualBasic.ProgramPathSearchTool.FileOpened(System.String)
@@ -59,6 +70,17 @@ Check if the file is opened by other code?(检测文件是否已经被其他程�
 |Parameter Name|Remarks|
 |--------------|-------|
 |FileName|目标文件|
+
+
+#### GetBaseName
+```csharp
+Microsoft.VisualBasic.ProgramPathSearchTool.GetBaseName(System.String)
+```
+@"M:System.IO.Path.GetFileNameWithoutExtension(System.String)" shortcuts extension.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|path|-|
 
 
 #### GetDirectoryFullPath
@@ -115,8 +137,8 @@ Microsoft.VisualBasic.ProgramPathSearchTool.LoadEntryList(System.String,System.S
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|Source|-|
-|Ext|-|
+|DIR|-|
+|exts|-|
 
 
 #### LoadSourceEntryList
@@ -146,6 +168,17 @@ Microsoft.VisualBasic.ProgramPathSearchTool.Long2Short(System.String,System.Stri
 >  System.IO.PathTooLongException: The specified path, file name, or both are too long.
 >  The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.
 >  
+
+#### MkDIR
+```csharp
+Microsoft.VisualBasic.ProgramPathSearchTool.MkDIR(System.String)
+```
+Make directory
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|DIR|-|
+
 
 #### NormalizePathString
 ```csharp

@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Imaging.Drawing2D
-date: 6/15/2016 1:49:35 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [DrawingScript](T-Microsoft.VisualBasic.Imaging.Drawing2D.DrawingScript.html)

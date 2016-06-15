@@ -55,14 +55,14 @@ The edit distance between two strings is defined as the minimum number of
 ```csharp
 Microsoft.VisualBasic.LevenshteinDistance.ComputeDistance``1(``0[],``0[],Microsoft.VisualBasic.LevenshteinDistance.Equals{``0},Microsoft.VisualBasic.LevenshteinDistance.ToChar{``0},System.Double)
 ```
-泛型序列的相似度的比较计算方法
+泛型序列的相似度的比较计算方法，这个会返回所有的数据
 
 |Parameter Name|Remarks|
 |--------------|-------|
 |reference|-|
 |hypotheses|-|
 |equals|-|
-|asChar|-|
+|asChar|这个只是用于进行显示输出的|
 |cost|-|
 
 

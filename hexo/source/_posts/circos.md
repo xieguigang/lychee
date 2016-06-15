@@ -40,7 +40,7 @@ The files includes in the ``circos.conf`` configuration file using both relative
 
 All most all of the circos.conf layout config file required of these housekeeping includes:
 
-```html
+```xml
 <<include etc/colors_fonts_patterns.conf>>
 <<include etc/housekeeping.conf>>
 <<include ticks.conf>>
@@ -55,7 +55,7 @@ All most all of the circos.conf layout config file required of these housekeepin
 ##### c. plots definitions
 The plots definitions in the circos is in the section of ``<plots>...</plots>``, and each circle plot is define in the sub-section of ``<plot>...</plot>``
 
-```
+```xml
   <plot>
 
   #   --> "LANS.SystemsBiology.AnalysisTools.DataVisualization.Interaction.Circos.Documents.Karyotype.Highlights.GradientMappings"
@@ -91,7 +91,7 @@ Public MustInherit Class Plot
    Public Property File As String
 
    ''' <summary>
-   ''' 圈外径(单位 r，请使用格式"&lt;double>r")
+   ''' 圈外径(单位 r，请使用格式"<double>r")
    ''' </summary>
    ''' <value></value>
    ''' <returns></returns>
@@ -99,7 +99,7 @@ Public MustInherit Class Plot
    Public Property r1 As String = "0.75r"
 
    ''' <summary>
-   ''' 圈内径(单位 r，请使用格式"&lt;double>r")
+   ''' 圈内径(单位 r，请使用格式"<double>r")
    ''' </summary>
    ''' <value></value>
    ''' <returns></returns>
@@ -112,6 +112,7 @@ End Class
 #### ideogram.conf
 #### ticks.conf
 
+![](https://raw.githubusercontent.com/SMRUCC/GCModeller.Circos/master/manual/image-02.png)
 
 ### Plot types
 ### Data types

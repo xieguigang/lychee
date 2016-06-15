@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Net.Http
-date: 6/15/2016 1:49:34 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [HTTP_RFC](T-Microsoft.VisualBasic.Net.Http.HTTP_RFC.html)

@@ -1,6 +1,6 @@
 ﻿---
 title: RQL.Linq
-date: 6/15/2016 1:49:36 AM
+date: 6/16/2016 4:45:51 AM
 ---
 
 [LinqAPI](T-RQL.Linq.LinqAPI.html)

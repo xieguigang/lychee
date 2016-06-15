@@ -11,7 +11,7 @@ _namespace: [Microsoft.VisualBasic.Parallel.Linq](N-Microsoft.VisualBasic.Parall
 
 #### Partitioning``2
 ```csharp
-Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.Partitioning``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{``0,``1})
+Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.Partitioning``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{``0,``1},System.Func{``0,System.Boolean})
 ```
 进行分区之后返回一个长时间的任务组合
 

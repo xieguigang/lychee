@@ -5,7 +5,7 @@ title: CLITools
 # CLITools
 _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandLine.html)_
 
-
+CLI parser and @"T:Microsoft.VisualBasic.CommandLine.CommandLine" object creates.
 
 ### Methods
 
@@ -14,6 +14,19 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 Microsoft.VisualBasic.CommandLine.CLITools.Args
 ```
 Gets the commandline object for the current program.
+
+#### CreateObject
+```csharp
+Microsoft.VisualBasic.CommandLine.CLITools.CreateObject(System.String,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.String}},System.Collections.Generic.IEnumerable{System.String})
+```
+Creates command line object from a set obj @"T:System.Collections.Generic.KeyValuePair`2"
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|Name|-|
+|args|-|
+|bFlags|-|
+
 
 #### CreateParameterValues
 ```csharp
@@ -63,11 +76,22 @@ Try parse the argument tokens which comes from the user input commandline string
 |CLI|-|
 
 
-#### IsPossibleLogicSW
+#### IsNumeric
 ```csharp
-Microsoft.VisualBasic.CommandLine.CLITools.IsPossibleLogicSW(System.String)
+Microsoft.VisualBasic.CommandLine.CLITools.IsNumeric(System.String)
 ```
-Is this string tokens is a possible boolean value flag
+Is this token value string is a number?
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|str|-|
+
+
+#### IsPossibleLogicFlag
+```csharp
+Microsoft.VisualBasic.CommandLine.CLITools.IsPossibleLogicFlag(System.String)
+```
+Is this string tokens is a possible @"T:System.Boolean" value flag
 
 |Parameter Name|Remarks|
 |--------------|-------|
@@ -82,14 +106,14 @@ ReGenerate the cli command line argument string text.(重新生成命令行字�
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|Tokens|-|
+|tokens|If the token value have a space character, then this function will be wrap that token with quot character automatically.|
 
 
 #### TrimParamPrefix
 ```csharp
 Microsoft.VisualBasic.CommandLine.CLITools.TrimParamPrefix(System.String)
 ```
-修建命令行参数名称的前置符号
+修剪命令行参数名称的前置符号
 
 |Parameter Name|Remarks|
 |--------------|-------|
@@ -114,4 +138,6 @@ Microsoft.VisualBasic.CommandLine.CLITools.TryParse(System.String,System.String,
 #### SPLIT_REGX_EXPRESSION
 A regex expression string that use for split the commandline text.
  (用于分析命令行字符串的正则表达式)
+#### TokenSplitRegex
+会对%进行替换的
 

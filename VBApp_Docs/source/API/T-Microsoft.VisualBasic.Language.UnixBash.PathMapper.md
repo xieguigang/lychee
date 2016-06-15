@@ -5,7 +5,7 @@ title: PathMapper
 # PathMapper
 _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.Language.UnixBash.html)_
 
-这个模块是将Linux路径映射为Windows路径的
+Maps the linux path to the Windows path.(这个模块是将Linux路径映射为Windows路径的)
 
 ### Methods
 
@@ -14,12 +14,13 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 Microsoft.VisualBasic.Language.UnixBash.PathMapper.GetMapPath(System.String)
 ```
 Map linux path on Windows:
- [~ -> C:\User\<user_name>]
- [# -> @"P:Microsoft.VisualBasic.App.HOME"]
- [/ -> C:\]
- [/usr/bin -> C:\Program Files\]
- [/usr -> C:\User\]
- [- -> @"P:Microsoft.VisualBasic.App.PreviousDirectory"]
+ 
+ + [~ -> C:\User\<user_name>]
+ + [# -> @"P:Microsoft.VisualBasic.App.HOME"]
+ + [/ -> C:\]
+ + [/usr/bin -> C:\Program Files\]
+ + [/usr -> C:\User\]
+ + [- -> @"P:Microsoft.VisualBasic.App.PreviousDirectory"]
 
 |Parameter Name|Remarks|
 |--------------|-------|
@@ -37,6 +38,6 @@ Get user home folder
 ### Properties
 
 #### platform
-Gets a System.PlatformID enumeration value that identifies the operating system
+Gets a @"T:System.PlatformID" enumeration value that identifies the operating system
  platform.
 

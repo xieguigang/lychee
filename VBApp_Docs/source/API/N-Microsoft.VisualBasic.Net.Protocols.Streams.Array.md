@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Net.Protocols.Streams.Array
-date: 6/15/2016 1:49:34 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [ArrayAbstract`1](T-Microsoft.VisualBasic.Net.Protocols.Streams.Array.ArrayAbstract`1.html)

@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm
-date: 6/15/2016 1:49:35 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [Apriori](T-Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.Apriori.html)

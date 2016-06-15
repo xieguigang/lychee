@@ -1,6 +1,6 @@
 ---
 title: API index
-date: 6/15/2016 1:49:36 AM
+date: 6/16/2016 4:45:51 AM
 ---
 
 Browser by namespace:
@@ -13,6 +13,7 @@ Browser by namespace:
 + [Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints](N-Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints.html)
 + [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.ComponentModel.html)
 + [Microsoft.VisualBasic.ComponentModel.Collection](N-Microsoft.VisualBasic.ComponentModel.Collection.html)
++ [Microsoft.VisualBasic.ComponentModel.Collection.FuzzyGroup](N-Microsoft.VisualBasic.ComponentModel.Collection.FuzzyGroup.html)
 + [Microsoft.VisualBasic.ComponentModel.Collection.Generic](N-Microsoft.VisualBasic.ComponentModel.Collection.Generic.html)
 + [Microsoft.VisualBasic.ComponentModel.DataSourceModel](N-Microsoft.VisualBasic.ComponentModel.DataSourceModel.html)
 + [Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository](N-Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository.html)
@@ -167,6 +168,7 @@ Browser by namespace:
 + [Microsoft.VisualBasic.Net.SSL.SSLProtocols](N-Microsoft.VisualBasic.Net.SSL.SSLProtocols.html)
 + [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.html)
 + [Microsoft.VisualBasic.Parallel.Linq](N-Microsoft.VisualBasic.Parallel.Linq.html)
++ [Microsoft.VisualBasic.Parallel.Linq.TaskPartitions](N-Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.html)
 + [Microsoft.VisualBasic.Parallel.ParallelLoading](N-Microsoft.VisualBasic.Parallel.ParallelLoading.html)
 + [Microsoft.VisualBasic.Parallel.ServicesFolk](N-Microsoft.VisualBasic.Parallel.ServicesFolk.html)
 + [Microsoft.VisualBasic.Parallel.Tasks](N-Microsoft.VisualBasic.Parallel.Tasks.html)

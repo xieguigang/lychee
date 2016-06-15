@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComponentModel.Ranges
-date: 6/15/2016 1:49:34 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [DoubleRange](T-Microsoft.VisualBasic.ComponentModel.Ranges.DoubleRange.html)

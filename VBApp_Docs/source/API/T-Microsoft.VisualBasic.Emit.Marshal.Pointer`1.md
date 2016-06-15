@@ -54,6 +54,16 @@ Pointer move to next and then returns the previous value
 
 ### Properties
 
+#### Current
+@"P:Microsoft.VisualBasic.Emit.Marshal.Pointer`1.Pointer" -> its current value
+#### EndRead
+Is read to end?
+#### Length
+Memory block size
+#### Pointer
+Current read position
+#### Raw
+Raw memory of this pointer
 #### Value
 相对于当前的指针的位置而言的
 

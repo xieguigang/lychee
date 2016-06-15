@@ -77,5 +77,5 @@ SMRUCC.HTTPInternal.Core.HttpFileSystem.handleGETRequest(SMRUCC.HTTPInternal.Cor
 #### Page404
 默认的404页面
 #### RequestStream
-默认是使用@"M:SMRUCC.HTTPInternal.Core.HttpFileSystem.GetResource(System.String)"获取得到文件数据
+默认是使用@"M:SMRUCC.HTTPInternal.Core.HttpFileSystem.GetResource(System.String@)"获取得到文件数据
 

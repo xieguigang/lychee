@@ -11,6 +11,31 @@ A command line object that parse from the user input commandline string.
 
 ### Methods
 
+#### Add
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.Add(System.String,System.String)
+```
+Add a parameter with name and its value.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|key|-|
+|value|-|
+
+
+#### Assert
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.Assert(System.String,System.String)
+```
+Determined that the specific Boolean flag is exists or not? 
+ if not then returns **failure**, if exists such flag, then returns the **name**.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|name|Boolean flag name|
+|failure|-|
+
+
 #### CheckMissingRequiredParameters
 ```csharp
 Microsoft.VisualBasic.CommandLine.CommandLine.CheckMissingRequiredParameters(System.Collections.Generic.IEnumerable{System.String})
@@ -23,6 +48,12 @@ Checking for the missing required parameter, this function will returns the miss
 |--------------|-------|
 |list|-|
 
+
+#### Clear
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.Clear
+```
+Clear the inner list buffer
 
 #### Contains
 ```csharp
@@ -241,6 +272,39 @@ Try get parameter value.
 |args|-|
 
 
+#### OpenStreamInput
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.OpenStreamInput(System.String)
+```
+[管道函数] 假若参数名存在并且所指向的文件也存在，则返回本地文件的文件指针，否则返回标准输入的指针
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|param|-|
+
+
+#### OpenStreamOutput
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.OpenStreamOutput(System.String)
+```
+[管道函数] 假若参数名存在，则返回本地文件的文件指针，否则返回标准输出的指针
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|param|-|
+
+
+#### Remove
+```csharp
+Microsoft.VisualBasic.CommandLine.CommandLine.Remove(Microsoft.VisualBasic.ComponentModel.DataSourceModel.NamedValue{System.String})
+```
+Removes a parameter by @"P:Microsoft.VisualBasic.ComponentModel.DataSourceModel.NamedValue`1.Name"
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|item|-|
+
+
 #### ToString
 ```csharp
 Microsoft.VisualBasic.CommandLine.CommandLine.ToString
@@ -260,6 +324,8 @@ Returns the original cli command line argument string.(返回所传入的命令�
 Get the original command line string.(获取所输入的命令行对象的原始的字符串)
 #### Count
 Get the switch counts in this commandline object.(获取本命令行对象中的所定义的开关的数目)
+#### IsNothing
+@"T:System.String" of @"P:Microsoft.VisualBasic.CommandLine.CommandLine.Name" AndAlso @"P:Microsoft.VisualBasic.CommandLine.CommandLine.IsNullOrEmpty"
 #### IsNullOrEmpty
 Does this cli command line object contains any parameter argument information.(查看本命令行参数对象之中是否存在有参数信息)
 #### Item

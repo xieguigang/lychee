@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Terminal.STDIO__.I_FormatProvider
-date: 6/15/2016 1:49:34 AM
+date: 6/16/2016 4:45:50 AM
 ---
 
 [b](T-Microsoft.VisualBasic.Terminal.STDIO__.I_FormatProvider.b.html)

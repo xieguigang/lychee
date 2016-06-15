@@ -13,12 +13,12 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection](N-Microsoft.Visual
 ```csharp
 Microsoft.VisualBasic.ComponentModel.Collection.FuzzyGroup.FuzzyGroups``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String},System.Double,System.Boolean)
 ```
-
+Grouping objects in a collection based on their unique key string Fuzzy equals to others'.
 
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-|getKey|-|
+|getKey|The unique key provider|
 |cut|字符串相似度的阈值|
 
 
