@@ -28,7 +28,7 @@ End Function
 + 数据可视化: d3js, Circos
 
 >![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/create_svg.png)
-> VB.NET+javascript html5混合编程
+> VB.NET+d3js SVG canvas html5混合编程
 
 ## **私人科研项目**
 ### 1. GCModeller开放计算平台 (VB.NET)
