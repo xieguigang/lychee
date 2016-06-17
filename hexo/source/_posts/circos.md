@@ -1,6 +1,6 @@
 ---
 title: Circos plots
-tags: [vb.net, CodeProject, circos, data visualization]
+tags: [vb.net, CodeProject, circos, data visualization, GCModeller]
 date: 2016-06-15
 ---
 
@@ -9,6 +9,7 @@ date: 2016-06-15
 Circos is a software package for visualizing data and information. It visualizes data in a circular layout — this makes Circos ideal for exploring relationships between objects or positions. There are other reasons why a circular layout is advantageous, not the least being the fact that it is attractive.
 
 > HOME page: http://circos.ca/
+> GCModeller API: https://github.com/SMRUCC/GCModeller.Circos
 
 <!--more-->
 
@@ -27,6 +28,13 @@ $ ~/circos/bin/circos
 
 ### Layout configs
 The circos layout configs is consist with 3 config file in the majority:
+
++ **circos.conf**
+	This is the main configuration of your circos plot, and the required graphics includes file, genome brief description, plots' details information was recorded at here.
++ **ideogram.conf**
+	
++ **ticks.conf**
+	The display style of the periodic loci labels for the genome chromosomes sequence was define at here.
 
 #### circos.conf
 ##### a. Includes header
