@@ -20,7 +20,7 @@ The typically circos data directory consists of two parts of data file: \*.conf 
 >  + ticks.conf
 >  + ./data/...
 
-Using circos program just very easy, using cd command enter the plots' config directory which the file circos.conf is located in the terminal, and then inputs the perl script location of circos, circos script will search for the circos.conf file automatically in your directory and then invoke drawing:
+Using circos program just very easy, using ``cd`` command enter the plots' config directory which the file **circos.conf** is located in the terminal, and then inputs the perl script location of circos, circos script will search for the **circos.conf** file automatically in your directory and then invoke drawing:
 
 ```bash
 $ ~/circos/bin/circos
@@ -32,7 +32,7 @@ The circos layout configs is consist with 3 config file in the majority:
 + **circos.conf**
 	This is the main configuration of your circos plot, and the required graphics includes file, genome brief description, plots' details information was recorded at here.
 + **ideogram.conf**
-	
+	ideogram visualizes linear layout of CHROMOSOMES, plots of the chromosomes brief information, and layout overview controls of the circos plot.
 + **ticks.conf**
 	The display style of the periodic loci labels for the genome chromosomes sequence was define at here.
 
@@ -60,8 +60,8 @@ All most all of the circos.conf layout config file required of these housekeepin
 ```
 
 ##### b. genome information &amp; plots configs
-##### c. plots definitions
-The plots definitions in the circos is in the section of ``<plots>...</plots>``, and each circle plot is define in the sub-section of ``<plot>...</plot>``
+##### c. plots definitions(Tracks)
+The plots definitions in the circos is in the section of ``<plots>...</plots>``, and each circle plot is define in the sub-section of ``<plot>...</plot>``, we call this circle plot as tracks. **Tracks are confined to a radial range and may overlap.**
 
 ```xml
   <plot>
@@ -123,4 +123,97 @@ End Class
 ![](https://raw.githubusercontent.com/SMRUCC/GCModeller.Circos/master/manual/image-02.png)
 
 ### Plot types
-### Data types
+### Track data types
+**Data for tracks is loaded from a plain-text file. Each data point is stored on a separate line, except for links which use two lines per link. The definition of a data point within a track is based on the genomic range, which is a combination of chromosome and start/end position.** For example, this is a very basically tracks data in the circos:
+
+```
+# the basis for a data point is a range
+chr12 1000 5000
+```
+
+In this tracks data example, there are two elements: First token ``chr12`` is the name of the chromosome which its identifer in your research is chr12, and then the followed two number value is that this track data on the position of this chromosome: from ranges of 1000bp to 5000bp with default forwards strand. 
+So that we can define a data model for this track data in .NET:
+
+```vbnet
+''' <summary>
+''' Data for tracks is loaded from a plain-text file. Each data point is stored on a 
+''' separate line, except for links which use two lines per link.
+''' 
+''' The definition Of a data point within a track Is based On the genomic range, 
+''' which Is a combination Of chromosome And start/End position.
+''' </summary>
+Public MustInherit Class TrackData
+
+    ''' <summary>
+    ''' Chromosomes name
+    ''' </summary>
+    Public Property chr As String
+    Public Property start As Integer
+    Public Property [end] As Integer
+    Public Property formatting As Formatting
+
+    ''' <summary>
+    ''' Using <see cref="ToString()"/> method for creates tracks data document.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Overrides Function ToString() As String
+        Dim s As String = __trackData()
+        Dim format As String = formatting.ToString
+
+        If Not String.IsNullOrEmpty(format) Then
+            s &= " " & format
+        End If
+
+        Return s
+    End Function
+
+    Protected MustOverride Function __trackData() As String
+
+End Class
+```
+
+And at here we can using ``formatting`` property to provides some additional data track annotation:
+
+```vbnet
+''' <summary>
+''' Annotated with formatting parameters that control how the point Is drawn. 
+''' </summary>
+Public Structure Formatting
+
+    ''' <summary>
+    ''' Only works in scatter, example is ``10p``
+    ''' </summary>
+    Dim glyph_size As String
+    ''' <summary>
+    ''' Only works in scatter, example is ``circle``
+    ''' </summary>
+    Dim glyph As String
+    ''' <summary>
+    ''' Works on histogram
+    ''' </summary>
+    Dim fill_color As String
+    ''' <summary>
+    ''' Works on any <see cref="Trackdata"/> data type.
+    ''' </summary>
+    Dim URL As String
+
+    Public Overrides Function ToString() As String
+        Dim s As New StringBuilder
+
+        Call __attach(s, NameOf(glyph), glyph)
+        Call __attach(s, NameOf(glyph_size), glyph_size)
+        Call __attach(s, NameOf(fill_color), fill_color)
+        Call __attach(s, "url", URL)
+
+        Return s.ToString
+    End Function
+
+    Private Shared Sub __attach(ByRef s As StringBuilder, name As String, value As String)
+        If s.Length = 0 Then
+            Call s.Append($"{name}={value}")
+        Else
+            Call s.Append($",{name}={value}")
+        End If
+    End Sub
+End Structure
+```
