@@ -27,6 +27,9 @@ End Function
 + 数据分析： Bioconductor, GCModeller
 + 数据可视化: d3js, Circos
 
+>![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/create_svg.png)
+> VB.NET+javascript html5混合编程
+
 ## **私人科研项目**
 ### 1. GCModeller开放计算平台 (VB.NET)
 > **开发时间**	2013.08 - 至今
@@ -84,6 +87,8 @@ PM> Install-Package VB_AppFramework_40
 ```
 
 本编程框架主要是针对VisualBasic语言在服务器端应用进行的拓展，本框架环境极大的拓展了VisualBasic语言的编程语法以及数据处理能力。本编程框架同时也是GCModeller分析套件的基础运行时环境。在本框架之中主要包括了一个完整的.NET程序的调试器系统，命令行解释器系统，大型计算任务多任务进程并行化拓展，SDK API文档自动编译系统，面向大型数据集合的数据框架以及数据挖掘分析套件。
+
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/m.gif)
 
 ## 个人娱乐项目
 ### Zplay-Music
