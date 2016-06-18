@@ -415,6 +415,53 @@ End Class
 ### **ideogram.conf**
 In Circos images, ideograms refer to graphical representations of chromosomes (or regions of chromosomes). By default ideograms are arranged in a circle, but radial positions of individual ideograms can be changed. The legibility of the figure depends on an ideogram organization that suits the data type and density.
 
+#### karyotype &amp; band
+The ideogram using karyotype file to define the genome skeleton information, which defines the name, size and color of chromosomes. 
+
+A simple karyotype with 5 chromosomes:
+
+```
+# chr1 5Mb
+# chr2 10Mb
+# chr3 20Mb
+# chr4 50Mb
+# chr5 100Mb
+
+chr - chr1 1 0 5000000 spectral-5-div-1
+chr - chr2 2 0 10000000 spectral-5-div-2
+chr - chr3 3 0 20000000 spectral-5-div-3
+chr - chr4 4 0 50000000 spectral-5-div-4
+chr - chr5 5 0 100000000 spectral-5-div-5
+```
+
+The format Of this file Is
+
+```
+chr - CHRNAME CHRLABEL START End COLOR
+```
+	
+In data files, chromosomes are referred To by CHRNAME. On the image, they are labeled by CHRLABEL. Colors are taken from the spectral Brewer palette. To learn about Brewer palettes, see: [www.colorbrewer.org](http://www.colorbrewer.org)
+
+```vbnet
+    ''' <summary>
+    ''' The ideogram using karyotype file to define the genome skeleton information, which defines the name, size and color of chromosomes. 
+    ''' </summary>
+    ''' <remarks>
+    ''' </remarks>
+    Public Class Karyotype
+
+        Public Property chrName As String
+        Public Property chrLabel As String
+        Public Property start As Integer
+        Public Property [end] As Integer
+        Public Property color As String
+
+        Public Overrides Function ToString() As String
+            Return $"chr - {chrName} {chrLabel} {start} {[end]} {color}"
+        End Function
+    End Class
+```
+
 ### **ticks.conf**
 
 The tick label is derived by multiplying the tick position by ``multiplier`` and casting it in ``format``:
