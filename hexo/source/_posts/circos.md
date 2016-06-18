@@ -6,14 +6,14 @@ date: 2016-06-15
 
 ![](https://raw.githubusercontent.com/SMRUCC/GCModeller.Circos/master/circos-cancer-cell.png)
 
-Circos is a software package for visualizing data and information. It visualizes data in a circular layout — this makes Circos ideal for exploring relationships between objects or positions. There are other reasons why a circular layout is advantageous, not the least being the fact that it is attractive.
+Circos is a software package for visualizing data and information which is written in **Perl** language. It visualizes data in a circular layout — this makes Circos ideal for exploring relationships between objects or positions. There are other reasons why a circular layout is advantageous, not the least being the fact that it is attractive. From the previous works on the bacterial genome annotation by using GCModeller, required of hybried programming with Perl language with vb.net for the annotation result visualization, by using this Circos software Perl script, I created this Circos API for .NET language, and introduce this .NET language API library.
 
 > HOME page: http://circos.ca/
 > GCModeller API: https://github.com/SMRUCC/GCModeller.Circos
 
 <!--more-->
 
-The typically circos data directory consists of two parts of data file: \*.conf circos plots layout configuration file, and \*.txt plots data files in a directory which is named '**data**':
+The typically circos data directory consists of two parts of data file: **\*.conf** circos plots layout configuration file, and **\*.txt** plots data files in a directory which is named '**data**':
 
 >  + circos.conf
 >  + ideogram.conf
@@ -41,10 +41,108 @@ The circos layout configs is consist with 3 config file in the majority:
 + **ticks.conf**
 	The display style of the periodic loci labels for the genome chromosomes sequence was define at here.
 
+### Basic Document Abstract
+
+First of all, we define the very basically class object at here for all of the circos documents at here:
+
+```vbnet
+''' <summary>
+''' This object can be convert to text document by using method <see cref="GenerateDocument"/>
+''' </summary>
+Public Interface ICircosDocNode
+    Function GenerateDocument(IndentLevel As Integer) As String
+End Interface
+
+''' <summary>
+''' This object can be save as a text doc for the circos plot
+''' </summary>
+Public Interface ICircosDocument : Inherits ICircosDocNode, ISaveHandle
+End Interface
+```
+
+In this interface definition, we just created the basically text document model for the files in the circos program: ``ICircosDocNode`` have an abstract function to generates the document text and ``ICircosDocument`` object by multiple inheritance, it have both method of document generation inherits from ``ICircosDocNode`` and abstract save method that inherits from text file save model ``ISaveHandle``
+
+So that based on the ``ICircosDocument`` abstract type, we can define the model of ``*.conf`` file at here:
+
+```vbnet
+    ''' <summary>
+    ''' Abstract of the circos config files.
+    ''' </summary>
+    Public MustInherit Class CircosConfig : Inherits ITextFile
+        Implements ICircosDocument
+
+        ''' <summary>
+        ''' 文档的对其他的配置文件的引用列表
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property Includes As List(Of CircosConfig)
+
+        ''' <summary>
+        ''' This config file was included in ``circos.conf``.(主配置文件Circos.conf)
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property main As Circos
+
+        Sub New(FileName As String, Circos As Circos)
+            MyBase.FilePath = FileName
+            Me.main = Circos
+        End Sub
+
+        Protected Function GenerateIncludes() As String
+            If Includes.IsNullOrEmpty Then
+                Return ""
+            End If
+
+            Dim sb As New StringBuilder(1024)
+
+            For Each includeFile As CircosConfig In Includes
+                Call __appendLine(sb, includeFile)
+                Call includeFile.Save(Encoding:=Encoding.ASCII)
+            Next
+
+            Return sb.ToString
+        End Function
+
+        Private Shared Sub __appendLine(ByRef sb As StringBuilder, include As CircosConfig)
+            Dim refPath As String = Tools.TrimPath(include)
+
+            If TypeOf include Is CircosDistributed Then
+                Dim name As String = DirectCast(include, CircosDistributed).Section
+                If Not String.IsNullOrEmpty(name) Then
+                    Call sb.AppendLine($"<{name}>")
+                    Call sb.AppendLine($"   <<include {refPath}>>")
+                    Call sb.AppendLine($"</{name}>")
+                Else
+                    Call sb.AppendLine($"<<include {refPath}>>")
+                End If
+            Else
+                Call sb.AppendLine($"<<include {refPath}>>")
+            End If
+        End Sub
+
+        Protected MustOverride Function GenerateDocument(IndentLevel As Integer) As String Implements ICircosDocument.GenerateDocument
+
+        ''' <summary>
+        ''' Auto detected that current is circos distribution or not, if true, then this file will not be saved.
+        ''' </summary>
+        ''' <param name="FilePath"></param>
+        ''' <param name="Encoding"></param>
+        ''' <returns></returns>
+        Public Overrides Function Save(Optional FilePath As String = "", Optional Encoding As Encoding = Nothing) As Boolean Implements ICircosDocument.Save
+            If TypeOf Me Is CircosDistributed Then
+                Return True ' 系统自带的不需要进行保存了
+            End If
+
+            Dim doc As String = GenerateDocument(IndentLevel:=Scan0)
+            Return doc.SaveTo(getPath(FilePath), If(Encoding Is Nothing, Encoding.ASCII, Encoding))
+        End Function
+    End Class
+```
+
 ### **circos.conf**
 #### a. Includes header
 
-The files includes in the ``circos.conf`` configuration file using both relative path or absolute path. By default, almost all of the miscellaneous pre-defined config file is saved in the ``ect/`` directory, **likes color definitions, fonts, patterns, etc**. By using the relative path, circos program will search you included file in the directory of:
+The files includes in the ``circos.conf`` configuration file using both relative path or absolute path. By default, almost all of the circos distribution miscellaneous pre-defined config file is saved in the ``ect/`` directory, **likes color definitions, fonts, patterns, etc**. By using the relative path, circos program will search you included file in the directory of:
 
 1. ./etc/
 2. ../etc/
@@ -53,11 +151,11 @@ The files includes in the ``circos.conf`` configuration file using both relative
 
 As always, centralize all your inputs as much as possible.
 
-All most all of the circos.conf layout config file required of these housekeeping includes. These should be present in every Circos configuration file and overridden as required. To see the content of these files, you can look in ``etc/`` in the Circos distribution.
+All most all of the ``circos.conf`` layout config file required of these housekeeping includes. These should be present in every Circos configuration file and overridden as required. To see the content of these files, you can look in ``etc/`` in the Circos distribution.
 
 It's best to include these files using relative paths. This way, the files if not found under your current directory will be drawn from the Circos distribution.
 
-```xml
+```html
 <<include etc/colors_fonts_patterns.conf>>
 <<include etc/housekeeping.conf>>
 <<include ticks.conf>>
@@ -74,15 +172,185 @@ Debugging, I/O an dother system parameters Included from Circos distribution.
 <<include etc/housekeeping.conf>> 
 ```
 
-RGB/HSV color definitions, color lists, location of fonts, fill patterns. Included from Circos distribution.
-
-In older versions of Circos, colors, fonts and patterns were included individually. Now, this is done from a central file.
+RGB/HSV color definitions, color lists, location of fonts, fill patterns. Included from Circos distribution. In older versions of Circos, colors, fonts and patterns were included individually. Now, this is done from a central file.
 
 ```
 <<include etc/colors_fonts_patterns.conf>> 
 ```
 
+And here is the definition of the reference to these circos distribution includes:
+
+```vbnet
+''' <summary>
+''' The circos distributed includes files.
+''' (这个对象仅仅是为了引用Cricos系统内的预置的配置文件的设立的，故而<see cref="CircosDistributed.GenerateDocument">
+''' </see>方法和<see cref="CircosDistributed.Save"></see>方法可以不会被实现)
+''' </summary>
+''' <remarks></remarks>
+Public Class CircosDistributed : Inherits CircosConfig
+
+    Public ReadOnly Property Section As String
+
+    ''' <summary>
+    ''' 由于这些是系统的预置的数据，是不能够再修改了的，所以这里由于没有数据配置项，直接忽略掉了Circos配置数据
+    ''' </summary>
+    ''' <param name="path"></param>
+    ''' <remarks></remarks>
+    Protected Sub New(path As String)
+        Call MyBase.New(path, Circos:=Nothing)
+    End Sub
+
+    Protected Sub New(path As String, name As String)
+        Me.New(path)
+        Me.Section = name
+    End Sub
+
+    Protected Overrides Function GenerateDocument(IndentLevel As Integer) As String
+        Return ""
+    End Function
+
+#Region "The Circos Distribution includes"
+    ''' <summary>
+    ''' Debugging, I/O an dother system parameters included from Circos distribution.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared ReadOnly Property HouseKeeping As CircosDistributed =
+        New CircosDistributed("etc/housekeeping.conf")
+
+    Public Shared ReadOnly Property ColorBrain As CircosDistributed =
+        New CircosDistributed("color.brain.conf", "colors")
+    Public Shared ReadOnly Property Image As CircosDistributed =
+            New CircosDistributed("etc/image.conf", "image")
+
+    ''' <summary>
+    ''' RGB/HSV color definitions, color lists, location of fonts, fill
+    ''' patterns. Included from Circos distribution.
+    '''
+    ''' In older versions Of Circos, colors, fonts And patterns were
+    ''' included individually. Now, this Is done from a central file. Make
+    ''' sure that you're not importing these values twice by having
+    '''
+    ''' *** Do Not Do THIS ***
+    ''' &lt;colors>
+    '''     &lt;&lt;include etc/colors.conf>>
+    ''' &lt;colors>
+    ''' **********************
+    ''' </summary>
+    ''' <returns></returns>
+    Public Shared ReadOnly Property ColorFontsPatterns As CircosDistributed =
+        New CircosDistributed("etc/colors_fonts_patterns.conf")
+#End Region
+End Class
+```
+
 #### b. genome information &amp; plots configs
+
+Here is some property that used on the genome layout controls in the ``circos.conf`` file:
+
+```vbnet
+''' <summary>
+''' circos.conf
+'''                                     ____ _
+'''                                    / ___(_)_ __ ___ ___  ___
+'''                                   | |   | | '__/ __/ _ \/ __|
+'''                                   | |___| | | | (_| (_) \__ \
+'''                                    \____|_|_|  \___\___/|___/
+'''
+'''                                                round Is good
+'''
+''' circos - generate circularly composited information graphics
+''' 
+''' (Circo基因组绘图程序的主配置文件)
+''' </summary>
+''' <remarks>
+''' ![](https://raw.githubusercontent.com/SMRUCC/GCModeller.Circos/master/manual/workflow.png)
+''' 
+''' Typically a central configuration file which defines data track information (circos.conf) imports other 
+''' configuration files that store parameters that change less frequently 
+''' (tick marks, ideogram size, grid, etc). 
+''' 
+''' Data for each data track Is stored in a file And the same file can be used for multiple tracks.
+''' 
+''' + PNG image output Is ideal For immediate viewing, web-based reporting Or presentation. 
+''' + SVG output Is most suitable For generating very high resolution line art For publication And For customizing aspects Of the figure.
+''' </remarks>
+Public Class Circos : Inherits CircosConfig
+    Implements ICircosDocument
+
+    ''' <summary>
+    ''' The basically genome structure plots: Chromosome name, size and color definition.(基本的数据文件)
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    <Circos> Public Property karyotype As String = "data/genes.txt"
+    <Circos> Public Property genome As String = null
+    <Circos> Public Property use_rules As String = yes
+
+    ''' <summary>
+    ''' The chromosomes_unit value is used as a unit (suffix "u") to shorten
+    ''' values In other parts Of the configuration file. Some parameters,
+    ''' such As ideogram And tick spacing, accept "u" suffixes, so instead Of
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_units As String = "5000"
+    ''' <summary>
+    ''' The default behaviour is to display all chromosomes defined in the
+    ''' karyotype file. In this example, I Select only a subset.
+    '''
+    ''' The 'chromosomes' parameter has several uses, and selecting which
+    ''' chromosomes To show Is one Of them. You can list them
+    ''' Or provide a regular expression that selects them based On a successful match
+    ''' The ``$`` anchor Is necessary, otherwise chromosomes Like *hs10, hs11 And
+    ''' hs20* are also matched.
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_display_default As String = yes
+    <Circos> Public Property chromosomes As String = null
+    ''' <summary>
+    ''' By default, the scale progression is clockwise. You can set the
+    ''' Global angle progression Using 'angle_orientation' in the ``&lt;image>``
+    ''' block (clockwise Or counterclockwise). To reverse it For one Or
+    ''' several ideograms, use 'chromosomes-reverse'
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_reverse As String = null
+    ''' <summary>
+    ''' The default radial position for all ideograms is set by 'radius' in
+    ''' the ``&lt;ideogram>`` block (see ideogram.conf). To change the value For
+    ''' specific ideograms, use chromosomes_radius.
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_radius As String = null
+    ''' <summary>
+    ''' The size of the ideogram on the figure can be adjusted using an
+    ''' absolute Or relative magnification. Absolute scaling,
+    ''' shrinks Or expands the ideogram by a fixed factor. When the "r"
+    ''' suffix Is used, the magnification becomes relative To the
+    ''' circumference Of the figure. Thus, 
+    ''' makes ``hs1`` To occupy 50% Of the figure. To uniformly distribute
+    ''' several ideogram within a fraction Of the figure, use a regular
+    ''' expression that selects the ideograms And the "rn" suffix (relative
+    ''' normalized).
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_scale As String = null
+    ''' <summary>
+    ''' The color of each ideogram is taken from the karyotype file. To
+    ''' change it, use 'chromosomes_color'.
+    ''' </summary>
+    ''' <returns></returns>
+    <Circos> Public Property chromosomes_color As String = null
+    <Circos> Public Property chromosomes_order As String = null
+    <Circos> Public Property chromosomes_breaks As String = null
+		
+    ''' <summary>
+    ''' 基因组的骨架信息
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property SkeletonKaryotype As SkeletonInfo
+```
+
 #### c. plots definitions(Tracks)
 The plots definitions in the circos is in the section of ``<plots>...</plots>``, and each circle plot is define in the sub-section of ``<plot>...</plot>``, we call this circle plot as tracks. **Tracks are confined to a radial range and may overlap.**
 
@@ -337,7 +605,7 @@ End Class
 ```
 
 ## Track plot types
-There are 5 track plot type that we usually used in the genome visualization: histogram, scatter, heatmap, links, and text.
+There are 5 track plot type that we usually used in the genome visualization: **histogram, scatter, heatmap, links, and text.**
 
 ### histogram
 
