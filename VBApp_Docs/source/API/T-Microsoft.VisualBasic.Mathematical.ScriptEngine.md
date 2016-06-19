@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 
 
+
 ### Properties
 
 #### StatementEngine
 all of the commands are stored at here
-

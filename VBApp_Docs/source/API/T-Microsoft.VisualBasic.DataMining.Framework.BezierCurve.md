@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### __interpolation
@@ -90,7 +92,6 @@ recreate the bezier curve.
 _returns: the list of points in the curve_
 
 
-
 ### Properties
 
 #### BezierPointList
@@ -99,4 +100,3 @@ store the list of points in the bezier curve
 store the list of initial points
 #### Iterations
 store the number of iterations
-

@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 
 
 
+
 ### Properties
 
 #### about
@@ -19,4 +20,3 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
  xml文档在rdf反序列化之后，原有的类型定义之中除了自有的属性被保留下来了之外，具备指向其他资源的属性都被保存在了这个属性字典之中
 #### RDFId
 rdf:ID
-

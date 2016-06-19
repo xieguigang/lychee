@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.Globalization](N-Microsoft.V
 
 
 
+
 ### Properties
 
 #### Default
 从属性或者域上面解析出来的默认的语言值
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.SSL](N-Microsoft.VisualBasic.Net.SSL.html
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -53,7 +55,6 @@ Microsoft.VisualBasic.Net.SSL.SSLSynchronizationServicesSocket.WaitForStart
 等待底层socket成功进入监听模式
 
 
-
 ### Properties
 
 #### CA
@@ -73,4 +74,3 @@ Does this ssl server accepts the handshaking from the user client or just allow 
 @"T:Microsoft.VisualBasic.Net.Abstract.DataRequestHandler": 
  Public Delegate Function @"T:Microsoft.VisualBasic.Net.Abstract.DataRequestHandler"(CA As @"T:System.Int64", request As @"T:Microsoft.VisualBasic.Net.Protocols.RequestStream", 
  RemoteAddress As @"T:System.Net.IPEndPoint") As @"T:System.Net.IPEndPoint"
-

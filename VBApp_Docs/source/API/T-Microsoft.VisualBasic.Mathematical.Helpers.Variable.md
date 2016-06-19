@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Helpers](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### AssignValue
@@ -32,10 +34,8 @@ Add a user const from the input of user on the console.
 
 
 
-
 ### Properties
 
 #### Variable
 Add a variable to the dictionary, if the variable is exists then will update its value.
  (向字典之中添加一个变量，假若该变量存在，则更新他的值)
-

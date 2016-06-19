@@ -9,6 +9,8 @@ Represents a strongly typed list of objects that can be accessed by index. Provi
  methods to search, sort, and manipulate lists.To browse the .NET Framework source
  code for this type, see the Reference Source.
 
+
+
 ### Methods
 
 #### #ctor
@@ -88,7 +90,5 @@ Move Next
 Microsoft.VisualBasic.List`1.PopAll
 ```
 Pop all of the elements value in to array from the list object and then clear all of the list data.
-
-
 
 

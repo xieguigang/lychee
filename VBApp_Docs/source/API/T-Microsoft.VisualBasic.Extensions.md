@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Common extension methods library for convenient the programming job.
 
+
+
 ### Methods
 
 #### __reversedTakeSelected``1
@@ -931,7 +933,6 @@ Microsoft.VisualBasic.Extensions.π(System.Collections.Generic.IEnumerable{Syste
 
 
 
-
 ### Properties
 
 #### BooleanValues
@@ -940,4 +941,3 @@ Convert the string value into the boolean value, this is useful to the text form
 Chr(0): NULL char
 #### Scan0
 The first element in a collection.
-

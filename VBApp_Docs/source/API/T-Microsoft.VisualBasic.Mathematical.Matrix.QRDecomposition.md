@@ -16,6 +16,8 @@ QR Decomposition.
  of simultaneous linear equations. This will fail if IsFullRank()
  returns false.
 
+
+
 ### Methods
 
 #### #ctor
@@ -45,7 +47,6 @@ _returns:      X that minimizes the two norm of Q*R*X-B.
  _
 
 
-
 ### Properties
 
 #### FullRank
@@ -70,4 +71,3 @@ Return the upper triangular factor
 #### Rdiag
 Array for internal storage of diagonal of R.
  @serial diagonal of R.
-

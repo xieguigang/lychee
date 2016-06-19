@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.BayesianBeliefNet
 
 
 
+
+
 ### Methods
 
 #### GetBelief
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.DataMining.Framework.Kernel.BayesianBeliefNetwork.BElim.Ge
 |--------------|-------|
 |x|-|
 |conditions|-|
-
-
 
 
 

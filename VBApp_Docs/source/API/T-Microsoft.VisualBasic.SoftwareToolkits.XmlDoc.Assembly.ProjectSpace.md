@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly](N-Microsoft
 
 A collection of one or more projects put together, and their attendant namespaces.
 
+
+
 ### Methods
 
 #### ExportMarkdownFiles
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly.ProjectSpace.ExportMarkdo
 |--------------|-------|
 |folderPath|-|
 |pageTemplate|a markdown page template. This token: [content] will be replaced with generated content.|
-
-
 
 
 

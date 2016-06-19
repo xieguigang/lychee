@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### LoadDocument
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.MarkupLanguage.HTML.HtmlDocument.LoadDocument(System.Strin
 |Parameter Name|Remarks|
 |--------------|-------|
 |url|-|
-
-
 
 
 

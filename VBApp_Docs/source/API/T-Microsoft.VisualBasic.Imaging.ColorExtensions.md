@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### IsNullOrEmpty
@@ -27,7 +29,6 @@ Microsoft.VisualBasic.Imaging.ColorExtensions.ToColor(System.String)
 
 
 
-
 ### Properties
 
 #### __allDotNETPrefixColors
@@ -36,4 +37,3 @@ Key都是小写的
 Gets all of the known name color from the Color object its shared property.
 #### RGB_EXPRESSION
 解析颜色表达式里面的RGB的正则表达式
-

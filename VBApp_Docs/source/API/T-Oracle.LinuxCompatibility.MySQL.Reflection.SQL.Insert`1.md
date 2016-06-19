@@ -7,6 +7,13 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.SQL](N-Oracle.LinuxCompa
 
 
 
+> 
+>  Example SQL:
+>  
+>  INSERT INTO `TableName` (`Field1`, `Field2`, `Field3`) VALUES ('1', '1', '1');
+>  
+
+
 ### Methods
 
 #### Generate
@@ -23,9 +30,7 @@ Generate the INSERT sql command of the instance of the specific type of 'Schema'
 _returns: INSERT sql text_
 
 
-
 ### Properties
 
 #### InsertSQL
 INSERT INTO `TableName` (`Field1`, `Field2`, `Field3`, ...) VALUES ('{0}', '{1}', '{2}', ...);
-

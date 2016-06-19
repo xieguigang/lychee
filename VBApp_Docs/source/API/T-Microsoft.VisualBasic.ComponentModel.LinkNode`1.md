@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 
 
+
 ### Properties
 
 #### Next
@@ -17,4 +18,3 @@ The next element in the chain after this element
 Current node in the chain list
 #### Previous
 The previous element in the chain before this element
-

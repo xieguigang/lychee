@@ -9,6 +9,8 @@ The entry point data of the commands in the command line which was original load
  from the source meta data in the compiled target.
  (命令行命令的执行入口点)
 
+
+
 ### Methods
 
 #### #ctor
@@ -94,7 +96,6 @@ Invoke this command line but returns the function execute success, Zero for succ
 
 
 
-
 ### Properties
 
 #### EntryPoint
@@ -105,4 +106,3 @@ If the target invoked @"P:Microsoft.VisualBasic.CommandLine.Reflection.EntryPoin
  (假若目标方法不是共享的方法，则必须要使用本对象来进行Invoke的调用)
 #### IsInstanceMethod
 The shared method did not requires of the object instance.(这个方法是否为实例方法)
-

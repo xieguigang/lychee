@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.Tokens](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### CreateLinqWhere
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.WhereClosure.CreateLinqWhere(Sy
 |--------------|-------|
 |Expr|必须是符合VisualBasic语法的逻辑表达式|
 |type|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.Vectors](N-Microsoft.Visual
 
 
 
+
+
 ### Methods
 
 #### Draw
@@ -24,7 +26,5 @@ Measures the specified string when drawn with the specified System.Drawing.Font.
 _returns: This method returns a System.Drawing.SizeF structure that represents the size,
  in the units specified by the System.Drawing.Graphics.PageUnit property, of the
  string specified by the text parameter as drawn with the font parameter._
-
-
 
 

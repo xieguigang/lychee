@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Ranges](N-Microsoft.VisualBasi
 
 Represents a generic range with minimum and maximum values
 
+
+
 ### Methods
 
 #### IsInside
@@ -36,11 +38,9 @@ _returns: True if the specified range overlaps with this range or
  false otherwise._
 
 
-
 ### Properties
 
 #### Max
 Maximum value
 #### Min
 Minimum value
-

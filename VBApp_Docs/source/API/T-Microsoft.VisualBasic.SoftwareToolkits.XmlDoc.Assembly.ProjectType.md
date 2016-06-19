@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly](N-Microsoft
 
 A type within a project namespace.
 
+
+
 ### Methods
 
 #### ExportMarkdownFile
@@ -22,7 +24,5 @@ Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly.ProjectType.ExportMarkdow
 |hexoPublish|-|
 
 > 这里还应该包括完整的函数的参数注释的输出
-
-
 
 

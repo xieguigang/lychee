@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 Parser for complex expressions
 
+
+
 ### Methods
 
 #### TryParse
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Mathematical.ExpressionParser.TryParse(Microsoft.VisualBas
 |Parameter Name|Remarks|
 |--------------|-------|
 |tokens|-|
-
-
 
 
 

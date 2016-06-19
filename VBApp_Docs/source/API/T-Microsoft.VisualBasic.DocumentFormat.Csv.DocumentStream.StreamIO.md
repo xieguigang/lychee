@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### __lazySaved
@@ -51,7 +53,5 @@ Save this csv document into a specific file location **path**.
  |
 
 > 当目标保存路径不存在的时候，会自动创建文件夹
-
-
 
 

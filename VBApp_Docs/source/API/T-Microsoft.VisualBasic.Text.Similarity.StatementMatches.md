@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text.Similarity](N-Microsoft.VisualBasic.Text
 
 其他的匹配方法是基于字符的，这个是基于单词的比对
 
+
+
 ### Methods
 
 #### Match
@@ -34,8 +36,6 @@ Microsoft.VisualBasic.Text.Similarity.StatementMatches.MatchFuzzy(System.String,
 |s2|-|
 |strict|-|
 |cut|-|
-
-
 
 
 

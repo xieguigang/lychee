@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Ranges](N-Microsoft.VisualBasi
 
 Represents an integer range with minimum and maximum values
 
+
+
 ### Methods
 
 #### #ctor
@@ -48,7 +50,6 @@ _returns: True if the specified range overlaps with this range or
  false otherwise._
 
 
-
 ### Properties
 
 #### Length
@@ -57,4 +58,3 @@ Length of the range (deffirence between maximum and minimum values)
 Maximum value
 #### Min
 Minimum value
-

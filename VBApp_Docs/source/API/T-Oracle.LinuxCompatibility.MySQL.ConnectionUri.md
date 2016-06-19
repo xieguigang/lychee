@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 The connection parameter for the MYSQL database server.(MySQL服务器的远程连接参数)
 
+
+
 ### Methods
 
 #### CreateObject
@@ -91,7 +93,6 @@ Oracle.LinuxCompatibility.MySQL.ConnectionUri.TryParsing(System.String)
 
 
 
-
 ### Properties
 
 #### Database
@@ -100,4 +101,3 @@ Using <database_name>.(数据库的名称)
 The server IP address, you can using 'localhost' to specific the local machine.(服务器的IP地址，可以使用localhost来指代本机)
 #### ServicesPort
 The port number of the remote database server.(数据库服务器的端口号)
-

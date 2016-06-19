@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 
 
+
 ### Properties
 
 #### CloseBracket
@@ -29,4 +30,3 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 Function Name, constant, variable
 #### WhiteSpace
 Space or Tab
-

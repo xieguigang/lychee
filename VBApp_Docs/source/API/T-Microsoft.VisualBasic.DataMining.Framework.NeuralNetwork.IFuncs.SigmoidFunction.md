@@ -7,6 +7,19 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.IFuncs](N-
 
 Sigmoid activation function.
 
+> The class represents sigmoid activation function with
+>  the next expression:
+>  
+>                 1
+>  f(x) = ------------------
+>         1 + exp(-alpha * x)
+> 
+>            alpha * exp(-alpha * x )
+>  f'(x) = ---------------------------- = alpha * f(x) * (1 - f(x))
+>            (1 + exp(-alpha * x))^2
+>  Output range of the function: [0, 1].Functions graph:
+
+
 ### Methods
 
 #### #ctor
@@ -74,9 +87,7 @@ _returns: Function output value, f(x)._
 > The method calculates function value at point **x**.
 
 
-
 ### Properties
 
 #### Alpha
 Sigmoid's alpha value.
-

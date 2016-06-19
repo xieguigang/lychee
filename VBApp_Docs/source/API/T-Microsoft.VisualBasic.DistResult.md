@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### Visualize
@@ -14,7 +16,6 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 Microsoft.VisualBasic.DistResult.Visualize
 ```
 Output HTML result for visualization
-
 
 
 ### Properties
@@ -27,4 +28,3 @@ m+ scores
 比对上的对象的数目
 #### Score
 可以简单地使用这个数值来表述所比较的两个对象之间的相似度
-

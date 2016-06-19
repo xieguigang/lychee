@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps](N-
 
 
 
+
+
 ### Methods
 
 #### GetFields``1
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.Mappings.GetFiel
 |type|-|
 |getFieldName|-|
 |explict|-|
-
-
 
 
 

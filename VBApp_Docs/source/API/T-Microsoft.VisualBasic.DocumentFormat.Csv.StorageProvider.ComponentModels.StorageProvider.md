@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 
 
+
 ### Properties
 
 #### BindProperty
@@ -21,4 +22,3 @@ The bind property in the reflected class object.(在反射的类型定义之中�
 假若目标属性之中没有提供名称的话，则会使用属性名称来代替
 #### Ordinal
 这个属性值在Csv文件的第几列？
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Helpers](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### Add
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.Mathematical.Helpers.Constants.GET(System.String,System.Bo
 |Parameter Name|Remarks|
 |--------------|-------|
 |x|-|
-
-
 
 
 

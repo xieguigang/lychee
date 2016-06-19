@@ -9,8 +9,8 @@ Value assignment statement for assign the value the a variable in the LINQ scrip
 
 
 
+
 ### Properties
 
 #### Name
 Variable name
-

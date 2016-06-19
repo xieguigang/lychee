@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Parallel.Tasks](N-Microsoft.VisualBasic.Paral
 Running a specific @"T:System.Action" in the background periodically.
  (比较适合用于在服务器上面执行周期性的计划任务)
 
+
+
 ### Methods
 
 #### #ctor
@@ -35,7 +37,6 @@ Microsoft.VisualBasic.Parallel.Tasks.UpdateThread.Stop
 停止更新线程的运行
 
 
-
 ### Properties
 
 #### ErrHandle
@@ -45,4 +46,3 @@ If this exception handler is null, then when the unhandled exception occurring,
 ms
 #### Running
 指示当前的这个任务处理对象是否处于运行状态
-

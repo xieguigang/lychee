@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 
 
+
+
 ### Methods
 
 #### op_Addition
@@ -31,8 +33,6 @@ Oracle.LinuxCompatibility.MySQL.Table`1.op_LessThan(Oracle.LinuxCompatibility.My
 |--------------|-------|
 |table|-|
 |SQL|-|
-
-
 
 
 

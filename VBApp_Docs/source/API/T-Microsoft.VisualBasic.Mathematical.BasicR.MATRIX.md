@@ -7,6 +7,27 @@ _namespace: [Microsoft.VisualBasic.Mathematical.BasicR](N-Microsoft.VisualBasic.
 
 
 
+> 
+>  Matlab里常用的矩阵运算函数  
+>  %假设矩阵为A
+>  det(A)求矩阵行列式
+>  eig(A)求矩阵特征值或特征向量
+>  inv(A)矩阵A求逆
+>  pinv(A)矩阵A求伪逆
+>  rank(A)求矩阵A的秩
+>  svd(A)求矩阵A的奇异值或进行奇异值分解
+>  gsvd(A)求矩阵A的广义奇异值
+>  trace(A)求矩阵A的迹
+>  schur(A)对矩阵A进行Schur分解
+>  hess(A)求矩阵A的Hessenburg标准型
+>  cond(A)求矩阵A的范数
+>  chol(A)对矩阵A进行Cholesky分解
+>  lu(A)对矩阵A进行lu分解
+>  qr(A)对矩阵A进行QR分解
+>  poly(A)求矩阵A的特征多项式
+>  
+
+
 ### Methods
 
 #### Adj
@@ -857,9 +878,7 @@ Microsoft.VisualBasic.Mathematical.BasicR.MATRIX.VR(Microsoft.VisualBasic.Mathem
 
 
 
-
 ### Properties
 
 #### GetSize
 获取矩阵行数
-

@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.DbAttributes](N-Oracle.L
 
 
 
+
+
 ### Methods
 
 #### op_Explicit
@@ -21,9 +23,7 @@ Get the table name property.(获取表名称)
 
 
 
-
 ### Properties
 
 #### Database
 这个数据表所处的数据库的名称，可选的属性
-

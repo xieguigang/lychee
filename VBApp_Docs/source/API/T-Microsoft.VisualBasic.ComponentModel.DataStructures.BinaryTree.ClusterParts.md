@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree](N-M
 
 
 
+
+
 ### Methods
 
 #### __hashLeaf``1
@@ -25,7 +27,5 @@ Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.ClusterParts.__ha
 Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.ClusterParts.ClusterParts``1(Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.BinaryTree{``0},Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.ClusterParts.IsType{``0},Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.ClusterParts.IsType{``0},Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.ClusterParts.GetEntities{``0})
 ```
 {最开始的节点，实体列表}
-
-
 
 

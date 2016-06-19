@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Graph](N-Microsoft.
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -22,9 +24,7 @@ Microsoft.VisualBasic.DataVisualization.Network.Graph.Node.#ctor(System.String,M
 
 
 
-
 ### Properties
 
 #### ID
 The unique id of this node
-

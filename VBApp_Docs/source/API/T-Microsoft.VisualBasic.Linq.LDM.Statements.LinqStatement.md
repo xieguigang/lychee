@@ -7,6 +7,16 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements](N-Microsoft.VisualBasic.
 
 A linq statement object model.
 
+> 
+>  From [Object [As TypeId]] 
+>  In [Collection] 
+>  Let [Declaration1, Declaration2, ...]
+>  Where [Condition Test] 
+>  Select [Object/Object Constrctor] 
+>  [Distinct] 
+>  [Order Statement]
+
+
 ### Methods
 
 #### TryParse
@@ -19,7 +29,6 @@ Try to parsing a linq query script into a statement object model and compile the
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-
 
 
 
@@ -42,4 +51,3 @@ Original statement text of this linq expression
 An object element in the target query collection.(目标待查询集合之中的一个元素)
 #### Where
 Where test condition for the query.(查询所使用的Where条件测试语句)
-

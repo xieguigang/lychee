@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.SharedMemory](N-Microsoft.V
 
 Memory shared services.
 
+
+
 ### Methods
 
 #### Allocate
@@ -24,9 +26,7 @@ Microsoft.VisualBasic.ComputingServices.SharedMemory.SharedSvr.Allocate(System.S
 _returns: Write or update the memory success?_
 
 
-
 ### Properties
 
 #### __variables
 这个是提供给远程主机读取使用的
-

@@ -10,8 +10,8 @@ Enum all of the data type in the mysql database.
 
 
 
+
 ### Properties
 
 #### BigInt
 Long
-

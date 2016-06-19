@@ -9,8 +9,8 @@ The class object which can interact with the target commandline program.(与目�
 
 
 
+
 ### Properties
 
 #### _executableAssembly
 Assembly path for the target invoked program.
-

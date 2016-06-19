@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Persistent.Application](N-Microsoft.Visua
 
 长连接模式的消息推送服务器
 
+
+
 ### Methods
 
 #### #ctor
@@ -104,7 +106,6 @@ Microsoft.VisualBasic.Net.Persistent.Application.MessagePushServer.SendMessage(S
 
 
 
-
 ### Properties
 
 #### _sslLayer
@@ -116,4 +117,3 @@ Microsoft.VisualBasic.Net.Persistent.Application.MessagePushServer.SendMessage(S
 #### UidMappings
 将外部编号映射为内部的客户端句柄
  假若找不到，请返回-1
-

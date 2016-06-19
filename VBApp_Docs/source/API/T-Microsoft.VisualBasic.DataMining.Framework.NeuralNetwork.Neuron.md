@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 
 
+
 ### Properties
 
 #### IFunc
 The active function
-

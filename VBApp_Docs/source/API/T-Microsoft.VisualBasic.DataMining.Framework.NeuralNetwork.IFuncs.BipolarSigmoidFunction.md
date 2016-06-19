@@ -7,6 +7,19 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.IFuncs](N-
 
 Bipolar sigmoid activation function.
 
+> The class represents bipolar sigmoid activation function with
+>  the next expression:
+>  
+>                 2
+>  f(x) = ------------------ - 1
+>         1 + exp(-alpha * x)
+> 
+>            2 * alpha * exp(-alpha * x )
+>  f'(x) = -------------------------------- = alpha * (1 - f(x)^2) / 2
+>            (1 + exp(-alpha * x))^2
+>  Output range of the function: [-1, 1].Functions graph:
+
+
 ### Methods
 
 #### #ctor
@@ -74,9 +87,7 @@ _returns: Function output value, f(x)._
 > The method calculates function value at point **x**.
 
 
-
 ### Properties
 
 #### Alpha
 Sigmoid's alpha value.
-

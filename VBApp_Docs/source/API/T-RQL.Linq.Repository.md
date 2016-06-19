@@ -7,6 +7,8 @@ _namespace: [RQL.Linq](N-RQL.Linq.html)_
 
 Repository database
 
+
+
 ### Methods
 
 #### GetRepository
@@ -32,9 +34,7 @@ RQL.Linq.Repository.GetType(System.String)
 
 
 
-
 ### Properties
 
 #### Models
 {lower_case.url, type_info}
-

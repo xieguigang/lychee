@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 
 
+
 ### Properties
 
 #### LEFT
 自动根据类型来计算出结果
-

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem](N-Microsoft.Vis
 Provides properties and methods for working with drives, files, and directories on remote server.
  (分布式文件系统)
 
+
+
 ### Methods
 
 #### CopyDirectory
@@ -343,7 +345,6 @@ Writes text to a file.
 
 
 
-
 ### Properties
 
 #### CurrentDirectory
@@ -352,4 +353,3 @@ Gets or sets the current directory.
 Returns a read-only collection of all available drive names.
 #### Portal
 远端服务器的开放的句柄端口
-

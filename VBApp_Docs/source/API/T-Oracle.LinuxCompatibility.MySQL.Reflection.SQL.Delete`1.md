@@ -7,6 +7,11 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.SQL](N-Oracle.LinuxCompa
 
 
 
+> 
+>  Example SQL:
+>  
+>  DELETE FROM `TableName` WHERE `IndexFieldName`='value';
+>  
 
 
 

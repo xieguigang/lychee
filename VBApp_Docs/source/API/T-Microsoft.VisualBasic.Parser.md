@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Simple type parser
 
+
+
 ### Methods
 
 #### ParseBoolean
@@ -73,8 +75,6 @@ Microsoft.VisualBasic.Parser.ParseSingle(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |s|-|
-
-
 
 
 

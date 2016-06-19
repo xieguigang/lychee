@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 Download by http://www.codefans.net
 
+
+
 ### Methods
 
 #### DrawGrayBitmap
@@ -23,8 +25,6 @@ Chang the bitmap to gray bitmap in hdc.
 |nWidth|-|
 |nHeight|-|
 |nMaskColor|-|
-
-
 
 
 

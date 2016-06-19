@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### TryGetMetaData
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Meta.TryGetMetaData(Micr
 |--------------|-------|
 |reader|-|
 |i|下一行是标题行|
-
-
 
 
 

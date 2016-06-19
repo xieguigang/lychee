@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 Automatically generates visualbasic source code from the SQL schema dump document.(根据SQL文档生成Visual Basic源代码)
 
+
+
 ### Methods
 
 #### __generateCode
@@ -92,8 +94,6 @@ Works with the conflicts of the VisualBasic keyword.(处理VB里面的关键词�
 |Parameter Name|Remarks|
 |--------------|-------|
 |name|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### Free
@@ -36,9 +38,7 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.LinqPool.OpenQuery(System.Colle
 
 
 
-
 ### Properties
 
 #### __linq
 linq池
-

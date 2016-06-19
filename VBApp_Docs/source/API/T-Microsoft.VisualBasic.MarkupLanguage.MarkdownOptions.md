@@ -9,6 +9,7 @@ The markdown document generate options.
 
 
 
+
 ### Properties
 
 #### AllowEmptyLinkText
@@ -38,4 +39,3 @@ when true, quote dont grab next lines
 #### StrictBoldItalic
 when true, bold and italic require non-word characters on either side 
  WARNING: this is a significant deviation from the markdown spec
-

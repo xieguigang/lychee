@@ -12,6 +12,8 @@ http://www.codeproject.com/Articles/18635/Ping-exe-replica-in-C
  Stefan Prodan, 3 May 2007 CPOL
  Usage example of the System.Net.NetworkInformation.Ping.
 
+
+
 ### Methods
 
 #### Ping
@@ -23,8 +25,6 @@ Microsoft.VisualBasic.Net.PingUtility.Ping(System.Net.IPAddress,System.UInt32)
 |Parameter Name|Remarks|
 |--------------|-------|
 |IP|-|
-
-
 
 
 

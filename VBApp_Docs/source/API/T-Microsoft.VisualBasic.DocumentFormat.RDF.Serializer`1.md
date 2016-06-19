@@ -7,6 +7,18 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 
 
 
+> 
+>  工作流程
+>  
+>   -- 解析类型定义
+>   -- CodeDOM创建新类型
+>   -- RDF文件格式化
+>   -- 使用新类型进行反序列化
+>   -- 属性映射
+>   -- 返回原来的目标对象实例
+>  
+
+
 ### Methods
 
 #### Copy
@@ -46,8 +58,6 @@ Microsoft.VisualBasic.DocumentFormat.RDF.Serializer`1.Normalization(System.Text.
 |Parameter Name|Remarks|
 |--------------|-------|
 |ObjectStream|-|
-
-
 
 
 

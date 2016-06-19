@@ -9,6 +9,7 @@ Provides detailed information about the host operating system.
 
 
 
+
 ### Properties
 
 #### BuildVersion
@@ -33,4 +34,3 @@ Gets the full version of the operating system running on this computer.
 Gets the full version string of the operating system running on this computer.
 #### WindowsName
 Gets the name of the operating system running on this computer.
-

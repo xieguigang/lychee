@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection
 
 
 
+
+
 ### Methods
 
 #### LoadData``1
@@ -31,8 +33,6 @@ Function returns type of @"T:System.Collections.Generic.Dictionary`2"
 |Parameter Name|Remarks|
 |--------------|-------|
 |ValueType|Type of the value in the dictionary, and the key type is @"T:System.String"|
-
-
 
 
 

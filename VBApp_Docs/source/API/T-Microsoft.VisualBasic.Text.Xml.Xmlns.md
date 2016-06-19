@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text.Xml](N-Microsoft.VisualBasic.Text.Xml.ht
 
 Xml namespace
 
+
+
 ### Methods
 
 #### RootParser
@@ -43,7 +45,5 @@ Microsoft.VisualBasic.Text.Xml.Xmlns.WriteNamespace(System.Text.StringBuilder)
 |xml|-|
 
 > 当前的这个对象是新值，需要替换掉文档里面的旧值
-
-
 
 

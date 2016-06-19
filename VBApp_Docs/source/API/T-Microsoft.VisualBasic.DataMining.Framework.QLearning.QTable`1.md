@@ -12,6 +12,8 @@ The heart of the Q-learning algorithm, the QTable contains the table
 
  @author A.Liapis (Original author), A. Hartzen (2013 modifications); xie.guigang@gcmodeller.org (2016 modifications)
 
+
+
 ### Methods
 
 #### #ctor
@@ -129,7 +131,6 @@ The updateQvalue is the heart of the Q-learning algorithm. Based on
 
 
 
-
 ### Properties
 
 #### __randomGenerator
@@ -170,4 +171,3 @@ the learningRate determines how new information affects accumulated
 the table variable stores the Q-table, where the state is saved
  directly as the actual map. Each map state has an array of Q values
  for all the actions available for that state.
-

@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF.Serialization](N-Microsoft
 
 
 
+
 ### Properties
 
 #### TypeInfo
 Get the @"T:System.Type" type information of the class type @"T:Microsoft.VisualBasic.DocumentFormat.RDF.Serialization.RDFElement"
-

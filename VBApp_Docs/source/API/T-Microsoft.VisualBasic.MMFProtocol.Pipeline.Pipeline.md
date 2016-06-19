@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol.Pipeline](N-Microsoft.VisualBasic
 
 exec cmd /var $<piplineName>, this can be using in the CLI programming for passing the variables between the program more efficient
 
+
+
 ### Methods
 
 #### __allocated
@@ -24,8 +26,6 @@ Microsoft.VisualBasic.MMFProtocol.Pipeline.Pipeline.GetValue``1(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |var|-|
-
-
 
 
 

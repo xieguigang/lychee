@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal.Utility](N-Microsoft.VisualBasic.Ter
 
 
 
+
+
 ### Methods
 
 #### FromFile
@@ -24,8 +26,6 @@ Microsoft.VisualBasic.Terminal.Utility.ManualPages.ShowManual(System.Int32,Syste
 |Parameter Name|Remarks|
 |--------------|-------|
 |initLines|最开始显示的行数|
-
-
 
 
 

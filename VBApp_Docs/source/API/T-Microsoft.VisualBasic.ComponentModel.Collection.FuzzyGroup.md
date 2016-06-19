@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection](N-Microsoft.Visual
 
 对数据进行分组，通过标签数据的相似度
 
+
+
 ### Methods
 
 #### FuzzyGroups``1
@@ -21,7 +23,8 @@ Grouping objects in a collection based on their unique key string Fuzzy equals t
 |getKey|The unique key provider|
 |cut|字符串相似度的阈值|
 
-
-
+> 
+>  由于list在查找方面的速度非常的慢，而字典可能在生成的时候会慢一些，但是查找很快，所以在这里函数里面使用字典来替代列表
+>  
 
 

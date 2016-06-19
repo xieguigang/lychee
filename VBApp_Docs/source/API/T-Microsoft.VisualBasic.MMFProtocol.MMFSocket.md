@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol](N-Microsoft.VisualBasic.MMFProto
 
 MMFProtocol socket object for the inter-process communication on the localhost, this can be using for the data exchange between two process.
 
+
+
 ### Methods
 
 #### #ctor
@@ -38,8 +40,6 @@ Microsoft.VisualBasic.MMFProtocol.MMFSocket.SendMessage(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |s|@"P:System.Text.Encoding.UTF8"|
-
-
 
 
 

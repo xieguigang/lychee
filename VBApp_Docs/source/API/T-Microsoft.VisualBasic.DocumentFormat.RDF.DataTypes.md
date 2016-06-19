@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 
 http://www.w3.org/2001/XMLSchema
 
+
+
 ### Methods
 
 #### GetType
@@ -24,8 +26,6 @@ Default is string type if property value of @"P:Microsoft.VisualBasic.DocumentFo
 |Parameter Name|Remarks|
 |--------------|-------|
 |x|-|
-
-
 
 
 

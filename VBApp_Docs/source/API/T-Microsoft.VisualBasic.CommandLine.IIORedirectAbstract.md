@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 
 
+
+
 ### Methods
 
 #### Run
@@ -30,9 +32,7 @@ Start the target process. If the target invoked process is currently on the runn
 _returns: 当发生错误的时候会返回错误代码，当当前的进程任然处于运行的状态的时候，程序会返回-100错误代码并在终端之上打印出警告信息_
 
 
-
 ### Properties
 
 #### StandardOutput
 Gets the standard output for the target invoke process.
-

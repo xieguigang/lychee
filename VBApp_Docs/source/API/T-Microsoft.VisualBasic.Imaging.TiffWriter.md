@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### SaveToExistingFile
@@ -20,8 +22,6 @@ This function can save newly scanned images on existing single page or multipage
 |fileName|-|
 |bmp|-|
 |type|-|
-
-
 
 
 

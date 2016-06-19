@@ -9,8 +9,8 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface](N-System.Data.SQLite
 
 
 
+
 ### Properties
 
 #### PrimaryKey
 FieldName, DbType
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection.FuzzyGroup](N-Micro
 
 分组操作的内部帮助类
 
+
+
 ### Methods
 
 #### Equals
@@ -21,7 +23,6 @@ Microsoft.VisualBasic.ComponentModel.Collection.FuzzyGroup.__groupHelper`1.Equal
 
 
 
-
 ### Properties
 
 #### key
@@ -30,4 +31,3 @@ Key for represent this object.
 Key cache
 #### x
 Target element object in the grouping
-

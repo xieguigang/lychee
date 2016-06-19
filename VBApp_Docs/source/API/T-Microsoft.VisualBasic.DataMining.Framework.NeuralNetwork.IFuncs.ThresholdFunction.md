@@ -7,6 +7,13 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.IFuncs](N-
 
 Threshold activation function.
 
+> The class represents threshold activation function with
+>  the next expression:
+>  
+>  f(x) = 1, if x >= 0, otherwise 0
+>  Output range of the function: [0, 1].Functions graph:
+
+
 ### Methods
 
 #### #ctor
@@ -64,7 +71,5 @@ Calculates function value.
 
 _returns: Function output value, f(x)._
 > The method calculates function value at point **x**.
-
-
 
 

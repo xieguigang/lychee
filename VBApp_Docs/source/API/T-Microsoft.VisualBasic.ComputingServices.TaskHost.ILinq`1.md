@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 Remote LINQ source reader
 
+
+
 ### Methods
 
 #### #ctor
@@ -25,7 +27,5 @@ Creates a linq source reader from the remote entry point
 Microsoft.VisualBasic.ComputingServices.TaskHost.ILinq`1.AsQuerable
 ```
 这个迭代器函数会自动重置远程数据源
-
-
 
 

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 Using this object to running the method on the remote machine.
  由于是远程调用，所以运行的环境可能会很不一样，所以在设计程序的时候请尽量避免或者不要使用模块变量，以免出现难以调查的BUG
 
+
+
 ### Methods
 
 #### AsLinq``1
@@ -53,8 +55,6 @@ Start the application on the remote host.(相当于Sub，调用远程的命令�
 |--------------|-------|
 |exe|Exe file path|
 |args|-|
-
-
 
 
 

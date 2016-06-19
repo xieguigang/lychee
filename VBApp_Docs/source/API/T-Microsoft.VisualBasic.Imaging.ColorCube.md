@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 Describes the RGB color space as a 3D cube with the origin at Black.
 
+> 
+>  http://social.technet.microsoft.com/wiki/contents/articles/20990.generate-color-sequences-using-rgb-color-cube-in-vb-net.aspx
+>  
+
+
 ### Methods
 
 #### Compare
@@ -123,7 +128,5 @@ _returns: The HSL representation of the color._
 >  http://geekymonkey.com/Programming/CSharp/RGB2HSL_HSL2RGB.htm This link is external to TechNet Wiki. It will open in a new window.
 >  (Adapted to VB)
 >  
-
-
 
 

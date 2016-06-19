@@ -9,6 +9,8 @@ Markdown is a text-to-HTML conversion tool for web writers.
  Markdown allows you to write using an easy-to-read, easy-to-write plain text format, 
  then convert it to structurally valid XHTML (or HTML).
 
+
+
 ### Methods
 
 #### #ctor
@@ -249,7 +251,6 @@ Microsoft.VisualBasic.MarkupLanguage.MarkDown.MarkdownHTML.Unescape(System.Strin
 swap back in all the special characters we've hidden
 
 
-
 ### Properties
 
 #### AsteriskIntraWordEmphasis
@@ -277,4 +278,3 @@ Don't grab next lines
 #### StrictBoldItalic
 when true, bold and italic require non-word characters on either side 
  WARNING: this is a significant deviation from the markdown spec
-

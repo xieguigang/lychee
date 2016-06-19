@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 
 
+
+
 ### Methods
 
 #### FileOpened
@@ -30,8 +32,6 @@ Open a file system handle
 |--------------|-------|
 |file|-|
 |encoding|-|
-
-
 
 
 

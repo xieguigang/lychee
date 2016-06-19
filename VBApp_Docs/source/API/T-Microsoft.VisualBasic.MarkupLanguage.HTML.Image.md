@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### ResParser
@@ -21,9 +23,7 @@ Microsoft.VisualBasic.MarkupLanguage.HTML.Image.ResParser(System.String)
 
 
 
-
 ### Properties
 
 #### Text
 这个Image对象的原始的html字符串
-

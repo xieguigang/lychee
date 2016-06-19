@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 Represents the standard input, output, and error streams for console applications. 交互式的命令行终端
 
+
+
 ### Methods
 
 #### Beep
@@ -218,7 +220,6 @@ Writes the text representation of the specified 64-bit unsigned integer value, f
 
 
 
-
 ### Properties
 
 #### BackgroundColor
@@ -275,4 +276,3 @@ Gets or sets the leftmost position of the console window area relative to the sc
 Gets or sets the top position of the console window area relative to the screen buffer.
 #### WindowWidth
 Gets or sets the width of the console window.
-

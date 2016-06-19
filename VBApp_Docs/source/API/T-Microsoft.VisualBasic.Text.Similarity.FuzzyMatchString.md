@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text.Similarity](N-Microsoft.VisualBasic.Text
 
 
 
+
+
 ### Methods
 
 #### __fuzzyCharEquals
@@ -43,8 +45,6 @@ Microsoft.VisualBasic.Text.Similarity.FuzzyMatchString.StringSelection(System.St
 |--------------|-------|
 |query|-|
 |List|-|
-
-
 
 
 

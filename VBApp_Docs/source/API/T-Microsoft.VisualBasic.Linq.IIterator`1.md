@@ -10,6 +10,8 @@ Exposes the enumerator, which supports a simple iteration over a collection of
  the Reference Source.
  (使用这个的原因是系统自带的@"T:System.Collections.Generic.IEnumerable`1"在Xml序列化之中的支持不太好)
 
+
+
 ### Methods
 
 #### GetEnumerator
@@ -26,7 +28,5 @@ Microsoft.VisualBasic.Linq.IIterator`1.IGetEnumerator
 Returns an enumerator that iterates through a collection.
 _returns: An System.Collections.IEnumerator object that can be used to iterate through
  the collection._
-
-
 
 

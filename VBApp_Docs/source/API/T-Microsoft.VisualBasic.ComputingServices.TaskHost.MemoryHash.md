@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### Destroy
@@ -29,8 +31,6 @@ Gets the object reference type.
 |Parameter Name|Remarks|
 |--------------|-------|
 |addr|-|
-
-
 
 
 

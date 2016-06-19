@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### RotateImage
@@ -74,7 +76,5 @@ _returns: A new @"T:System.Drawing.Bitmap" that is just large enough
 >  together adjacentBottom and oppositeTop.
 >  
 >  
-
-
 
 

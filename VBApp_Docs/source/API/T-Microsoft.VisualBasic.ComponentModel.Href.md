@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 Resource link data.
 
+
+
 ### Methods
 
 #### GetFullPath
@@ -21,7 +23,6 @@ Microsoft.VisualBasic.ComponentModel.Href.GetFullPath(System.String)
 
 
 
-
 ### Properties
 
 #### Annotations
@@ -30,4 +31,3 @@ Microsoft.VisualBasic.ComponentModel.Href.GetFullPath(System.String)
 资源的名称
 #### Value
 The relative path of the target resource object in the file system.(资源对象在文件系统之中的相对路径)
-

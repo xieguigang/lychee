@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.KMeans](N-Microsoft.Visu
 
 A collection of Cluster objects or Clusters
 
+
+
 ### Methods
 
 #### Add
@@ -21,9 +23,7 @@ Adds a Cluster to the collection of Clusters
 
 
 
-
 ### Properties
 
 #### Item
 Returns the Cluster at this index
-

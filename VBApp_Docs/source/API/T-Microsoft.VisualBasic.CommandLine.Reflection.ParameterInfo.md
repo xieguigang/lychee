@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine.Reflection](N-Microsoft.VisualBas
 
 Use for the detail description for a specific commandline switch.(用于对某一个命令的开关参数的具体描述帮助信息)
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,7 +21,6 @@ Microsoft.VisualBasic.CommandLine.Reflection.ParameterInfo.#ctor(System.String,S
 |--------------|-------|
 |Name|The name of this command line parameter switch.(该命令开关的名称)|
 |Optional|Is this parameter switch is an optional value.(本开关是否为可选的参数)|
-
 
 
 
@@ -37,4 +38,3 @@ The name of this command line parameter switch.(该命令开关的名称)
 Is this parameter switch is an optional value.(本开关是否为可选的参数)
 #### Usage
 The usage syntax information about this parameter switch.(本开关参数的使用语法)
-

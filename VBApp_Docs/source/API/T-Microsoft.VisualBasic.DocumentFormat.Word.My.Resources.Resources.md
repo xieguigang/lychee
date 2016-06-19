@@ -9,6 +9,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 
 
+
 ### Properties
 
 #### Culture
@@ -31,4 +32,3 @@ software and other kinds of works.
 to take away yo [rest of string was truncated]";.
 #### ResourceManager
 Returns the cached ResourceManager instance used by this class.
-

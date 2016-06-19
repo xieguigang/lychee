@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.Asymmetric](N-Microsoft.Vis
 
 主节点下面的每一台物理机上面的宿主服务，提供给该物理机上面的服务实例
 
+
+
 ### Methods
 
 #### #ctor
@@ -35,7 +37,6 @@ Microsoft.VisualBasic.ComputingServices.Asymmetric.Parasitifer.SystemLoad
 获取当前物理主机上面的系统负载
 
 
-
 ### Properties
 
 #### _instance
@@ -46,4 +47,3 @@ Microsoft.VisualBasic.ComputingServices.Asymmetric.Parasitifer.SystemLoad
 当前的这个管理节点和其所管理的服务实例之间相互通信所需要的身份认证信息
 #### _OAuth
 这个节点在主节点上面的授权认证信息
-

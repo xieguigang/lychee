@@ -9,6 +9,7 @@ Describes a RGB color in Hue, Saturation, and Luminance values.
 
 
 
+
 ### Properties
 
 #### H
@@ -17,4 +18,3 @@ The color hue.
 The color luminance.
 #### S
 The color saturation.
-

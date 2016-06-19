@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Visualize](N-Micros
 
 
 
+
+
 ### Methods
 
 #### DrawImage
@@ -25,9 +27,7 @@ Microsoft.VisualBasic.DataVisualization.Network.Visualize.NetworkVisualizer.Draw
 
 
 
-
 ### Properties
 
 #### BackgroundColor
 This background color was picked from https://github.com/whichlight/reddit-network-vis
-

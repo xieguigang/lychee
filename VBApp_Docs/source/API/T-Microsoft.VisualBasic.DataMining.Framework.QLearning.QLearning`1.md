@@ -11,6 +11,8 @@ Q Learning sample class The goal of this code sample is for the character @ to r
  
  @author A.Liapis (Original author), A. Hartzen (2013 modifications)
 
+
+
 ### Methods
 
 #### __finishLearn
@@ -42,7 +44,6 @@ Takes a action for the agent.
 
 
 
-
 ### Properties
 
 #### ActionRange
@@ -51,4 +52,3 @@ The size of the @"T:Microsoft.VisualBasic.DataMining.Framework.QLearning.QTable`
 目标没有达成的罚分
 #### GoalRewards
 目标达成所得到的奖励
-

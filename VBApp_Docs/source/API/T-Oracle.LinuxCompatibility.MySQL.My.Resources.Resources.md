@@ -9,6 +9,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 
 
+
 ### Properties
 
 #### Culture
@@ -26,4 +27,3 @@ Looks up a localized resource of type System.Byte[].
 Returns the cached ResourceManager instance used by this class.
 #### share
 Looks up a localized resource of type System.Byte[].
-

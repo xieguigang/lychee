@@ -13,6 +13,8 @@ Liu Junfeng. An almost feature complete YAML parser.
  It is broadly useful for programming needs ranging from configuration files to 
  Internet messaging to object persistence to data auditing.
 
+
+
 ### Methods
 
 #### DecreaseIndent
@@ -38,7 +40,5 @@ Increase Indent for Nested Block Collection
 Microsoft.VisualBasic.MarkupLanguage.YAML.Grammar.YamlParser.IncreaseIndentIfZero
 ```
 Mandatory Indentation for "non-indented" Scalar
-
-
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CodeDOM_VBC](N-Microsoft.VisualBasic.CodeDOM_
 
 
 
+
+
 ### Methods
 
 #### Compile
@@ -52,7 +54,6 @@ Microsoft.VisualBasic.CodeDOM_VBC.CodeDOMExtension.Icon(System.String)
 
 
 
-
 ### Properties
 
 #### DllProfile
@@ -61,4 +62,3 @@ Microsoft.VisualBasic.CodeDOM_VBC.CodeDOMExtension.Icon(System.String)
 基本的引用集合
 #### ExecutableProfile
 .exe的编译配置文件
-

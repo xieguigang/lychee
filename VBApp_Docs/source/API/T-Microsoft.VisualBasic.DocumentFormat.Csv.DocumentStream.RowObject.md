@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 A line of data in the csv file.(Csv表格文件之中的一行)
 
+
+
 ### Methods
 
 #### #ctor
@@ -119,7 +121,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.RowObject.ToString
 Displaying in IDE
 
 
-
 ### Properties
 
 #### _innerColumns
@@ -138,4 +139,3 @@ is this row object contains any data?
 返回本行中的非空白数据
 #### Width
 非空白单元格的数目
-

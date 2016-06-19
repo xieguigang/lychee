@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 
 做序列化的时候请务必要添加一个自定义的属性：<XmlType(RDF.RDF_PREFIX & "RDF")>
 
+
+
 ### Methods
 
 #### LoadDocument
@@ -25,7 +27,5 @@ Microsoft.VisualBasic.DocumentFormat.RDF.RDF.LoadDocument(System.String)
 Microsoft.VisualBasic.DocumentFormat.RDF.RDF.ToString
 ```
 将RDF对象转换为XML文件之中的字符串
-
-
 
 

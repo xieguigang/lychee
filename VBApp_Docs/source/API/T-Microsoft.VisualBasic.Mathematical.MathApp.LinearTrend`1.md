@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.Mathematical.MathApp](N-Microsoft.VisualBasic
 
 Linear trend calculation
 
+> 
+>  http://www.codeproject.com/Articles/1101932/Simple-trend-calculation
+>  
+
+
 ### Methods
 
 #### Calculate
@@ -14,7 +19,6 @@ Linear trend calculation
 Microsoft.VisualBasic.Mathematical.MathApp.LinearTrend`1.Calculate(Microsoft.VisualBasic.List{Microsoft.VisualBasic.Mathematical.MathApp.ValueItem{`0}},System.Func{Microsoft.VisualBasic.Mathematical.MathApp.ValueItem{`0}})
 ```
 Calculates the trendline
-
 
 
 ### Properties
@@ -35,4 +39,3 @@ Slope
 Value for the first trend point on X axis
 #### TrendItems
 Trend items
-

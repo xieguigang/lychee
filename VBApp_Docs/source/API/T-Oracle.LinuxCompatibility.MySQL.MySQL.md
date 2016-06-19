@@ -8,6 +8,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 MySql database server connection module.
  (与MySql数据库服务器之间的通信操作的封装模块)
 
+
+
 ### Methods
 
 #### CommitTransaction
@@ -136,9 +138,7 @@ Test the connection of the client to the mysql database server and then
 _returns: 当函数返回一个负数的时候，表明Ping操作失败，即无数据库服务器连接_
 
 
-
 ### Properties
 
 #### UriMySQL
 A Formatted connection string using for the connection established to the database server.
-

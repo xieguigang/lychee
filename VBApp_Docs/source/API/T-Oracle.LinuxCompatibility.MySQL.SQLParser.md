@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 
 
+
+
 ### Methods
 
 #### __createDataType
@@ -57,11 +59,9 @@ Loading the table schema from a specific SQL doucment.
 
 
 
-
 ### Properties
 
 #### FIELD_COMMENTS
 Regex expression for parsing the comments of the field in a table definition.
 #### SQL_CREATE_TABLE
 Parsing the create table statement in the SQL document.
-

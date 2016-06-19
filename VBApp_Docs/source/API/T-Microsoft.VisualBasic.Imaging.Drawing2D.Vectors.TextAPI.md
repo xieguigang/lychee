@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.Vectors](N-Microsoft.Visual
 
 基于HTML语法的字符串的绘制描述信息的解析
 
+
+
 ### Methods
 
 #### DrawStrng
@@ -31,8 +33,6 @@ Microsoft.VisualBasic.Imaging.Drawing2D.Vectors.TextAPI.GetStrings(System.String
 |Parameter Name|Remarks|
 |--------------|-------|
 |html|这里只是一个很小的html的片段，仅仅用来描述所需要进行绘制的字符串的gdi+属性|
-
-
 
 
 

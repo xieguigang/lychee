@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### __pairs
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.PathMatch.__pairs(System.String[],System.String[],System.F
 |--------------|-------|
 |paths1|-|
 |path2|-|
-
-
 
 
 

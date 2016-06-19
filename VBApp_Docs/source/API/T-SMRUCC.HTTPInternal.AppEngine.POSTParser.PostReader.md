@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.AppEngine.POSTParser](N-SMRUCC.HTTPInternal.App
 
 POST参数的解析工具
 
+
+
 ### Methods
 
 #### LoadMultiPart
@@ -14,7 +16,5 @@ POST参数的解析工具
 SMRUCC.HTTPInternal.AppEngine.POSTParser.PostReader.LoadMultiPart
 ```
 Loads the data on the form for multipart/form-data
-
-
 
 

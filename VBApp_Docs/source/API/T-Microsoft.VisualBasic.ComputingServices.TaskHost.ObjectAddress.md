@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 Object reference address on the remote
 
+
+
 ### Methods
 
 #### ReferenceEquals
@@ -21,9 +23,7 @@ Object is equals on the remote and local
 
 
 
-
 ### Properties
 
 #### HashCode
 @"T:System.Object" from local
-

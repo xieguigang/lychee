@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### __innerTextParser
@@ -33,7 +35,5 @@ Microsoft.VisualBasic.MarkupLanguage.HTML.DocParserAPI.TextParse(System.String@)
 |doc|-|
 
 > 这个方法是最开始的解析函数，非递归的
-
-
 
 

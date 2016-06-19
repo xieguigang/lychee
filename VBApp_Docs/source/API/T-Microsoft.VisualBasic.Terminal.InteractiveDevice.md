@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -33,9 +35,7 @@ Microsoft.VisualBasic.Terminal.InteractiveDevice.Save(System.String,System.Text.
 
 
 
-
 ### Properties
 
 #### HistoryCallerStack
 ReadLine函数的递归返回值
-

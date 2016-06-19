@@ -7,6 +7,10 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework](N-Microsoft.VisualBasic
 
 Fourier transformation.
 
+> The class implements one dimensional and two dimensional
+>  Discrete and Fast Fourier Transformation.
+
+
 ### Methods
 
 #### DFT
@@ -61,7 +65,5 @@ Two dimensional Fast Fourier Transform.
 > The method accepts **data** array of 2n size
 >  only in each dimension, where n may vary in the [1, 14] range. For example, 16x16 array
 >  is valid, but 15x15 is not.
-
-
 
 

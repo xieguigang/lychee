@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataMining.Framework.Kernel.Classifier
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:14 AM
 ---
 
 [Bayesian](T-Microsoft.VisualBasic.DataMining.Framework.Kernel.Classifier.Bayesian.html)

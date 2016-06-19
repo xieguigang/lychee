@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.FileIO](N-Microsoft.VisualBasic.FileIO.html)_
 
 
 
+
+
 ### Methods
 
 #### GetMapPath
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.FileIO.NetFile.MapNetFile(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |url|-|
-
-
 
 
 

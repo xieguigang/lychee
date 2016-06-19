@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.LinqAPIHelpers](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### op_LessThanOrEqual
@@ -20,8 +22,6 @@ Initializes a new instance of the @"T:Microsoft.VisualBasic.List`1"`1 class that
 |Parameter Name|Remarks|
 |--------------|-------|
 |linq|The collection whose elements are copied to the new list.|
-
-
 
 
 

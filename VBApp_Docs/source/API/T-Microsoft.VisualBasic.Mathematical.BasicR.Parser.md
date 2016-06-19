@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.BasicR](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### Matrix
@@ -18,8 +20,6 @@ Parsing a matrix object from a expression string.(从一个表达式之中解析
 |Parameter Name|Remarks|
 |--------------|-------|
 |expression|-|
-
-
 
 
 

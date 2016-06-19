@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SecurityString](N-Microsoft.VisualBasic.Secur
 
 并行化的需求
 
+
+
 ### Methods
 
 #### GetMd5hashLong
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.SecurityString.Md5HashProvider.GetMd5hashLong(System.Byte[
 |Parameter Name|Remarks|
 |--------------|-------|
 |input|-|
-
-
 
 
 

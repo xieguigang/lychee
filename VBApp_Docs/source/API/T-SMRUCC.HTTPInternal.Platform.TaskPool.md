@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Platform](N-SMRUCC.HTTPInternal.Platform.html)_
 
 
 
+
+
 ### Methods
 
 #### GetTask
@@ -21,9 +23,7 @@ SMRUCC.HTTPInternal.Platform.TaskPool.GetTask(System.String)
 
 
 
-
 ### Properties
 
 #### NumThreads
 允许同时运行的任务的数量
-

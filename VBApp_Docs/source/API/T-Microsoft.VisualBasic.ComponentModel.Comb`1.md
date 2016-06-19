@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 对象类型的组合输出工具，即目标类型的集合之中的元素两两组合配对
 
+
+
 ### Methods
 
 #### CreateCompleteObjectPairs
@@ -22,11 +24,9 @@ Creates the completely combination of the elements in the target input collectio
 
 
 
-
 ### Properties
 
 #### EOL
 对象列表是否已经完全组合输出
 #### NewLine
 是否已经开始读取新的一行数据
-

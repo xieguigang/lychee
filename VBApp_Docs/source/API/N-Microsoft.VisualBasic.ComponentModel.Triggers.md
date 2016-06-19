@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComponentModel.Triggers
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:13 AM
 ---
 
 [ITrigger](T-Microsoft.VisualBasic.ComponentModel.Triggers.ITrigger.html)

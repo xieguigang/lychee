@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### AddWithDelim
@@ -213,8 +215,6 @@ Uppers the case of the first char.
 |Parameter Name|Remarks|
 |--------------|-------|
 |name|The name.|
-
-
 
 
 

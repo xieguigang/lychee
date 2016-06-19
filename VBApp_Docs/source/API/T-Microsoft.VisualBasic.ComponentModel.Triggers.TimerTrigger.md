@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Triggers](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -29,9 +31,7 @@ Microsoft.VisualBasic.ComponentModel.Triggers.TimerTrigger.__test
 不计算毫秒
 
 
-
 ### Properties
 
 #### Interval
 ms
-

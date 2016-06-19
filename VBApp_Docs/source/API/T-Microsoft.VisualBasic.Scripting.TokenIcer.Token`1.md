@@ -7,6 +7,10 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 
 a Token object class
 
+> 
+>  A Token object holds the token and token value.
+>  
+
 
 
 ### Properties
@@ -20,4 +24,3 @@ Token type
 The text that makes up the token.
 #### UNDEFINED
 务必要保持0为未定义
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.C.CString](N-Microsoft.VisualBasic.L
 
 
 
+
+
 ### Methods
 
 #### StrTok
@@ -21,8 +23,6 @@ This method simulates the classic C string function 'strtok' (and 'wcstok').
 |--------------|-------|
 |stringtotokenize|-|
 |delimiters|-|
-
-
 
 
 

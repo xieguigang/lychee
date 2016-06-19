@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.FileStream](N-Micro
 
 The network csv data information with specific type of the datamodel
 
+
+
 ### Methods
 
 #### op_Addition
@@ -81,8 +83,6 @@ Microsoft.VisualBasic.DataVisualization.Network.FileStream.Network`2.Save(System
  will be exported at the current work directory.
  (进行数据导出的文件夹，假若为空则会保存数据至当前的工作文件夹之中)|
 |encoding|The file encoding of the exported node and edge csv file.|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 Only works on Windows
 
+
+
 ### Methods
 
 #### Start
@@ -14,7 +16,5 @@ Only works on Windows
 Oracle.LinuxCompatibility.MySQL.TinyServer.Start
 ```
 Run server process, the thread will be stuck at this function until the server is stop.
-
-
 
 

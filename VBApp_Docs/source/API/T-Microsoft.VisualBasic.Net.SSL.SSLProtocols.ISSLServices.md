@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.SSL.SSLProtocols](N-Microsoft.VisualBasic
 
 抽象SSL服务器
 
+
+
 ### Methods
 
 #### Install
@@ -19,7 +21,6 @@ Microsoft.VisualBasic.Net.SSL.SSLProtocols.ISSLServices.Install(Microsoft.Visual
 |--------------|-------|
 |CA|-|
 |[overrides]|当证书的哈希值有冲突的时候，新安装的证书**ca**可不可以将旧的证书覆盖掉|
-
 
 
 
@@ -37,4 +38,3 @@ Microsoft.VisualBasic.Net.SSL.SSLProtocols.ISSLServices.Install(Microsoft.Visual
 对于某些应用出于安全性的考虑，会将这里设置为False，则服务器就会全部拒绝后面的所有的握手请求，只接受来自于从外部导入的用户证书的数据请求
 #### ResponseHandler
 处理私有密匙的数据请求
-

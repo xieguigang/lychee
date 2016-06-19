@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection.Generic](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### Equals
@@ -18,8 +20,6 @@ Call by the method @"M:Microsoft.VisualBasic.IEnumerations.GetItem``1(System.Col
 |Parameter Name|Remarks|
 |--------------|-------|
 |pairItem|-|
-
-
 
 
 

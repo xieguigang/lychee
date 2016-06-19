@@ -44,6 +44,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Matrix](N-Microsoft.VisualBasic.
  double rnorm = r.NormInf();
  ```
 
+
+
 ### Methods
 
 #### #ctor
@@ -589,7 +591,6 @@ _returns:     -A
  _
 
 
-
 ### Properties
 
 #### A
@@ -615,4 +616,3 @@ Row and column dimensions.
 Get row dimension.
 #### RowPackedCopy
 Make a one-dimensional row packed copy of the internal array.
-

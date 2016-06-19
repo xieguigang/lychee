@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### IsTextFile
@@ -81,8 +83,6 @@ Microsoft.VisualBasic.TextDoc.SaveTo(System.Collections.Generic.IEnumerable{Syst
 |array|-|
 |path|-|
 |encoding|-|
-
-
 
 
 

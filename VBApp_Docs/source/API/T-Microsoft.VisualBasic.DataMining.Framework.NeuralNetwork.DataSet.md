@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 The training dataset
 
+
+
 ### Methods
 
 #### #ctor
@@ -22,11 +24,9 @@ Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.DataSet.#ctor(System.Do
 
 
 
-
 ### Properties
 
 #### Targets
 The network expected output values
 #### Values
 Neuron network input parameters
-

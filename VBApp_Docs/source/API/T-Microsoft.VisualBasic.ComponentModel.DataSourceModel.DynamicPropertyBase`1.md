@@ -9,10 +9,10 @@ Has a dictionary as a dynamics property.
 
 
 
+
 ### Properties
 
 #### Properties
 The dynamics property object with specific type of value.
 #### Value
 Get value by property name.
-

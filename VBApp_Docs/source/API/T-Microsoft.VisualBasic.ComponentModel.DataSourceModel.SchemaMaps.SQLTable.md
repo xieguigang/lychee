@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps](N-
 
 SQL之中的一个数据表的抽象描述接口
 
+
+
 ### Methods
 
 #### GetDeleteSQL
@@ -34,7 +36,5 @@ UPDATE table_name SET field = <new value> WHERE field = <value>
 Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.SQLTable.ToString
 ```
 Display the INSERT INTO sql from function @"M:Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.SQLTable.GetInsertSQL".
-
-
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 
 
 
+
+
 ### Methods
 
 #### Upload
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols.NetTransfer.Upload(
 |local|-|
 |destination|-|
 |remote|-|
-
-
 
 
 

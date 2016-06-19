@@ -7,18 +7,23 @@ _namespace: [Microsoft.VisualBasic.Scripting](N-Microsoft.VisualBasic.Scripting.
 
 转换从终端或者脚本文件之中输入的字符串的类型的转换
 
+
+
 ### Methods
 
-#### CanbeHandle
+#### CapabilityPromise
 ```csharp
-Microsoft.VisualBasic.Scripting.InputHandler.CanbeHandle(System.Type,System.Type)
+Microsoft.VisualBasic.Scripting.InputHandler.CapabilityPromise(System.String,System.Type,System.Func{System.String,System.Object})
 ```
-主要为了方便减少脚本编程模块的代码
+Dynamics updates the capability of function @"M:Microsoft.VisualBasic.Scripting.InputHandler.CTypeDynamic(System.String,System.Type)", 
+ @"M:Microsoft.VisualBasic.Scripting.InputHandler.CTypeDynamic``1(System.String)" and 
+ @"M:Microsoft.VisualBasic.Scripting.InputHandler.IsPrimitive(System.Type)"
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|inputType|-|
-|DefType|-|
+|briefName|-|
+|stringConvertType|-|
+|cast|-|
 
 
 #### CastArray``1
@@ -30,6 +35,18 @@ The parameter **obj** should implements a @"T:System.Collections.IEnumerable" in
 |Parameter Name|Remarks|
 |--------------|-------|
 |obj|-|
+
+
+#### Convertible
+```csharp
+Microsoft.VisualBasic.Scripting.InputHandler.Convertible(System.Type,System.Type)
+```
+Does the **inputtype** type can be cast to type **DefType**.(主要为了方便减少脚本编程模块的代码)
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|inputType|-|
+|DefType|-|
 
 
 #### CTypeDynamic
@@ -105,22 +122,6 @@ Microsoft.VisualBasic.Scripting.InputHandler.ToString(System.Object)
 |obj|-|
 
 
-#### UpdateHandle
-```csharp
-Microsoft.VisualBasic.Scripting.InputHandler.UpdateHandle(System.String,System.Type,System.Func{System.String,System.Object})
-```
-Dynamics updates the capability of function @"M:Microsoft.VisualBasic.Scripting.InputHandler.CTypeDynamic(System.String,System.Type)", 
- @"M:Microsoft.VisualBasic.Scripting.InputHandler.CTypeDynamic``1(System.String)" and 
- @"M:Microsoft.VisualBasic.Scripting.InputHandler.IsPrimitive(System.Type)"
-
-|Parameter Name|Remarks|
-|--------------|-------|
-|briefName|-|
-|stringConvertType|-|
-|cast|-|
-
-
-
 
 ### Properties
 
@@ -128,6 +129,5 @@ Dynamics updates the capability of function @"M:Microsoft.VisualBasic.Scripting.
 Object为字符串类型，这个字典可以讲字符串转为目标类型
 #### String
 @"T:System.Type" information for @"T:System.String" type from GetType operator
-#### TypeNames
-键值都是小写的
-
+#### Types
+Enumerate all of the types that can be handled in this module. All of the key string is in lower case.(键值都是小写的)

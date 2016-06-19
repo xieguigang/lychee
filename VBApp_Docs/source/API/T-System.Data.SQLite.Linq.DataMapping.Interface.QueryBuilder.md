@@ -7,6 +7,8 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface](N-System.Data.SQLite
 
 SQL query statement builder for the SELECT query.
 
+
+
 ### Methods
 
 #### Escaping
@@ -55,8 +57,6 @@ System.Data.SQLite.Linq.DataMapping.Interface.QueryBuilder.TrimmingSQLConserved(
 |Parameter Name|Remarks|
 |--------------|-------|
 |str|-|
-
-
 
 
 

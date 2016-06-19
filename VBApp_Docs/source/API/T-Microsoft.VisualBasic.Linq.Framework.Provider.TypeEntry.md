@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider](N-Microsoft.VisualBa
 
 item in the type registry table
 
+> 方法和类型是分开的
+
+
 ### Methods
 
 #### #ctor
@@ -27,7 +30,6 @@ Microsoft.VisualBasic.Linq.Framework.Provider.TypeEntry.GetType
 得到集合之中的元素的类型
 
 
-
 ### Properties
 
 #### Func
@@ -38,4 +40,3 @@ Microsoft.VisualBasic.Linq.Framework.Provider.TypeEntry.GetType
 数据源的读取方法
 #### TypeId
 Full type name for the target LINQ entity type. Assembly!typeFullName (目标LINQEntity集合中的类型全称)
-

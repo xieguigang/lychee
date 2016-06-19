@@ -18,6 +18,8 @@ Eigenvalues and eigenvectors of a real matrix.
  conditioned, or even singular, so the validity of the equation
  A = V*D*Inverse(V) depends upon V.cond().
 
+
+
 ### Methods
 
 #### #ctor
@@ -38,7 +40,6 @@ Microsoft.VisualBasic.Mathematical.Matrix.EigenvalueDecomposition.GetV
 Return the eigenvector matrix
 _returns:      V
  _
-
 
 
 ### Properties
@@ -70,4 +71,3 @@ Return the real parts of the eigenvalues
 #### V
 Array for internal storage of eigenvectors.
  @serial internal storage of eigenvectors.
-

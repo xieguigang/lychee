@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps](N-
 
 @"T:Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.DataFrameColumnAttribute"属性的别称
 
+
+
 ### Methods
 
 #### #ctor
@@ -18,8 +20,6 @@ Initializes a new instance by name.
 |Parameter Name|Remarks|
 |--------------|-------|
 |FieldName|The name.|
-
-
 
 
 

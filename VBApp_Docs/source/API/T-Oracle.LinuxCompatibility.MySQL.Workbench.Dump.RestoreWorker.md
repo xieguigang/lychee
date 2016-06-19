@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Workbench.Dump](N-Oracle.LinuxCompa
 
 
 
+
+
 ### Methods
 
 #### ImportsData
@@ -18,8 +20,6 @@ Oracle.LinuxCompatibility.MySQL.Workbench.Dump.RestoreWorker.ImportsData(System.
 |Parameter Name|Remarks|
 |--------------|-------|
 |dumpDir|-|
-
-
 
 
 

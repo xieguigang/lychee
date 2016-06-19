@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 The returns value.(远端调用的函数返回)
 
+
+
 ### Methods
 
 #### GetValue
@@ -21,11 +23,9 @@ If the remote execute raising a exception, then a exception will be throw from t
 
 
 
-
 ### Properties
 
 #### ex
 Exception Message
 #### value
 Json value
-

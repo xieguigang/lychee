@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider.ImportsAPI](N-Microso
 
 只需要记住命名空间和对应的Assembly的引用就行了
 
+
+
 ### Methods
 
 #### GetType
@@ -21,9 +23,7 @@ Microsoft.VisualBasic.Linq.Framework.Provider.ImportsAPI.APIProvider.GetType(Sys
 
 
 
-
 ### Properties
 
 #### __nsList
 {lower_ns, imports_ns}
-

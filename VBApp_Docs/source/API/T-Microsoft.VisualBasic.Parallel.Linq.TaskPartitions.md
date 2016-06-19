@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel.Linq](N-Microsoft.VisualBasic.Parall
 
 对大量的短时间的任务进行分区的操作是在这里完成的
 
+
+
 ### Methods
 
 #### Partitioning``2
@@ -14,6 +16,19 @@ _namespace: [Microsoft.VisualBasic.Parallel.Linq](N-Microsoft.VisualBasic.Parall
 Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.Partitioning``2(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{``0,``1},System.Func{``0,System.Boolean})
 ```
 进行分区之后返回一个长时间的任务组合
+
+#### PartTokens
+```csharp
+Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.PartTokens(System.Int32,System.Int32)
+```
+根据任务总量计算出所需要的线程的数量
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|source|-|
+|num_threads|-|
+
+> 假设所有的任务都被平均的分配到每一个线程之上
 
 #### SplitIterator``1
 ```csharp
@@ -32,7 +47,5 @@ Performance the partitioning operation on the input sequence.
 >  
 >  由于本函数需要处理大量的数据，使用Array的方法会内存占用较厉害，所以在这里更改为List操作以降低内存的占用
 >  
-
-
 
 

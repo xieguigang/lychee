@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 
 
+
 ### Properties
 
 #### Directory
@@ -21,4 +22,3 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 整数
 #### Text
 普通的文本字符串
-

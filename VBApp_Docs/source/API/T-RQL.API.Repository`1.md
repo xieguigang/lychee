@@ -7,6 +7,11 @@ _namespace: [RQL.API](N-RQL.API.html)_
 
 RQL Client API.
 
+> 
+>  数据对象在申明创建之后并没有立即执行，而是在调用迭代器之后才会执行查询
+>  
+
+
 ### Methods
 
 #### #ctor
@@ -34,8 +39,6 @@ RQL.API.Repository`1.Where(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |assertions|断言|
-
-
 
 
 

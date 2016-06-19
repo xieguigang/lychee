@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Terminal
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:13 AM
 ---
 
 [AbstractBar](T-Microsoft.VisualBasic.Terminal.AbstractBar.html)
@@ -9,7 +9,7 @@ date: 6/16/2016 4:45:50 AM
 [HistoryStacks](T-Microsoft.VisualBasic.Terminal.HistoryStacks.html)
 [InnerQueue](T-Microsoft.VisualBasic.Terminal.InnerQueue.html)
 [InteractiveDevice](T-Microsoft.VisualBasic.Terminal.InteractiveDevice.html)
-[Pipeline](T-Microsoft.VisualBasic.Terminal.Pipeline.html)
+[PipelineCLI](T-Microsoft.VisualBasic.Terminal.PipelineCLI.html)
 [Program](T-Microsoft.VisualBasic.Terminal.Program.html)
 [ProgressBar](T-Microsoft.VisualBasic.Terminal.ProgressBar.html)
 [ProgressProvider](T-Microsoft.VisualBasic.Terminal.ProgressProvider.html)

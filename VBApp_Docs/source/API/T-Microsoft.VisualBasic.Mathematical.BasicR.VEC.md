@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.BasicR](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### op_Addition
@@ -104,9 +106,7 @@ Microsoft.VisualBasic.Mathematical.BasicR.VEC.op_UnaryNegation(Microsoft.VisualB
 
 
 
-
 ### Properties
 
 #### Dim
 向量维数
-

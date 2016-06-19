@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 EndNote tags
 
+
+
 ### Methods
 
 #### #ctor
@@ -50,7 +52,6 @@ Microsoft.VisualBasic.Scripting.MetaData.Cite.__formatAbstractPreview(System.Str
 
 
 
-
 ### Properties
 
 #### Abstract
@@ -59,4 +60,3 @@ Microsoft.VisualBasic.Scripting.MetaData.Cite.__formatAbstractPreview(System.Str
 author(eMail);author(eMail)
 #### ISSN
 ISSN_1; ISSN_2; ISSN_3
-

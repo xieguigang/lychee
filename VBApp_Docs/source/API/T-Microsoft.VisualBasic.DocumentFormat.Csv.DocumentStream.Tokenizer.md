@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 RowObject parsers
 
+
+
 ### Methods
 
 #### CharsParser
@@ -32,9 +34,7 @@ Parsing the row data from the input string line.(通过正则表达式来解析�
 
 
 
-
 ### Properties
 
 #### SplitRegxExpression
 A regex expression string that use for split the line text.
-

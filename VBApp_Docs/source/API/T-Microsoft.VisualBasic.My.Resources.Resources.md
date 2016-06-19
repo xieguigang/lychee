@@ -9,6 +9,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 
 
+
 ### Properties
 
 #### CPOL
@@ -66,4 +67,3 @@ Looks up a localized string similar to NameMIME Type / Internet Media TypeFile E
 3rd Generation Partnership Project - Pic Smallapplication/ [rest of string was truncated]";.
 #### ResourceManager
 Returns the cached ResourceManager instance used by this class.
-

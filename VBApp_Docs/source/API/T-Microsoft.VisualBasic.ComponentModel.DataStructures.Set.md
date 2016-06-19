@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 Represents an unordered grouping of unique hetrogenous members.
  (这个对象的功能和List类似，但是这个对象的主要的作用是进行一些集合运算：使用AND求交集以及使用OR求并集的)
 
+
+
 ### Methods
 
 #### #ctor
@@ -226,11 +228,9 @@ _returns: A @"T:System.String"[String] that represents the current
  @"T:Microsoft.VisualBasic.ComponentModel.DataStructures.Set"[Set]._
 
 
-
 ### Properties
 
 #### Item
 Public accessor for the members of the @"T:Microsoft.VisualBasic.ComponentModel.DataStructures.Set"[Set].
 #### Length
 The number of members of the set.
-

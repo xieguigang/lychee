@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 
 Stack tree parser
 
+
+
 ### Methods
 
 #### __parsing``1
@@ -30,8 +32,6 @@ Microsoft.VisualBasic.Scripting.TokenIcer.StackParser.Parsing``1(System.Collecti
 |--------------|-------|
 |source|-|
 |stackT|Pretend the root tokens as a true node|
-
-
 
 
 

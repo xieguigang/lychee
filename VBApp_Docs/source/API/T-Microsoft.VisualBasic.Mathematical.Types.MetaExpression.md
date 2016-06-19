@@ -9,10 +9,10 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Types](N-Microsoft.VisualBasic.M
 
 
 
+
 ### Properties
 
 #### LEFT
 自动根据类型来计算出结果
 #### Operator
-
 

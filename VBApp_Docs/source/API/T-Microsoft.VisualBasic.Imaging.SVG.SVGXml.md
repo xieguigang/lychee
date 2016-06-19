@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.SVG](N-Microsoft.VisualBasic.Imaging.
 
 The svg vector graphics in Xml document format.
 
+
+
 ### Methods
 
 #### SaveAsXml
@@ -22,7 +24,6 @@ Save this svg document object into the file system.
 
 
 
-
 ### Properties
 
 #### defs
@@ -30,4 +31,3 @@ Style definition of the xml node in this svg document.
  you can define the style by using css and set the class 
  attribute for the specific node to controls the 
  visualize style.
-

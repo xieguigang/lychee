@@ -10,6 +10,9 @@ Using this class object rather than @"T:Microsoft.VisualBasic.CommandLine.IORedi
  似乎@"T:Microsoft.VisualBasic.CommandLine.IORedirect"对象在创建一个子进程的时候的对象IO重定向的句柄的处理有问题，所以在这里构建一个更加简单的类型对象，
  这个IO重定向对象不具备终端交互功能)
 
+> 先重定向到一个临时文件之中，然后再返回临时文件给用户代码
+
+
 ### Methods
 
 #### #ctor
@@ -60,7 +63,6 @@ Microsoft.VisualBasic.CommandLine.IORedirectFile.Start(System.Action)
 
 
 
-
 ### Properties
 
 #### _TempRedirect
@@ -69,4 +71,3 @@ Microsoft.VisualBasic.CommandLine.IORedirectFile.Start(System.Action)
 shell文件接口
 #### StandardOutput
 目标子进程的终端标准输出
-

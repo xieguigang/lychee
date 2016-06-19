@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 Remote Linq source reader
 
+
+
 ### Methods
 
 #### #ctor
@@ -45,11 +47,9 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.ILinqReader.Moves(System.Int32)
 
 
 
-
 ### Properties
 
 #### Portal
 Remote entry point
 #### Type
 Element type in the source collection.
-

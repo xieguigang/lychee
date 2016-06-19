@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Debugging](N-Microsoft.VisualBasic.Debugging.
 
 
 
+
 ### Properties
 
 #### All
@@ -21,4 +22,3 @@ _namespace: [Microsoft.VisualBasic.Debugging](N-Microsoft.VisualBasic.Debugging.
 是否输出调试信息有程序代码来控制，这个是默认的参数
 #### Warning
 只会输出警告或者错误类型的信息
-

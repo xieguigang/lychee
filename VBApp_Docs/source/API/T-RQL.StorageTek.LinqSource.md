@@ -7,6 +7,8 @@ _namespace: [RQL.StorageTek](N-RQL.StorageTek.html)_
 
 
 
+
+
 ### Methods
 
 #### Source
@@ -19,8 +21,6 @@ RQL.StorageTek.LinqSource.Source(System.String,Microsoft.VisualBasic.Linq.Framew
 |--------------|-------|
 |res|-|
 |handle|-|
-
-
 
 
 

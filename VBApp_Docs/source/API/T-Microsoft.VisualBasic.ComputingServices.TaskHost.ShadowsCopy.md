@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### __innerCopy
@@ -34,8 +36,6 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.ShadowsCopy.ShadowsCopy(System.
 |from|Client上面的|
 |target|服务器上面的|
 |memory|内存管理模块单元|
-
-
 
 
 

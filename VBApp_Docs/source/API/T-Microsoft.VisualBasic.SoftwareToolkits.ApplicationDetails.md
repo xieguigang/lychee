@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits](N-Microsoft.VisualBasic.Sof
 
 Parsing product assembly meta data
 
+> 
+>  http://www.c-sharpcorner.com/uploadfile/ravesoft/access-assemblyinfo-file-and-get-product-informations/
+>  
+
+
 ### Methods
 
 #### #ctor
@@ -14,7 +19,6 @@ Parsing product assembly meta data
 Microsoft.VisualBasic.SoftwareToolkits.ApplicationDetails.#ctor
 ```
 获取当前的应用程序的描述信息
-
 
 
 ### Properties
@@ -31,4 +35,3 @@ Get the name of the System from the assembly
 Get the Product tile from the assembly
 #### ProductVersion
 Get System version from the assembly
-

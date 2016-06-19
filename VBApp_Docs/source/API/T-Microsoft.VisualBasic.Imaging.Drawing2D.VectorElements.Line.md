@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -22,8 +24,6 @@ Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.Line.#ctor(System.Drawing
 |Color|-|
 |Width|-|
 |GDI|-|
-
-
 
 
 

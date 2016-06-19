@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine.Reflection](N-Microsoft.VisualBas
 
 
 
+
+
 ### Methods
 
 #### HelpSummary
@@ -37,7 +39,5 @@ Microsoft.VisualBasic.CommandLine.Reflection.SDKManual.LaunchManual(Microsoft.Vi
 Microsoft.VisualBasic.CommandLine.Reflection.SDKManual.MarkdownDoc(Microsoft.VisualBasic.CommandLine.Interpreter)
 ```
 这个是用于保存于文件之中的markdown格式的有格式标记的文本输出
-
-
 
 

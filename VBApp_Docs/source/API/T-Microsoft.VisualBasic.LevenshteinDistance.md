@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Levenshtein Edit Distance Algorithm for measure string distance
 
+> 
+>  http://www.codeproject.com/Tips/697588/Levenshtein-Edit-Distance-Algorithm
+>  
+
+
 ### Methods
 
 #### __computeRoute
@@ -78,8 +83,6 @@ Microsoft.VisualBasic.LevenshteinDistance.CreateTable``1(``0[],``0[],System.Doub
 |hypotheses|-|
 |cost|-|
 |equals|泛型化的元素等价性的比较方法|
-
-
 
 
 

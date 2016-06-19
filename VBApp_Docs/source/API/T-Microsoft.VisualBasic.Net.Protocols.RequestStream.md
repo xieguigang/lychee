@@ -10,6 +10,8 @@ Socket user client => Socket server data request &
  (Socket客户端 => Socket服务器所发送的数据请求以及从
  Socket服务器 => Socket客户端所返回数据的数据响应包)
 
+
+
 ### Methods
 
 #### #ctor
@@ -95,7 +97,6 @@ Microsoft.VisualBasic.Net.Protocols.RequestStream.Serialize
 执行序列化进行网络之间的数据传输
 
 
-
 ### Properties
 
 #### BufferLength
@@ -122,4 +123,3 @@ This property indicates the protocol processor module for the server object.
 #### uid
 使用用户的账号信息唯一标识出来的对象，在服务器端用来查找用户证书的
  由于在服务器上面这个哈希值是和解密的密匙唯一对应的，所以服务器上面大多数情况下是直接通过这个哈希值来决定授权的
-

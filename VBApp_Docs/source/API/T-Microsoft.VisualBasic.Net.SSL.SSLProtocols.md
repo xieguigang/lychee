@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.SSL](N-Microsoft.VisualBasic.Net.SSL.html
 
 
 
+
+
 ### Methods
 
 #### __sslHandshake
@@ -39,8 +41,6 @@ Microsoft.VisualBasic.Net.SSL.SSLProtocols.SSLServicesResponseHandler(Microsoft.
 |request|-|
 |remoteDev|-|
 |InstallCertificates|-|
-
-
 
 
 

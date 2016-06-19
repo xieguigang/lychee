@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 
 
 
+
 ### Properties
 
 #### Position
 -100表示获取
-

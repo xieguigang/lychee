@@ -7,6 +7,10 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 
 A PeekToken object class
 
+> 
+>  A PeekToken is a special pointer object that can be used to Peek() several
+>  tokens ahead in the GetToken() queue.
+>  
 
 
 

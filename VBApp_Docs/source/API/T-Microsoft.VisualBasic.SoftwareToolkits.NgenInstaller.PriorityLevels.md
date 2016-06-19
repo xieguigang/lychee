@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.NgenInstaller](N-Microsoft.V
 
 
 
+
 ### Properties
 
 #### Idle
@@ -17,4 +18,3 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.NgenInstaller](N-Microsoft.V
 1 Native images are generated And installed immediately, without waiting For idle time.
 #### Waiting
 2 Native images are generated And installed without waiting For idle time, but after all priority 1 actions (And their dependencies) have completed.
-

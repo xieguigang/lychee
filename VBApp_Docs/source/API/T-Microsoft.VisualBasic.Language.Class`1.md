@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 
 @"T:System.Type"
 
+
+
 ### Methods
 
 #### op_LessThanOrEqual
@@ -31,8 +33,6 @@ IsNullOrEmpty
 |--------------|-------|
 |cls|-|
 |source|-|
-
-
 
 
 

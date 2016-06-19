@@ -7,6 +7,14 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 
 TokenParser
 
+> 
+>  TokenParser is the main parser engine for converting input into lexical tokens.
+>  
+>  Auto Generated from
+>  http://www.codeproject.com/Articles/220042/Easily-Create-Your-Own-Parser
+>  
+
+
 ### Methods
 
 #### #ctor
@@ -61,9 +69,7 @@ Microsoft.VisualBasic.Scripting.TokenIcer.TokenParser`1.ResetParser
 ResetParser resets the parser to its inital state. Reloading InputString is required.
 
 
-
 ### Properties
 
 #### InputString
 InputString Property
-

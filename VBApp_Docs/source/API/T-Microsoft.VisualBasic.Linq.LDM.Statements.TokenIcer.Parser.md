@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.TokenIcer](N-Microsoft.Vi
 
 
 
+
+
 ### Methods
 
 #### GetTokens
@@ -17,7 +19,5 @@ Default Constructor
 > 
 >  The constructor initalizes memory and adds all of the tokens to the token dictionary.
 >  
-
-
 
 

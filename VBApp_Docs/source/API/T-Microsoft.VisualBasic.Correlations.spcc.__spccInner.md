@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Correlations.spcc](N-Microsoft.VisualBasic.Co
 
 
 
+
 ### Properties
 
 #### i
 在序列之中原有的位置
-

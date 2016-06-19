@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 User define function.(用户自定义函数)
 
+
+
 ### Methods
 
 #### GetExpression
@@ -21,7 +23,6 @@ Microsoft.VisualBasic.Mathematical.Func.GetExpression(Microsoft.VisualBasic.Math
 
 
 
-
 ### Properties
 
 #### Args
@@ -30,4 +31,3 @@ Microsoft.VisualBasic.Mathematical.Func.GetExpression(Microsoft.VisualBasic.Math
 函数表达式
 #### Name
 函数名
-

@@ -9,6 +9,8 @@ A command line object that parse from the user input commandline string.
  (从用户所输入的命令行字符串之中解析出来的命令行对象，标准的命令行格式为：
  ==<EXE> <CLI_Name> ["Parameter" "Value"]==)
 
+
+
 ### Methods
 
 #### Add
@@ -312,7 +314,6 @@ Microsoft.VisualBasic.CommandLine.CommandLine.ToString
 Returns the original cli command line argument string.(返回所传入的命令行的原始字符串)
 
 
-
 ### Properties
 
 #### _CLICommandArgvs
@@ -339,4 +340,3 @@ The parameters in the commandline without the first token of the command name.
 #### Tokens
 The command tokens that were parsed from the input commandline.
  (从所输入的命令行之中所解析出来的命令参数单元)
-

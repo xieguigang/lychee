@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 The extension module for web services works.
 
+
+
 ### Methods
 
 #### BuildArgvs
@@ -246,11 +248,9 @@ Microsoft.VisualBasic.WebServiceUtils.UrlPathEncode(System.String)
 
 
 
-
 ### Properties
 
 #### MicrosoftDNS
 Microsoft DNS Server
 #### Protocols
 Web protocols enumeration
-

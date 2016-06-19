@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.Classifier](N-Mic
 
 
 
+
 ### Properties
 
 #### OutputFunction
 Weights, Entity, OutputValue
-

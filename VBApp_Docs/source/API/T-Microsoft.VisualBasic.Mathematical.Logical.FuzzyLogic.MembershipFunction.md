@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical.FuzzyLogic](N-Microsoft.
 
 Represents a membership function.
 
+
+
 ### Methods
 
 #### #ctor
@@ -39,7 +41,6 @@ Calculate the centroid of a trapezoidal membership function.
 _returns: The value of centroid._
 
 
-
 ### Properties
 
 #### Name
@@ -54,4 +55,3 @@ The value of the (x1, 1) point.
 The value of the (x2, 1) point.
 #### X3
 The value of the (x3, 0) point.
-

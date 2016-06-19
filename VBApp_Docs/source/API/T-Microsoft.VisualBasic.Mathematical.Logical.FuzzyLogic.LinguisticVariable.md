@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical.FuzzyLogic](N-Microsoft.
 
 Represents a linguistic variable.
 
+
+
 ### Methods
 
 #### #ctor
@@ -55,7 +57,6 @@ Returns the difference between MaxValue() and MinValue().
 _returns: The difference between MaxValue() and MinValue()._
 
 
-
 ### Properties
 
 #### InputValue
@@ -64,4 +65,3 @@ The input value for the linguistic variable.
 A membership functions collection for the lingusitic variable.
 #### Name
 The name that identificates the linguistic variable.
-

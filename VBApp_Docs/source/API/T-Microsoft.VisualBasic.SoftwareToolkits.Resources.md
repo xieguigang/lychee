@@ -5,6 +5,11 @@ title: Resources
 # Resources
 _namespace: [Microsoft.VisualBasic.SoftwareToolkits](N-Microsoft.VisualBasic.SoftwareToolkits.html)_
 
+Represents a resource manager that provides convenient access to culture-specific
+ resources at run time.Security Note: Calling methods in this class with untrusted
+ data is a security risk. Call the methods in the class only with trusted data.
+ For more information, see Untrusted Data Security Risks.
+
 
 
 ### Methods
@@ -75,9 +80,11 @@ Microsoft.VisualBasic.SoftwareToolkits.Resources.LoadMy
 从自身的程序集之中加载数据
 
 
-
 ### Properties
 
+#### FileName
+The file path of the resources satellite assembly.
 #### MyResource
 Returns the cached ResourceManager instance used by this class.
-
+#### Resources
+@"T:System.Resources.ResourceManager" object in the satellite assembly.

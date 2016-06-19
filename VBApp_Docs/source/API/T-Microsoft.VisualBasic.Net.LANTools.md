@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net](N-Microsoft.VisualBasic.Net.html)_
 
 http://www.codeproject.com/Tips/358946/Retrieving-IP-and-MAC-addresses-for-a-LAN
 
+
+
 ### Methods
 
 #### GetAllDevicesOnLAN
@@ -59,9 +61,7 @@ Returns true if the specified IP address is a multicast address
 
 
 
-
 ### Properties
 
 #### ERROR_INSUFFICIENT_BUFFER
 Error codes GetIpNetTable returns that we recognise
-

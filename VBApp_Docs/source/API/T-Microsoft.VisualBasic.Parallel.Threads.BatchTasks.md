@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel.Threads](N-Microsoft.VisualBasic.Par
 
 
 
+
+
 ### Methods
 
 #### BatchTask``1
@@ -35,8 +37,6 @@ Microsoft.VisualBasic.Parallel.Threads.BatchTasks.BatchTask``2(System.Collection
 |getTask|-|
 |numThreads|可以在这里手动的控制任务的并发数，这个数值小于或者等于零则表示自动配置线程的数量，如果想要单线程，请将这个参数设置为1|
 |TimeInterval|-|
-
-
 
 
 

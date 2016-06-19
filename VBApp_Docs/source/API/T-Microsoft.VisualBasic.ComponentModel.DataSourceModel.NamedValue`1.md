@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel](N-Microsoft.V
 
 The value object have a name string.
 
+
+
 ### Methods
 
 #### #ctor
@@ -22,11 +24,9 @@ Creates a object bind with a specific @"P:Microsoft.VisualBasic.ComponentModel.D
 
 
 
-
 ### Properties
 
 #### Name
 Identifier
 #### x
 Object value
-

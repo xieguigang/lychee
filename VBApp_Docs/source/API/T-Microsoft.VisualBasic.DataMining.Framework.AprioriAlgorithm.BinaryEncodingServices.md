@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm](N-Micr
 
 
 
+
+
 ### Methods
 
 #### DecodesTransaction
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.BinaryEncodingServic
 |Parameter Name|Remarks|
 |--------------|-------|
 |transaction|-|
-
-
 
 
 

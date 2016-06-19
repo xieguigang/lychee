@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage](N-Microsoft.VisualBasic.Marku
 
 
 
+
+
 ### Methods
 
 #### #cctor
@@ -22,10 +24,8 @@ Microsoft.VisualBasic.MarkupLanguage.FormatHelper.Outdent(System.String)
 Remove one level of line-leading spaces
 
 
-
 ### Properties
 
 #### _tabWidth
 Tabs are automatically converted to spaces as part of the transform 
  this constant determines how "wide" those tabs become in spaces
-

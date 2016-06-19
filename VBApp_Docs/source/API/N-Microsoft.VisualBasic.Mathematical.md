@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Mathematical
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:14 AM
 ---
 
 [Expression](T-Microsoft.VisualBasic.Mathematical.Expression.html)

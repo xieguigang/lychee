@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 线程不安全的图片数据对象
 
+
+
 ### Methods
 
 #### FromImage
@@ -65,8 +67,6 @@ Sets the color of the specified pixel in this System.Drawing.Bitmap.(这个函�
 |color|
  A System.Drawing.Color structure that represents the color to assign to the specified
  pixel.|
-
-
 
 
 

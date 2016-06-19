@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 只包含有对数据映射目标对象的属性读写，并不包含有文件数据的读写操作
 
+
+
 ### Methods
 
 #### ExistsNode
@@ -55,7 +57,6 @@ Microsoft.VisualBasic.ComponentModel.Settings.ConfigEngine.View(System.String)
 
 
 
-
 ### Properties
 
 #### _SettingsData
@@ -65,4 +66,3 @@ List all of the available settings nodes in this profile data session.
  (枚举出当前配置会话之中的所有可用的配置节点)
 #### ProfileItemCollection
 键名都是小写的
-

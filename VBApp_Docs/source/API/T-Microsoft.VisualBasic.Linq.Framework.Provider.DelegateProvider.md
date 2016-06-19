@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.Linq.Framework.Provider.DelegateProvider.GetLinqResource(S
 |Parameter Name|Remarks|
 |--------------|-------|
 |uri|-|
-
-
 
 
 

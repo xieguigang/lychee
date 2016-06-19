@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.HtmlParser](N-Microsoft.VisualBasic.HtmlParse
 
 The string parser for the table html text block
 
+
+
 ### Methods
 
 #### GetColumnsHTML
@@ -40,8 +42,6 @@ Parsing the html text betweens the tag <table></table> by using regex expression
 |Parameter Name|Remarks|
 |--------------|-------|
 |html|-|
-
-
 
 
 

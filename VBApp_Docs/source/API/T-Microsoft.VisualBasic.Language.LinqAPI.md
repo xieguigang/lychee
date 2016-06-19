@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 
 Language syntax extension for the Linq expression in VisualBasic language
 
+
+
 ### Methods
 
 #### Exec``1
@@ -34,7 +36,5 @@ Microsoft.VisualBasic.Language.LinqAPI.MakeList``1
 Initializes a new instance of the @"T:Microsoft.VisualBasic.List`1"`1 class that
  contains elements copied from the specified collection and has sufficient capacity
  to accommodate the number of elements copied.
-
-
 
 

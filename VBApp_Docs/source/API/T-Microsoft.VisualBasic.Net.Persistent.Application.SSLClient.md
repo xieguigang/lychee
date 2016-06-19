@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Persistent.Application](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -44,8 +46,6 @@ Microsoft.VisualBasic.Net.Persistent.Application.SSLClient.SendMessage(System.In
 |--------------|-------|
 |USER_ID|-|
 |request|-|
-
-
 
 
 

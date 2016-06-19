@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### DrawAsRightTriangle
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.Triangle.DrawAsRightTriangle(System.Int32,System.Int32)
 ```
 直角三角形
-
-
 
 

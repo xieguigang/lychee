@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Serialization](N-Microsoft.VisualBasic.Serial
 
 使用.NET系统环境之中自带的框架进行JSON序列化和反序列化
 
+
+
 ### Methods
 
 #### GetJson
@@ -51,7 +53,5 @@ Microsoft.VisualBasic.Serialization.JsonContract.LoadObject(System.String,System
 Microsoft.VisualBasic.Serialization.JsonContract.LoadObject``1(System.String)
 ```
 JSON反序列化
-
-
 
 

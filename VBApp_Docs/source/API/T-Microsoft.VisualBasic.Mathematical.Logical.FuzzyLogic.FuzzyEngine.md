@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical.FuzzyLogic](N-Microsoft.
 
 Represents the inferential engine.
 
+
+
 ### Methods
 
 #### Defuzzify
@@ -23,7 +25,6 @@ Microsoft.VisualBasic.Mathematical.Logical.FuzzyLogic.FuzzyEngine.ToModel
 Sets the FilePath property and saves the project into a FCL-like XML file.
 
 
-
 ### Properties
 
 #### Consequent
@@ -32,4 +33,3 @@ The consequent variable name.
 A collection of rules.
 #### LinguisticVariableCollection
 A collection of linguistic variables.
-

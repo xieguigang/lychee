@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 
 
+
+
 ### Methods
 
 #### ToString
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 Microsoft.VisualBasic.ComponentModel.TimeInterval.ToString
 ```
 (dd hh:mm:ss) 输出可以被MySQL数据库所识别的字符串格式
-
-
 
 

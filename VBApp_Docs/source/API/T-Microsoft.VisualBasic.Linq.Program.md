@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq](N-Microsoft.VisualBasic.Linq.html)_
 
 
 
+
+
 ### Methods
 
 #### Main
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Linq](N-Microsoft.VisualBasic.Linq.html)_
 Microsoft.VisualBasic.Linq.Program.Main
 ```
 DO_NOTHING
-
-
 
 

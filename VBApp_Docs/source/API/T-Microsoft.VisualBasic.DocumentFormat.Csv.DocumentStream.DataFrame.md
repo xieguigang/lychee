@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 The dynamics data frame object which its first line is not contains the but using for the title property.
  (第一行总是没有的，即本对象类型适用于第一行为列标题行的数据)
 
+
+
 ### Methods
 
 #### __reviewColumnHeader
@@ -112,11 +114,9 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.DataFrame.Reset
 Reset the reading position in the data frame object.
 
 
-
 ### Properties
 
 #### __columnList
 Using the first line of the csv row as the column headers in this csv file.
 #### __currentPointer
 @"F:Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.DataFrame.__currentLine"在@"F:Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.File._innerTable"之中的位置
-

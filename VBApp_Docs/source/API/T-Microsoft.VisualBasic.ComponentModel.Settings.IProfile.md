@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 
 
+
 ### Properties
 
 #### FilePath
 本属性不能够被设置为只读属性是因为 Settings.Settings(Of IProfile).LoadFile 函数的需要
-

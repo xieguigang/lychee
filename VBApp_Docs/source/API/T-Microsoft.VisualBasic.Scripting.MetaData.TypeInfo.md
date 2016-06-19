@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 The type reference information.(类型信息)
 
+
+
 ### Methods
 
 #### #ctor
@@ -46,7 +48,6 @@ Microsoft.VisualBasic.Scripting.MetaData.TypeInfo.op_Equality(Microsoft.VisualBa
 
 
 
-
 ### Properties
 
 #### assm
@@ -55,4 +56,3 @@ The assembly file which contains this type definition.(模块文件)
 @"P:System.Type.FullName".(类型源)
 #### SystemKnownType
 Is this type object is a known system type?(是否是已知的类型？)
-

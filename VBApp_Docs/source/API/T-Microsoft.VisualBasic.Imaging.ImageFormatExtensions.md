@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 Specifies the file format of the image. Not inheritable.
 
+
+
 ### Methods
 
 #### SaveAs
@@ -20,8 +22,6 @@ Saves this @"T:System.Drawing.Image" to the specified file in the specified form
 |res|The image resource data that will be saved to the disk|
 |path|path string|
 |format|Image formats enumeration.|
-
-
 
 
 

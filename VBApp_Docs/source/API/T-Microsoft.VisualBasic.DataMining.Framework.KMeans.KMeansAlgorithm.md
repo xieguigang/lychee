@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.KMeans](N-Microsoft.Visu
 
 This class implement a KMeans clustering algorithm.(请注意，实体对象的属性必须要长度一致)
 
+
+
 ### Methods
 
 #### ClusterDataSet``1
@@ -75,7 +77,5 @@ Converts a System.Data.DataTable to a 2-dimensional array
 |table|A System.Data.DataTable containing data to cluster|
 
 _returns: A 2-dimensional array containing data to cluster_
-
-
 
 

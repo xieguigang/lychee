@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### TryParse
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.MarkupLanguage.HTML.TextAPI.TryParse(System.String,System.
 |Parameter Name|Remarks|
 |--------------|-------|
 |html|-|
-
-
 
 
 

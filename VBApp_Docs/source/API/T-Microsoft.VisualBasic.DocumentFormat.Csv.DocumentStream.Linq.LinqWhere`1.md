@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq](N-Mic
 
 
 
+
+
 ### Methods
 
 #### __compile
@@ -123,9 +125,7 @@ column <opr> value
 
 
 
-
 ### Properties
 
 #### _operations
 操作符代码
-

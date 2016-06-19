@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.GeneticAlgorithm]
 
 
 
+
 ### Properties
 
 #### DifferenceCount
@@ -17,4 +18,3 @@ Gets the number of values that didn't had a valid result.
  values were, it only cares that they were different.
  Also, the normal function considers a single right value
  as all misses and non-returning calls as double misses.
-

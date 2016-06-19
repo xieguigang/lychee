@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 
 预定义的一些脚本的解析程序
 
+
+
 ### Methods
 
 #### MathParserHash
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Scripting.TokenIcer](N-Microsoft.VisualBasic.
 Microsoft.VisualBasic.Scripting.TokenIcer.Prefix.MathParserHash
 ```
 These lines add each grammar rule to the dictionary
-
-
 
 

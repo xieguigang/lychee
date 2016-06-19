@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 mono shortcuts
 
+
+
 ### Methods
 
 #### BashRun
@@ -33,7 +35,5 @@ Execute command using perl script
 Microsoft.VisualBasic.Language.UnixBash.LinuxRunHelper.ScriptMe
 ```
 perl ./@"T:System.Reflection.Assembly" @ARGV
-
-
 
 

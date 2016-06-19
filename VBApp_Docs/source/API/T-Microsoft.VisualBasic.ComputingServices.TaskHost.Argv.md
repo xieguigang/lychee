@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 Json value of the function parameter, and the type information is also included in this property.
 
+
+
 ### Methods
 
 #### #ctor
@@ -21,11 +23,9 @@ Creates the function remote calls one of its parameter value.
 
 
 
-
 ### Properties
 
 #### Type
 @"P:System.Type.FullName"
 #### value
 Json string
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq](N-Microsoft.VisualBasic.Linq.html)_
 
 Linq Helpers.(为了方便编写Linq代码而构建的一个拓展模块)
 
+
+
 ### Methods
 
 #### CopyVector``1
@@ -127,8 +129,6 @@ Microsoft.VisualBasic.Linq.Extensions.ToArray``2(System.Collections.Generic.IEnu
 |source|-|
 |__ctype|第二个参数是index|
 |Parallel|-|
-
-
 
 
 

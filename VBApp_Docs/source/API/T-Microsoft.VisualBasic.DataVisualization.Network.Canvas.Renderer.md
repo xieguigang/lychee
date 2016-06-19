@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Canvas](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -45,7 +47,6 @@ Projects the client graphics data to the data model.
 
 
 
-
 ### Properties
 
 #### __graphicsProvider
@@ -56,4 +57,3 @@ gets the graphics region for the projections: @"M:Microsoft.VisualBasic.DataVisu
 The node drawing radius cache
 #### widthHash
 The edge drawing width cache
-

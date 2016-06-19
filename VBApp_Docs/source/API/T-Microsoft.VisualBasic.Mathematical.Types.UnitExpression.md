@@ -10,6 +10,8 @@ A class object stand for a very simple mathematic expression that have no bracke
  (一个用于表达非常简单的数学表达式的对象，在这个所表示的简单表达式之中不能够包含有任何括号或者函数，
  其仅包含有有限的计算符号在其中，例如：+-*/\%^!)
 
+
+
 ### Methods
 
 #### Evaluate
@@ -48,7 +50,6 @@ Convert the expression in the string type to this class object type.
 
 
 
-
 ### Properties
 
 #### LEFT
@@ -59,4 +60,3 @@ Arithmetic operator(运算符)
 #### RIGHT
 The number b in the function of "Arithmetic.Evaluate".
  (函数'Arithmetic.Evaluate'中的参数'b')
-

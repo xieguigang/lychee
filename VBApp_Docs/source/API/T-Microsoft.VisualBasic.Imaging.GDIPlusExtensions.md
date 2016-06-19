@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 GDI+
 
+
+
 ### Methods
 
 #### CorpBlank
@@ -144,8 +146,6 @@ Microsoft.VisualBasic.Imaging.GDIPlusExtensions.Vignette(System.Drawing.Image,Sy
 |Image|-|
 |y1|-|
 |y2|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.Asymmetric](N-Microsoft.Vis
 
 非对等网络里面的中心主节点
 
+
+
 ### Methods
 
 #### #ctor
@@ -68,11 +70,9 @@ Microsoft.VisualBasic.ComputingServices.Asymmetric.Master.NodeRegister(System.In
 
 
 
-
 ### Properties
 
 #### _nodes
 键名是IP地址，由于一台物理主机上面只会有一个管理节点，所以端口号都是固定了的
 #### Nodes
 获取在当前的服务器上面注册了的所有的管理节点的位置
-

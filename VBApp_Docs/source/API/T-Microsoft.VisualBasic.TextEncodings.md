@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### Assertion
@@ -43,8 +45,6 @@ Microsoft.VisualBasic.TextEncodings.TransEncoding(System.String,Microsoft.Visual
 |path|-|
 |encoding|-|
 |from|-|
-
-
 
 
 

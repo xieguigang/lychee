@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 CLI resources manager
 
+
+
 ### Methods
 
 #### #ctor
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.CommandLine.CliResCommon.TryRelease(System.String,System.S
 |Parameter Name|Remarks|
 |--------------|-------|
 |Name|使用 NameOf 操作符来获取资源|
-
-
 
 
 

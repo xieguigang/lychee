@@ -7,6 +7,8 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface](N-System.Data.SQLite
 
 Provides the reflection operation extensions for the generic collection data to updates database.
 
+
+
 ### Methods
 
 #### __getSchemaCache``1
@@ -113,8 +115,6 @@ System.Data.SQLite.Linq.DataMapping.Interface.Reflector.RecordExists(System.Data
 |--------------|-------|
 |DbTransaction|-|
 |obj|-|
-
-
 
 
 

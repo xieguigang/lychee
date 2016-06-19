@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.ht
 
 
 
+
+
 ### Methods
 
 #### ParallelGroup``2
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Parallel.GroupAPI.ParallelGroup``2(System.Collections.Gene
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-
-
 
 
 

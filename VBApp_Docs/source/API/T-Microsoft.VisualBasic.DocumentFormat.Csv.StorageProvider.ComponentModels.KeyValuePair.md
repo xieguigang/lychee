@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.KeyValu
 |--------------|-------|
 |Name|可能会通过@"T:Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.ColumnAttribute"来取别名|
 |BindProperty|-|
-
-
 
 
 

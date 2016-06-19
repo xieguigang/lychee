@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Search the path from a specific keyword.(通过关键词来推测路径)
 
+
+
 ### Methods
 
 #### BaseName
@@ -336,9 +338,7 @@ Removes the file extension name from the file path.(去除掉文件的拓展名)
 
 
 
-
 ### Properties
 
 #### ILLEGAL_PATH_CHARACTERS_ENUMERATION
 枚举所有非法的路径字符
-

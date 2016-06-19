@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv](N-Microsoft.VisualBasic.D
 
 Module provides the csv data imports operation of the csv document creates from a text file.(模块提供了从文本文档之中导入数据的方法)
 
+
+
 ### Methods
 
 #### FixLengthImports
@@ -60,9 +62,7 @@ Row parsing its column tokens
 
 
 
-
 ### Properties
 
 #### SplitRegxExpression
 A regex expression string that use for split the line text.
-

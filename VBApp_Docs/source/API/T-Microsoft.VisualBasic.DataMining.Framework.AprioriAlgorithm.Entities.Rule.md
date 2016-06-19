@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.Entitie
 
 
 
+
 ### Properties
 
 #### Confidence
 µ±Ç°µÄÕâ¸öÊÂ¼þ¹ØÁª¹æÔòµÄÖÃÐÅ¶ÈµÄ¸ßµÍ
-

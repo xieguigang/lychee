@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Debugging](N-Microsoft.VisualBasic.Debugging.
 
 调试器设置参数模块
 
+
+
 ### Methods
 
 #### __logShell
@@ -43,11 +45,9 @@ Microsoft.VisualBasic.Debugging.DebuggerArgs.SaveErrorLog(System.String)
 
 
 
-
 ### Properties
 
 #### DebuggerHelps
 Some optional VisualBasic debugger parameter help information.(VisualBasic调试器的一些额外的开关参数的帮助信息)
 #### ErrLogs
 错误日志的文件存储位置，默认是在AppData里面
-

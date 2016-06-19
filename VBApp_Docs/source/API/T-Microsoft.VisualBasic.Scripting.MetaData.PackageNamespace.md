@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 This attribute provides a more details information about a namepace package module in your scripting plugins.
 
+
+
 ### Methods
 
 #### #ctor
@@ -14,7 +16,6 @@ This attribute provides a more details information about a namepace package modu
 Microsoft.VisualBasic.Scripting.MetaData.PackageNamespace.#ctor
 ```
 This attribute provides a more details information about a namepace package module in your scripting plugins.
-
 
 
 ### Properties
@@ -25,4 +26,3 @@ This attribute provides a more details information about a namepace package modu
 Your name or E-Mail
 #### Url
 This plugins project's home page url.
-

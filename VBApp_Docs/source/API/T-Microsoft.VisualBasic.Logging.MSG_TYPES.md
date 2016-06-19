@@ -9,6 +9,7 @@ The types enumeration of the log file message.
 
 
 
+
 ### Properties
 
 #### DEBUG
@@ -19,4 +20,3 @@ The program error information message.[RED]
 The normal information message.[WHITE]
 #### WRN
 Warnning message from the program.[YELLOW]
-

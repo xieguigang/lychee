@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 Function object model.(调用函数的方法)
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Mathematical.FuncCaller.#ctor(System.String,Microsoft.Visu
 |--------------|-------|
 |Name|The function name|
 |evaluate|Engine handle|
-
-
 
 
 

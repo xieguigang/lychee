@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### LoadTextureResource
@@ -21,8 +23,6 @@ Microsoft.VisualBasic.Imaging.TextureResourceLoader.LoadTextureResource(System.D
 |Size|-|
 |IntervalWidth|纹理模块之间在水平上的间隔宽度|
 |IntervalHeight|纹理模块之间在竖直方向上的间隔宽度|
-
-
 
 
 

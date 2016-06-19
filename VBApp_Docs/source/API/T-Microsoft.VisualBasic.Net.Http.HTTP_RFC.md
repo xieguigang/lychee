@@ -17,6 +17,7 @@ The following is a list of Hypertext Transfer Protocol (HTTP) response status co
 
 
 
+
 ### Properties
 
 #### RFC_ACCEPTED
@@ -313,4 +314,3 @@ The following is a list of Hypertext Transfer Protocol (HTTP) response status co
 #### RFC_VERSION_NOT_SUPPORTED
 505 HTTP Version Not Supported |
  The server does Not support the HTTP protocol version used In the request.
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Serialization](N-Microsoft.VisualBasic.Serial
 
 
 
+
+
 ### Methods
 
 #### __shadowsCopy
@@ -66,7 +68,5 @@ Microsoft.VisualBasic.Serialization.ShadowsCopy.ShadowsCopy``1(``0)
 |obj|-|
 
 > 对外函数接口，为了防止无限递归的出现
-
-
 
 

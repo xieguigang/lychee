@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 Parser API for the well formatted documents.
 
+
+
 ### Methods
 
 #### CrossFields
@@ -58,8 +60,6 @@ Parsing the document head section from the document.
  (从这里向调用者返回偏移量)
  |
 |__isHead|Condition for continue move the parser pointer to the next line.|
-
-
 
 
 

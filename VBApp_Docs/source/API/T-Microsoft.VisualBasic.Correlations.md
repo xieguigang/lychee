@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### GetPearson
@@ -60,9 +62,7 @@ Microsoft.VisualBasic.Correlations.SW(System.Double[],System.Double[])
 
 
 
-
 ### Properties
 
 #### TINY
 will regularize the unusual case of complete correlation
-

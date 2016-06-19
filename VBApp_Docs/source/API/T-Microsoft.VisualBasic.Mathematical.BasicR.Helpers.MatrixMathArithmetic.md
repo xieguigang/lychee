@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.BasicR.Helpers](N-Microsoft.Visu
 The basics arithmetic operators' definition of matrix object in mathematics.
  (数学意义上的基本的四则运算符号的定义)
 
+
+
 ### Methods
 
 #### Evaluate
@@ -46,7 +48,6 @@ _returns:
  _
 
 
-
 ### Properties
 
 #### Arithmetic
@@ -57,4 +58,3 @@ A string constant RegularExpressions that stands a double type number.
 #### OPERATORS
 A string constant that enumerate all of the arithmetic operators.
  (一个枚举所有的基本运算符的字符串常数)
-

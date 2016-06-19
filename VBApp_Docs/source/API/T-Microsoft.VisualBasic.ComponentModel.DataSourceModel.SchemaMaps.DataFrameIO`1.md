@@ -7,14 +7,14 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps](N-
 
 
 
+
+
 ### Methods
 
 #### InitializeSchema``1
 ```csharp
 Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.DataFrameIO`1.InitializeSchema``1
 ```
-
-
 
 
 

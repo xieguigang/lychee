@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 
 The base class object in VisualBasic
 
+
+
 ### Methods
 
 #### __toString
@@ -35,9 +37,7 @@ Microsoft.VisualBasic.Language.ClassObject.ToString
 Default is display the json value of the object class
 
 
-
 ### Properties
 
 #### Extension
 The extension property.(为了节省内存的需要，这个附加属性尽量不要被自动初始化)
-

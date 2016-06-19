@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Emit.Marshal](N-Microsoft.VisualBasic.Emit.Ma
 
 Represents a pointer to an 8-bit unsigned integer array.
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Represents a pointer to an 8-bit unsigned integer array.
 |--------------|-------|
 |p|The start address location of the array in the memory|
 |chunkSize|array length|
-
-
 
 
 

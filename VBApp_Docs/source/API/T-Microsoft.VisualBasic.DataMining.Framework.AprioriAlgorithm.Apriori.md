@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm](N-Micr
 
 
 
+
+
 ### Methods
 
 #### SorterSortTokens
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.Apriori.SorterSortTo
 |Parameter Name|Remarks|
 |--------------|-------|
 |token|-|
-
-
 
 
 

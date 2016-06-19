@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Terminal.xConsole](N-Microsoft.VisualBasic.Te
 
 
 
+
 ### Properties
 
 #### CoolWriting
@@ -17,4 +18,3 @@ Gradual typing the output into console
 Write speed
 #### CWRDDelay
 Set the delay when write a new line or dots. (Default = 200).
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Mailto](N-Microsoft.VisualBasic.Net.Mailt
 
 A client of gmail.com
 
+
+
 ### Methods
 
 #### GmailClient
@@ -32,8 +34,6 @@ Microsoft.VisualBasic.Net.Mailto.EMailClient.SendMessagesTo(System.String,System
 |emailTitle|标题|
 |emailNote|内容|
 |emailUser|收件人地址|
-
-
 
 
 

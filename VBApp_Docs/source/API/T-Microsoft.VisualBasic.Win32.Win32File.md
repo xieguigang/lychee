@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)_
 
 .NET 2.0 Workaround for PathTooLongException
 
+> 
+>  http://www.codeproject.com/Articles/22013/NET-Workaround-for-PathTooLongException
+>  
+
+
 ### Methods
 
 #### GetAccess
@@ -65,9 +70,7 @@ open writable open(String, FileMode.OpenOrCreate, FileAccess.Write, FileShare.No
 
 
 
-
 ### Properties
 
 #### ERROR_ALREADY_EXISTS
 Error
-

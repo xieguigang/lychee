@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection
 
 
 
+
+
 ### Methods
 
 #### __generateMask
@@ -47,8 +49,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.TypeSchemaPr
 |Parameter Name|Remarks|
 |--------------|-------|
 |Property|-|
-
-
 
 
 

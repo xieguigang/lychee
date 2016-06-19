@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps](N-
 
 Schema for @"T:System.Attribute" and its bind @"T:System.Reflection.PropertyInfo" object target
 
+
+
 ### Methods
 
 #### GetValue
@@ -42,7 +44,6 @@ Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.BindProperty`1.T
 Display this schema maps in Visualbasic style.
 
 
-
 ### Properties
 
 #### Identifier
@@ -57,4 +58,3 @@ Gets a value indicating whether the @"T:System.Type" is one of the primitive typ
 The property object that bind with its custom attribute @"F:Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.BindProperty`1.Column" of type **T**
 #### Type
 Gets the type of this property.
-

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection.Generic](N-Microsof
 The key of the dictionary is string value and the keys is not sensitive to the character case.
  (字典的键名为字符串，大小写不敏感，行为和哈希表类型)
 
+
+
 ### Methods
 
 #### #ctor
@@ -30,9 +32,7 @@ Microsoft.VisualBasic.ComponentModel.Collection.Generic.HashDictionary`1.Contain
 
 
 
-
 ### Properties
 
 #### Item
 添加@"M:Microsoft.VisualBasic.ComponentModel.Collection.Generic.HashDictionary`1.Add(System.Collections.Generic.KeyValuePair{System.String,`0})"和替换操作主要在这里进行
-

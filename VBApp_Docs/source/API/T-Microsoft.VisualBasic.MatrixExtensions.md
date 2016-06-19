@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### MAT``1
@@ -41,8 +43,6 @@ Convert the matrix data into a collection of collection data type.(将矩阵对�
 |Parameter Name|Remarks|
 |--------------|-------|
 |MAT|-|
-
-
 
 
 

@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Win32.GetLastErrorAPI](N-Microsoft.VisualBasi
 
 
 
+
 ### Properties
 
 #### Success
 (0)-操作成功完成。
-

@@ -9,10 +9,10 @@ _namespace: [Microsoft.VisualBasic.Linq](N-Microsoft.VisualBasic.Linq.html)_
 
 
 
+
 ### Properties
 
 #### _pathList
 从高版本到低版本排列，从x64到x86排列
 #### AvaliableSDK
 .NET Framework的Reference Assembly文件夹的位置
-

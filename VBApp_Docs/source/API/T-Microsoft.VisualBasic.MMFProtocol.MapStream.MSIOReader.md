@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol.MapStream](N-Microsoft.VisualBasi
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -29,9 +31,7 @@ Microsoft.VisualBasic.MMFProtocol.MapStream.MSIOReader.ReadBadge
 由于考虑到可能会传递很大的数据块，所以在这里检测数据更新的话只读取头部的8个字节的数据
 
 
-
 ### Properties
 
 #### _udtBadge
 内存映射文件的更新标识符
-

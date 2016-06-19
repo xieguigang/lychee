@@ -9,6 +9,7 @@ Task remotes protocols
 
 
 
+
 ### Properties
 
 #### Free
@@ -25,4 +26,3 @@ The remote linq source reads done! Exit the iterator function.
 Gets the portal of the remote FileSystem
 #### Reset
 Resets the iterator of the remote linq source
-

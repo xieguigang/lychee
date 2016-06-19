@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Word.RichTextFormatDocument](N
 
 
 
+
 ### Properties
 
 #### HaveParFlag
 是否具有分段的标识符
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq](N-Mic
 
 
 
+
+
 ### Methods
 
 #### ReadQueue``1
@@ -20,7 +22,5 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.BatchQueue.ReadQueu
 |files|-|
 
 > 在服务器上面可能会出现IO很慢的情况，这个时候可以试一下这个函数进行批量数据加载
-
-
 
 

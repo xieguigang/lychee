@@ -10,6 +10,8 @@ http://sub.domain.com/somefolder/index.html -> domain.com
  http://anotherdomain.org/home -> anotherdomain.org
  www.subdomain.anothersubdomain.maindomain.com/something/ -> maindomain.com
 
+
+
 ### Methods
 
 #### TryParse
@@ -21,8 +23,6 @@ Microsoft.VisualBasic.Net.DomainParser.TryParse(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |url|-|
-
-
 
 
 

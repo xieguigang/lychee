@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### CreateObjectFromXml``1
@@ -94,8 +96,6 @@ Save the object as the XML document.
 |saveXml|-|
 |throwEx|-|
 |encoding|-|
-
-
 
 
 

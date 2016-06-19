@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### ToHTMLTable
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.HTMLWriter.ToHTMLTable(M
 |--------------|-------|
 |doc|-|
 |width|100%|px|
-
-
 
 
 

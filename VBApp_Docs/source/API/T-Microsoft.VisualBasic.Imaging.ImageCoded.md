@@ -7,6 +7,15 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+> 
+>  # 
+>  # res.0 (Image)
+>  # ----------------------------
+>  # ----------------------------
+>  #
+>  
+
+
 ### Methods
 
 #### LoadImageResource
@@ -18,8 +27,6 @@ Microsoft.VisualBasic.Imaging.ImageCoded.LoadImageResource(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |path|File path of the @"T:Microsoft.VisualBasic.Imaging.Drawing2D.DrawingScript"|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Logging](N-Microsoft.VisualBasic.Logging.html
 
 日志文件记录模块.
 
+
+
 ### Methods
 
 #### #ctor
@@ -63,7 +65,6 @@ Microsoft.VisualBasic.Logging.LogFile.WriteLine(System.String,System.String[])
 
 
 
-
 ### Properties
 
 #### ColorfulOutput
@@ -85,4 +86,3 @@ Indicated that write the @"F:Microsoft.VisualBasic.Logging.MSG_TYPES.ERR"[Error 
 Indicated that write the @"F:Microsoft.VisualBasic.Logging.MSG_TYPES.WRN"[Warn type] message to the console screen, this 
  property will override the WriteToScreen parameter in function @"M:Microsoft.VisualBasic.Logging.LogFile.WriteLine(System.String)" when the 
  message type is @"F:Microsoft.VisualBasic.Logging.MSG_TYPES.WRN"[Warn type].
-

@@ -9,9 +9,9 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Graph](N-Microsoft.
 
 
 
+
 ### Properties
 
 #### connectedNodes
 Returns the set of all Nodes that have emanating Edges.
  This therefore returns all Nodes that will be visible in the drawing.
-

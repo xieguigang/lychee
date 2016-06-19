@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 
 
+
 ### Properties
 
 #### Identifier
 This object identifier
-

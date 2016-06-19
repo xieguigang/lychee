@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 Initializes a new instance of the System.IO.FileStream class with the specified
  path and creation mode.
 
+
+
 ### Methods
 
 #### OpenHandle
@@ -18,9 +20,7 @@ Initializes a new instance of the System.IO.FileStream class with the specified
  path and creation mode.
 
 
-
 ### Properties
 
 #### Mode
 Specifies how the operating system should open a file.
-

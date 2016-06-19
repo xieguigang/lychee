@@ -16,6 +16,8 @@ Singular Value Decomposition.
  never fail. The matrix condition number and the effective numerical
  rank can be computed from this decomposition.
 
+
+
 ### Methods
 
 #### #ctor
@@ -71,7 +73,6 @@ _returns:      Number of nonnegligible singular values.
  _
 
 
-
 ### Properties
 
 #### m
@@ -97,4 +98,3 @@ Arrays for internal storage of U and V.
 Arrays for internal storage of U and V.
  @serial internal storage of U.
  @serial internal storage of V.
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel.Tasks](N-Microsoft.VisualBasic.Paral
 
 
 
+
+
 ### Methods
 
 #### Enqueue
@@ -31,7 +33,5 @@ Microsoft.VisualBasic.Parallel.Tasks.TaskQueue`1.Join(System.Func{`0})
 |handle|-|
 
 _returns: 假若本对象已经开始Dispose了，则为完成的任务都会返回Nothing_
-
-
 
 

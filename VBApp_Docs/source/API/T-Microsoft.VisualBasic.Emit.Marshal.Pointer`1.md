@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Emit.Marshal](N-Microsoft.VisualBasic.Emit.Ma
 
 
 
+
+
 ### Methods
 
 #### MoveNext
@@ -51,7 +53,6 @@ Pointer move to next and then returns the previous value
 
 
 
-
 ### Properties
 
 #### Current
@@ -66,4 +67,3 @@ Current read position
 Raw memory of this pointer
 #### Value
 相对于当前的指针的位置而言的
-

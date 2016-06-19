@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree](N-M
 
 http://www.evolgenius.info/evolview/
 
+
+
 ### Methods
 
 #### __makeInternalNode``1
@@ -41,8 +43,6 @@ created: Oct 20, 2013 : a better and easier to maintain parser for newick and ne
 |inputstr| : input tree string |
 |hashTranslate| : aliases for lead nodes (for nexsus format) |
 |iNode| : current internal node; == rootNode the first time 'newickParser' is called  |
-
-
 
 
 

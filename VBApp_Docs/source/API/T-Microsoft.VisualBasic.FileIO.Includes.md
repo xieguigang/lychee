@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.FileIO](N-Microsoft.VisualBasic.FileIO.html)_
 
 File includes search tools
 
+
+
 ### Methods
 
 #### Add
@@ -29,8 +31,6 @@ Get the absolutely file path from the includes file's relative path.
 |Parameter Name|Remarks|
 |--------------|-------|
 |relPath|-|
-
-
 
 
 

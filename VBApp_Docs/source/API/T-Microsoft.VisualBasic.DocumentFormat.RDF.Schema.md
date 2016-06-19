@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 
 
 
+
+
 ### Methods
 
 #### GetType
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DocumentFormat.RDF.Schema.GetType(Microsoft.VisualBasic.Do
 |Parameter Name|Remarks|
 |--------------|-------|
 |RDFRootType|-|
-
-
 
 
 

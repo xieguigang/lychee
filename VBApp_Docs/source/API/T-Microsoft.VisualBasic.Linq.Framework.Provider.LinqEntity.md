@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider](N-Microsoft.VisualBa
 
 LINQ entity type
 
+
+
 ### Methods
 
 #### #ctor
@@ -30,8 +32,6 @@ Microsoft.VisualBasic.Linq.Framework.Provider.LinqEntity.GetEntityType(System.Ty
 |Parameter Name|Remarks|
 |--------------|-------|
 |type|-|
-
-
 
 
 

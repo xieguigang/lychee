@@ -10,6 +10,8 @@ Represents a column of certain data frames. The mapping between to schema is als
  其是使用属性名来作为列映射名称的，故而在修改这些没有预设的列名称的映射属性的属性名的时候，请注意
  要小心维护这种映射关系)
 
+
+
 ### Methods
 
 #### #ctor
@@ -47,11 +49,9 @@ Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.DataFrameColumnA
 没有名称属性的映射使用属性名来表述
 
 
-
 ### Properties
 
 #### Index
 Gets the index.
 #### Name
 Gets the name.
-

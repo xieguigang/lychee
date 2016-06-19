@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting](N-Microsoft.VisualBasic.Scripting.
 
 Shell object for the external script running.
 
+
+
 ### Methods
 
 #### #ctor
@@ -47,9 +49,7 @@ Microsoft.VisualBasic.Scripting.ExternalCall.Shell(System.String,System.Collecti
 > Perl脚本测试通过！
 
 
-
 ### Properties
 
 #### __host
 脚本宿主的可执行文件的路径
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints](N-Microso
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -33,9 +35,7 @@ Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints.APIDelegate.Execute(Sys
 
 
 
-
 ### Properties
 
 #### Name
 The usage name of this command line entry point.(本命令行对象的调用命令名称)
-

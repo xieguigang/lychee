@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.SharedMemory](N-Microsoft.V
 
 The shared variable on the remote machine.
 
+
+
 ### Methods
 
 #### GetValueJson
@@ -14,7 +16,6 @@ The shared variable on the remote machine.
 Microsoft.VisualBasic.ComputingServices.SharedMemory.HashValue.GetValueJson
 ```
 Json serialization for the network transfer.
-
 
 
 ### Properties
@@ -25,4 +26,3 @@ The variable name
 Simple type information
 #### value
 variable value
-

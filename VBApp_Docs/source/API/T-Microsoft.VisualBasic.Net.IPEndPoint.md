@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Net](N-Microsoft.VisualBasic.Net.html)_
 The object of @"T:System.Net.IPEndPoint" can not be Xml serialization.
  (系统自带的@"T:System.Net.IPEndPoint"不能够进行Xml序列化)
 
+
+
 ### Methods
 
 #### #ctor
@@ -34,9 +36,7 @@ Microsoft.VisualBasic.Net.IPEndPoint.ToString
 http://IPAddress:<Port>/
 
 
-
 ### Properties
 
 #### IsValid
 格式是否正确
-

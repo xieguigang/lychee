@@ -9,6 +9,8 @@ Creating Zip Files Easily in .NET 4.5
  Tim Corey, 11 May 2012
  http://www.codeproject.com/Articles/381661/Creating-Zip-Files-Easily-in-NET
 
+
+
 ### Methods
 
 #### AddToArchive
@@ -74,8 +76,6 @@ Safely extracts a single file from a zip file
  Specifies how we are going to handle an existing file.
  The default is Overwrite.IfNewer.
  |
-
-
 
 
 

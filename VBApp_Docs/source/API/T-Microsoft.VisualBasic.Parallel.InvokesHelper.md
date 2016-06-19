@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.ht
 
 
 
+
+
 ### Methods
 
 #### Invoke
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Parallel.InvokesHelper.Invoke(System.Action[],System.Int32
 |--------------|-------|
 |tasks|-|
 |numOfThreads|同时执行的句柄的数目|
-
-
 
 
 

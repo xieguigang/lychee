@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem](N-Microsoft.Vis
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -62,9 +64,7 @@ Returns a read-only collection of all available drive names.
 _returns: A read-only collection of all available drives as System.IO.DriveInfo objects._
 
 
-
 ### Properties
 
 #### OpenedHandles
 远程服务器上面已经打开的文件句柄
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 
 3D coordinate transformation tools.
 
+
+
 ### Methods
 
 #### SpaceToGrid
@@ -19,8 +21,6 @@ Transform point 3D into point 2D
 |--------------|-------|
 |pt3D|-|
 |xRotate|-|
-
-
 
 
 

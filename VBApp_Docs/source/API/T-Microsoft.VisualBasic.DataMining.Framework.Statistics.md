@@ -7,6 +7,10 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework](N-Microsoft.VisualBasic
 
 Set of statistics functions.
 
+> The class represents collection of simple functions used
+>  in statistics.
+
+
 ### Methods
 
 #### Entropy
@@ -171,7 +175,5 @@ _returns: Returns value of standard deviation._
 >  hits).The method is an equevalent to the @"M:Microsoft.VisualBasic.DataMining.Framework.Statistics.StdDev(System.Int32[])" method,
 >  but it relieas on the passed mean value, which is previously calculated
 >  using @"M:Microsoft.VisualBasic.DataMining.Framework.Statistics.Mean(System.Int32[])" method.
-
-
 
 

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 Command line interpreter for your cli program.(命令行解释器，请注意，在调试模式之下，命令行解释器会在运行完命令之后暂停，而Release模式之下则不会。
  假若在调试模式之下发现程序有很长一段时间处于cpu占用为零的静止状态，则很有可能已经运行完命令并且等待回车退出)
 
+
+
 ### Methods
 
 #### #ctor
@@ -171,7 +173,6 @@ Gets the dictionary data which contains all of the available command information
  (获取从本模块之中获取得到的所有的命令行信息)
 
 
-
 ### Properties
 
 #### __API_InfoHash
@@ -192,4 +193,3 @@ Returns the command entry info list array.
 #### ListCommandsEntryName
 List all of the command line entry point name which were contains in this cli interpreter.
  (列举出本CLI命令行解释器之中的所有的命令行执行入口点的名称)
-

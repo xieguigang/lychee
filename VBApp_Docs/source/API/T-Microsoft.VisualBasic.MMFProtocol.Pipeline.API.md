@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol.Pipeline](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### IsRef
@@ -52,8 +54,6 @@ Microsoft.VisualBasic.MMFProtocol.Pipeline.API.WriteData(System.String,Microsoft
 |--------------|-------|
 |var|-|
 |value|-|
-
-
 
 
 

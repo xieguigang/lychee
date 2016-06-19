@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider](N-Microsoft.VisualBa
 Type registry table for loading the external LINQ entity assembly module.
  (起始这个模块就是相当于一个类型缓存而已，因为程序可以直接读取dll文件里面的内容，但是直接读取的方法会造成性能下降，所以需要使用这个对象来缓存所需要的类型数据)
 
+
+
 ### Methods
 
 #### Find
@@ -64,9 +66,7 @@ Registry the external LINQ entity assembly module in the LINQFramework
 > 查询出目标元素的类型定义并获取信息
 
 
-
 ### Properties
 
 #### SDK
 .NET SDK directory
-

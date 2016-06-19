@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Logging](N-Microsoft.VisualBasic.Logging.html
 
 Provides interaction with Windows event logs.(这个日志入口点对象的创建应该调用于安装程序的模块之中，并且以管理员权限执行)
 
+
+
 ### Methods
 
 #### #ctor
@@ -48,8 +50,6 @@ Writes a localized entry to the event log.
 |--------------|-------|
 |EventType|An @"T:System.Diagnostics.EventLogEntryType" value that indicates the event type.|
 |category|A resource identifier that corresponds to a string defined in the category resource file of the event source, or zero to specify no category for the event.|
-
-
 
 
 

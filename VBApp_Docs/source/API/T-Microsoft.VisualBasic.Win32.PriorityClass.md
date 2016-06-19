@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)_
 
 
 
+
+
 ### Methods
 
 #### GetCurrentProcess
@@ -27,7 +29,6 @@ Microsoft.VisualBasic.Win32.PriorityClass.PriorityClass(System.Int32)
 
 
 
-
 ### Properties
 
 #### HIGH_PRIORITY_CLASS
@@ -36,4 +37,3 @@ Microsoft.VisualBasic.Win32.PriorityClass.PriorityClass(System.Int32)
 新进程应该有非常低的优先级——只有在系统空闲的时候才能运行。基本值是4
 #### NORMAL_PRIORITY_CLASS
 标准优先级。如进程位于前台，则基本值是9；如在后台，则优先值是7
-

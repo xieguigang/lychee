@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
+
 ### Methods
 
 #### BlankPointer
@@ -39,7 +41,5 @@ remove the previous pointer and place it in a new possition
 Microsoft.VisualBasic.Terminal.SwayBar.Step
 ```
 prints the progress bar acorrding to pointers and current direction
-
-
 
 

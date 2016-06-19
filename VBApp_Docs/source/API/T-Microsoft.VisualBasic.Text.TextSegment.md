@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 
 
+
 ### Properties
 
 #### Array
@@ -17,4 +18,3 @@ ASCII值
 在原始文本之中的左端起始位置
 #### Segment
 当前的这个文本片段的字符串值
-

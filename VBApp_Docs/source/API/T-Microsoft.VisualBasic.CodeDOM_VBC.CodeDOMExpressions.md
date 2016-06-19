@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CodeDOM_VBC](N-Microsoft.VisualBasic.CodeDOM_
 
 
 
+
+
 ### Methods
 
 #### Call
@@ -152,9 +154,7 @@ Variable value initializer
 
 
 
-
 ### Properties
 
 #### EntryPoint
 Public Shared Function Main(Argvs As String()) As Integer
-

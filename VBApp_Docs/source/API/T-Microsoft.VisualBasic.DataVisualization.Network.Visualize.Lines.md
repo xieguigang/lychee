@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Visualize](N-Micros
 
 
 
+
+
 ### Methods
 
 #### PointOnCurve
@@ -27,7 +29,5 @@ Calculates interpolated point between two points using Catmull-Rom Spline///
 _returns: Calculated Spline Point/// _
 > 
 >  Points calculated exist on the spline between points two and three./// 
-
-
 
 

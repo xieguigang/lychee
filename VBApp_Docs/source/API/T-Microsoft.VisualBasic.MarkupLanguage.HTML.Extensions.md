@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 
 
+
+
 ### Methods
 
 #### StripHTMLDirectly
@@ -30,8 +32,6 @@ Strip out HTML tags while preserving the basic formatting
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-
-
 
 
 

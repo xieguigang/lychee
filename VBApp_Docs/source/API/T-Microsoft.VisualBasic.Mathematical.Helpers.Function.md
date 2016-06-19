@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Helpers](N-Microsoft.VisualBasic
 Mathematics function calculation engine
  (数学函数计算引擎)
 
+
+
 ### Methods
 
 #### Add
@@ -52,10 +54,8 @@ This function return a random number, you can specific the boundary of the rando
 
 
 
-
 ### Properties
 
 #### SystemPrefixFunctions
 The mathematics calculation delegates collection with its specific name.
  (具有特定名称的数学计算委托方法的集合)
-

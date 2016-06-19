@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 
 
 
+
 ### Properties
 
 #### length
 输入的参数的长度
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -47,9 +49,7 @@ Microsoft.VisualBasic.Text.TextIndexing.IsMatch(System.String,System.Int32)
 
 
 
-
 ### Properties
 
 #### PreCache
 为了用于加速批量匹配计算的效率而生成的一个缓存对象
-

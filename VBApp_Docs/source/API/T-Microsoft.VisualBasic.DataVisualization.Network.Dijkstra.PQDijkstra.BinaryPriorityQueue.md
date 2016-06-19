@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra
 
 
 
+
+
 ### Methods
 
 #### Peek
@@ -48,8 +50,6 @@ Notify the PQ that the object at position i has changed
 |Parameter Name|Remarks|
 |--------------|-------|
 |i|The index of the changed object.|
-
-
 
 
 

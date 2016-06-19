@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+> 
+>  http://www.cnblogs.com/masonlu/p/4668232.html
+>  
+
+
 ### Methods
 
 #### SetProgress
@@ -18,8 +23,6 @@ Microsoft.VisualBasic.Terminal.ProgressBar.SetProgress(System.Int32,System.Strin
 |Parameter Name|Remarks|
 |--------------|-------|
 |p|Percentage, 假设是从p到current|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra
 
 
 
+
+
 ### Methods
 
 #### GetRelativePosition
@@ -19,8 +21,6 @@ a function to get relative position from one node to another
 |--------------|-------|
 |start|-|
 |finish|-|
-
-
 
 
 

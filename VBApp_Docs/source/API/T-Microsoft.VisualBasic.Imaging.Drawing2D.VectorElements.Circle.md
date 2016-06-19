@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.Circle.#ctor(System.Drawi
 |--------------|-------|
 |LeftTop|左上角|
 |D|圆的直径|
-
-
 
 
 

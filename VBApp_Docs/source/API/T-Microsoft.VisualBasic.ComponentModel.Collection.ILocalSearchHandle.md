@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection](N-Microsoft.Visual
 
 
 
+
+
 ### Methods
 
 #### Match
@@ -31,8 +33,6 @@ Microsoft.VisualBasic.ComponentModel.Collection.ILocalSearchHandle.Matches(Syste
 |--------------|-------|
 |Keyword|-|
 |CaseSensitive|是否大小写敏感，默认不敏感|
-
-
 
 
 

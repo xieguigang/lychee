@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
+
 ### Methods
 
 #### Step
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 Microsoft.VisualBasic.Terminal.AnimatedBar.Step
 ```
 prints the character found in the animation according to the current index
-
-
 
 

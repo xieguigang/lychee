@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 
 
+
 ### Properties
 
 #### a
@@ -21,4 +22,3 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 顺便输出行号
 #### v
 反向选择，亦即显示出没有 '搜寻字符串' 内容的那一行！
-

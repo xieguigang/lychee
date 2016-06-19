@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Protocols.Reflection](N-Microsoft.VisualB
 
 This attribute indicates the entry point of the protocol processor definition location and the details of the protocol processor.
 
+
+
 ### Methods
 
 #### #ctor
@@ -45,7 +47,6 @@ This method is usually using for generates a @"T:Microsoft.VisualBasic.Net.Proto
 
 
 
-
 ### Properties
 
 #### DeclaringType
@@ -53,4 +54,3 @@ This method is usually using for generates a @"T:Microsoft.VisualBasic.Net.Proto
 #### EntryPoint
 Entry point for the data protocols, this property usually correspondent to the request stream's 
  property: @"P:Microsoft.VisualBasic.Net.Protocols.RequestStream.Protocol" and @"P:Microsoft.VisualBasic.Net.Protocols.RequestStream.ProtocolCategory"
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### CreateDictionary``1
@@ -43,8 +45,6 @@ Microsoft.VisualBasic.IEnumerations.Takes``1(System.Collections.Generic.IEnumera
 |--------------|-------|
 |lstId|-|
 |source|-|
-
-
 
 
 

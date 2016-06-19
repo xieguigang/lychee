@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection
 
 The dynamics reflection operations on Csv data source services.
 
+
+
 ### Methods
 
 #### __save
@@ -98,7 +100,5 @@ Save the specifc type object collection into the csv data file.
 |explicit|-|
 
 > 查找所有具备读属性的属性值
-
-
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 用于解决函数重载的函数数字签名的属性
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Scripting.MetaData.OverloadsSignatureHandle.#ctor(System.S
 |--------------|-------|
 |TypeIdBrief|Brief name for the target signature type **FullName**|
 |FullName|Target signature type for function overloads.|
-
-
 
 
 

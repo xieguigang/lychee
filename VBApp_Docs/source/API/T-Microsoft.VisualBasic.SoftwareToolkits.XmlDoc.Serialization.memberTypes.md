@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Serialization](N-Micr
 
 
 
+
 ### Properties
 
 #### Event
@@ -21,4 +22,3 @@ M
 P
 #### Type
 T
-

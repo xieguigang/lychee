@@ -7,6 +7,8 @@ _namespace: [RQL](N-RQL.html)_
 
 在线查询服务提供模块，在这个模块之中只负责进行url参数的解析工作
 
+
+
 ### Methods
 
 #### #ctor
@@ -33,8 +35,6 @@ http://linq.gcmodeller.org/kegg/pathways?where=test_expr(pathway)
 |Parameter Name|Remarks|
 |--------------|-------|
 |p|-|
-
-
 
 
 

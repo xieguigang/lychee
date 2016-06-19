@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.KMeans](N-Microsoft.Visu
 
 计算所使用的对象实例实体模型
 
+
+
 ### Methods
 
 #### Load
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DataMining.Framework.KMeans.Entity.Load(System.String,Syst
 |Parameter Name|Remarks|
 |--------------|-------|
 |path|Csv文件之中除了第一列是名称标识符，其他的都必须是该实体对象的属性|
-
-
 
 
 

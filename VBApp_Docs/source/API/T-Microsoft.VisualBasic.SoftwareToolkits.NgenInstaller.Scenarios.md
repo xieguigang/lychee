@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.NgenInstaller](N-Microsoft.V
 
 
 
+
 ### Properties
 
 #### Debug
@@ -17,4 +18,3 @@ Generate native images that can be used under a debugger.
 Generate the minimum number Of native images required by the specified scenario options.
 #### Profile
 Generate native images that can be used under a profiler.
-

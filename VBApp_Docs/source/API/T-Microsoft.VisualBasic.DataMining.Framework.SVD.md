@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### SVDecomposition
@@ -20,8 +22,6 @@ Singular Value Decomposition
 |a|Number of rows in A must be greater or equal to number of columns|
 |w|-|
 |v|-|
-
-
 
 
 

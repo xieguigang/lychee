@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 
 按照任意角度旋转的箭头对象
 
+
+
 ### Methods
 
 #### #ctor
@@ -33,7 +35,6 @@ Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.Arrow.InvokeDrawing
  \|-----
 
 
-
 ### Properties
 
 #### BodyHeightPercentage
@@ -46,4 +47,3 @@ Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.Arrow.InvokeDrawing
 忽略了箭头的方向，本箭头对象存粹的在进行图形绘制的时候的左右的位置
 #### Size
 返回图形上面的绘图的大小，而非箭头本身的大小
-

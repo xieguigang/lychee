@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.BayesianBeliefNet
 
 贝叶斯信念网络
 
+
+
 ### Methods
 
 #### CreateFrom
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.DataMining.Framework.Kernel.BayesianBeliefNetwork.BeliefNe
 |Parameter Name|Remarks|
 |--------------|-------|
 |Array|Array的元素个数必须与节点的数目相等|
-
-
 
 
 

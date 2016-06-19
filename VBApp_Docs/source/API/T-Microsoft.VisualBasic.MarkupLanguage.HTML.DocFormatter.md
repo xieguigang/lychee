@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.HTML](N-Microsoft.VisualBasic.
 
 Module provides some method for text document
 
+
+
 ### Methods
 
 #### HighlightEMail
@@ -40,8 +42,6 @@ Highligh links in the text.(将文档里面的url使用html标记出来)
 |Parameter Name|Remarks|
 |--------------|-------|
 |s|假设这里面没有任何html标记|
-
-
 
 
 

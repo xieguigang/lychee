@@ -9,10 +9,10 @@ The init variable.
 
 
 
+
 ### Properties
 
 #### Name
 变量的名称
 #### TypeId
 变量的类型标识符
-

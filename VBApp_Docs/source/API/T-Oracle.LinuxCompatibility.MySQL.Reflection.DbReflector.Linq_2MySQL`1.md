@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.DbReflector](N-Oracle.Li
 
 
 
+
+
 ### Methods
 
 #### __forEach``1
@@ -21,8 +23,6 @@ LINQ to MySQL engine
 |type|-|
 |lstFields|-|
 |__invoke|-|
-
-
 
 
 

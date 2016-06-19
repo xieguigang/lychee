@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Collection](N-Microsoft.Visual
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.ComponentModel.Collection.CapacityQueue`1.#ctor(System.Int
 |--------------|-------|
 |capacity|The initial number of elements that the System.Collections.Generic.Queue`1 can
  contain.|
-
-
 
 
 

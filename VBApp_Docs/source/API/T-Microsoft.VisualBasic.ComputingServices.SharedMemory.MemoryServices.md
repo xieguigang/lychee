@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.SharedMemory](N-Microsoft.V
 
 Shared the memory with the remote machine.
 
+
+
 ### Methods
 
 #### #ctor
@@ -42,8 +44,6 @@ Microsoft.VisualBasic.ComputingServices.SharedMemory.MemoryServices.SetValue``1(
 |--------------|-------|
 |name|建议使用NameOf来设置或者获取参数值|
 |value|-|
-
-
 
 
 

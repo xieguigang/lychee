@@ -11,6 +11,8 @@ Please notice that some data type in mysql database is not allow combine with so
  (请注意：在MySql数据库中有一些数据类型是不能够和一些字段的属性组合使用的，我不能够在本代码中检查出此潜在
  的错误。故，当你定义的对象类型无法创建表的时候，请检查你的字段属性的组合是否有错误？)
 
+
+
 ### Methods
 
 #### ToMySqlDateTimeString
@@ -23,8 +25,6 @@ Oracle.LinuxCompatibility.MySQL.Reflection.DbAttributes.DataType.ToMySqlDateTime
 |Parameter Name|Remarks|
 |--------------|-------|
 |value|-|
-
-
 
 
 

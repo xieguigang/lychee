@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -54,8 +56,6 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.TaskInvoke.InvokeLinq(System.In
 |CA|SSL证书编号|
 |args|-|
 |remote|-|
-
-
 
 
 

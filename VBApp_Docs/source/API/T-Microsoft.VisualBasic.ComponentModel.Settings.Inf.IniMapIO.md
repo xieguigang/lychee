@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings.Inf](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -18,8 +20,6 @@ The path parameter can be shortcut by method @"M:Microsoft.VisualBasic.Language.
 |Parameter Name|Remarks|
 |--------------|-------|
 |path|-|
-
-
 
 
 

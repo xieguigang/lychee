@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Serials.PeriodAnalysis](
 
 
 
+
+
 ### Methods
 
 #### Analysis
@@ -30,8 +32,6 @@ Microsoft.VisualBasic.DataMining.Framework.Serials.PeriodAnalysis.PeriodAnalysis
 |Parameter Name|Remarks|
 |--------------|-------|
 |path|-|
-
-
 
 
 

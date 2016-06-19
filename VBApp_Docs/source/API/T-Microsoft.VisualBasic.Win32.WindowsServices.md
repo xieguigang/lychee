@@ -9,6 +9,8 @@ Windows event logger services & installer services.
  (这个模块主要的功能是日志服务，包括在安装阶段对日志记录的创建以及自定义url协议的创建等，
  请注意，这个模块之中的大部分的功能都需要你的应用程序是在管理员权限之下运行的)
 
+
+
 ### Methods
 
 #### Initialize
@@ -71,7 +73,6 @@ Microsoft.VisualBasic.Win32.WindowsServices.RegisterURLProtocol(System.String,Sy
 
 
 
-
 ### Properties
 
 #### Initialized
@@ -79,4 +80,3 @@ Does component @"P:Microsoft.VisualBasic.Win32.WindowsServices.ServicesLogs" hav
 #### ServicesLogs
 Windows system logging services interface, you can viewing the application log events from Event Viewer:
  Explorer >> Manage >> Event Viewer >> Applications and Services Logs >> <Your_Product>
-

@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Net](N-Microsoft.VisualBasic.Net.html)_
 
 
 
+
 ### Properties
 
 #### CurrentSize
@@ -19,4 +20,3 @@ Client status
 KB/sec
 #### TotalSize
 Total size of the file that has to be downloaded
-

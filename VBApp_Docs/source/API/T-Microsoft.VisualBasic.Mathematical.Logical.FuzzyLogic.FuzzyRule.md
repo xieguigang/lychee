@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical.FuzzyLogic](N-Microsoft.
 
 Represents a rule.
 
+
+
 ### Methods
 
 #### #ctor
@@ -29,11 +31,9 @@ Returns the conditions of the rule.
 _returns: The conditions of the rule._
 
 
-
 ### Properties
 
 #### Text
 The text of the rule.
 #### Value
 The value of the rule after the evaluation process.
-

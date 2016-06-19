@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 
 
+
+
 ### Methods
 
 #### __pathRule
@@ -66,7 +68,5 @@ Generates the command line string value for the invoked target cli program using
 >  （假若是枚举值类型，可能还需要再枚举值之中添加@"T:System.ComponentModel.DescriptionAttribute"属性）
 >  @"F:Microsoft.VisualBasic.CommandLine.Reflection.CLITypes.File", 假若字符串为空则不添加，有空格自动添加双引号，相对路径会自动转换为全路径。
 >  
-
-
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm](N-Micr
 
 ½«ÊÂ¼þ½øÐÐ±àÂëÎªµ¥¸ö×Ö·û
 
+
+
 ### Methods
 
 #### #ctor
@@ -35,8 +37,6 @@ Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.EncodingServices.Tra
 |Parameter Name|Remarks|
 |--------------|-------|
 |data|Õâ¸öµÄË³ÐòÓëÊýÄ¿±ØÐëÒªÓë@"F:Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.EncodingServices._CodeMappings"»òÕß@"F:Microsoft.VisualBasic.DataMining.Framework.AprioriAlgorithm.EncodingServices._originals"ÏàÒ»ÖÂ|
-
-
 
 
 

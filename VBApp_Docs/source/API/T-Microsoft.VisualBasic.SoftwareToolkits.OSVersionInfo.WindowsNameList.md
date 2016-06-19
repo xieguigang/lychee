@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.OSVersionInfo](N-Microsoft.V
 
 
 
+
 ### Properties
 
 #### null
@@ -51,4 +52,3 @@ Windows Server 2012
 Windows Vista
 #### WindowsXP
 Windows XP
-

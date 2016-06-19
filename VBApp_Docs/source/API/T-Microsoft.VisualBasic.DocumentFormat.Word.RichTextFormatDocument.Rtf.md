@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Word.RichTextFormatDocument](N
 
 Rich text format document object model.(带有格式描述信息的文本文档的对象模型)
 
+
+
 ### Methods
 
 #### #ctor
@@ -91,7 +93,5 @@ Set format value to a selected region in the text document. the previous format 
 > 
 >  目标区域**start** -> **selectLength**可能与某一个设置了字体的区域重合一部分，也可能完全包含有其他的多个区域
 >  
-
-
 
 

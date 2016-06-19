@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine.Reflection](N-Microsoft.VisualBas
 
 用来生成帮助信息
 
+
+
 ### Methods
 
 #### PrintHelp
@@ -18,8 +20,6 @@ Prints the formatted help information on the console.
 |Parameter Name|Remarks|
 |--------------|-------|
 |api|-|
-
-
 
 
 

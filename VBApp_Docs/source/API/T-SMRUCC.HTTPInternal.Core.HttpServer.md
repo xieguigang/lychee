@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Core](N-SMRUCC.HTTPInternal.Core.html)_
 
 Internal http server core.
 
+
+
 ### Methods
 
 #### #ctor
@@ -58,11 +60,9 @@ SMRUCC.HTTPInternal.Core.HttpServer.Shutdown
 Shutdown this internal http server
 
 
-
 ### Properties
 
 #### IsRunning
 Indicates this http server is running status or not.
 #### LocalPort
 The network data port of this internal http server listen.
-

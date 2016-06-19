@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.MarkDown](N-Microsoft.VisualBa
 
 Add title to youtube link
 
+
+
 ### Methods
 
 #### #ctor
@@ -58,11 +60,9 @@ Get videos titles from youtube API
 _returns: Return null string if request failed_
 
 
-
 ### Properties
 
 #### _apiKey
 Google api key
 #### _links
 Array of links: videoID/title
-

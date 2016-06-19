@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CodeDOM_VBC](N-Microsoft.VisualBasic.CodeDOM_
 
 
 
+
+
 ### Methods
 
 #### CompileCode
@@ -31,8 +33,6 @@ Construct of the vbc.exe compiler parameters.
 |ref|-|
 |SDK|-|
 |dll|-|
-
-
 
 
 

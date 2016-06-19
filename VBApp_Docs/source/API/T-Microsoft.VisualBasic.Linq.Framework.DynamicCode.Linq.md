@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.DynamicCode](N-Microsoft.Visua
 
 Example
 
+
+
 ### Methods
 
 #### Project
@@ -18,8 +20,6 @@ From X As <Type> In $source Let a = <Expression> let b = <Expression> Where <Exp
 |Parameter Name|Remarks|
 |--------------|-------|
 |x|-|
-
-
 
 
 

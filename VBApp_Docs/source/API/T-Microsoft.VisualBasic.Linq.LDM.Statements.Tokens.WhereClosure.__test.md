@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.WhereClosure](N-Mi
 
 
 
+
+
 ### Methods
 
 #### Test
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.WhereClosure.__test.Test(System
 |Parameter Name|Remarks|
 |--------------|-------|
 |x|-|
-
-
 
 
 

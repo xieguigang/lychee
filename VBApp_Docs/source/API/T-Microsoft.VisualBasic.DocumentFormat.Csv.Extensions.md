@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv](N-Microsoft.VisualBasic.D
 
 The shortcuts operation for the common csv document operations.
 
+
+
 ### Methods
 
 #### AsDataSource``1
@@ -131,8 +133,6 @@ Generate a csv document from a object collection.(从一个特定类型的数据
 |--------------|-------|
 |source|-|
 |explicit|默认导出所有的可用属性|
-
-
 
 
 

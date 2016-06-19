@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 从可写属性之中赋值
 
+
+
 ### Methods
 
 #### Maps``1
@@ -19,8 +21,6 @@ The properties in the class type needs decorating with attribute @"T:Microsoft.V
 |--------------|-------|
 |args|-|
 |strict|-|
-
-
 
 
 

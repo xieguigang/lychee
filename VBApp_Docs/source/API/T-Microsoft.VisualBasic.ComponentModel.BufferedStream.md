@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 Buffered large text dataset reader
 
+
+
 ### Methods
 
 #### #ctor
@@ -28,11 +30,9 @@ Microsoft.VisualBasic.ComponentModel.BufferedStream.Reset
 Reset the stream buffer reader to its initial state.
 
 
-
 ### Properties
 
 #### EndRead
 End of buffer read?
 #### FileName
 The File location of this text file.
-

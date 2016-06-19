@@ -9,6 +9,7 @@ Specifies the file format of the image.
 
 
 
+
 ### Properties
 
 #### Bmp
@@ -31,4 +32,3 @@ Gets the W3C Portable Network Graphics (PNG) image format.
 Gets the Tagged Image File Format (TIFF) image format.
 #### Wmf
 Gets the Windows metafile (WMF) image format.
-

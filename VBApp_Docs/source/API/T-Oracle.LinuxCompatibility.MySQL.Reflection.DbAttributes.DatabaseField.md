@@ -8,6 +8,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.DbAttributes](N-Oracle.L
 Custom attribute class to mapping the field in the data table.
  (用于映射数据库中的表中的某一个字段的自定义属性类型)
 
+
+
 ### Methods
 
 #### op_Explicit
@@ -23,10 +25,8 @@ Get the field name property.
 
 
 
-
 ### Properties
 
 #### Name
 Get or set the name of the database field.
  (获取或者设置数据库表中的字段的名称)
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.ht
 
 
 
+
+
 ### Methods
 
 #### OperationTimeOut
@@ -45,8 +47,6 @@ The returns value of TRUE represent of the target operation has been time out.(�
 |handle|-|
 |Out|-|
 |TimeOut|The time unit of this parameter is second.(单位为秒)|
-
-
 
 
 

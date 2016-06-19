@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### GenerateConfigurations``1
@@ -31,8 +33,6 @@ Microsoft.VisualBasic.ComponentModel.Settings.SimpleConfig.TryParse``2(System.Bo
 |--------------|-------|
 |canRead|向文件之中写数据的时候，需要设置为真|
 |canWrite|从文件之中读取数据的时候，需要设置为真|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.MarkDown.Span](N-Microsoft.Vis
 
 
 
+
+
 ### Methods
 
 #### InlineLinks
@@ -24,7 +26,5 @@ Microsoft.VisualBasic.MarkupLanguage.MarkDown.Span.LinksParser.InlineLinks(Syste
 > 
 >  [This link](http//example.net/) has no title attribute.
 >  
-
-
 
 

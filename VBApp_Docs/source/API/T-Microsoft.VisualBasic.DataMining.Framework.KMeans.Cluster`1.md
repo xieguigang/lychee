@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.KMeans](N-Microsoft.Visu
 
 A class containing a group of data with similar characteristics (cluster)
 
+
+
 ### Methods
 
 #### Add
@@ -21,7 +23,6 @@ Adds a single dimension array data to the cluster
 
 
 
-
 ### Properties
 
 #### ClusterMean
@@ -30,4 +31,3 @@ The mean of all the data in the cluster
 The sum of all the data in the cluster
 #### Item
 Returns the one dimensional array data located at the index
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 
 标傲世一个3D物体的模型
 
+
+
 ### Methods
 
 #### Rotate
@@ -24,9 +26,7 @@ Microsoft.VisualBasic.Imaging.Drawing3D.Model.Rotate(System.Int32,System.Drawing
 > http://codentronix.com/2011/05/25/rotating-solid-cube-using-vb-net-and-gdi/
 
 
-
 ### Properties
 
 #### Length
 The @"T:Microsoft.VisualBasic.Imaging.Drawing3D.Point3D" data vector array length
-

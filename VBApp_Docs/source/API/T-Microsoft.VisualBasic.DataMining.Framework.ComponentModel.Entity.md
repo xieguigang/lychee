@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.ComponentModel](N-Micros
 
 {Properties} -> Class
 
+
+
 ### Methods
 
 #### CastTo
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DataMining.Framework.ComponentModel.Entity.CastTo(Microsof
 |Parameter Name|Remarks|
 |--------------|-------|
 |row|第一个元素为分类，其余元素为属性|
-
-
 
 
 

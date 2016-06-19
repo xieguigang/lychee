@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### Jet
@@ -16,9 +18,7 @@ Microsoft.VisualBasic.Imaging.ColorMap.Jet
 *
 
 
-
 ### Properties
 
 #### Alpha
 Alpha value in the RBG color function.
-

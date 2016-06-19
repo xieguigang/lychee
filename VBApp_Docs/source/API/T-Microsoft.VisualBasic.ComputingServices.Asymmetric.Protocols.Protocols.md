@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.Asymmetric.Protocols](N-Mic
 
 
 
+
 ### Properties
 
 #### GetInstanceList
@@ -19,4 +20,3 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.Asymmetric.Protocols](N-Mic
 物理机上面的服务节点在启动之后向主节点进行自身网络位置的注册
 #### ShutdownInstance
 关闭目标物理机上面的一个指定编号的实例进程
-

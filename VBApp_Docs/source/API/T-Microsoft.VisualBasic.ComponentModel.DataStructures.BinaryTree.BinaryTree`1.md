@@ -12,6 +12,8 @@ The Binary tree itself.
  The advantage of a binary tree is its fast insert and lookup
  characteristics. This version does not deal with tree balancing.
 
+
+
 ### Methods
 
 #### #ctor
@@ -131,11 +133,9 @@ Return the tree depicted as a simple string, useful for debugging, eg
 _returns: Returns the tree_
 
 
-
 ### Properties
 
 #### _Count
 Points to the root of the tree
 #### Length
 Returns the number of nodes in the tree
-

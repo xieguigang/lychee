@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Some extension methods for @"T:System.Random" for creating a few more kinds of random stuff.
 
+> Imports from https://github.com/rvs76/superbest-random.git 
+
+
 ### Methods
 
 #### NextBoolean
@@ -82,8 +85,6 @@ Shuffles a list in O(n) time by using the Fisher-Yates/Knuth algorithm.
 |--------------|-------|
 |r|-|
 |list|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection](N-Oracle.LinuxCompatibi
 
 
 
+
+
 ### Methods
 
 #### __getObject``1
@@ -107,8 +109,6 @@ Oracle.LinuxCompatibility.MySQL.Reflection.DbReflector.ReadFirst``1(System.Data.
 |Parameter Name|Remarks|
 |--------------|-------|
 |Reader|-|
-
-
 
 
 

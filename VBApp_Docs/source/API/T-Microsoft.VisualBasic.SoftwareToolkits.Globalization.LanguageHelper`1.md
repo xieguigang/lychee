@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.Globalization](N-Microsoft.V
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -32,10 +34,8 @@ Microsoft.VisualBasic.SoftwareToolkits.Globalization.LanguageHelper`1.__init(Sys
 
 
 
-
 ### Properties
 
 #### Text
 Get the string that store as specific language.
  (获取指定语言的字符串)
-

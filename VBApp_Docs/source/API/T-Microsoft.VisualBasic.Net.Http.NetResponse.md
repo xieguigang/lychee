@@ -15,6 +15,8 @@ The following is a list of Hypertext Transfer Protocol (HTTP) response status co
 
  Microsoft IIS sometimes uses additional Decimal Sub-codes To provide more specific information, but these are Not listed here.
 
+
+
 ### Methods
 
 #### IsHTTP_RFC
@@ -26,7 +28,6 @@ Microsoft.VisualBasic.Net.Http.NetResponse.IsHTTP_RFC(Microsoft.VisualBasic.Net.
 |Parameter Name|Remarks|
 |--------------|-------|
 |response|-|
-
 
 
 
@@ -328,4 +329,3 @@ Microsoft.VisualBasic.Net.Http.NetResponse.IsHTTP_RFC(Microsoft.VisualBasic.Net.
 505 HTTP Version Not Supported |
  The server does Not support the HTTP protocol version used In the request.
  (服务器所不支持的协议类型)
-

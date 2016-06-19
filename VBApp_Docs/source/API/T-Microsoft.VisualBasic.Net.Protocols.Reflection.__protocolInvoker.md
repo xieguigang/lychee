@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Protocols.Reflection](N-Microsoft.VisualB
 
 
 
+
+
 ### Methods
 
 #### InvokeProtocol3
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.Net.Protocols.Reflection.__protocolInvoker.InvokeProtocol3
 |CA|@"P:Microsoft.VisualBasic.Net.SSL.Certificate.uid"|
 |request|-|
 |remoteDevice|-|
-
-
 
 
 

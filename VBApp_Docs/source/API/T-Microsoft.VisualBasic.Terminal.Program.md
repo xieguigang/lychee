@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
+
 ### Methods
 
 #### Run
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.Terminal.Program.Run(Microsoft.VisualBasic.Terminal.Abstra
 |bar|-|
 |wait|Sleep time of the thread|
 |[end]|Ends at this iteration|
-
-
 
 
 

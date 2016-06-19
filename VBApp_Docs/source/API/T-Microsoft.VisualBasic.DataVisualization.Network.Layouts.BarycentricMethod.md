@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Layouts](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### doLayout
@@ -32,8 +34,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Layouts.BarycentricMethod.ForceD
 |Network|-|
 |cutoff|-|
 |_DEBUG_EXPORT|-|
-
-
 
 
 

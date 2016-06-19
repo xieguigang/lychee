@@ -8,6 +8,35 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 Defines a generalized type-specific comparison method that a value type or class
  implements to order or sort its instances.
 
+> 
+> 
+>  Summary:
+> 
+>      Compares the current instance with another object of the same type and returns
+>      an integer that indicates whether the current instance precedes, follows, or
+>      occurs in the same position in the sort order as the other object.
+> 
+>  Returns:
+> 
+>      A value that indicates the relative order of the objects being compared. The
+>      return value has these meanings:
+> 
+>      1. Value Meaning Less than zero
+>         This instance precedes obj in the sort order.
+> 
+>      2. Zero
+>         This instance occurs in the same position in the sort order as obj.
+> 
+>      3. Greater than zero
+>         This instance follows obj in the sort order.
+> 
+>  Exceptions:
+> 
+>    T:System.ArgumentException:
+>      obj is not the same type as this instance.
+>  
+
+
 ### Methods
 
 #### Equals``1
@@ -79,8 +108,6 @@ The max element its index in the source collection.
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-
-
 
 
 

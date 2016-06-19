@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Platform.Plugins](N-SMRUCC.HTTPInternal.Platfor
 
 
 
+
+
 ### Methods
 
 #### handleVisit
@@ -19,8 +21,6 @@ SMRUCC.HTTPInternal.Platform.Plugins.PluginBase.handleVisit(SMRUCC.HTTPInternal.
 |--------------|-------|
 |p|-|
 |success|-|
-
-
 
 
 

@@ -9,6 +9,8 @@ A standard input/output compatibility package that makes VisualBasic console
  program easily running on the Linux server or mac osx operating system.
  (一个用于让VisualBasic应用程序更加容易的运行于Linux服务器或者MAC系统之上的标准输入输出流的系统兼容包)
 
+
+
 ### Methods
 
 #### __testEquals
@@ -34,18 +36,6 @@ Microsoft.VisualBasic.Terminal.STDIO.cat(System.String[])
 |out|-|
 
 
-#### Format
-```csharp
-Microsoft.VisualBasic.Terminal.STDIO.Format(System.String,System.String[])
-```
-Formatting a string using some formation arguments.(使用一些指定的格式化参数来格式化一个字符串)
-
-|Parameter Name|Remarks|
-|--------------|-------|
-|s|-|
-|Args|-|
-
-
 #### MsgBox
 ```csharp
 Microsoft.VisualBasic.Terminal.STDIO.MsgBox(System.String,Microsoft.VisualBasic.MsgBoxStyle)
@@ -65,9 +55,9 @@ Microsoft.VisualBasic.Terminal.STDIO.MsgBox(System.String,Microsoft.VisualBasic.
  @"F:Microsoft.VisualBasic.MsgBoxStyle.YesNoCancel"|
 
 
-#### Printf
+#### printf
 ```csharp
-Microsoft.VisualBasic.Terminal.STDIO.Printf(System.String,System.String[])
+Microsoft.VisualBasic.Terminal.STDIO.printf(System.String,System.Object[])
 ```
 Output the string to the console using a specific formation.(按照指定的格式将字符串输出到终端窗口之上，请注意，这个函数除了将数据流输出到标准终端之外，还会输出到调试终端)
 
@@ -89,13 +79,20 @@ Read the string that user input on the console to the function paramenter.
 |s|-|
 
 
+#### ZeroFill
+```csharp
+Microsoft.VisualBasic.Terminal.STDIO.ZeroFill(System.String,System.Int32)
+```
+Fill the number string with specific length of ZERO sequence to generates the fixed width string.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|sn|-|
+|len|-|
+
 
 
 ### Properties
 
 #### Eschs
 A dictionary list of the escape characters.(转义字符列表)
-#### IFormater
-A dictionary list of the method of format a string provider class object.
- (标准输入输出对象的格式化方法所提供的对象的字典)
-

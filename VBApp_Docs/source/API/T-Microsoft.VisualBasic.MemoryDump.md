@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### __dumpInvoke
@@ -19,8 +21,6 @@ Create memory dump for a class object instance
 |--------------|-------|
 |obj|-|
 |DumpLevel|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Persistent.Application](N-Microsoft.Visua
 
 消息都是经过加密操作了的
 
+
+
 ### Methods
 
 #### #ctor
@@ -37,11 +39,9 @@ Microsoft.VisualBasic.Net.Persistent.Application.SSLPushServices.Install(Microso
 
 
 
-
 ### Properties
 
 #### CA
 共有密匙
 #### PrivateKeys
 连接到当前的这个服务器上面的客户端的私有密匙列表
-

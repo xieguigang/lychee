@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 
 
 
+
+
 ### Methods
 
 #### UpdateGraphics
@@ -21,10 +23,8 @@ Draw the faces using the PAINTERS ALGORITHM (distant faces first, closer faces l
 
 
 
-
 ### Properties
 
 #### order
 Draw the faces using the PAINTERS ALGORITHM (distant faces first, closer faces last).
  (表面的绘制的顺序)
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### GenerateMapping
@@ -48,8 +50,6 @@ Trims the data ranges,
 |Dbl|-|
 |min|-|
 |max|-|
-
-
 
 
 

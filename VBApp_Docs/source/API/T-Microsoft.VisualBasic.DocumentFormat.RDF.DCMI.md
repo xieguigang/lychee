@@ -8,6 +8,15 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 RDF 都柏林核心元数据倡议
  (http://w3school.com.cn/rdf/rdf_dublin.asp)
 
+> 
+>  都柏林核心元数据倡议 (DCMI) 已创建了一些供描述文档的预定义属性。
+>  
+>  Dublin 核心
+>  RDF 是元数据（关于数据的数据）。RDF 被用于描述信息资源。
+>  都柏林核心是一套供描述文档的预定义属性。
+>  第一份都柏林核心属性是于1995年 在俄亥俄州的都柏林的元数据工作组被定义的，目前由都柏林元数据倡议来维护。
+>  
+
 
 
 ### Properties
@@ -42,4 +51,3 @@ RDF 都柏林核心元数据倡议
 一个给资源起的名称
 #### Type
 资源内容的种类或类型。
-

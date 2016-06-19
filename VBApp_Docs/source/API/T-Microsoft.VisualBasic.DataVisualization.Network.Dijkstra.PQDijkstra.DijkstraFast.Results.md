@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -28,11 +30,9 @@ Prepares a Dijkstra results package.
 
 
 
-
 ### Properties
 
 #### MinimumDistance
 
 #### MinimumPath
-
 

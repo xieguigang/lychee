@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel.Tasks](N-Microsoft.VisualBasic.Paral
 
 Represents the status of an asynchronous operation.(背景线程加载数据)
 
+
+
 ### Methods
 
 #### GetValue
@@ -22,9 +24,7 @@ Microsoft.VisualBasic.Parallel.Tasks.AsyncHandle`1.Run
 Start the background task thread.(启动后台背景线程)
 
 
-
 ### Properties
 
 #### IsCompleted
 Gets a value that indicates whether the asynchronous operation has completed.
-

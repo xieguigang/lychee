@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits](N-Microsoft.VisualBasic.Sof
 
 Tools for generate the program change log document.
 
+
+
 ### Methods
 
 #### #ctor
@@ -31,8 +33,6 @@ Microsoft.VisualBasic.SoftwareToolkits.ChangeLog.AppendChangeInformation(System.
 |--------------|-------|
 |Changes|-|
 |version|假若为空的话，会自动的根据上一次版本的号码叠加1|
-
-
 
 
 

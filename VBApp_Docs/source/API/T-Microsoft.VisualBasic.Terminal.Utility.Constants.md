@@ -9,6 +9,7 @@ Constants used with PInvoke methods
 
 
 
+
 ### Properties
 
 #### FOCUS_EVENT
@@ -24,4 +25,3 @@ Event contains window change event record
 Event contains key event record
 #### WINDOW_BUFFER_SIZE_EVENT
 Event contains mouse event record
-

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 Represents a collection of keys and values.To browse the .NET Framework source
  code for this type, see the Reference Source.
 
+
+
 ### Methods
 
 #### #ctor
@@ -111,7 +113,5 @@ Gets the value associated with the specified key.
 
 _returns: When this method returns, the value associated with the specified key, if the
  key is found; otherwise, the default value for the type of the value parameter._
-
-
 
 

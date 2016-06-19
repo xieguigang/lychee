@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Net](N-Microsoft.VisualBasic.Net.html)_
 Socket listening object which is running at the server side asynchronous able multiple threading.
  (运行于服务器端上面的Socket监听对象，多线程模型)
 
+
+
 ### Methods
 
 #### #ctor
@@ -90,7 +92,6 @@ Server reply the processing result of the request from the client.
 
 
 
-
 ### Properties
 
 #### disposedValue
@@ -101,4 +102,3 @@ The server services listening on this local port.(当前的这个服务器对象
 This function pointer using for the data request handling of the data request from the client socket. 
  [Public Delegate Function DataResponseHandler(str As @"T:System.String", RemoteAddress As @"T:System.Net.IPEndPoint") As @"T:System.String"]
  (这个函数指针用于处理来自于客户端的请求)
-

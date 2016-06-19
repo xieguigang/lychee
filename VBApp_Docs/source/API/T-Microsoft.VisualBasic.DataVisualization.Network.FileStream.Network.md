@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.FileStream](N-Micro
 
 
 
+
+
 ### Methods
 
 #### Links
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DataVisualization.Network.FileStream.Network.Links(System.
 |Parameter Name|Remarks|
 |--------------|-------|
 |node|-|
-
-
 
 
 

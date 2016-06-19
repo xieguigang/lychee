@@ -8,6 +8,12 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra
 Implements a generalized Dijkstra's algorithm to calculate 
  both minimum distance and minimum path.
 
+>  
+>  For this algorithm, all nodes should be provided, and handled 
+>  in the delegate methods, including the start and finish nodes. 
+>  
+
+
 ### Methods
 
 #### #ctor
@@ -29,8 +35,6 @@ Creates an instance of the @"N:Microsoft.VisualBasic.DataVisualization.Network.D
  An optional delegate that can provide a small subset of nodes 
  that a given node may be connected to. 
  |
-
-
 
 
 

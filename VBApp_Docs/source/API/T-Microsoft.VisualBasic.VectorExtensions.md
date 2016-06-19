@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### GetIndexes``1
@@ -44,8 +46,6 @@ Microsoft.VisualBasic.VectorExtensions.Split``1(System.Collections.Generic.IEnum
 |--------------|-------|
 |source|-|
 |delimiter|和字符串的Split函数一样，这里作为delimiter的元素都不会出现在结果之中|
-
-
 
 
 

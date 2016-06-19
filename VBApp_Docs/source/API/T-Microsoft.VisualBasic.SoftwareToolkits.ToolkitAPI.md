@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits](N-Microsoft.VisualBasic.Sof
 
 
 
+
+
 ### Methods
 
 #### RegisterCOMDll
@@ -18,8 +20,6 @@ Register a .NET dll file as a COM component.(将某一个.NET语言所编写的D
 |Parameter Name|Remarks|
 |--------------|-------|
 |COM_Dll|-|
-
-
 
 
 

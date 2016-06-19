@@ -9,6 +9,8 @@ Provides a System.IO.Stream for a file, supporting both synchronous and asynchro
  read and write operations.To browse the .NET Framework source code for this type,
  see the Reference Source.
 
+
+
 ### Methods
 
 #### #ctor
@@ -257,7 +259,6 @@ Writes a byte to the current position in the file stream.
 
 
 
-
 ### Properties
 
 #### CanRead
@@ -281,4 +282,3 @@ Gets the length in bytes of the stream.
 Gets the name of the FileStream that was passed to the constructor.
 #### Position
 Gets or sets the current position of this stream.
-

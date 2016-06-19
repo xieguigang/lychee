@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
 ### Properties
 
 #### p
 指向@"F:Microsoft.VisualBasic.Terminal.HistoryStacks._historyList"
-

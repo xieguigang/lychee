@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)_
 
 Wrapper for the returns value of api @"M:Microsoft.VisualBasic.Win32.GetLastErrorAPI.GetLastError"
 
+
+
 ### Methods
 
 #### GetLastError
@@ -29,7 +31,5 @@ Microsoft.VisualBasic.Win32.GetLastErrorAPI.GetLastError
 >  才应访问GetLastError；这时能保证获得有效的结果。SetLastError函数主要在对api函数进行模拟的dll函数中使用，
 >  所以对vb应用程序来说是没有意义的
 >  
-
-
 
 

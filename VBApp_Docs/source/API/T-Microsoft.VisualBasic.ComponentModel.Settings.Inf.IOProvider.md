@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings.Inf](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### WriteProfile``1
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.ComponentModel.Settings.Inf.IOProvider.WriteProfile``1(``0
 |Parameter Name|Remarks|
 |--------------|-------|
 |x|-|
-
-
 
 
 

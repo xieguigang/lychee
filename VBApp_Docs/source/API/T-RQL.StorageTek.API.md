@@ -7,6 +7,8 @@ _namespace: [RQL.StorageTek](N-RQL.StorageTek.html)_
 
 系统自有的存储API
 
+
+
 ### Methods
 
 #### DIRJson
@@ -34,9 +36,7 @@ RQL.StorageTek.API.XmlList(System.String,System.Type)
 
 
 
-
 ### Properties
 
 #### InternalAPIs
 系统自带的存储API
-

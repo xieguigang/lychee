@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.DynamicCode](N-Microsoft.Visua
 
 
 
+
 ### Properties
 
 #### Code
 Closure token code
-

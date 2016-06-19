@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 
 
+
 ### Properties
 
 #### Weight
 两个神经元之间的连接强度
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF.Framework.DynamicCode.VBC]
 
 
 
+
+
 ### Methods
 
 #### DeclareTypeDefine
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DocumentFormat.RDF.Framework.DynamicCode.VBC.CodeDOMCreato
 |Parameter Name|Remarks|
 |--------------|-------|
 |RDFType|-|
-
-
 
 
 

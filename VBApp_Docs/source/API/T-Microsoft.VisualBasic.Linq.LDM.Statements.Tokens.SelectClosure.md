@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.Tokens](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -22,9 +24,7 @@ Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.SelectClosure.#ctor(Microsoft.V
 
 
 
-
 ### Properties
 
 #### Projects
 通过Select表达式所产生的数据投影
-

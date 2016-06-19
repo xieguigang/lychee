@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Platform](N-SMRUCC.HTTPInternal.Platform.html)_
 
 服务基础类，REST API的开发需要引用当前的项目
 
+
+
 ### Methods
 
 #### #ctor
@@ -31,8 +33,6 @@ GET
 |Parameter Name|Remarks|
 |--------------|-------|
 |p|-|
-
-
 
 
 

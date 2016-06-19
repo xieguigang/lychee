@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 
 
+
+
 ### Methods
 
 #### Binarization
@@ -28,7 +30,5 @@ Microsoft.VisualBasic.Imaging.hcBitmap.Binarization(System.Drawing.Bitmap@,Micro
 >  lock handle In place-Get/Set value/unlock handle. It Is the most inefficient way To manipulate bitmaps In .NET. 
 >  The author should read about @"M:System.Drawing.Bitmap.LockBits(System.Drawing.Rectangle,System.Drawing.Imaging.ImageLockMode,System.Drawing.Imaging.PixelFormat)" first.
 >  
-
-
 
 

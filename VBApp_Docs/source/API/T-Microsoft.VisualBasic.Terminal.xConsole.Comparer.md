@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal.xConsole](N-Microsoft.VisualBasic.Te
 
 This can compute the input then return back the most appropriate word.
 
+
+
 ### Methods
 
 #### #ctor
@@ -28,7 +30,6 @@ Microsoft.VisualBasic.Terminal.xConsole.Comparer.Find(System.String,Microsoft.Vi
 Find a word from an input abbreviation (es n > name)
 
 
-
 ### Properties
 
 #### Description
@@ -37,4 +38,3 @@ Descrizione
 Init to 0!
 #### Word
 This is the word to find
-

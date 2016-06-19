@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream](N-Microsof
 
 A comma character seperate table file that can be read and write in the EXCEL.(一个能够被Excel程序所读取的表格文件)
 
+
+
 ### Methods
 
 #### __createTableVector
@@ -294,7 +296,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.File.Transpose
 对当前的csv矩阵进行转置之后返回新的文件
 
 
-
 ### Properties
 
 #### _innerTable
@@ -311,4 +312,3 @@ Gets a row in the document stream object.
 Row Counts
 #### Width
 Get the max width number of the rows in the table.(返回表中的元素最多的一列的列数目)
-

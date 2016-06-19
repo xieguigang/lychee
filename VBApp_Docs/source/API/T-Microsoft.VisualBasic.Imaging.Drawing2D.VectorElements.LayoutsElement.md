@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### InvokeDrawing
@@ -22,9 +24,7 @@ Microsoft.VisualBasic.Imaging.Drawing2D.VectorElements.LayoutsElement.InvokeDraw
 _returns: 函数返回当前元素在绘制之后所占据的区域_
 
 
-
 ### Properties
 
 #### EnableAutoLayout
 默认是允许自动组织布局的
-

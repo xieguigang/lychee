@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.Globalization](N-Microsoft.V
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.SoftwareToolkits.Globalization.LanguageAttribute.#ctor(Sys
 |Language|The language of the target object.|
 |Context|-|
 |langEnum|This type define should be a enum type.|
-
-
 
 
 

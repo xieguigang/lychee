@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:13 AM
 ---
 
 [App](T-Microsoft.VisualBasic.App.html)
@@ -35,7 +35,6 @@ date: 6/16/2016 4:45:50 AM
 [Ranks](T-Microsoft.VisualBasic.Ranks.html)
 [ScaleMaps](T-Microsoft.VisualBasic.ScaleMaps.html)
 [SetAPI](T-Microsoft.VisualBasic.SetAPI.html)
-[SingleInstanceFormEntry`1](T-Microsoft.VisualBasic.SingleInstanceFormEntry`1.html)
 [StringHelpers](T-Microsoft.VisualBasic.StringHelpers.html)
 [StrUtils](T-Microsoft.VisualBasic.StrUtils.html)
 [TextDoc](T-Microsoft.VisualBasic.TextDoc.html)

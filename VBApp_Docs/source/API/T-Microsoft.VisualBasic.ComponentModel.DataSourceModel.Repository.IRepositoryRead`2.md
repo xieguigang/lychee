@@ -7,6 +7,12 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository](N-
 
 Interface to support reading entities from the backing store
 
+> 
+>  In this architecture there is a seperate read and write interface but often this
+>  pattern has just the one interface for both functions
+>  
+
+
 ### Methods
 
 #### Exists
@@ -55,8 +61,6 @@ Get a set of entities from the repository that match the where clause
 |clause|
  A function to apply to filter the results from the repository
  |
-
-
 
 
 

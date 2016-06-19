@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### __getImageFromBase64
@@ -42,8 +44,6 @@ Convert the Image from Input to Base64 Encoded String
 |Parameter Name|Remarks|
 |--------------|-------|
 |ImageInput|-|
-
-
 
 
 

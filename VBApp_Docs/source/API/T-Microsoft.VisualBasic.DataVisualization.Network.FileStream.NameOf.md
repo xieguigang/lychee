@@ -9,6 +9,7 @@ The names value for edge type @"T:Microsoft.VisualBasic.DataVisualization.Networ
 
 
 
+
 ### Properties
 
 #### REFLECTION_ID_MAPPING_CONFIDENCE
@@ -23,4 +24,3 @@ The names value for edge type @"T:Microsoft.VisualBasic.DataVisualization.Networ
 @"P:Microsoft.VisualBasic.DataVisualization.Network.FileStream.Node.NodeType"
 #### REFLECTION_ID_MAPPING_TO_NODE
 @"P:Microsoft.VisualBasic.DataVisualization.Network.FileStream.NetworkEdge.ToNode"
-

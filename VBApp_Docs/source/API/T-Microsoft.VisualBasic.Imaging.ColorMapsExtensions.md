@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 Create Custom Color Maps
 
+> http://www.codeproject.com/Articles/18150/Create-Custom-Color-Maps-in-C
+
+
 ### Methods
 
 #### ColorSequence
@@ -20,8 +23,6 @@ Microsoft.VisualBasic.Imaging.ColorMapsExtensions.ColorSequence(Microsoft.Visual
 |Maps|-|
 |map|@"P:Microsoft.VisualBasic.Imaging.ColorMap.MaxDepth"|
 |min|value should smaller than @"P:Microsoft.VisualBasic.Imaging.ColorMap.MaxDepth" in parameter **map**|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.Schema](N-Oracle.LinuxCo
 
 The table schema that we define on the custom attributes of a Class.
 
+
+
 ### Methods
 
 #### __indexing
@@ -23,7 +25,6 @@ Indexing from the primary key attributed field.
 
 
 
-
 ### Properties
 
 #### Database
@@ -35,5 +36,4 @@ The index field when execute the update/delete sql.
 #### PrimaryFields
 主键，主要根据这个属性来生成WHERE条件
 #### TableName
-
 

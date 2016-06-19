@@ -9,6 +9,7 @@ State object for reading client data asynchronously
 
 
 
+
 ### Properties
 
 #### BufferSize
@@ -19,4 +20,3 @@ Received data.
 Receive buffer.
 #### workSocket
 Client socket.
-

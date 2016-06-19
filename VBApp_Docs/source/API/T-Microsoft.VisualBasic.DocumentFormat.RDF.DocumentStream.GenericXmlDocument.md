@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF.DocumentStream](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### GetNodesValue
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DocumentFormat.RDF.DocumentStream.GenericXmlDocument.GetNo
 |Parameter Name|Remarks|
 |--------------|-------|
 |NodePath|Path使用/或者\进行分割|
-
-
 
 
 

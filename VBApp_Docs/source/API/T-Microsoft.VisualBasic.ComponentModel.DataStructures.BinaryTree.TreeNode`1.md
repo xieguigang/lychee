@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree](N-M
 
 Define tree nodes
 
+
+
 ### Methods
 
 #### #ctor
@@ -28,9 +30,7 @@ Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.TreeNode`1.GetEnu
 最多只有两个元素
 
 
-
 ### Properties
 
 #### Count
 递归的得到子节点的数目
-

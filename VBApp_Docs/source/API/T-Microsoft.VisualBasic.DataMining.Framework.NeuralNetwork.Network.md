@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -33,8 +35,6 @@ Compute result output for the neuron network **inputs**
 |Parameter Name|Remarks|
 |--------------|-------|
 |inputs|-|
-
-
 
 
 

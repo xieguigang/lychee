@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 
 
 
+
+
 ### Methods
 
 #### GetSetLength
@@ -30,8 +32,6 @@ Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols.API.GetSetReadPosit
 |--------------|-------|
 |pos|-100表示set|
 |handle|-|
-
-
 
 
 

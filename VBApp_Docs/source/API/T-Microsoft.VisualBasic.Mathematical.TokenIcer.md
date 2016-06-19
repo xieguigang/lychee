@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 
 
+
+
 ### Methods
 
 #### __parseDouble
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Mathematical.TokenIcer.__parseDouble(System.CharEnumerator
 |--------------|-------|
 |str|-|
 |token|-|
-
-
 
 
 

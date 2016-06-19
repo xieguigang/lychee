@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Wrapper for the file operations.
 
+
+
 ### Methods
 
 #### Peeks
@@ -25,8 +27,6 @@ Microsoft.VisualBasic.LargeTextFile.Tails(System.String,System.Int32)
 |--------------|-------|
 |path|-|
 |length|字符的数目|
-
-
 
 
 

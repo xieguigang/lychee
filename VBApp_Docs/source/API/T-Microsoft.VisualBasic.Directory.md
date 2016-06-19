@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 A wrapper object for the processing of relative file path.
 
+
+
 ### Methods
 
 #### #ctor
@@ -42,8 +44,6 @@ Determined that the input file path is a absolute path or not?
 |Parameter Name|Remarks|
 |--------------|-------|
 |file|-|
-
-
 
 
 

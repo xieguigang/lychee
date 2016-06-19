@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging](N-Microsoft.VisualBasic.Imaging.html
 
 GDI+ device handle for encapsulates a GDI+ drawing surface.(GDI+绘图设备句柄)
 
+
+
 ### Methods
 
 #### CreateDevice
@@ -102,7 +104,6 @@ Microsoft.VisualBasic.Imaging.GDIPlusDeviceHandle.Save(System.String,System.Draw
 
 
 
-
 ### Properties
 
 #### Center
@@ -121,4 +122,3 @@ GDI+ device handle memory.(GDI+设备之中的图像数据)
 Gets or sets the interpolation mode associated with this System.Drawing.Graphics.
 #### Size
 Gets the width and height, in pixels, of this image.(图像的大小)
-

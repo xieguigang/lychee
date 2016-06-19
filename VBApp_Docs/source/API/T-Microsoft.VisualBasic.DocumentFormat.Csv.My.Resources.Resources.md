@@ -9,6 +9,7 @@ A strongly-typed resource class, for looking up localized strings, etc.
 
 
 
+
 ### Properties
 
 #### Culture
@@ -55,4 +56,3 @@ Looks up a localized string similar to <!DOCTYPE html>
 </html>.
 #### ResourceManager
 Returns the cached ResourceManager instance used by this class.
-

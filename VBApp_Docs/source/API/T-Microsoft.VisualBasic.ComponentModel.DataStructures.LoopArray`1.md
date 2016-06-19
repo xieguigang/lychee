@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 
 
 
+
+
 ### Methods
 
 #### GET
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 Microsoft.VisualBasic.ComponentModel.DataStructures.LoopArray`1.GET
 ```
 Gets the next elements in the array, is move to end, then the index will moves to the array begining position.
-
-
 
 

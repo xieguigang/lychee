@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 
 
+
 ### Properties
 
 #### CLI_MAN
@@ -19,4 +20,3 @@ Analysis Tools API that applied on your scientific research or industry producti
 API for facilities of the software development.
 #### UtilityTools
 Something small utilities for facility the scripting, makes your programming more easily.
-

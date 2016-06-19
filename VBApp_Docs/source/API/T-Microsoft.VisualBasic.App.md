@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 Provides information about, and means to manipulate, the current environment Application information collection.
  (More easily runtime environment information provider on @"F:System.PlatformID.Unix"/LINUX platform for visualbasic program.)
 
+
+
 ### Methods
 
 #### __completeCLI
@@ -202,7 +204,6 @@ Function returns the file path of the application log file.
  (函数返回的是日志文件的文件路径)
 
 
-
 ### Properties
 
 #### __GCThread
@@ -256,4 +257,3 @@ The directory path of the system temp data.
 Getting the path of the home directory
 #### Version
 Gets the product version associated with this application.
-

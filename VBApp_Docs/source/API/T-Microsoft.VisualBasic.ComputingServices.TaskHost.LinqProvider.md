@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 执行得到数据集合然后分独传输数据元素
 
+
+
 ### Methods
 
 #### #ctor
@@ -37,7 +39,6 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.LinqProvider.Moves(System.Int32
 
 
 
-
 ### Properties
 
 #### __svrThread
@@ -46,4 +47,3 @@ Microsoft.VisualBasic.ComputingServices.TaskHost.LinqProvider.Moves(System.Int32
 Linq数据源的集合的类型信息
 #### IsOpen
 当前的这个数据源服务是否已经正确的开启了？
-

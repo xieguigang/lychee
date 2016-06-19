@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### EuclideanDistance
@@ -123,8 +125,6 @@ Logical true values are regarded as one, false values as zero. For historical re
 |Parameter Name|Remarks|
 |--------------|-------|
 |bc|-|
-
-
 
 
 

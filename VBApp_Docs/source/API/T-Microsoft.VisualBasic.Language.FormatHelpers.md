@@ -7,19 +7,19 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 
 
 
+
+
 ### Methods
 
 #### xFormat
 ```csharp
 Microsoft.VisualBasic.Language.FormatHelpers.xFormat(System.String)
 ```
-@"M:Microsoft.VisualBasic.Terminal.STDIO.Format(System.String,System.String[])"
+@"M:Microsoft.VisualBasic.Terminal.STDIO__.CFormatProvider.sprintf(System.String,System.Object[])"
 
 |Parameter Name|Remarks|
 |--------------|-------|
 |s|-|
-
-
 
 
 

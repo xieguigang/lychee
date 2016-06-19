@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.MathApp](N-Microsoft.VisualBasic
 
 Base class for value items
 
+
+
 ### Methods
 
 #### CreateCopy
@@ -14,7 +16,6 @@ Base class for value items
 Microsoft.VisualBasic.Mathematical.MathApp.ValueItem`1.CreateCopy
 ```
 Creates a copy of the value item
-
 
 
 ### Properties
@@ -25,4 +26,3 @@ The value for X for calculations
 The actual value for X
 #### Y
 Y value of the data item
-

@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 
 
 
+
 ### Properties
 
 #### CopyDirectory
@@ -23,4 +24,3 @@ Returns a read-only collection of all available drive names.
 在服务器上面打开一个文件句柄
 #### ReadBuffer
 Reads a block of bytes from the stream and writes the data in a given buffer.
-

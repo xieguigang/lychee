@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository](N-
 
 An exception that occured when reading from the repository backing store
 
+> 
+>  The inner exception is from whatever
+>  
 
 
 

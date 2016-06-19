@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -86,7 +88,6 @@ Remove a object instance element in this list object that have a specify handler
 
 
 
-
 ### Properties
 
 #### _EmptyListStack
@@ -104,4 +105,3 @@ Get or set a object instance data that has specify handle value
 #### ListData
 Get the logical list of the data store in this list object instance.
  (获取逻辑形式的列表数据)
-

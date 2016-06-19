@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### API
@@ -173,6 +175,20 @@ Is a inherits from b
 |b|基本类型|
 
 
+#### IsNumericType
+```csharp
+Microsoft.VisualBasic.EmitReflection.IsNumericType(System.Object)
+```
+Determines whether the specified value is of numeric type.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|o|The object to check.|
+
+_returns: 
+ true if o is a numeric type; otherwise, false.
+ _
+
 #### ModuleVersion
 ```csharp
 Microsoft.VisualBasic.EmitReflection.ModuleVersion(System.Type)
@@ -193,8 +209,6 @@ Get the scripting namespace value from @"T:Microsoft.VisualBasic.CommandLine.Ref
 |Parameter Name|Remarks|
 |--------------|-------|
 |__nsType|-|
-
-
 
 
 

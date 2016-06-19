@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 Type of @"T:System.Int32" pointer class to the @"T:System.Array" class.
  (@"T:System.Int32"类型，一般用来进行数组操作的)
 
+
+
 ### Methods
 
 #### #ctor
@@ -75,9 +77,7 @@ Automatically increasing self +1 and then returns the previous value.(自增1，
 
 
 
-
 ### Properties
 
 #### __index
 Current read position
-

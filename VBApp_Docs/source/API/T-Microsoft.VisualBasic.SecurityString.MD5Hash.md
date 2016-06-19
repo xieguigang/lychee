@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SecurityString](N-Microsoft.VisualBasic.Secur
 
 
 
+
+
 ### Methods
 
 #### GetFileHashString
@@ -107,8 +109,6 @@ Verify a hash against a string.
 |--------------|-------|
 |input|-|
 |comparedHash|-|
-
-
 
 
 

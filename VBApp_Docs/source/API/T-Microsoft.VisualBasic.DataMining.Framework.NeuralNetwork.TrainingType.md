@@ -9,10 +9,10 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 
 
+
 ### Properties
 
 #### Epoch
 @"F:Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.Helpers.MaxEpochs"
 #### MinimumError
 @"F:Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.Helpers.MinimumError"
-

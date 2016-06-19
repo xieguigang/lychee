@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Ranges](N-Microsoft.VisualBasi
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -41,8 +43,6 @@ Microsoft.VisualBasic.ComponentModel.Ranges.OrderSelector`1.SelectUntilLessThan(
 |Parameter Name|Remarks|
 |--------------|-------|
 |n|-|
-
-
 
 
 

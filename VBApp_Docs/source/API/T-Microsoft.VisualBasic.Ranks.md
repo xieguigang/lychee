@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### Best``1
@@ -21,7 +23,5 @@ Microsoft.VisualBasic.Ranks.Best``1(System.Collections.Generic.IEnumerable{``0},
 |Evaluate|-|
 
 _returns: Ranks值最小的是认为最好的_
-
-
 
 

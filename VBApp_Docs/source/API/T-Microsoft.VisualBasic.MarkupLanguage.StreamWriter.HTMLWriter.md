@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage.StreamWriter](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### Save
@@ -30,8 +32,6 @@ Generates document string from the html data model.
 |Parameter Name|Remarks|
 |--------------|-------|
 |doc|-|
-
-
 
 
 

@@ -10,6 +10,7 @@ The file handle object on the remote server machine.
 
 
 
+
 ### Properties
 
 #### FileName
@@ -18,4 +19,3 @@ The file location on the remote file system.
 远程机器上面唯一标示的文件句柄值
 #### HashCode
 The hash code value on the remote services program.
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting](N-Microsoft.VisualBasic.Scripting.
 
 
 
+
+
 ### Methods
 
 #### As``1
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.Scripting.Casting.CastInteger(System.String)
 |Parameter Name|Remarks|
 |--------------|-------|
 |obj|-|
-
-
 
 
 

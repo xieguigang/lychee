@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Helpers](N-Microsoft.VisualBasic
 
 
 
+
+
 ### Methods
 
 #### Convert
@@ -25,7 +27,5 @@ Convert a logical expression into a math expression
 >  True -> 1
 >  False -> 0
 >  
-
-
 
 

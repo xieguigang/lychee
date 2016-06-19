@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 Allows you to color and animate the console. ~ overpowered.it ~ TheTrigger - 💸
 
+> http://www.codeproject.com/Tips/626856/xConsole-Project
+
+
 ### Methods
 
 #### ClearInput
@@ -204,7 +207,6 @@ Allows you to write in the console-output with custom colors, followed by the cu
 
 
 
-
 ### Properties
 
 #### BACKGROUND_COLOR
@@ -221,4 +223,3 @@ My ASM FILE
 Default line terminator
 #### RDN
 Random number Generator
-

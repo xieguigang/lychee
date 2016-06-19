@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 Expression Evaluation Engine
 
+
+
 ### Methods
 
 #### Evaluate
@@ -47,9 +49,7 @@ Microsoft.VisualBasic.Mathematical.Expression.GetValue(System.String)
 
 
 
-
 ### Properties
 
 #### DefaultEngine
 The default expression evaluation engine.
-

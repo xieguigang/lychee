@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 
 
 
+
+
 ### Methods
 
 #### op_Addition
@@ -19,8 +21,6 @@ Returns current line in the array and then pointer moves to next.
 |--------------|-------|
 |array|-|
 |i|-|
-
-
 
 
 

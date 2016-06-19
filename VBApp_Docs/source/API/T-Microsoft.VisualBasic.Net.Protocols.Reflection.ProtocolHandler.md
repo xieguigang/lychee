@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Protocols.Reflection](N-Microsoft.VisualB
 
 这个模块只处理@"T:Microsoft.VisualBasic.Net.Abstract.DataRequestHandler"类型的接口
 
+
+
 ### Methods
 
 #### #ctor
@@ -46,9 +48,7 @@ Microsoft.VisualBasic.Net.Protocols.Reflection.ProtocolHandler.SafelyCreateObjec
 
 
 
-
 ### Properties
 
 #### DeclaringType
 这个类型建议一般为某种枚举类型
-

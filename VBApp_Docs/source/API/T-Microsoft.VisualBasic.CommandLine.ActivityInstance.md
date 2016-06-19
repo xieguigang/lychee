@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 Interpreter for object instance.(对于@"T:Microsoft.VisualBasic.CommandLine.Interpreter"而言，其仅解析静态的方法，二本对象则实例方法和静态方法都进行解析)
 
+
+
 ### Methods
 
 #### #ctor
@@ -30,8 +32,6 @@ Microsoft.VisualBasic.CommandLine.ActivityInstance.__getsAllCommands(System.Type
 |--------------|-------|
 |Type|-|
 |[Throw]|-|
-
-
 
 
 

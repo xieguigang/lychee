@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.DynamicCode](N-Microsoft.Visua
 
 
 
+
 ### Properties
 
 #### obj
 名字复杂一些，避免在进行动态编译的时候的命名冲突
-

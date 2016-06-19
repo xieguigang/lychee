@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 
 
+
+
 ### Methods
 
 #### op_LeftShift
@@ -55,8 +57,6 @@ Add a search options
 |--------------|-------|
 |ls|-|
 |l|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -41,8 +43,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Dijkstra.PQDijkstra.PQDijkstraPr
 |Parameter Name|Remarks|
 |--------------|-------|
 |startingNode|-|
-
-
 
 
 

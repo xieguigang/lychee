@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text.Xml](N-Microsoft.VisualBasic.Text.Xml.ht
 
 
 
+
+
 ### Methods
 
 #### ToString
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Text.Xml](N-Microsoft.VisualBasic.Text.Xml.ht
 Microsoft.VisualBasic.Text.Xml.XmlDeclaration.ToString
 ```
 <?xml version="{@"F:Microsoft.VisualBasic.Text.Xml.XmlDeclaration.version"}" encoding="{@"F:Microsoft.VisualBasic.Text.Xml.XmlDeclaration.encoding"}" standalone="{@"F:Microsoft.VisualBasic.Text.Xml.XmlDeclaration.standalone"}"?>
-
-
 
 

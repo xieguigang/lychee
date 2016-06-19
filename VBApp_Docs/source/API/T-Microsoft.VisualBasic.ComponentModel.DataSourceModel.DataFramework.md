@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel](N-Microsoft.V
 
 在目标对象中必须要具有一个属性有自定义属性@"T:Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.DataFrameColumnAttribute"
 
+
+
 ### Methods
 
 #### __toStringInternal
@@ -44,9 +46,7 @@ Retrive data from a specific datatable object.(从目标数据表中获取数据
 
 
 
-
 ### Properties
 
 #### BasicTypesLoading
 将字符串数据类型转换为其他的数据类型
-

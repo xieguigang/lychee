@@ -7,6 +7,12 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.IFuncs](N-
 
 Activation function interface.
 
+> All activation functions, which are supposed to be used with
+>  neurons, which calculate their output as a function of weighted sum of
+>  their inputs, should implement this interfaces.
+>  
+
+
 ### Methods
 
 #### Derivative
@@ -52,7 +58,5 @@ Calculates function value.
 
 _returns: Function output value, f(x)._
 > The method calculates function value at point **x**.
-
-
 
 

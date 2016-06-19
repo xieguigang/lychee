@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.KMeans](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### __buildNET
@@ -66,8 +68,6 @@ Microsoft.VisualBasic.DataMining.Framework.KMeans.Tree.TreeCluster(System.Collec
 |Parameter Name|Remarks|
 |--------------|-------|
 |resultSet|-|
-
-
 
 
 

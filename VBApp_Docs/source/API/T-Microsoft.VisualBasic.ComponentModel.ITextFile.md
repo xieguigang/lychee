@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 Object model of the text file doucment.(文本文件的对象模型，这个文本文件对象在Disposed的时候会自动保存其中的数据)
 
+
+
 ### Methods
 
 #### getPath
@@ -24,9 +26,7 @@ Automatically determine the path paramater: If the target path is empty, then re
 
 
 
-
 ### Properties
 
 #### FilePath
 The storage filepath of this text file.
-

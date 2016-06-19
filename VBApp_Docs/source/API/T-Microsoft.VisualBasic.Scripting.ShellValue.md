@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting](N-Microsoft.VisualBasic.Scripting.
 
 Script shell result.
 
+
+
 ### Methods
 
 #### GetObject``1
@@ -21,7 +23,6 @@ Parsing object from the standard output
 
 
 
-
 ### Properties
 
 #### state
@@ -30,4 +31,3 @@ Process exit code
 Standard error
 #### STD_OUT
 Standard output on the console
-

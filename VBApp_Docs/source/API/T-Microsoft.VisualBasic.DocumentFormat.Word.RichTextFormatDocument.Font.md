@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Word.RichTextFormatDocument](N
 
 Font style of the selected text region.
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Normal font style
 |--------------|-------|
 |size|-|
 |Name|-|
-
-
 
 
 

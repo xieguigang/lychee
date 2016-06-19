@@ -7,6 +7,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.
 
 
 
+
+
 ### Methods
 
 #### GetAttribute``1
@@ -34,9 +36,7 @@ Get the data type of a field in the data table.
 
 
 
-
 ### Properties
 
 #### SERVERSITE
 IP地址或者localhost
-

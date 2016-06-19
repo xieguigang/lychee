@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.ht
 
 
 
+
+
 ### Methods
 
 #### DynamicsVBCTask
@@ -66,8 +68,6 @@ Microsoft.VisualBasic.Parallel.ParallelLoading.SendMessageAPI(System.Int32)
 |Parameter Name|Remarks|
 |--------------|-------|
 |Port|-|
-
-
 
 
 

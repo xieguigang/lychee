@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Language.C](N-Microsoft.VisualBasic.Language.
 This class provides the ability to simulate various classic C string functions
 which don't have exact equivalents in the .NET Framework.
 
+
+
 ### Methods
 
 #### ChangeCharacter
@@ -69,8 +71,6 @@ This method simulates the classic C string function 'strstr' (and 'wcsstr').
 |--------------|-------|
 |stringtosearch|-|
 |stringtofind|-|
-
-
 
 
 

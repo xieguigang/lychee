@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 
 GDI+图形设备的简易抽象
 
+
+
 ### Methods
 
 #### _animationLoop_Tick
@@ -31,8 +33,6 @@ Enable double-buffering to eliminate flickering.
 |--------------|-------|
 |sender|-|
 |e|-|
-
-
 
 
 

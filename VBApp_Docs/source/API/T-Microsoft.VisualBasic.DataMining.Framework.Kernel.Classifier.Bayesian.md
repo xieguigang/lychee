@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.Classifier](N-Mic
 
 朴素贝叶斯分类器
 
+
+
 ### Methods
 
 #### P
@@ -22,9 +24,7 @@ P(X|Y=y)
 
 
 
-
 ### Properties
 
 #### Entities
 原始的数据集合
-

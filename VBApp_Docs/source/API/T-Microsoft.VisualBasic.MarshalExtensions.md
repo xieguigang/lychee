@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### MarshalAs``1
@@ -30,7 +32,5 @@ Microsoft.VisualBasic.MarshalExtensions.MarshalAs``1(``0[]@,System.IntPtr)
 >  Public Shared Sub Copy(source As IntPtr, destination() As IntPtr, startIndex As Integer, length As Integer)
 >  Public Shared Sub Copy(source As IntPtr, destination() As Double, startIndex As Integer, length As Integer)
 >  
-
-
 
 

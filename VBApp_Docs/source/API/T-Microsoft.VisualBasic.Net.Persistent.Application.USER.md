@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Persistent.Application](N-Microsoft.Visua
 
 服务器也相当于一个USER，只不过服务器的UID为0，即最高级的用户
 
+
+
 ### Methods
 
 #### #ctor
@@ -58,8 +60,6 @@ True标识发送成功，False标识用户离线
 |--------------|-------|
 |USER_ID|-|
 |Message|在发送之前请对消息进行加密处理|
-
-
 
 
 

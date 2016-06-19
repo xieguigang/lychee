@@ -9,10 +9,10 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.Schema](N-Oracle.LinuxCo
 
 
 
+
 ### Properties
 
 #### AutoIncrement
 值是自动增长的
 #### PropertyInfo
 The property information of this custom database field attribute.
-

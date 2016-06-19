@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 Represents a reader that can read a sequential series of characters.
 
+
+
 ### Methods
 
 #### Close
@@ -52,9 +54,7 @@ Reads all characters from the current position to the end of the text reader
  and returns them as one string.
 
 
-
 ### Properties
 
 #### Position
 The current read position.
-

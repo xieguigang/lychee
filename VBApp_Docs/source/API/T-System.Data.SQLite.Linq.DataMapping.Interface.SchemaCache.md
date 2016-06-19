@@ -7,6 +7,8 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface](N-System.Data.SQLite
 
 Cached for the database schema.
 
+
+
 ### Methods
 
 #### __getValue
@@ -106,7 +108,6 @@ UPDATE table_name SET col = value WHERE col = colName
 
 
 
-
 ### Properties
 
 #### DbType
@@ -120,4 +121,3 @@ integer(size) 仅容纳整数。在括号内规定数字的最大位数。
  
  varchar(size) 容纳可变长度的字符串（可容纳字母、数字以及特殊的字符）。在括号中规定字符串的最大长度。
  date(yyyymmdd)
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Layouts.Interfaces]
 
 
 
+
+
 ### Methods
 
 #### EachNode
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Layouts.Interfaces.IForceDirecte
 |Parameter Name|Remarks|
 |--------------|-------|
 |del|-|
-
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 title: API index
-date: 6/16/2016 4:45:51 AM
+date: 6/19/2016 11:16:14 AM
 ---
 
 Browser by namespace:
@@ -191,9 +191,7 @@ Browser by namespace:
 + [Microsoft.VisualBasic.StatisticsMathExtensions](N-Microsoft.VisualBasic.StatisticsMathExtensions.html)
 + [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.html)
 + [Microsoft.VisualBasic.Terminal.Helpers](N-Microsoft.VisualBasic.Terminal.Helpers.html)
-+ [Microsoft.VisualBasic.Terminal.STDIO](N-Microsoft.VisualBasic.Terminal.STDIO.html)
 + [Microsoft.VisualBasic.Terminal.STDIO__](N-Microsoft.VisualBasic.Terminal.STDIO__.html)
-+ [Microsoft.VisualBasic.Terminal.STDIO__.I_FormatProvider](N-Microsoft.VisualBasic.Terminal.STDIO__.I_FormatProvider.html)
 + [Microsoft.VisualBasic.Terminal.Utility](N-Microsoft.VisualBasic.Terminal.Utility.html)
 + [Microsoft.VisualBasic.Terminal.xConsole](N-Microsoft.VisualBasic.Terminal.xConsole.html)
 + [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)
@@ -201,8 +199,12 @@ Browser by namespace:
 + [Microsoft.VisualBasic.Text.Similarity](N-Microsoft.VisualBasic.Text.Similarity.html)
 + [Microsoft.VisualBasic.Text.Similarity.StatementMatches](N-Microsoft.VisualBasic.Text.Similarity.StatementMatches.html)
 + [Microsoft.VisualBasic.Text.Xml](N-Microsoft.VisualBasic.Text.Xml.html)
++ [Microsoft.VisualBasic.TextEncodings](N-Microsoft.VisualBasic.TextEncodings.html)
++ [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)
 + [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)
 + [Microsoft.VisualBasic.Win32.GetLastErrorAPI](N-Microsoft.VisualBasic.Win32.GetLastErrorAPI.html)
++ [Microsoft.VisualBasic.Win32.My.Resources](N-Microsoft.VisualBasic.Win32.My.Resources.html)
++ [Microsoft.VisualBasic.Windows.Forms](N-Microsoft.VisualBasic.Windows.Forms.html)
 + [Oracle.LinuxCompatibility.MySQL](N-Oracle.LinuxCompatibility.MySQL.html)
 + [Oracle.LinuxCompatibility.MySQL.My.Resources](N-Oracle.LinuxCompatibility.MySQL.My.Resources.html)
 + [Oracle.LinuxCompatibility.MySQL.Reflection](N-Oracle.LinuxCompatibility.MySQL.Reflection.html)

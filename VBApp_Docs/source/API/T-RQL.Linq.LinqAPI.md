@@ -7,6 +7,8 @@ _namespace: [RQL.Linq](N-RQL.Linq.html)_
 
 对外部提供Linq查询服务的WebApp
 
+
+
 ### Methods
 
 #### Free
@@ -44,11 +46,9 @@ RQL.Linq.LinqAPI.OpenQuery(System.String,System.String)
 
 
 
-
 ### Properties
 
 #### __uidMaps
 {hashCode.tolower, linq_uid}
 #### uid
 Linq数据源的MD5哈希值
-

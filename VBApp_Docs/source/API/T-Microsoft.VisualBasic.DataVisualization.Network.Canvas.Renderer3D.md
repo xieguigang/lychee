@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Canvas](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Canvas.Renderer3D.#ctor(System.F
 |canvas|-|
 |regionProvider|-|
 |iForceDirected|@"T:Microsoft.VisualBasic.DataVisualization.Network.Layouts.ForceDirected3D"|
-
-
 
 
 

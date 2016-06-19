@@ -9,6 +9,7 @@ The data structure for represents the search result of the Web search egine.
 
 
 
+
 ### Properties
 
 #### BriefText
@@ -19,4 +20,3 @@ Specifies the Title element of the result string.
 Update time.
 #### URL
 Url that points to the Current result.
-

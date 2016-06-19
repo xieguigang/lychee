@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.AppEngine](N-SMRUCC.HTTPInternal.AppEngine.html
 
 
 
+
+
 ### Methods
 
 #### __defaultFailure
@@ -59,11 +61,9 @@ SMRUCC.HTTPInternal.AppEngine.APPManager.Register``1(``0)
 
 
 
-
 ### Properties
 
 #### DefaultAPI
 当WebApp查找失败的时候所执行的默认的API函数
 #### RunningAPP
 键名要求是小写的
-

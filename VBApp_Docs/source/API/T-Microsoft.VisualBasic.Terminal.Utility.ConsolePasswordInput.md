@@ -7,6 +7,12 @@ _namespace: [Microsoft.VisualBasic.Terminal.Utility](N-Microsoft.VisualBasic.Ter
 
 Summary description for ConsolePasswordInput.
 
+> 
+>  .NET Console Password Input By Masking Keyed-In Characters
+>  http://www.codeproject.com/Articles/8110/NET-Console-Password-Input-By-Masking-Keyed-In-Ch
+>  
+
+
 ### Methods
 
 #### PasswordInput
@@ -19,8 +25,6 @@ Microsoft.VisualBasic.Terminal.Utility.ConsolePasswordInput.PasswordInput(System
 |--------------|-------|
 |refPasswordToBuild|-|
 |iMaxNumberOfCharactersSet|The password max length limits.|
-
-
 
 
 

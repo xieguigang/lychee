@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork](N-Microso
 
 Tools for training the neuron network
 
+
+
 ### Methods
 
 #### Corrects
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.DataMining.Framework.NeuralNetwork.TrainingUtils.Corrects(
 |input|The inputs data|
 |convertedResults|The error outputs|
 |expectedResults|The corrects output|
-
-
 
 
 

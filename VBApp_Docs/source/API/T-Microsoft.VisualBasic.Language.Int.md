@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.ht
 
 
 
+
+
 ### Methods
 
 #### op_LessThan
@@ -20,8 +22,6 @@ n < value <= n2
 |--------------|-------|
 |n|-|
 |x|-|
-
-
 
 
 

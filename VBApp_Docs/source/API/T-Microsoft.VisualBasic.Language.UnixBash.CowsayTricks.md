@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 Cowsay tricks for showing your message more friendly.
 
+
+
 ### Methods
 
 #### __msgbox
@@ -32,11 +34,9 @@ Show cowsay with a specific input message on your console screen. you can using 
 
 
 
-
 ### Properties
 
 #### DeadCow
 The cow in dead face
 #### NormalCow
 Normal cow
-

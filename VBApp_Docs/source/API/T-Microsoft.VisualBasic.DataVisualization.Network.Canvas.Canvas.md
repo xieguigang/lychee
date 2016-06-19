@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Canvas](N-Microsoft
 
 
 
+
+
 ### Methods
 
 #### WriteLayout
@@ -14,7 +16,6 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Canvas](N-Microsoft
 Microsoft.VisualBasic.DataVisualization.Network.Canvas.Canvas.WriteLayout
 ```
 Write the node layout position into its extensions data, for generates the svg graphics.
-
 
 
 ### Properties
@@ -31,4 +32,3 @@ GDI+ interface for the canvas control.
 Render and layout engine works in 3D mode?
 #### timer
 The graphics updates thread.
-

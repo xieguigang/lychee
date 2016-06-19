@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.TaskHost](N-Microsoft.Visua
 
 
 
+
+
 ### Methods
 
 #### AddressOf
@@ -34,7 +36,6 @@ DirectCast
 
 
 
-
 ### Properties
 
 #### _local
@@ -42,4 +43,3 @@ Services running on a LAN?
 #### EnvironmentLocal
 假若这个参数为真，则说明服务只是运行在局域网之中，则只会返回局域网的IP地址
  假若为假，则说明服务是运行在互联网上面的，则会查询主机的公共IP地址，调试的时候建议设置为真
-

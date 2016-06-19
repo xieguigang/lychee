@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.DFL_Driver](N-Microsoft.
 
 A node in the fuzzy logic network.(模糊逻辑网络之中的一个节点)
 
+
+
 ### Methods
 
 #### get_FactorsCollectionWeight
@@ -14,7 +16,5 @@ A node in the fuzzy logic network.(模糊逻辑网络之中的一个节点)
 Microsoft.VisualBasic.DataMining.Framework.DFL_Driver.dflNode.get_FactorsCollectionWeight
 ```
 获取当前节点上面的调控因子的数量的总和
-
-
 
 

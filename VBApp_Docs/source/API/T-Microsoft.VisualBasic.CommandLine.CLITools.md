@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 CLI parser and @"T:Microsoft.VisualBasic.CommandLine.CommandLine" object creates.
 
+
+
 ### Methods
 
 #### Args
@@ -132,7 +134,6 @@ Microsoft.VisualBasic.CommandLine.CLITools.TryParse(System.String,System.String,
 
 
 
-
 ### Properties
 
 #### SPLIT_REGX_EXPRESSION
@@ -140,4 +141,3 @@ A regex expression string that use for split the commandline text.
  (用于分析命令行字符串的正则表达式)
 #### TokenSplitRegex
 会对%进行替换的
-

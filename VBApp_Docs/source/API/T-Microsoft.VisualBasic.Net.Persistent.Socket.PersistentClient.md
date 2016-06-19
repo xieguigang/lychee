@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Persistent.Socket](N-Microsoft.VisualBasi
 
 请注意，这个对象是应用于客户端与服务器保持长连接所使用，并不会主动发送消息给服务器，而是被动的接受服务器的数据请求
 
+
+
 ### Methods
 
 #### #ctor
@@ -90,7 +92,6 @@ Retrieve the state object and the client socket from the asynchronous state obje
 
 
 
-
 ### Properties
 
 #### OnServerHashCode
@@ -101,4 +102,3 @@ The port number for the remote device.
 Remote End Point
 #### RemoteServerShutdown
 远程主机强制关闭连接之后触发这个动作
-

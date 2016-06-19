@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Core](N-SMRUCC.HTTPInternal.Core.html)_
 
 这个对象包含有具体的http request的处理方法
 
+
+
 ### Methods
 
 #### HandlePOSTRequest
@@ -26,7 +28,6 @@ SMRUCC.HTTPInternal.Core.HttpProcessor.writeFailure(System.String)
 404
 
 
-
 ### Properties
 
 #### _404Page
@@ -39,4 +40,3 @@ If current request url is indicates the HTTP root: index.html
 10MB
 #### Out
 可以向这里面写入数据从而回传数据
-

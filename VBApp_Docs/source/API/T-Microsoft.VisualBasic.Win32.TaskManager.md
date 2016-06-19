@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Win32](N-Microsoft.VisualBasic.Win32.html)_
 
 Windows的任务管理器的接口
 
+
+
 ### Methods
 
 #### ProcessUsage
@@ -23,9 +25,7 @@ Microsoft.VisualBasic.Win32.TaskManager.ProcessUsageDetails
 _returns: Memory, CPU_
 
 
-
 ### Properties
 
 #### CPU_Usages
 Using this property you can display the CPU usage (over all CPU usage like you would find on the task manager)
-

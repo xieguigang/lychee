@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataStructures](N-Microsoft.Vi
 
 Create a collection of slide Windows data for the target collection object.
 
+
+
 ### Methods
 
 #### CreateSlideWindows``1
@@ -21,8 +23,6 @@ Create a collection of slide Windows data for the target collection object.(创�
 |slideWindowSize|The windows size of the created slide window.(窗口的大小)|
 |offset|在序列之上移动的步长|
 |extTails|引用类型不建议打开这个参数|
-
-
 
 
 

@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical](N-Microsoft.VisualBasic
 
 
 
+
 ### Properties
 
 #### Comparer
@@ -17,4 +18,3 @@ _namespace: [Microsoft.VisualBasic.Mathematical.Logical](N-Microsoft.VisualBasic
 And Or Not Xor Nor Nand
 #### WhiteSpace
 Space or VbTab
-

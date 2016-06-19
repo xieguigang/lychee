@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 
 
 
+
 ### Properties
 
 #### _brushes
@@ -17,4 +18,3 @@ _namespace: [Microsoft.VisualBasic.Imaging.Drawing3D](N-Microsoft.VisualBasic.Im
 表面
 #### _vertices
 顶点
-

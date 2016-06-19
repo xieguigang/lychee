@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 Parser for simple expression
 
+
+
 ### Methods
 
 #### ClearOverlapOperator
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Mathematical.SimpleParser.ClearOverlapOperator(System.Stri
 |Parameter Name|Remarks|
 |--------------|-------|
 |s|-|
-
-
 
 
 

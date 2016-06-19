@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal.Utility](N-Microsoft.VisualBasic.Ter
 
 有显示标题的
 
+
+
 ### Methods
 
 #### #ctor
@@ -41,8 +43,6 @@ Microsoft.VisualBasic.Terminal.Utility.IndexedManual.ShowManual(System.Int32,Sys
 |--------------|-------|
 |initLines|无用的参数|
 |printLines|无用的参数|
-
-
 
 
 

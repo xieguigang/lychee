@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Dijkstra](N-Microso
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -32,7 +34,5 @@ Calculates the shortest route to all the other locations
 |startPos|-|
 
 _returns: List of all locations and their shortest route_
-
-
 
 

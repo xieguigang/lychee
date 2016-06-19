@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.Protocols.Reflection](N-Microsoft.VisualB
 
 能够处理多种协议数据
 
+
+
 ### Methods
 
 #### RegisterApp``1
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Net.Protocols.Reflection.AppMgr.RegisterApp``1(``0,System.
 |--------------|-------|
 |App|-|
 |[overrides]|-|
-
-
 
 
 

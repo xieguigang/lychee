@@ -9,10 +9,10 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.Kernel.BayesianBeliefNet
 
 
 
+
 ### Properties
 
 #### CP_Table
 CP Table，用于把各节点和它的直接父节点相关联起来的一个概率表
 #### Parents
 本节点的父节点
-

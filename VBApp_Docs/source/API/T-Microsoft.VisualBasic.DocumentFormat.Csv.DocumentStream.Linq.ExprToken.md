@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq](N-Mic
 
 
 
+
 ### Properties
 
 #### Operator
@@ -18,4 +19,3 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq](N-Mic
  != (int, string, boolean) not equals, 
  % (string) InStr, 
  @ (string) Regex Matches
-

@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols](N-Mic
 Represents a local file or remote file its location on the network.
  (表示一个本地文件或者网络上面的文件的位置)
 
+
+
 ### Methods
 
 #### FileStreamParser
@@ -30,7 +32,6 @@ Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols.FileURI.ToString
 {port}@{ipaddress}://C:\xxx\xxx.file
 
 
-
 ### Properties
 
 #### EntryPoint
@@ -41,4 +42,3 @@ The reference location of this file system object on the target machine.
  (目标机器(@"P:Microsoft.VisualBasic.ComputingServices.FileSystem.Protocols.FileURI.EntryPoint")上面的文件系统的引用的位置)
 #### IsLocal
 Is this file system object is a local file?.(是否为本地文件)
-

@@ -7,6 +7,9 @@ _namespace: [Microsoft.VisualBasic.Emit.Marshal](N-Microsoft.VisualBasic.Emit.Ma
 
 内存指针
 
+> 只不过这个对象是封装了写内存操作的
+
+
 ### Methods
 
 #### #ctor
@@ -28,11 +31,9 @@ Microsoft.VisualBasic.Emit.Marshal.IntPtr`1.Write
 Unsafe write memory
 
 
-
 ### Properties
 
 #### __writeMemory
 Public Delegate Sub UnsafeWrite(Of T)(destination As T(), startIndex As Integer, source As System.IntPtr, length As Integer)
 #### Scan0
 第一个位置
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Parallel](N-Microsoft.VisualBasic.Parallel.ht
 
 任务线程队列
 
+
+
 ### Methods
 
 #### AddToQueue
@@ -33,7 +35,6 @@ Microsoft.VisualBasic.Parallel.ThreadQueue.WaitQueue
 Wait for all thread queue job done.(Needed if you are using multiThreaded queue)
 
 
-
 ### Properties
 
 #### dummy
@@ -47,4 +48,3 @@ Is thread running?
  hum
 #### Queue
 Just my queue
-

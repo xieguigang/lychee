@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Serialization.BinaryDumping](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### Load``1
@@ -31,8 +33,6 @@ Save a structure type object into a binary file.(使用二进制序列化保存�
 |--------------|-------|
 |obj|-|
 |path|-|
-
-
 
 
 

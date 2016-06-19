@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF.DocumentStream](N-Microsof
 
 
 
+
 ### Properties
 
 #### InternalText
 内部节点的XML字符串
-

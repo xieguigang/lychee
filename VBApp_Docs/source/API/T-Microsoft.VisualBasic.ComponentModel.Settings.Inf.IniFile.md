@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings.Inf](N-Microsoft.Visu
 
 Ini file I/O handler
 
+
+
 ### Methods
 
 #### #ctor
@@ -71,7 +73,5 @@ Write a string value into a specific section in a specifc ini profile.(在初始
  如果文件没有找到，则函数会创建它|
 
 _returns: Long，非零表示成功，零表示失败。会设置@"M:Microsoft.VisualBasic.Win32.GetLastErrorAPI.GetLastError"_
-
-
 
 

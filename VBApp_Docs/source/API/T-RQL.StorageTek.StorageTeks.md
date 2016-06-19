@@ -9,6 +9,7 @@ Entity storage technology.(实体对象所存储的方法)
 
 
 
+
 ### Properties
 
 #### Binary
@@ -25,4 +26,3 @@ Json文件之中的list之中的某一个对象映射为某一个实体对象
 Csv rows.(Csv文件的行映射为某一个实体对象)(需要外部插件)
 #### Xml
 Xml文件之中的List之中的某一个对象映射为某一个实体对象
-

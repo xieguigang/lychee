@@ -8,6 +8,8 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection](N-Oracle.LinuxCompatibi
 A table object of a specific table schema that mapping a table object in the mysql database.
  (一个映射到MYSQL数据库中的指定的表之上的表对象)
 
+
+
 ### Methods
 
 #### Commit
@@ -132,7 +134,6 @@ Update a record in the table. Please notice that, in order to decrease the usage
 
 
 
-
 ### Properties
 
 #### _listData
@@ -156,4 +157,3 @@ The sql transaction that will be commit to the mysql database.
  (将要被提交至MYSQL数据库之中的SQL事务集)
 #### UpdateSQL
 'UPDATE' sql text generator of a record that type of schema.
-

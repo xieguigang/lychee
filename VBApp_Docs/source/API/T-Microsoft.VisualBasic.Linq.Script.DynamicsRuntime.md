@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Script](N-Microsoft.VisualBasic.Linq.Scr
 
 LINQ脚本数据源查询运行时环境
 
+
+
 ### Methods
 
 #### Evaluate
@@ -73,7 +75,5 @@ Microsoft.VisualBasic.Linq.Script.DynamicsRuntime.Source(System.String)
 >  Imports Namespace
 >  var result = <Linq>
 >  
-
-
 
 

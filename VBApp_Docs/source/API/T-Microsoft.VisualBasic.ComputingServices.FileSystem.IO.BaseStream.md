@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.FileSystem.IO](N-Microsoft.
 
 
 
+
 ### Properties
 
 #### FileSystem
 远端机器上面的文件系统的访问入口点
-

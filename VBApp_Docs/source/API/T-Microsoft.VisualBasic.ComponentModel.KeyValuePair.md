@@ -7,6 +7,11 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 An object for the text file format xml data storage.(用于存储与XML文件之中的字符串键值对对象)
 
+> 
+>  20160524 为了更好的构建GCModeller项目的数据文档的格式，本类型对象不再继承自@"T:Microsoft.VisualBasic.ComponentModel.Collection.Generic.KeyValuePairObject`2"类型
+>  
+
+
 ### Methods
 
 #### Equals
@@ -22,9 +27,7 @@ Microsoft.VisualBasic.ComponentModel.KeyValuePair.Equals(Microsoft.VisualBasic.C
 
 
 
-
 ### Properties
 
 #### Key
 Gets the key in the key/value pair.
-

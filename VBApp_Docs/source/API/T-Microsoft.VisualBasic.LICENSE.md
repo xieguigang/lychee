@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Information about this VisualBasic App framework code module.
 
+
+
 ### Methods
 
 #### GithubRepository
@@ -14,7 +16,6 @@ Information about this VisualBasic App framework code module.
 Microsoft.VisualBasic.LICENSE.GithubRepository
 ```
 https://github.com/xieguigang/VisualBasic_AppFramework
-
 
 
 ### Properties
@@ -34,4 +35,3 @@ software and other kinds of works.
 
  The licenses for most software and other practical works are designed
 to take away yo [rest of string was truncated]";.
-

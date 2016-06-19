@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net.SSL](N-Microsoft.VisualBasic.Net.SSL.html
 
 应用程序的完整性验证和用户身份的验证
 
+
+
 ### Methods
 
 #### #ctor
@@ -65,7 +67,6 @@ Microsoft.VisualBasic.Net.SSL.Certificate.PublicEncrypt(Microsoft.VisualBasic.Ne
 
 
 
-
 ### Properties
 
 #### _uid
@@ -80,4 +81,3 @@ Microsoft.VisualBasic.Net.SSL.Certificate.PublicEncrypt(Microsoft.VisualBasic.Ne
 #### uid
 @"T:System.Guid"计算出来的哈希值只能为负数，现在约定，当这个属性为0的时候就认为这个证书是公共密匙，
  这个一般是使用用户的账号所计算出来的哈希值
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network](N-Microsoft.Visual
 
 
 
+
+
 ### Methods
 
 #### GetConnections
@@ -31,8 +33,6 @@ Microsoft.VisualBasic.DataVisualization.Network.NetworkAPI.GetNextConnects(Syste
 |--------------|-------|
 |source|-|
 |from|-|
-
-
 
 
 

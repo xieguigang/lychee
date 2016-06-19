@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 读写Ini文件的拓展
 
+
+
 ### Methods
 
 #### LoadIni``1
@@ -30,8 +32,6 @@ The section name of the profile data is the type name
 |--------------|-------|
 |x|-|
 |path|-|
-
-
 
 
 

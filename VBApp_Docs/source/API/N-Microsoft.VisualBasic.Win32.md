@@ -1,10 +1,11 @@
 ﻿---
 title: Microsoft.VisualBasic.Win32
-date: 6/16/2016 4:45:50 AM
+date: 6/19/2016 11:16:14 AM
 ---
 
-[GetLastErrorAPI](T-Microsoft.VisualBasic.Win32.GetLastErrorAPI.html)
-[PriorityClass](T-Microsoft.VisualBasic.Win32.PriorityClass.html)
-[TaskManager](T-Microsoft.VisualBasic.Win32.TaskManager.html)
-[Win32File](T-Microsoft.VisualBasic.Win32.Win32File.html)
-[WindowsServices](T-Microsoft.VisualBasic.Win32.WindowsServices.html)
+[ComDlg32](T-Microsoft.VisualBasic.Win32.ComDlg32.html)
+[Gdi32](T-Microsoft.VisualBasic.Win32.Gdi32.html)
+[Kernel32](T-Microsoft.VisualBasic.Win32.Kernel32.html)
+[Shell32](T-Microsoft.VisualBasic.Win32.Shell32.html)
+[TypeDef](T-Microsoft.VisualBasic.Win32.TypeDef.html)
+[WinMM](T-Microsoft.VisualBasic.Win32.WinMM.html)

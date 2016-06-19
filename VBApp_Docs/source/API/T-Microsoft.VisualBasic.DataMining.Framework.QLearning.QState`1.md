@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.QLearning](N-Microsoft.V
 
 
 
+
+
 ### Methods
 
 #### GetNextState
@@ -25,7 +27,6 @@ Gets the @"P:Microsoft.VisualBasic.DataMining.Framework.QLearning.QState`1.Curre
 _returns:  resulting map after the action is taken _
 
 
-
 ### Properties
 
 #### Current
@@ -33,4 +34,3 @@ map before the action is taken, clone object: @"M:System.ICloneable.Clone"
 #### State
 假若操作不会涉及到数据修改，请使用这个属性来减少性能的损失，@"P:Microsoft.VisualBasic.DataMining.Framework.QLearning.QState`1.Current"属性返回的值和本属性是一样的，
  只不过@"P:Microsoft.VisualBasic.DataMining.Framework.QLearning.QState`1.Current"属性是从@"M:System.ICloneable.Clone"方法得到的数据，所以性能方面会有损失
-

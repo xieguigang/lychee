@@ -9,8 +9,8 @@ This type of object have a @"P:Microsoft.VisualBasic.ComponentModel.Collection.G
 
 
 
+
 ### Properties
 
 #### Identifier
 The unique identifer in the object collection. Unique-Id of the target implements object
-

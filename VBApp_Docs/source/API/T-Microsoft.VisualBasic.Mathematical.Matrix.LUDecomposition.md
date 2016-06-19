@@ -15,6 +15,8 @@ LU Decomposition.
  LU decomposition is in the solution of square systems of simultaneous
  linear equations. This will fail if IsNonSingular() returns false.
 
+
+
 ### Methods
 
 #### #ctor
@@ -52,7 +54,6 @@ _returns:      X so that L*U*X = B(piv,:)
  _
 
 
-
 ### Properties
 
 #### DoublePivot
@@ -86,4 +87,3 @@ Row and column dimensions, and pivot sign.
  @serial pivot sign.
 #### U
 Return upper triangular factor
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text.Xml](N-Microsoft.VisualBasic.Text.Xml.ht
 
 请使用@"M:Microsoft.VisualBasic.Text.Xml.XmlDoc.ToString"方法获取修改之后的Xml文档
 
+
+
 ### Methods
 
 #### #ctor
@@ -39,9 +41,7 @@ Microsoft.VisualBasic.Text.Xml.XmlDoc.ToString
 使用这个函数可以得到修改之后的Xml文档
 
 
-
 ### Properties
 
 #### xmlns
 Xml namespace definitions
-

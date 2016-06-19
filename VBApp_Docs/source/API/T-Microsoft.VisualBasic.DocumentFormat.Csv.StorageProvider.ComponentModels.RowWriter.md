@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 
 
+
+
 ### Methods
 
 #### __buildRowMeta
@@ -32,9 +34,7 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.RowWrit
 
 
 
-
 ### Properties
 
 #### _metaBlank
 填充不存在的动态属性的默认字符串
-

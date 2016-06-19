@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 Data structure for high perfermence data loading.
 
+
+
 ### Methods
 
 #### GetDataTypeName
@@ -103,11 +105,9 @@ _returns:
  _
 
 
-
 ### Properties
 
 #### Attribute
 Get or set the string value in the specific attribute name of current line.
 #### FieldCount
 Gets the number of columns in the current row.
-

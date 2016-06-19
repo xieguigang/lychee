@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.SecurityString](N-Microsoft.VisualBasic.Secur
 
 
 
+
+
 ### Methods
 
 #### #ctor
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.SecurityString.TripleDES.#ctor(System.Byte[],System.Byte[]
 |--------------|-------|
 |key|24byte|
 |iv|8byte|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.Framework.Provider](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### GetHandle
@@ -29,8 +31,6 @@ Microsoft.VisualBasic.Linq.Framework.Provider.RegistryReader.GetResource(System.
 |Parameter Name|Remarks|
 |--------------|-------|
 |uri|-|
-
-
 
 
 

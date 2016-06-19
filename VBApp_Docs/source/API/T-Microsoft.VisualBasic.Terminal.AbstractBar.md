@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal](N-Microsoft.VisualBasic.Terminal.ht
 
 
 
+
+
 ### Methods
 
 #### PrintMessage
@@ -18,8 +20,6 @@ Prints a simple message
 |Parameter Name|Remarks|
 |--------------|-------|
 |msg|Message to print|
-
-
 
 
 

@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.SoftwareToolkits.NgenInstaller](N-Microsoft.V
 
 
 
+
 ### Properties
 
 #### Continue
@@ -17,4 +18,3 @@ allow the paused service to continue
 Pause the native image service
 #### status
 query the status of the service.
-

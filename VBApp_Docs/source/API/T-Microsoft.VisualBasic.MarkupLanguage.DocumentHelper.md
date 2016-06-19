@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MarkupLanguage](N-Microsoft.VisualBasic.Marku
 
 
 
+
+
 ### Methods
 
 #### Normalize
@@ -29,9 +31,7 @@ returns an array of HTML tokens comprising the input string. Each token is
  the actual value.
 
 
-
 ### Properties
 
 #### _nestDepth
 maximum nested depth of [] and () supported by the transform; implementation detail
-

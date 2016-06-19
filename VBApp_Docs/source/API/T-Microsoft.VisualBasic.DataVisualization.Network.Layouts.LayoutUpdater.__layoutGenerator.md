@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Layouts.LayoutUpdat
 
 
 
+
+
 ### Methods
 
 #### drawNode
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Layouts.LayoutUpdater.__layoutGe
 |--------------|-------|
 |iNode|-|
 |iPosition|-|
-
-
 
 
 

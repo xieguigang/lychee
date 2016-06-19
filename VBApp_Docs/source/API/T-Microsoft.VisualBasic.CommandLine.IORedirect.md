@@ -9,6 +9,8 @@ A communication fundation class type for the commandline program interop.
  (一个简单的用于从当前进程派生子进程的Wrapper对象，假若需要folk出来的子进程对象
  不需要终端交互功能，则更加推荐使用@"T:Microsoft.VisualBasic.CommandLine.IORedirectFile"对象来进行调用)
 
+
+
 ### Methods
 
 #### #ctor
@@ -77,7 +79,6 @@ Gets the value that the associated process specified when it terminated.
 _returns: The code that the associated process specified when it terminated._
 
 
-
 ### Properties
 
 #### _processStateRunning
@@ -86,4 +87,3 @@ _returns: The code that the associated process specified when it terminated._
 The process invoke interface of current IO redirect operation.
 #### StandardOutput
 Gets the standard output for the target invoke process.
-

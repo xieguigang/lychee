@@ -9,6 +9,7 @@ How line breaks after last non empty line in block scalar are handled.
 
 
 
+
 ### Properties
 
 #### Clip
@@ -17,4 +18,3 @@ Keep one
 Keep all
 #### Strip
 Keep none
-

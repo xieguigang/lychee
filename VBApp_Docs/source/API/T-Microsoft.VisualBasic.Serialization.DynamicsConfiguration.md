@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Serialization](N-Microsoft.VisualBasic.Serial
 
 
 
+
+
 ### Methods
 
 #### LoadDocument``1
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Serialization.DynamicsConfiguration.LoadDocument``1(System
 |Parameter Name|Remarks|
 |--------------|-------|
 |path|-|
-
-
 
 
 

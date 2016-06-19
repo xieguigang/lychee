@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 
 
 
+
+
 ### Methods
 
 #### __allocate
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.ComponentModel](N-Microsoft.VisualBasic.Compo
 Microsoft.VisualBasic.ComponentModel.HashHandle`1.__allocate
 ```
 Allocate memory
-
-
 
 

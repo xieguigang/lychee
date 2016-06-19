@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Scripting.MetaData](N-Microsoft.VisualBasic.S
 
 
 
+
+
 ### Methods
 
 #### GetEntry
@@ -21,9 +23,7 @@ Microsoft.VisualBasic.Scripting.MetaData.MetaAPI.GetEntry(System.Type)
 
 
 
-
 ### Properties
 
 #### TypeInfo
 @"T:Microsoft.VisualBasic.Scripting.MetaData.PackageNamespace"
-

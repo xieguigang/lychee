@@ -9,6 +9,8 @@ The stream writer for the data set, you can handling the ultra large dataset
  serialize into a csv document by using this writer stream object.
  (文件写入流，这个一般是在遇到非常大的文件流的时候才需要使用)
 
+
+
 ### Methods
 
 #### #ctor
@@ -55,8 +57,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.WriteStream`1.ToArr
 |Parameter Name|Remarks|
 |--------------|-------|
 |_ctype|-|
-
-
 
 
 

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Mathematical](N-Microsoft.VisualBasic.Mathema
 
 
 
+
+
 ### Methods
 
 #### Add
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.Mathematical.MemoryCollection`1.Add(System.String,`0,Syste
 |--------------|-------|
 |Name|-|
 |value|-|
-
-
 
 
 

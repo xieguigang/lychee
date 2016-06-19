@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.Tokens](N-Microsoft.Visua
 
 引用运行时环境之中的某一个变量或者执行表达式
 
+
+
 ### Methods
 
 #### GetRepository
@@ -23,7 +25,5 @@ Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.Reference.GetRepository(Microso
 |runtime|-|
 
 > 这里是不是也需要进行动态编译？
-
-
 
 

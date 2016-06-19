@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection
 
 This is a column in the csv document.
 
+
+
 ### Methods
 
 #### #ctor
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.ColumnAttrib
 |Parameter Name|Remarks|
 |--------------|-------|
 |Name|-|
-
-
 
 
 

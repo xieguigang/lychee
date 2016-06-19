@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Net](N-Microsoft.VisualBasic.Net.html)_
 
 
 
+
+
 ### Methods
 
 #### ConnectSocket
@@ -62,7 +64,5 @@ Microsoft.VisualBasic.Net.TCPExtensions.PortIsAvailable(System.Int32)
 Microsoft.VisualBasic.Net.TCPExtensions.PortIsUsed
 ```
 获取操作系统已用的端口号
-
-
 
 

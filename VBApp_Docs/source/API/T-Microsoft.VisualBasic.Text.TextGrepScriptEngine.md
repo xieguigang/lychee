@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 A script object for grep the gene id in the blast output query and subject title.(用于解析基因名称的脚本类，这个对象是在项目的初始阶段，为了方便命令行操作而设置的)
 
+
+
 ### Methods
 
 #### Compile
@@ -51,11 +53,9 @@ Microsoft.VisualBasic.Text.TextGrepScriptEngine.Tokens(System.String,System.Stri
 
 
 
-
 ### Properties
 
 #### _Operations
 Source,Script,ReturnValue
 #### Method
 字符串剪裁操作的函数指针
-

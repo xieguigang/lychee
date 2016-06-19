@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal.Utility](N-Microsoft.VisualBasic.Ter
 
 
 
+
+
 ### Methods
 
 #### Start
@@ -18,8 +20,6 @@ Microsoft.VisualBasic.Terminal.Utility.CBusyIndicator.Start(System.Int32)
 |Parameter Name|Remarks|
 |--------------|-------|
 |Ticks|The total ticking counts of the indicator, Unit is [second].|
-
-
 
 
 

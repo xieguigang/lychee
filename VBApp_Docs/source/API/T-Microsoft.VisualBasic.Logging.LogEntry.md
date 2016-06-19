@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Logging](N-Microsoft.VisualBasic.Logging.html
 
 
 
+
+
 ### Methods
 
 #### ToString
@@ -14,7 +16,5 @@ _namespace: [Microsoft.VisualBasic.Logging](N-Microsoft.VisualBasic.Logging.html
 Microsoft.VisualBasic.Logging.LogEntry.ToString
 ```
 生成日志文档之中的一行记录数据
-
-
 
 

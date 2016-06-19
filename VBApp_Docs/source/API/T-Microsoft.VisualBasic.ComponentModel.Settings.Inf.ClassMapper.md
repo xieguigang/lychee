@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings.Inf](N-Microsoft.Visu
 
 使用这个属性来标记需要进行序列化的对象属性: @"T:Microsoft.VisualBasic.ComponentModel.DataSourceModel.SchemaMaps.DataFrameColumnAttribute"
 
+
+
 ### Methods
 
 #### ClassWriter``1
@@ -52,8 +54,6 @@ Write ini section into data file.
 |--------------|-------|
 |x|A section class in the ini profile file.|
 |ini|-|
-
-
 
 
 

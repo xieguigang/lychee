@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings](N-Microsoft.VisualBa
 
 
 
+
+
 ### Methods
 
 #### IsFsysValid
@@ -17,9 +19,7 @@ Microsoft.VisualBasic.ComponentModel.Settings.BindMapping.IsFsysValid
  对于其他的类型数据，都是返回False
 
 
-
 ### Properties
 
 #### AsOutString
 打印在终端窗口上面的字符串
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Layouts](N-Microsof
 
 
 
+
+
 ### Methods
 
 #### DirectDraw
@@ -16,9 +18,7 @@ Microsoft.VisualBasic.DataVisualization.Network.Layouts.AbstractRenderer.DirectD
 不计算位置而直接更新绘图
 
 
-
 ### Properties
 
 #### Asynchronous
 Running the drawing task in another thread?
-

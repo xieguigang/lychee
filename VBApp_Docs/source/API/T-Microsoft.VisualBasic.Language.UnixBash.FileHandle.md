@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 
 
+
 ### Properties
 
 #### IsHTTP
 Determined that is this filename is a network location.
-

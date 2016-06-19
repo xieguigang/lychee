@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 汉字拼音转换类
 
+
+
 ### Methods
 
 #### Get
@@ -33,11 +35,9 @@ Microsoft.VisualBasic.Text.GB2312.GetFirst(System.String)
 
 
 
-
 ### Properties
 
 #### otherChinese
 二级汉字数组
 #### otherPinYin
 二级汉字对应拼音数组
-

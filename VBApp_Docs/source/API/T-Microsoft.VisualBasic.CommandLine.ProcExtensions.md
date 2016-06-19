@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine](N-Microsoft.VisualBasic.CommandL
 
 How to found the process by CLI
 
+
+
 ### Methods
 
 #### Call
@@ -57,8 +59,6 @@ Get process by command line parameter.(按照命令行参数来获取进程实�
 |Parameter Name|Remarks|
 |--------------|-------|
 |CLI|-|
-
-
 
 
 

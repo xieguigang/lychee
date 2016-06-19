@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 The extensions module for facilities the string operations.
 
+
+
 ### Methods
 
 #### Count
@@ -246,19 +248,6 @@ Shortcuts for method @"T:System.String"(s1, s2, @"F:System.StringComparison.Ordi
 |s2|-|
 
 
-#### ZeroFill
-```csharp
-Microsoft.VisualBasic.StringHelpers.ZeroFill(System.String,System.Int32)
-```
-Fill the number string with specific length of ZERO sequence to generates the fixed width string.
-
-|Parameter Name|Remarks|
-|--------------|-------|
-|n|-|
-|len|-|
-
-
-
 
 ### Properties
 
@@ -272,4 +261,3 @@ Regex exprression for parsing the http/ftp URL
 @"F:System.Text.RegularExpressions.RegexOptions.IgnoreCase" + @"F:System.Text.RegularExpressions.RegexOptions.Multiline"
 #### RegexICSng
 @"F:System.Text.RegularExpressions.RegexOptions.IgnoreCase" + @"F:System.Text.RegularExpressions.RegexOptions.Singleline"
-

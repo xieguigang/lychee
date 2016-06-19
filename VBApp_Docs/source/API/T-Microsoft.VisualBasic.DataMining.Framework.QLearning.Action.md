@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.QLearning](N-Microsoft.V
 One specific environment state have some possible actions,
  but there is just one best action on the current environment state based on the accumulate q-values
 
+
+
 ### Methods
 
 #### ToString
@@ -17,11 +19,9 @@ Microsoft.VisualBasic.DataMining.Framework.QLearning.Action.ToString
 Environment -> actions' Q-values
 
 
-
 ### Properties
 
 #### EnvirState
 The environment variables state as inputs for the machine.
 #### Qvalues
 Actions for the current state.
-

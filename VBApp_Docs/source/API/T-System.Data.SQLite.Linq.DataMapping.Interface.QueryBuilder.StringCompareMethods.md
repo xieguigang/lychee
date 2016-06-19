@@ -9,6 +9,7 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface.QueryBuilder](N-Syste
 
 
 
+
 ### Properties
 
 #### Equals
@@ -19,4 +20,3 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface.QueryBuilder](N-Syste
 模糊匹配，大小写敏感的
 #### LikeWithCaseInsensitive
 模糊匹配，大小写不敏感的
-

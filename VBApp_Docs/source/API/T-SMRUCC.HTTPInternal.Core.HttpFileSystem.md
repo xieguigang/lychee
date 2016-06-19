@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.Core](N-SMRUCC.HTTPInternal.Core.html)_
 
 不兼容IE和Edge浏览器???为什么会这样子？
 
+
+
 ### Methods
 
 #### #ctor
@@ -69,7 +71,6 @@ SMRUCC.HTTPInternal.Core.HttpFileSystem.handleGETRequest(SMRUCC.HTTPInternal.Cor
 
 
 
-
 ### Properties
 
 #### _virtualMappings
@@ -78,4 +79,3 @@ SMRUCC.HTTPInternal.Core.HttpFileSystem.handleGETRequest(SMRUCC.HTTPInternal.Cor
 默认的404页面
 #### RequestStream
 默认是使用@"M:SMRUCC.HTTPInternal.Core.HttpFileSystem.GetResource(System.String@)"获取得到文件数据
-

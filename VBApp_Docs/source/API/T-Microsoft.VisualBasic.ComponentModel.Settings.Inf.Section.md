@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.Settings.Inf](N-Microsoft.Visu
 
 
 
+
+
 ### Methods
 
 #### SetValue
@@ -19,8 +21,6 @@ Microsoft.VisualBasic.ComponentModel.Settings.Inf.Section.SetValue(System.String
 |--------------|-------|
 |Name|-|
 |value|-|
-
-
 
 
 

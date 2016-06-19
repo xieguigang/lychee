@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Linq.LDM.Statements.Tokens](N-Microsoft.Visua
 
 Object declared using a LET expression.(使用Let语句所声明的只读对象)
 
+
+
 ### Methods
 
 #### #ctor
@@ -16,11 +18,9 @@ Microsoft.VisualBasic.Linq.LDM.Statements.Tokens.LetClosure.#ctor(Microsoft.Visu
 Let var = expression
 
 
-
 ### Properties
 
 #### Name
 Variable name
 #### Type
 Optional
-

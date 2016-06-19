@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 只是针对文本文件的
 
+
+
 ### Methods
 
 #### #ctor
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.PartitionedStream.#ctor(System.String,System.Int32,System.
 |path|-|
 |blockSize|-|
 |encoding|-|
-
-
 
 
 

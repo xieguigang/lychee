@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol](N-Microsoft.VisualBasic.MMFProto
 
 进程排斥锁
 
+
+
 ### Methods
 
 #### #ctor
@@ -21,7 +23,6 @@ Microsoft.VisualBasic.MMFProtocol.ProcessLock.#ctor(System.String)
 
 
 
-
 ### Properties
 
 #### _ProcessLock
@@ -30,4 +31,3 @@ Microsoft.VisualBasic.MMFProtocol.ProcessLock.#ctor(System.String)
 进程锁的排斥情况
 #### Locked
 返回当前的进程是否被加锁
-

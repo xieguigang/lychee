@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Text](N-Microsoft.VisualBasic.Text.html)_
 
 Encoding fileEncoding = TextFileEncodingDetector.DetectTextFileEncoding("you file path",Encoding.Default);
 
+
+
 ### Methods
 
 #### DetectTextFileEncoding
@@ -19,8 +21,6 @@ completely arbitrary - inappropriate for high numbers of files / high speed requ
 |--------------|-------|
 |InputFilename|-|
 |DefaultEncoding|-|
-
-
 
 
 

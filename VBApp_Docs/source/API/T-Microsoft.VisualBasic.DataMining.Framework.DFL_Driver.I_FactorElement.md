@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataMining.Framework.DFL_Driver](N-Microsoft.
 
 This object represents the factor which decides the node state changes.(决定@"T:Microsoft.VisualBasic.DataMining.Framework.DFL_Driver.dflNode"的状态的因素)
 
+
+
 ### Methods
 
 #### get_InteractionQuantity
@@ -34,7 +36,6 @@ Microsoft.VisualBasic.DataMining.Framework.DFL_Driver.I_FactorElement.ShadowCopy
 
 
 
-
 ### Properties
 
 #### _ABS_Weight
@@ -46,4 +47,3 @@ Does this factor effects on the node states changes? value zero is no effects.
  (当前的这个因素是否会影响目标节点的状态值的改变，0表示不影响)
 #### Weight
 Weight = [-1,1]. (可以带有符号，介于-1到1之间)
-

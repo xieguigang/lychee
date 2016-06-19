@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 从目标对象解析出来的Csv文件的结构组织数据
 
+
+
 ### Methods
 
 #### ContainsField
@@ -68,7 +70,6 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.SchemaP
 
 
 
-
 ### Properties
 
 #### CollectionColumns
@@ -77,4 +78,3 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.SchemaP
 基本数据类型的列
 #### MetaAttributes
 一个类型之中只可以定义一个元数据存储对象
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentM
 
 
 
+
+
 ### Methods
 
 #### Indexof
@@ -21,9 +23,7 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.RowBuil
 
 
 
-
 ### Properties
 
 #### Columns
 总的列表
-

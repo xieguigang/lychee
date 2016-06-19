@@ -9,6 +9,8 @@ _namespace: [Microsoft.VisualBasic.Net.Protocols](N-Microsoft.VisualBasic.Net.Pr
  1. 从原始的字节流之中反序列化构造出自身的构造函数
  2. 将自身序列化为字节流的@"M:Microsoft.VisualBasic.Net.Protocols.ISerializable.Serialize"序列化方法
 
+
+
 ### Methods
 
 #### #ctor
@@ -52,11 +54,9 @@ Microsoft.VisualBasic.Net.Protocols.RawStream.Serialize
 @"M:Microsoft.VisualBasic.Net.Protocols.ISerializable.Serialize"序列化方法
 
 
-
 ### Properties
 
 #### DblFloat
 System.Double
 #### INT32
 Single/Integer
-

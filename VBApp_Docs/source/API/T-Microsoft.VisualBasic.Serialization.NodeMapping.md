@@ -9,6 +9,7 @@ _namespace: [Microsoft.VisualBasic.Serialization](N-Microsoft.VisualBasic.Serial
 
 
 
+
 ### Properties
 
 #### Mapping
@@ -19,4 +20,3 @@ _namespace: [Microsoft.VisualBasic.Serialization](N-Microsoft.VisualBasic.Serial
 映射的文本文件源
 #### SourceToMappingCasting
 从源映射到数据模型的类型转换
-

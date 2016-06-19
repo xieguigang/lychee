@@ -9,8 +9,8 @@ _namespace: [Microsoft.VisualBasic.ComputingServices.Asymmetric.DDM](N-Microsoft
 
 
 
+
 ### Properties
 
 #### Portal
 直接对这个节点进行交互的端口
-

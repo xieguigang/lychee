@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Terminal.xConsole](N-Microsoft.VisualBasic.Te
 
 A list of spinners for your console ❤
 
+
+
 ### Methods
 
 #### #ctor
@@ -39,7 +41,6 @@ Turn the spin!
 _returns: False if it has been stopped_
 
 
-
 ### Properties
 
 #### inLoop
@@ -48,4 +49,3 @@ looplooplooplooplooplooplooplooplooploop[...]
 List of available spinners (you can add new)
 #### SpinText
 The base string for spinning. {0} will display the spinner. COLOR is SUPPORTED! 🆒
-

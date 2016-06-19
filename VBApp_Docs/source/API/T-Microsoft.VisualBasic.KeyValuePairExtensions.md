@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 
 
+
+
 ### Methods
 
 #### Add``2
@@ -32,8 +34,6 @@ Creates a @"T:System.Collections.Generic.Dictionary`2"`2 from an @"T:System.Coll
 |Parameter Name|Remarks|
 |--------------|-------|
 |source|-|
-
-
 
 
 

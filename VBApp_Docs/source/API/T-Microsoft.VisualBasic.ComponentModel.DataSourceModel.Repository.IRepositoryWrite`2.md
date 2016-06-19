@@ -7,6 +7,12 @@ _namespace: [Microsoft.VisualBasic.ComponentModel.DataSourceModel.Repository](N-
 
 Interface to support writing (and deletes) to a typed repository
 
+> 
+>  In this architecture there is a seperate read and write interface but often this
+>  pattern has just the one interface for both functions
+>  
+
+
 ### Methods
 
 #### AddNew
@@ -56,8 +62,6 @@ Delete the entity uniquely identified by this key
 |key|
  The unique identifier of the record to delete
  |
-
-
 
 
 

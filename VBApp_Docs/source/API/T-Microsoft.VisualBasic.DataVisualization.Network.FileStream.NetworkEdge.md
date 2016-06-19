@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.FileStream](N-Micro
 
 The edge between the two nodes in the network.(节点与节点之间的相互关系)
 
+
+
 ### Methods
 
 #### GetConnectedNode
@@ -27,9 +29,7 @@ Microsoft.VisualBasic.DataVisualization.Network.FileStream.NetworkEdge.GetNullDi
 返回没有方向性的统一标识符
 
 
-
 ### Properties
 
 #### SelfLoop
 起始节点是否是终止节点
-

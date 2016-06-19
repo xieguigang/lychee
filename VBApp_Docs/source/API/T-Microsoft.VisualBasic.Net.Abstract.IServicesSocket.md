@@ -8,6 +8,8 @@ _namespace: [Microsoft.VisualBasic.Net.Abstract](N-Microsoft.VisualBasic.Net.Abs
 Socket listening object which is running at the server side asynchronous able multiple threading.
  (运行于服务器端上面的Socket监听对象，多线程模型)
 
+
+
 ### Methods
 
 #### Run
@@ -20,9 +22,7 @@ This server waits for a connection and then uses asychronous operations to
  It then disconnects from the client and waits for another client.(请注意，当服务器的代码运行到这里之后，代码将被阻塞在这里)
 
 
-
 ### Properties
 
 #### LocalPort
 The server services listening on this local port.(当前的这个服务器对象实例所监听的本地端口号)
-

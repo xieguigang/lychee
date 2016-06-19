@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
 Debugger helper module for VisualBasic Enterprises System.
 
+
+
 ### Methods
 
 #### __DEBUG_ECHO
@@ -95,11 +97,9 @@ Display the wraning level(YELLOW color) message on the console.
 
 
 
-
 ### Properties
 
 #### Mute
 Disable the debugger information outputs on the console if this @"P:Microsoft.VisualBasic.VBDebugger.Mute" property is set to True, 
  and enable the output if this property is set to False. 
  NOTE: this debugger option property can be overrides by the debugger parameter from the CLI parameter named '--echo'
-

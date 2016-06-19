@@ -12,6 +12,8 @@ Cholesky Decomposition.
  returns a partial decomposition and sets an internal flag that may
  be queried by the isSPD() method.
 
+
+
 ### Methods
 
 #### #ctor
@@ -49,7 +51,6 @@ _returns:      X so that L*L'*X = B
  _
 
 
-
 ### Properties
 
 #### isspd
@@ -63,4 +64,3 @@ Row and column dimension (square matrix).
  @serial matrix dimension.
 #### SPD
 Is the matrix symmetric and positive definite?
-

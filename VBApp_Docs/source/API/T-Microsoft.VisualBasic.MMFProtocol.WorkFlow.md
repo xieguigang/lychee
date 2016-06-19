@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.MMFProtocol](N-Microsoft.VisualBasic.MMFProto
 
 
 
+
+
 ### Methods
 
 #### FolkProc``2
@@ -23,8 +25,6 @@ Microsoft.VisualBasic.MMFProtocol.WorkFlow.FolkProc``2(System.String,System.Stri
 |[in]|-|
 |writer|-|
 |reader|-|
-
-
 
 
 

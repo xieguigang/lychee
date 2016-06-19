@@ -7,10 +7,17 @@ _namespace: [Oracle.LinuxCompatibility.MySQL.Reflection.SQL](N-Oracle.LinuxCompa
 
 
 
+> 
+>  Example SQL:
+>  
+>  UPDATE `TableName` 
+>  SET `Field1`='value', `Field2`='value' 
+>  WHERE `IndexField`='index';
+>  
+
 
 
 ### Properties
 
 #### UpdateSQL
-
 

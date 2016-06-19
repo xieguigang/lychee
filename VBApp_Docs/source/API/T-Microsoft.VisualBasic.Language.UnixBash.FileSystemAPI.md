@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.Language.UnixBash](N-Microsoft.VisualBasic.La
 
 
 
+
+
 ### Methods
 
 #### wildcards
@@ -21,7 +23,6 @@ Microsoft.VisualBasic.Language.UnixBash.FileSystemAPI.wildcards(System.String[])
 
 
 
-
 ### Properties
 
 #### l
@@ -32,4 +33,3 @@ ls -l -ext("*.xml") <= DIR, The filesystem search proxy
 Searching the directory, if this parameter is not presents, then returns search file.
 #### r
 递归的搜索
-

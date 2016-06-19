@@ -7,6 +7,8 @@ _namespace: [System.Data.SQLite.Linq.DataMapping.Interface](N-System.Data.SQLite
 
 The API interface wrapper of the SQLite.(SQLite的存储引擎的接口)
 
+
+
 ### Methods
 
 #### ___SQLDump
@@ -90,11 +92,9 @@ System.Data.SQLite.Linq.DataMapping.Interface.SQLProcedure.ExistsTable(System.Ty
 Get a value to knows that wether the target table is exists in the database or not.
 
 
-
 ### Properties
 
 #### SQLiteCnn
 SQLite 连接字符串
 #### URL
 Get the filename of the connected SQLite database file.(返回数据库文件的文件位置)
-

@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.DataVisualization.Network.Canvas](N-Microsoft
 
 @"T:Microsoft.VisualBasic.DataVisualization.Network.Graph.NetworkGraph" to svg doc
 
+
+
 ### Methods
 
 #### ToSVG
@@ -20,8 +22,6 @@ Microsoft.VisualBasic.DataVisualization.Network.Canvas.SVGExtensions.ToSVG(Micro
 |graph|-|
 |style|Default value is @"M:Microsoft.VisualBasic.DataVisualization.Network.Canvas.SVGExtensions.DefaultStyle"|
 |size|The export canvas size|
-
-
 
 
 

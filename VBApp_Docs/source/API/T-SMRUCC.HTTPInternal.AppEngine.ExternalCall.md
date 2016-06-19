@@ -7,6 +7,8 @@ _namespace: [SMRUCC.HTTPInternal.AppEngine](N-SMRUCC.HTTPInternal.AppEngine.html
 
 调用和注册外部模块为rest服务的插件，从这里拓展核心服务层
 
+
+
 ### Methods
 
 #### ParseDll
@@ -19,8 +21,6 @@ Register external WebApp as services.
 |--------------|-------|
 |dll|-|
 |platform|-|
-
-
 
 
 

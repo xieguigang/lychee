@@ -7,6 +7,8 @@ _namespace: [Microsoft.VisualBasic.CommandLine.Reflection](N-Microsoft.VisualBas
 
 The help information for a specific command line parameter switch.(某一个指定的命令的开关的帮助信息)
 
+
+
 ### Methods
 
 #### ToString
@@ -14,7 +16,6 @@ The help information for a specific command line parameter switch.(某一个指�
 Microsoft.VisualBasic.CommandLine.Reflection.ParameterInfoCollection.ToString
 ```
 显示所有的开关信息
-
 
 
 ### Properties
@@ -25,4 +26,3 @@ Microsoft.VisualBasic.CommandLine.Reflection.ParameterInfoCollection.ToString
 Gets the usage example of this parameter switch.(获取本参数开关的帮助信息)
 #### Parameter
 Returns the parameter switch help information with the specific name value.(显示某一个指定名称的开关信息)
-
