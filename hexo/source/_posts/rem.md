@@ -10,3 +10,5 @@ date: 2016-06-20
 然而现实是我们是孤独的，然而现实是我们只能独享自己最失落的时光，然而现实是蕾姆只是画里女孩，然而现实是我们的努力只会让我们成为成功的孤独者。
 结论：孤独才是真理，人至少还可以享受寂寞。二次元之所以是二次元，是因为它们让我们有了莫名的期待。
 (苦笑)@亚连c
+
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/c/Rem.png)

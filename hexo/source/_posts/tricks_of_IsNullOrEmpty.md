@@ -1,5 +1,5 @@
 ---
-title: The tricks of IsNullorEmpty
+title: The tricks of IsNullOrEmpty
 tags: [vb.net, tricks, note, Linq]
 date: 2016-06-20
 ---
