@@ -11,6 +11,8 @@ I'm usually using a shared function from string type ``String.IsNullOrEmpty`` to
 
 So that a extension method ``IsNullOrEmpty`` of collection type is required for deal with these situation.
 
+<!--more-->
+
 ## The init edition for collection
 
 In the early time of my programming, I'm using the ``IsNullOrEmpty`` like this:
@@ -41,7 +43,7 @@ The Linq expression results of two effects: **``LinqAPI.Exec(of T)`` in VisualBa
 + When iterate on the data collection, you just enumerate the datas, so that this iteration operation is just very rapid; 
 + When iterate on the data producer, you are not only enumerate all of the datas, and also producing new datas as your result data source.
 
-![](./images/TwoLinq'.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/TwoLinq.png)
 
 And this initial version ``IsNullOrEmpty`` is still works fine on the first Linq expression as ``source`` is a data collection, and ``Count`` method just enumerate the datas, and the procedure is very fast; But things get worsening on the second Linq expression, as the second expression result a data producer, you are not only enumerate the result datas, and also needs the expression to produce new objects as your result source. So that the ``Count`` function will enumerate the entire producer source and then reutrns the element counts, and this makes the program performance very worst.
 
