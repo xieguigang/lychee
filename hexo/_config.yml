@@ -65,3 +65,11 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: yilia
+
+
+# CloudMusic
+widgetType:  iframe ## It can be flash or iframe
+widgetSize:  custom ## It can be small or big or custom if widgetType is iframe
+autoPlay:  0 ## It can be 0 to set autoPlay disable or 1 to set autoPlay enable
+width: 278　## Set the widget width if widgetType is irfame and widgetSize is custom
+height: 132　## Set the widget height if widgetType is irfame and widgetSize is custom
