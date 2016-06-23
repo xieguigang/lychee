@@ -156,7 +156,104 @@ End Function
 
 Gets the property value definition just very easy, right? we just gets the value from the dictionary by using the property name as the key.
 
-## Extension Property Example
+So that this extension property usage may becomes this style:
+
+1. First define a Extension function in a module
+2. You can using ``NameOf`` keyword to get property name or just using ``MethodBase.GetCurrentMethod`` for get current function name
+3. Using shared function ``PropertyValue(Of <Type>).Read(Of T)`` to get the property definition of your ``ClassObject``
+
+And here is a simple example by using this extension property, here is the property definition example:
+
+```vbnet
+Public Module PropertyDefinitionModule
+
+    ''' <summary>
+    ''' Example of the extension property in VisualBasic
+    ''' </summary>
+    ''' <typeparam name="T"></typeparam>
+    ''' <param name="x"></param>
+    ''' <returns></returns>
+    <Extension>
+    Public Function Uid(Of T As ClassObject)(x As T) As PropertyValue(Of Long)
+        Return PropertyValue(Of Long).Read(Of T)(x, NameOf(Uid))
+    End Function
+
+    ' Or
+
+    ''' <summary>
+    ''' Example of the extension property in VisualBasic
+    ''' </summary>
+    ''' <typeparam name="T"></typeparam>
+    ''' <param name="x"></param>
+    ''' <returns></returns>
+    <Extension>
+    Public Function Uid(Of T As ClassObject)(x As T) As PropertyValue(Of Long)
+        ' Just copy this statement without any big modification.
+        ' just modify the generics type constraint to use this extension property language feature.
+        Return PropertyValue(Of Long).Read(Of T)(x, MethodBase.GetCurrentMethod)
+    End Function
+End Module
+```
+
+So that by using this extension property, that for get value, we can do as this:
+
+```vbnet
+Dim n As Long = x.Uid
+```
+
+For set property value, that we can write the code:
+
+```vbnet
+Dim n As Long = VBMath.Rnd() * 100000000000L
+x.Uid.value = n
+Call x.Uid.__DEBUG_ECHO()
+```
+
+And here is the code example for csharp:
+
+```csharp
+using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ComponentModel.DataSourceModel;
+using Microsoft.VisualBasic.Language;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using static Microsoft.VisualBasic.Extensions;
+
+namespace Test2
+{
+    public static class Program
+    {
+
+        public static PropertyValue<long> myId<T>(this T x) where T : ClassObject
+        {
+            // Just copy this statement without any big modification. just modify the generics type constraint.
+            return PropertyValue<long>.Read<T>(x, MethodBase.GetCurrentMethod());
+        }
+
+        static void Main(string[] args)
+        {
+            var x = new ClassObject();
+            long n = x.myId().Value; // The init value is ZERO
+
+            x.myId().Value = 55;     // Extension property set value
+
+            n = -100;
+            n = x.myId().Value;      // Extension property get value, value should be 55 not -100
+            n.__DEBUG_ECHO();        // display the value
+
+            Pause();
+        }
+    }
+}
+```
+
+## Extension Property with Linq
+
+Recently I have lots of works on the bacterial genome annotation, one of this job is using the circos software to visualize the finial result data. For construct a bacterial genome with some plasmid its visualization data model in the circos, I using a linq expression to do this job, and the extension property language feature helps me a lot on this job:
 
 ```vbnet
 Imports Microsoft.VisualBasic.Language
@@ -191,9 +288,11 @@ Public Module KaryotypeExtensions
 End Module
 ```
 
+In Some of the situation, we just want to avoided of the anonymous type in the code, so that by using the extension property, we can easily extended our class code with modify the original code, and avoid the anonymous type in the linq.
+
 ```vbnet
 ''' <summary>
-''' 使用这个函数进行创建多条染色体的
+''' Creates the model for the multiple chromosomes genome data in circos.(使用这个函数进行创建多条染色体的)
 ''' </summary>
 ''' <param name="source">Band数据</param>
 ''' <param name="chrs">karyotype数据</param>
@@ -210,39 +309,26 @@ Public Shared Function FromBlastnMappings(source As IEnumerable(Of BlastnMapping
                                           .start = 0,
                                           .end = nt.obj.Length
                                       }.nt.SetValue(nt.obj).As(Of Karyotype)
-     ' ......
+    Dim labels As Dictionary(Of String, Karyotype) =
+        ks.ToDictionary(Function(x) x.nt.Value.Title, Function(x) x)
+    Dim bands As List(Of Band) =
+        LinqAPI.MakeList(Of Band) <= From x As SeqValue(Of BlastnMapping)
+                                     In source.SeqIterator
+                                     Let chr As String = labels(x.obj.Reference).chrName
+                                     Let loci As NucleotideLocation = x.obj.MappingLocation
+                                     Select New Band With {
+                                         .chrName = chr,
+                                         .start = loci.Left,
+                                         .end = loci.Right,
+                                         .color = "",
+                                         .bandX = "band" & x.i,
+                                         .bandY = "band" & x.i
+                                    }
+    Return New BasicGenomeSkeleton With {
+         .__bands = bands,
+         .__karyotypes = New List(Of Karyotype)(ks)
+    }
 End Function
 ```
 
-And here is another simple example by using this extension property:
-
-Here is the extension property definition:
-
-```vbnet
-Public Module ClassAPI
-
-    ''' <summary>
-    ''' Example of the extension property in VisualBasic
-    ''' </summary>
-    ''' <typeparam name="T"></typeparam>
-    ''' <param name="x"></param>
-    ''' <returns></returns>
-    <Extension>
-    Public Function Uid(Of T As ClassObject)(x As T) As PropertyValue(Of Long)
-        Return PropertyValue(Of Long).Read(Of T)(x, NameOf(Uid))
-    End Function
-End Module
-```
-
-So that by using this extension property, that for get value, we can do as this:
-
-```vbnet
-Dim n As Long = x.Uid
-```
-
-For set property value, that we can write the code:
-
-```vbnet
-Dim n As Long = VBMath.Rnd() * 100000000000L
-x.Uid.value = n
-```
+You can found this example code at github: [https://github.com/SMRUCC/GCModeller.Circos/blob/master/Circos/Karyotype/BasicGenome.vb](https://github.com/SMRUCC/GCModeller.Circos/blob/master/Circos/Karyotype/BasicGenome.vb)
