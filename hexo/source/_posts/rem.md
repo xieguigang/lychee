@@ -12,3 +12,8 @@ date: 2016-06-20
 (苦笑)@亚连c
 
 ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/c/Rem.png)
+
+<!--more-->
+
+> <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=413961906&auto=1&height=66"></iframe>
+> TV动画《**Re:从零开始异世界生活**》片尾曲 / TVアニメ「Re:ゼロから始める異世界生活」EDテーマ
