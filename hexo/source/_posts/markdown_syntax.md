@@ -4,9 +4,6 @@ tags: [Markdown,Syntax,转载搬运]
 date: 2016.06.07
 ---
 
-> Source from: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)
-
-
 >*   [Overview](#overview)
     *   [Philosophy](#philosophy)
     *   [Inline HTML](#html)
@@ -722,3 +719,5 @@ Markdown provides backslash escapes for the following characters:
 	-	minus sign (hyphen)
     .   dot
     !   exclamation mark
+    
+> Source: [http://daringfireball.net/projects/markdown/syntax](http://daringfireball.net/projects/markdown/syntax)

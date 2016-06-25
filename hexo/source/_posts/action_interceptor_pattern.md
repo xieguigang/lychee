@@ -5,8 +5,6 @@ date: 2016-06-09
 source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
 ---
 
-> source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
-
 ## Introduction
 
 In Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementations. In this article, we will see an old-school yet beneficial way to reach the same goal, but without messing around with IoC frameworks.
@@ -350,3 +348,5 @@ The disadvantages are:
 5. It is up to your decision.
 
 IoC frameworks do give us great powers. But we have to face the tradeoffs of added code complexity and performance loss. When I saw people asking questions about IoC frameworks here and there, which were originally simple without IoC, I wondered whether they were using the right tool.
+
+> source: [wmjordan,](http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx) 16 Jun 2016

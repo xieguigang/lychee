@@ -4,8 +4,6 @@ tags: [repost,3d graphics,note]
 date: 2016-06-10
 ---
 
-> source: https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation
-
 ![](https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg)
 
 3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation. In 2D the axis of rotation is always perpendicular to the **x,y** plane, i.e., the Z axis, but in 3D the axis of rotation can have any spatial orientation. We will first look at rotation around the three principle axes **(X, Y, Z)** and then about an arbitrary axis. Note that for Inverse Rotation: **replace q with -q and then R(R-1) = 1**
@@ -199,3 +197,5 @@ Row2	n1n2(1 - cosq) - n3sinq     n22 + (1 - n22)cosq         n2n3(1 - cosq) + n1
 Row3	n1n3(1 - cosq) + n2sinq     n2n3(1 - cosq) - n1sinq     n32 + (1 - n32)cosq        0
 Row4	0                           0                           0                          1
 ```
+
+> source: [3D Rotation](https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation)
