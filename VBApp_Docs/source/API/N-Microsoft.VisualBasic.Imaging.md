@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Imaging
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:00 PM
 ---
 
 [ImageCoded](T-Microsoft.VisualBasic.Imaging.ImageCoded.html)

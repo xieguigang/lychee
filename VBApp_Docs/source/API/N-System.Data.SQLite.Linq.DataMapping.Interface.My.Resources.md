@@ -1,6 +1,6 @@
 ﻿---
 title: System.Data.SQLite.Linq.DataMapping.Interface.My.Resources
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:29 PM
 ---
 
 [Resources](T-System.Data.SQLite.Linq.DataMapping.Interface.My.Resources.Resources.html)

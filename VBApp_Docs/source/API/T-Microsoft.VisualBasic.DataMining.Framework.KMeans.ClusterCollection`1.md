@@ -13,7 +13,7 @@ A collection of Cluster objects or Clusters
 
 #### Add
 ```csharp
-Microsoft.VisualBasic.DataMining.Framework.KMeans.ClusterCollection`1.Add(Microsoft.VisualBasic.DataMining.Framework.KMeans.Cluster{`0})
+Microsoft.VisualBasic.DataMining.Framework.KMeans.ClusterCollection`1.Add(Microsoft.VisualBasic.DataMining.Framework.KMeans.KMeansCluster{`0})
 ```
 Adds a Cluster to the collection of Clusters
 

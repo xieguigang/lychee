@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Imaging.SVG
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:01 PM
 ---
 
 [node](T-Microsoft.VisualBasic.Imaging.SVG.node.html)

@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataMining.Framework.ComponentModel
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:46:51 PM
 ---
 
 [Entity](T-Microsoft.VisualBasic.DataMining.Framework.ComponentModel.Entity.html)

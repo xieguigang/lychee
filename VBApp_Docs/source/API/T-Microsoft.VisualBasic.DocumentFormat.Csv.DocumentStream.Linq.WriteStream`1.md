@@ -15,7 +15,7 @@ The stream writer for the data set, you can handling the ultra large dataset
 
 #### #ctor
 ```csharp
-Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.WriteStream`1.#ctor(System.String,System.Boolean,System.String)
+Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.WriteStream`1.#ctor(System.String,System.Boolean,System.String,System.String[])
 ```
 
 
@@ -23,6 +23,7 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.WriteStream`1.#ctor
 |--------------|-------|
 |path|-|
 |Explicit|Schema parsing of the object strictly?|
+|metaKeys|预设的标题头部|
 
 
 #### Ctype``1
@@ -60,3 +61,11 @@ Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.WriteStream`1.ToArr
 
 
 
+### Properties
+
+#### _fileIO
+File system object handle for write csv row data.
+#### IsMetaIndexed
+Has the meta field indexed?
+#### RowWriter
+Schema for creates row data from the inputs object.

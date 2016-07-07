@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Parallel.Linq.TaskPartitions
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:29 PM
 ---
 
 [__taskHelper`2](T-Microsoft.VisualBasic.Parallel.Linq.TaskPartitions.__taskHelper`2.html)

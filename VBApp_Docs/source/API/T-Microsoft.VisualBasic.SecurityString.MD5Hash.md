@@ -28,6 +28,17 @@ Microsoft.VisualBasic.SecurityString.MD5Hash.GetHashCode(System.Collections.Gene
 ```
 Gets the hashcode of the input string.
 
+#### GetMd5Hash
+```csharp
+Microsoft.VisualBasic.SecurityString.MD5Hash.GetMd5Hash(System.String)
+```
+Calculate md5 hash value for the input string.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|input|-|
+
+
 #### SaltValue
 ```csharp
 Microsoft.VisualBasic.SecurityString.MD5Hash.SaltValue(System.String)

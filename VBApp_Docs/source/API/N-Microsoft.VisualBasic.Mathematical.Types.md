@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Mathematical.Types
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:04 PM
 ---
 
 [MetaExpression](T-Microsoft.VisualBasic.Mathematical.Types.MetaExpression.html)

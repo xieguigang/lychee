@@ -82,7 +82,7 @@ Save the specifc type object collection into the csv data file.(将目标对象�
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|Collection|-|
+|source|-|
 |Explicit|-|
 
 > 查找所有具备读属性的属性值

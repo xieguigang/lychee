@@ -144,7 +144,7 @@ _returns: 返回第一个找到关键词的行数，没有找到则返回-1_
 
 #### lTokens
 ```csharp
-Microsoft.VisualBasic.StringHelpers.lTokens(System.String)
+Microsoft.VisualBasic.StringHelpers.lTokens(System.String,System.Boolean)
 ```
 Line tokens. ==> Parsing the text into lines by using @"F:Microsoft.VisualBasic.Constants.vbCr", @"F:Microsoft.VisualBasic.Constants.vbLf".
  (函数对文本进行分行操作，由于在Windows(@"F:Microsoft.VisualBasic.Constants.vbCrLf")和
@@ -154,6 +154,9 @@ Line tokens. ==> Parsing the text into lines by using @"F:Microsoft.VisualBasic.
 |Parameter Name|Remarks|
 |--------------|-------|
 |__text|-|
+|trim|
+ Set @"F:System.Boolean.FalseString" to avoid a reader bug in the csv data reader @"T:Microsoft.VisualBasic.ComponentModel.BufferedStream"
+ |
 
 
 #### Match

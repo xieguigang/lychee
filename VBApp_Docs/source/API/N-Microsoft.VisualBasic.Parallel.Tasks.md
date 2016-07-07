@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Parallel.Tasks
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:27 PM
 ---
 
 [__backgroundTask`1](T-Microsoft.VisualBasic.Parallel.Tasks.__backgroundTask`1.html)

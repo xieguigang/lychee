@@ -23,4 +23,15 @@ Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.CollectionAt
 |Delimiter|由于受正则表达式的解析速度的影响，因为CSV文件是使用逗号进行分隔的，假若使用逗号的话，正则表达式的解析速度会比较低，故在这里优先考虑使用分号来作为分隔符|
 
 
+#### CreateObject``1
+```csharp
+Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.CollectionAttribute.CreateObject``1(System.Collections.Generic.IEnumerable{``0})
+```
+Collection of object into a cell string content.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|source|-|
+
+
 

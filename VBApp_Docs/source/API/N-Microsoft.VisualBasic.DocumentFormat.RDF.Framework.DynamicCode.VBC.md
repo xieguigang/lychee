@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DocumentFormat.RDF.Framework.DynamicCode.VBC
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:46:59 PM
 ---
 
 [CodeDOMCreator](T-Microsoft.VisualBasic.DocumentFormat.RDF.Framework.DynamicCode.VBC.CodeDOMCreator.html)

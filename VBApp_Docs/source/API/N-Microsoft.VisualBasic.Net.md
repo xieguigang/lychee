@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Net
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:38 PM
 ---
 
 [AsynInvoke](T-Microsoft.VisualBasic.Net.AsynInvoke.html)

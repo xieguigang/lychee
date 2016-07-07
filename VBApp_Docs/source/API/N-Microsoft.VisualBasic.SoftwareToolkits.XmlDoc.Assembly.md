@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:39 PM
 ---
 
 [Project](T-Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Assembly.Project.html)

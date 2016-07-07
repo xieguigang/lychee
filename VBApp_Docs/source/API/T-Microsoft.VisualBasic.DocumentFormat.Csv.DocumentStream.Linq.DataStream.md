@@ -49,10 +49,13 @@ Processing large dataset in block partitions.(以分块任务的形式来处理�
 |invoke|task of this block buffer|
 |blockSize|Lines of the data source.(行数)|
 
+> 
+>  2016.06.19  代码已经经过测试，没有数据遗漏的bug，请放心使用
+>  
 
 #### OpenHandle
 ```csharp
-Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.DataStream.OpenHandle(System.String,System.Text.Encoding)
+Microsoft.VisualBasic.DocumentFormat.Csv.DocumentStream.Linq.DataStream.OpenHandle(System.String,System.Text.Encoding,System.Int32)
 ```
 Open the data frame reader for the specific csv document.
 

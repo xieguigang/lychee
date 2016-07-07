@@ -110,4 +110,16 @@ The max element its index in the source collection.
 |source|-|
 
 
+#### NextInteger
+```csharp
+Microsoft.VisualBasic.Language.Numeric.NextInteger(System.Random,System.Int32)
+```
+@"T:System.Random" get next integer in the specific range **max**
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|rnd|-|
+|max|-|
+
+
 

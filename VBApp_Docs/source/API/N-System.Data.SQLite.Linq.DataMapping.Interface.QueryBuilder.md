@@ -1,6 +1,6 @@
 ﻿---
 title: System.Data.SQLite.Linq.DataMapping.Interface.QueryBuilder
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:29 PM
 ---
 
 [FieldQueryBuilder](T-System.Data.SQLite.Linq.DataMapping.Interface.QueryBuilder.FieldQueryBuilder.html)

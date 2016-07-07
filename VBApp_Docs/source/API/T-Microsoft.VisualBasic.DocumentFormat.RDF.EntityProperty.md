@@ -13,10 +13,10 @@ _namespace: [Microsoft.VisualBasic.DocumentFormat.RDF](N-Microsoft.VisualBasic.D
 >  请注意，在这里的对@"T:Microsoft.VisualBasic.Language.ClassObject"类型的继承是为了解决simpleContent的BUG的:
 >  
 >  System.Exception: 
->  LANS.SystemsBiology.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.GraphAttribute 
->  ---> System.InvalidOperationException: There was an error reflecting type 'LANS.SystemsBiology.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.GraphAttribute'. 
+>  SMRUCC.genomics.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.GraphAttribute 
+>  ---> System.InvalidOperationException: There was an error reflecting type 'SMRUCC.genomics.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.GraphAttribute'. 
 >  ---> System.InvalidOperationException: There was an error reflecting property 'RDF'. 
->  ---> System.InvalidOperationException: There was an error reflecting type 'LANS.SystemsBiology.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.DocumentElements.NetworkMetadata'. 
+>  ---> System.InvalidOperationException: There was an error reflecting type 'SMRUCC.genomics.AnalysisTools.DataVisualization.Interaction.Cytoscape.DocumentFormat.CytoscapeGraphView.DocumentElements.NetworkMetadata'. 
 >  ---> System.InvalidOperationException: Cannot serialize object of type '@"T:Microsoft.VisualBasic.DocumentFormat.RDF.RDFEntity"'. 
 >  
 >  Base type '@"T:Microsoft.VisualBasic.DocumentFormat.RDF.RDFProperty"' has simpleContent and can only be extended by adding XmlAttribute elements. 

@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DataVisualization.Network.Canvas
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:46:51 PM
 ---
 
 [Canvas](T-Microsoft.VisualBasic.DataVisualization.Network.Canvas.Canvas.html)

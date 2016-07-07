@@ -1,15 +1,15 @@
 ﻿---
 title: Microsoft.VisualBasic
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:19 PM
 ---
 
 [App](T-Microsoft.VisualBasic.App.html)
 [Base64Codec](T-Microsoft.VisualBasic.Base64Codec.html)
+[CloneExtensions](T-Microsoft.VisualBasic.CloneExtensions.html)
 [CollectionIO](T-Microsoft.VisualBasic.CollectionIO.html)
 [ControlsExtension](T-Microsoft.VisualBasic.ControlsExtension.html)
 [Correlations](T-Microsoft.VisualBasic.Correlations.html)
 [Dictionary`1](T-Microsoft.VisualBasic.Dictionary`1.html)
-[Directory](T-Microsoft.VisualBasic.Directory.html)
 [DistResult](T-Microsoft.VisualBasic.DistResult.html)
 [EmitReflection](T-Microsoft.VisualBasic.EmitReflection.html)
 [ExtendedProps](T-Microsoft.VisualBasic.ExtendedProps.html)

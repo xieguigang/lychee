@@ -84,6 +84,19 @@ The function will print the exception details information on the standard @"T:Sy
 |exception|-|
 
 
+#### this
+```csharp
+Microsoft.VisualBasic.VBDebugger.this(System.String)
+```
+Returns the current function name.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|caller|
+ The caller function name, do not assign any value to this parameter! Just leave it blank.
+ |
+
+
 #### Warning
 ```csharp
 Microsoft.VisualBasic.VBDebugger.Warning(System.String,System.String)

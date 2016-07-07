@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Mathematical.BasicR.Helpers
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:47:04 PM
 ---
 
 [MatrixMathArithmetic](T-Microsoft.VisualBasic.Mathematical.BasicR.Helpers.MatrixMathArithmetic.html)

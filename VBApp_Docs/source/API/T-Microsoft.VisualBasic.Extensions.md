@@ -349,20 +349,6 @@ Value assignment to the target variable.(将**value**参数里面的值赋值给
 |value|-|
 
 
-#### InvokeSet``2
-```csharp
-Microsoft.VisualBasic.Extensions.InvokeSet``2(``0@,System.String,``1)
-```
-Assigning the value to the specific named property to the target object.
- (将**value**参数之中的值赋值给目标对象**obj**之中的指定的**name**属性名称的属性，如果发生错误，则原有的对象**obj**不会被修改)
-
-|Parameter Name|Remarks|
-|--------------|-------|
-|obj|-|
-|Name|可以使用NameOf得到需要进行修改的属性名称|
-|value|-|
-
-
 #### Is_NA_UHandle
 ```csharp
 Microsoft.VisualBasic.Extensions.Is_NA_UHandle(System.Double)
@@ -591,7 +577,7 @@ Return a collection with randomize element position in **source[the original col
 ```csharp
 Microsoft.VisualBasic.Extensions.RegexParseDouble(System.String)
 ```
-Parsing a real number from the expression text by using the regex expression @"F:Microsoft.VisualBasic.Extensions._DOUBLE".
+Parsing a real number from the expression text by using the regex expression @"F:Microsoft.VisualBasic.Extensions.RegexFloat".
  (使用正则表达式解析目标字符串对象之中的一个实数)
 
 |Parameter Name|Remarks|
@@ -688,7 +674,7 @@ Microsoft.VisualBasic.Extensions.Shell(System.String)
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|CommandLine|-|
+|CLI|-|
 
 
 #### Split``1
@@ -929,7 +915,7 @@ Microsoft.VisualBasic.Extensions.π(System.Collections.Generic.IEnumerable{Syste
 
 |Parameter Name|Remarks|
 |--------------|-------|
-|Elements|-|
+|source|-|
 
 
 

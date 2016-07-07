@@ -5,11 +5,22 @@ title: Int
 # Int
 _namespace: [Microsoft.VisualBasic.Language](N-Microsoft.VisualBasic.Language.html)_
 
-
+Alias of @"T:System.Int32"
 
 
 
 ### Methods
+
+#### CompareTo
+```csharp
+Microsoft.VisualBasic.Language.Int.CompareTo(System.Object)
+```
+Compare @"T:Microsoft.VisualBasic.Language.Int" or @"T:System.Int32"
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|obj|-|
+
 
 #### op_LessThan
 ```csharp

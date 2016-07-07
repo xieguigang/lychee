@@ -23,10 +23,18 @@ Creates a object bind with a specific @"P:Microsoft.VisualBasic.ComponentModel.D
 |value|-|
 
 
+#### ToString
+```csharp
+Microsoft.VisualBasic.ComponentModel.DataSourceModel.NamedValue`1.ToString
+```
+View object.
+
 
 ### Properties
 
+#### IsEmpty
+Does this object have value?
 #### Name
-Identifier
+Identifier tag data. you can using this property value as a dictionary key.
 #### x
 Object value

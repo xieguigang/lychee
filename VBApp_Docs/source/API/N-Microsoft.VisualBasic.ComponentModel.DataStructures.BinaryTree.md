@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:14 PM
 ---
 
 [BinaryTree`1](T-Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree.BinaryTree`1.html)

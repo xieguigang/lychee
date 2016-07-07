@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Parallel.ServicesFolk
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:29 PM
 ---
 
 [__getChildPortal](T-Microsoft.VisualBasic.Parallel.ServicesFolk.__getChildPortal.html)

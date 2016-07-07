@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Net.Protocols.ContentTypes
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:33 PM
 ---
 
 [ContentType](T-Microsoft.VisualBasic.Net.Protocols.ContentTypes.ContentType.html)

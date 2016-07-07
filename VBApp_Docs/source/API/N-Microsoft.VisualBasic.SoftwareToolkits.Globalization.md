@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.SoftwareToolkits.Globalization
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:40 PM
 ---
 
 [LanguageAttribute](T-Microsoft.VisualBasic.SoftwareToolkits.Globalization.LanguageAttribute.html)

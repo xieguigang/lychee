@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.SecurityString
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:42 PM
 ---
 
 [MD5Hash](T-Microsoft.VisualBasic.SecurityString.MD5Hash.html)

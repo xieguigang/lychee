@@ -5,7 +5,7 @@ title: Base64Codec
 # Base64Codec
 _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
-
+Tools API for encoded the image into a base64 string.
 
 
 

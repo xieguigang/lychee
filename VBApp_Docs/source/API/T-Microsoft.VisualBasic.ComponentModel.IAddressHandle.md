@@ -12,8 +12,3 @@ This object gets a object handle value to indicated that the position this objec
 
 
 
-### Properties
-
-#### Address
-The ID that this object in a list instance.
- (本对象在一个列表对象中的位置索引号)

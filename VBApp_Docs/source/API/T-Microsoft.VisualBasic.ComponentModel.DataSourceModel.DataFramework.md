@@ -45,8 +45,23 @@ Retrive data from a specific datatable object.(从目标数据表中获取数据
 |DataTable|-|
 
 
+#### ValueToString
+```csharp
+Microsoft.VisualBasic.ComponentModel.DataSourceModel.DataFramework.ValueToString(System.Object)
+```
+Call @"T:System.Object" of the value types
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|x|Object should be @"T:System.Data.ValueType"|
+
+
 
 ### Properties
 
-#### BasicTypesLoading
-将字符串数据类型转换为其他的数据类型
+#### Flags
+Controls for @"T:Microsoft.VisualBasic.ComponentModel.DataSourceModel.DataFramework.PropertyAccessibilityControls" on @"T:System.Reflection.PropertyInfo"
+#### PrimitiveFromString
+Converts the .NET primitive types from string.(将字符串数据类型转换为其他的数据类型)
+#### ToStrings
+Object @"T:System.Object" methods.

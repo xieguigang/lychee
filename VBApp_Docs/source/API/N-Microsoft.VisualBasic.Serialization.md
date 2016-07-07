@@ -1,12 +1,11 @@
 ﻿---
 title: Microsoft.VisualBasic.Serialization
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:30 PM
 ---
 
 [__StringTypeCaster](T-Microsoft.VisualBasic.Serialization.__StringTypeCaster.html)
 [ConfigurationMappings](T-Microsoft.VisualBasic.Serialization.ConfigurationMappings.html)
 [DynamicsConfiguration](T-Microsoft.VisualBasic.Serialization.DynamicsConfiguration.html)
-[JsonContract](T-Microsoft.VisualBasic.Serialization.JsonContract.html)
 [MappingsIgnored](T-Microsoft.VisualBasic.Serialization.MappingsIgnored.html)
 [NodeMapping](T-Microsoft.VisualBasic.Serialization.NodeMapping.html)
 [ShadowsCopy](T-Microsoft.VisualBasic.Serialization.ShadowsCopy.html)

@@ -5,7 +5,7 @@ title: RowBuilder
 # RowBuilder
 _namespace: [Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels](N-Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.ComponentModels.html)_
 
-
+这个是用于将Csv文件之中的行数据转换为.NET对象的
 
 
 

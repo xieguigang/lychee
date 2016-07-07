@@ -30,6 +30,17 @@ Contact this class object with other string value
 |x|-|
 
 
+#### ReadProperty``1
+```csharp
+Microsoft.VisualBasic.Language.ClassObject.ReadProperty``1(System.String)
+```
+Get dynamics property value.
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|name|-|
+
+
 #### ToString
 ```csharp
 Microsoft.VisualBasic.Language.ClassObject.ToString

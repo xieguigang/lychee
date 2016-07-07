@@ -40,6 +40,18 @@ Replaces the string representations of meta chars with their corresponding
 
 _returns: A string with all string meta chars are replaced_
 
+#### sprintf
+```csharp
+Microsoft.VisualBasic.Terminal.STDIO__.CFormatProvider.sprintf(System.String,System.Object[])
+```
+Format string like C
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|Format|-|
+|Parameters|-|
+
+
 #### ToInteger
 ```csharp
 Microsoft.VisualBasic.Terminal.STDIO__.CFormatProvider.ToInteger(System.Object,System.Boolean)

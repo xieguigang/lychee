@@ -5,7 +5,7 @@ title: EmitReflection
 # EmitReflection
 _namespace: [Microsoft.VisualBasic](N-Microsoft.VisualBasic.html)_
 
-
+Some common used reflection operation extension at here.
 
 
 
@@ -210,5 +210,26 @@ Get the scripting namespace value from @"T:Microsoft.VisualBasic.CommandLine.Ref
 |--------------|-------|
 |__nsType|-|
 
+
+#### RunApp
+```csharp
+Microsoft.VisualBasic.EmitReflection.RunApp(System.String,System.String,System.Boolean)
+```
+Run external [.NET] Program from RAM Memory
+
+|Parameter Name|Remarks|
+|--------------|-------|
+|app|-|
+|CLI|-|
+|cs|Going to running a c# program?|
+
+> 
+>  http://www.codeproject.com/Tips/1108105/Run-external-NET-Program-from-RAM-Memory
+>  
+>  Run external app directly from RAM. You can load the specific file into a ``Byte[]`` Array 
+>  with a ``StreamReader()`` or even download it from WEB via a direct link provided. 
+>  If you loaded the file from disk, you can delete it if you want after it has been loaded 
+>  by a ``StreamReader()``.
+>  
 
 

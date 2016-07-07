@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Serialization
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:40 PM
 ---
 
 [Doc](T-Microsoft.VisualBasic.SoftwareToolkits.XmlDoc.Serialization.Doc.html)

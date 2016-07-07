@@ -26,6 +26,8 @@ Microsoft.VisualBasic.CommandLine.Reflection.ParameterInfo.#ctor(System.String,S
 
 ### Properties
 
+#### AcceptTypes
+Accept these types as input or output data in this types if @"P:Microsoft.VisualBasic.CommandLine.Reflection.ParameterInfo.Out" is true.
 #### Description
 The description and brief help information about this parameter switch, 
  you can using the \n escape string to gets a VbCrLf value.
@@ -36,5 +38,7 @@ The usage example of this parameter switch.(该开关的值的示例)
 The name of this command line parameter switch.(该命令开关的名称)
 #### Optional
 Is this parameter switch is an optional value.(本开关是否为可选的参数)
+#### Out
+Is this parameter is using for the output
 #### Usage
 The usage syntax information about this parameter switch.(本开关参数的使用语法)

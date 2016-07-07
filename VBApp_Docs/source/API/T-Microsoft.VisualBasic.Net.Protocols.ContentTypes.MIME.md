@@ -12,3 +12,11 @@ MIME stands for "Multipurpose Internet Mail Extensions. It's a way of identifyin
 
 
 
+### Properties
+
+#### ContentTypes
+根据类型来枚举
+#### ExtDict
+枚举出所有已知的文件拓展名列表
+#### Unknown
+.*（ 二进制流，不知道下载文件类型）

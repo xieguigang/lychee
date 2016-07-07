@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.Reflector
-date: 6/19/2016 11:16:14 AM
+date: 7/7/2016 5:46:58 PM
 ---
 
 [OperationTypes](T-Microsoft.VisualBasic.DocumentFormat.Csv.StorageProvider.Reflection.Reflector.OperationTypes.html)

@@ -145,6 +145,12 @@ This is the custom message of the exception, not extract from the function @"M:S
 |Trace|-|
 
 
+#### RunAsAdmin
+```csharp
+Microsoft.VisualBasic.App.RunAsAdmin
+```
+Restart the current process with administrator credentials.(以管理员的身份重启本应用程序)
+
 #### RunCLI
 ```csharp
 Microsoft.VisualBasic.App.RunCLI(System.Type,Microsoft.VisualBasic.CommandLine.CommandLine,Microsoft.VisualBasic.CommandLine.__ExecuteFile,Microsoft.VisualBasic.CommandLine.__ExecuteEmptyCLI,System.String)

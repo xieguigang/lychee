@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints
-date: 6/19/2016 11:16:13 AM
+date: 7/7/2016 5:46:13 PM
 ---
 
 [APIDelegate](T-Microsoft.VisualBasic.CommandLine.Reflection.EntryPoints.APIDelegate.html)
