@@ -16,7 +16,9 @@ End Function
    + [admin-master@gcmodeller.org](mailto://admin-master@gcmodeller.org)
 + 手机: +86 13807837047
 
-> {% githubCard xieguigang %}
+> {% githubCard xieguigang %}  
+
+<iframe src="http://www.codeproject.com/members/flair/10137048?show=RepDesignation,MemberTypes,ArticleCount,MessageCount,AvgArtRating,Reputation" height="180" width="270" scrolling="no" frameborder="no"></iframe>
 
 他自称是一名全栈开发人员，但是其实主要精通的是进行服务器后端的开发工作，对于前端的html5开发也略微精通。其从2011年开始学习编程，从2013年开始算起到现在已经有3年的服务器后端的开发经验了。他在位于美国的西雅图微软公司的雷德蒙德研究院有过为期1个月的学习实习经历。
 
