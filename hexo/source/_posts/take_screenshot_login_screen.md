@@ -8,7 +8,7 @@ This simple tutorial shows you how to capture screenshot of the ``LightDM`` / ``
 
 Besides installing your system as ``Virtualbox`` or ``Vmware`` Guest OS, we can follow the steps below to capture and share our login screens.
 
-![]()
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/c/login_screenshot_bash.png)
 
 <!--More-->
 
@@ -18,8 +18,8 @@ When it opens, run command blow to check out your display manager:
 ```bash
 cat /etc/X11/default-display-manager
 
-handbook@handbook-1310:~$ cat /etc/X11/default-display-manager
-/usr/sbin/lightdm
+# handbook@handbook-1310:~$ cat /etc/X11/default-display-manager
+# /usr/sbin/lightdm
 ```
 
 By default:
@@ -32,8 +32,8 @@ By default:
 ```bash
 echo $DISPLAY
 
-handbook@handbook-1310:~$ echo $DISPLAY
-:0
+# handbook@handbook-1310:~$ echo $DISPLAY
+# :0
 ```
 
 **3. Now create a simple script**
@@ -51,7 +51,7 @@ You may change:
 **4. Press ``Ctrl+Alt+F1`` and log into ``TTY1``**
 **5. Run command below to start the script**
 
-```bash
+```perl
 sudo bash /tmp/shot.sh >/tmp/shot.xwd
 ```
 
@@ -59,13 +59,13 @@ sudo bash /tmp/shot.sh >/tmp/shot.xwd
 **7. Logout by normal way. While you can see login screen, wait for some seconds.**
 **8. Login by normal way. Install ``imagemagick`` if you don’t have it installed yet.**
 
-```bash
+```perl
 sudo apt-get install -y imagemagick
 ```
 
 **9. Run command below and finally you can check out the image under user Pictures folder.**
 
-```bash
+```perl
 convert /tmp/shot.xwd ~/Pictures/loginscreen.png
 ```
 
