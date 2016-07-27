@@ -1,6 +1,6 @@
 ﻿---
 title: RQL.My.Resources
-date: 6/19/2016 11:16:14 AM
+date: 7/27/2016 8:07:53 PM
 ---
 
 [Resources](T-RQL.My.Resources.Resources.html)

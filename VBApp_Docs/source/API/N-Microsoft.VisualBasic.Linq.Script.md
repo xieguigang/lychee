@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Linq.Script
-date: 6/19/2016 11:16:13 AM
+date: 7/27/2016 8:07:50 PM
 ---
 
 [DynamicsRuntime](T-Microsoft.VisualBasic.Linq.Script.DynamicsRuntime.html)

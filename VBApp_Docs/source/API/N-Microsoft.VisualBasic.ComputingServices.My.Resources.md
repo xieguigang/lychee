@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.ComputingServices.My.Resources
-date: 6/19/2016 11:16:13 AM
+date: 7/27/2016 8:07:51 PM
 ---
 
 [Resources](T-Microsoft.VisualBasic.ComputingServices.My.Resources.Resources.html)

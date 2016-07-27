@@ -1,6 +1,6 @@
 ﻿---
 title: Microsoft.VisualBasic.Linq.My.Resources
-date: 6/19/2016 11:16:13 AM
+date: 7/27/2016 8:07:50 PM
 ---
 
 [Resources](T-Microsoft.VisualBasic.Linq.My.Resources.Resources.html)
