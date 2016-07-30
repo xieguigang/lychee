@@ -8,7 +8,7 @@ Hi, fellows,
 
 Today I gladly announced that my personal open source contributions on the github community have reach 4000 points, from the continute works on github have been half year with almost 200 streak days.
 
-Cheers!
+Cheers! ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/20160708144913.gif)
 
 <!--more-->
 
@@ -16,7 +16,7 @@ This September I will going to work in the **Bei Jing** city, the capital city o
 
 Due to the reason of start busy with the company works, so that the open source works of [GCModeller](http://gcmodeller.org) project on [github](https://github.com/SMRUCC/GCModeller) may be slowing down, but this open source project development will not be stop, and continue move on in my free time. And probably the GCModeller coding will be more professional as I will benefit from my new job by learning lots of new technical skill knowledge to solving the scientific problems.
 
-Good luck with me!
+Good luck with me! &lt;(￣︶￣)↗[GO!]
 
 _#2016-07-31#_  write in Hong Kong University.
 
