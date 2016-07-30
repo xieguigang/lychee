@@ -10,13 +10,17 @@ Today I gladly announced that my personal open source contributions on the githu
 
 Cheers! ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/20160708144913.gif)
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/github_4000_hits.png)
+
 <!--more-->
+
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/100_streaks.png)
 
 This September I will going to work in the **Bei Jing** city, the capital city of China. A fantastic city that can provide me a more Broader platform for my bioinformatics software development career. With new challenge, Do great things and meet new friends in this new environment.
 
 Due to the reason of start busy with the company works, so that the open source works of [GCModeller](http://gcmodeller.org) project on [github](https://github.com/SMRUCC/GCModeller) may be slowing down, but this open source project development will not be stop, and continue move on in my free time. And probably the GCModeller coding will be more professional as I will benefit from my new job by learning lots of new technical skill knowledge to solving the scientific problems.
 
-Good luck with me! &lt;(￣︶￣)↗[GO!]
+Good luck with me! **&lt;(￣︶￣)↗[GO!]**
 
 _#2016-07-31#_  write in Hong Kong University.
 
