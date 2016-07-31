@@ -1,7 +1,7 @@
 # Site
-title: 谢桂纲的专栏客
+title: 谢桂纲的专栏博客
 subtitle:
-description:
+description: 在这上面记一些有用的笔记
 author: しゃけい よしつな
 language: en-US
 timezone:
@@ -21,8 +21,8 @@ subnav:
   #zhihu: "#"
   #douban: "#"
   mail: "mailto://I@xieguigang.me"
-  #facebook: "#"
-  #google: "#"
+  #facebook: "#"  
+  google: "xie.guigang@gmail.com"
   twitter: "https://twitter.com/xieguigang"
   #linkedin: "#"
 

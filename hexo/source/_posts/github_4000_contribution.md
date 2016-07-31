@@ -13,8 +13,6 @@ Cheers! ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-he
 <img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/github_4000_hits.png" width="450" />
 
 <!--more-->
---------------------------------------------------------------------------------------
-
 ### **Check list for year 2016**
 
 + **√. 100 days streak _#4th, May#_**
