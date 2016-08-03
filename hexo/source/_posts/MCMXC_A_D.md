@@ -1,6 +1,6 @@
 ---
 title: MCMXC, A.D.
-tags: [music]
+tags: [music, Enigma]
 date: 2016-8-2
 ---
 
