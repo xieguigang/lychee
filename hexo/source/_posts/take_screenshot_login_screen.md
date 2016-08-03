@@ -1,6 +1,6 @@
 ---
 title: Take screenshot of Login Screen in Ubuntu, Elementary & Pear OS
-tags: [bash, ubuntu, elementary os]
+tags: [bash, ubuntu, elementary os, repost]
 date: 2016-7-26
 ---
 

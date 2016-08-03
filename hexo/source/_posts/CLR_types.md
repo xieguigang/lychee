@@ -1,6 +1,6 @@
 ---
 title: What does the Visual Studio “Any CPU” target mean?
-tags: [note, VisualStudio, Compiler]
+tags: [note, VisualStudio, Compiler, MSDN]
 date: 2016-06-11
 ---
 

@@ -1,8 +1,10 @@
 ---
 title: Calculating F-statistics from genotypic data
-tags: [genetics, algorithm]
+tags: [genetics, algorithm, vb.net, github]
 date: 2016-8-3
 ---
+
+> CLI_tools source code on github: [pairwise.fst](https://github.com/genetics-potato/pairwise.fst)
 
 ###### Genotype
 

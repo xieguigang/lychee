@@ -1,6 +1,6 @@
 ---
 title: Markdown Syntax
-tags: [Markdown,Syntax,转载搬运]
+tags: [Markdown,Syntax,转载搬运, repost]
 date: 2016.06.07
 ---
 

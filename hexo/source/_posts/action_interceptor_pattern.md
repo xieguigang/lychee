@@ -1,6 +1,6 @@
 ---
 title: The Action Interceptor Pattern
-tags: [CodeProject,note,转载搬运,architecture,vb.net]
+tags: [CodeProject,note,转载搬运,architecture,vb.net, 架构]
 date: 2016-06-09
 source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
 ---

@@ -1,6 +1,6 @@
 ---
 title: 关于浏览器你不知道的事
-tags: [web, user-agent]
+tags: [web, user-agent, chrome, firefox, IE]
 date: 2016-06-24
 ---
 

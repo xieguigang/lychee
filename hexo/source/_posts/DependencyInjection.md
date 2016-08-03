@@ -1,6 +1,6 @@
 ---
 title: Dependency Injection In Programming
-tags: [vb.net, 架构, CodeProject]
+tags: [vb.net, 架构, CodeProject, interface]
 date: 2016-06-25
 ---
 

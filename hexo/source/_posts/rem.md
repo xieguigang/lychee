@@ -1,6 +1,6 @@
 ---
 title: Re:从零开始的异世界生活 的蕾姆
-tags: [re0,rem]
+tags: [re0,rem, note]
 date: 2016-06-20
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 3D Rotation
-tags: [repost,3d graphics,note]
+tags: [repost,3d graphics,note, math]
 date: 2016-06-10
 ---
 

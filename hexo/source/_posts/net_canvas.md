@@ -1,6 +1,6 @@
 ---
 title: Canvas for Network visualization
-tags: [d3js,vb.net,my works,前端]
+tags: [d3js,vb.net,my works,前端, javascript, force directed]
 date: 2016.06.06
 ---
 

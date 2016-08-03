@@ -1,6 +1,6 @@
 ---
 title: 关于NodeJS的单线程和异步IO
-tags: [nodejs,转载搬运]
+tags: [nodejs,转载搬运, javascript]
 date: 2016.06.04
 ---
 

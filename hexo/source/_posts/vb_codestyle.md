@@ -1,6 +1,6 @@
 ---
 title: Code style guidelines for Microsoft VisualBasic
-tags: [vb.net,CodeProject,SDK document]
+tags: [vb.net,CodeProject,SDK document, note]
 date: 2016.06.04
 ---
 
