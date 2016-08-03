@@ -16,9 +16,10 @@ End Function
    + [admin-master@gcmodeller.org](mailto://admin-master@gcmodeller.org)
 + 手机: +86 13807837047
 
+## 我的github名片
+
 > {% githubCard xieguigang %}  
 
-<iframe src="http://www.codeproject.com/members/flair/10137048?show=RepDesignation,MemberTypes,ArticleCount,MessageCount,AvgArtRating,Reputation" height="180" width="270" scrolling="no" frameborder="no"></iframe>
 
 他自称是一名全栈开发人员，但是其实主要精通的是进行服务器后端的开发工作，对于前端的html5开发也略微精通。其从2011年开始学习编程，从2013年开始算起到现在已经有3年的服务器后端的开发经验了。他在位于美国的西雅图微软公司的雷德蒙德研究院有过为期1个月的学习实习经历。
 
@@ -101,6 +102,9 @@ PM> Install-Package VB_AppFramework_40
 
 --------------------------------------------------
 ### **谢桂纲的CodeProject社区文章列表**
+
+<iframe src="http://www.codeproject.com/members/flair/10137048?show=RepDesignation,MemberTypes,ArticleCount,MessageCount,AvgArtRating,Reputation" height="150" width="270" scrolling="no" frameborder="no"></iframe>
+
 1. [R Statics Language API to VB.NET Language](http://www.codeproject.com/Articles/1083875/R-Statics-Language-API-to-VB-NET-Language)
 2. [Venn Diagram in VisualBasic](http://www.codeproject.com/Articles/1090178/Venn-Diagram-in-VisualBasic)
 3. [R language S4Object Serialization to .NET Object](http://www.codeproject.com/Articles/890099/R-language-S-Object-Serialization-to-NET-Object)
