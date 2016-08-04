@@ -1,19 +1,17 @@
 ---
 title: 为什么我们瞧不起土狗？
-tags: [dog]
+tags: [Chinese rural dog, 中華田園犬]
 date: 2016-8-5
 ---
 
-不是狗土，是你土
+**不是狗土，是你土。**
 
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p1.jpg)
 
 中国的语言文字是美丽丰富的，但却没能给中国土狗取一个名字。
-
 不是已经说了叫“土狗”吗？柴狗、黄狗、草狗、中华田园犬，不都是名字？
 
-不是。
+**不是。**
 
 柴狗、黄狗、草狗是部分地区的叫法，不是统称；“土狗”是贬义词，不是中性名词；“中华田园犬”是自欺欺人的“雅称”，正如我们把“妓女”称为“性工作从事者”；遛土狗很丢人，遛“中华田园犬”好像就没那么丢人了。
 
@@ -23,40 +21,33 @@ date: 2016-8-5
 
 姑且先叫它们土狗吧。
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p2.jpg)
 
-
-
-
-
-  一  
-中国土狗不是杂种
+### 中国土狗不是杂种
 
 中国有不少品种狗，藏獒、京巴、松狮、西施、冠毛、昆明犬（狼狗）等等，但提到“土狗”，就完全无血统可言了：杂种！
-
 所有的“串儿”、低等杂种狗，都可以统称为土狗。偏见。所谓的中国“土狗”其实是一种血统优秀的高级犬。
-
 土狗的祖先是东亚狼，早年，它们跟随汉民族从青藏高原以东、长城以南，经黄河流域分散到全国各地，如今大概分三个品系。
 
-
-1 北方品系
+#### 1. 北方品系
 
 主要生活于东北、黄河流域、长江中上游，多杂色，不吃外食，独死。
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p3.jpg)
 
 
-
-2 两广品系
+#### 2. 两广品系
 
 主要生活于广东、广西、福建等地，抗病能力强，擅捕猎，战斗力强。
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p4.jpg)
 
 
-
-3 江浙品系
+#### 3. 江浙品系
 
 主要生活于浙江、江苏、安徽等地，对韩国、日本犬种影响极大，是日本柴犬的祖先。
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p5.jpg)
 
 
 土狗 是一种有独立血统，习性、栖息地明确的犬种，不是杂种。
@@ -66,7 +57,7 @@ date: 2016-8-5
 狗粮、狗衣、狗玩具、狗预防针都是给西方犬预备的，土狗只需要一条铁锁链和一碗剩饭。
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p6.jpg)
 
 
 果真 如此吗？
@@ -76,7 +67,7 @@ date: 2016-8-5
 李斯临刑哀叹：“吾欲与若复牵黄犬俱出……岂可得乎？”；苏轼晚年感慨：“老夫聊发少年狂，左牵黄，右擎苍”。
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p7.jpg)
 
 
 中国的人啊，你凭什么瞧不起中国的狗呢？中国的狗哪里配不上你呢？
@@ -85,17 +76,15 @@ date: 2016-8-5
 
 
 
-  二  
-中国土狗的血统是最优秀的
+### 中国土狗的血统是最优秀的
 
 中国土狗血统的优秀在于它既保留了东亚狼的优势又躲过了西方人对犬类血统的祸害。
-
 西方白人有很强的“血统观”，把人分为皇室、贵族、贱民，他们不仅重视人的血统，还重视狗的。
 
 如何保持血统纯正？
 近亲繁殖。
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p8.jpg)
 
 
 
@@ -106,7 +95,7 @@ date: 2016-8-5
 不少国内专家还在用“优者越优，劣者越劣”来美化近亲繁殖，误导民众。
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p9.jpg)
 
 
 犬的祖先是东亚狼，为何如今的“名种狗”连家都找不着？易走失、爱得病、撒手丢、人尽可主、各种不能吃，退化的主要原因便是近亲繁殖。
@@ -119,14 +108,14 @@ date: 2016-8-5
 是为了择优，而不是衰退。
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p10.jpg)
 
 
 即便土狗有独立血统与优势，却依然没能得到FCI （世界畜犬联盟）的认证，换言之，国际上不认可有“土狗”这个品种。
 
 但台湾的“台湾犬（台湾原住民饲养的猎犬，南亚狩猎犬的后代）”却被认证了，为什么？
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p11.jpg)
 
 台湾犬
 
@@ -142,7 +131,7 @@ date: 2016-8-5
 土狗的智商到底如何呢？
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p12.jpg)
 
 
 有户农家总丢饭，婆婆以为是儿媳妇偷吃的就打了她，可饭还是天天丢。邻居说一个女人吃不了那么多，可能是村里的大黄狗偷吃的。
@@ -160,7 +149,7 @@ date: 2016-8-5
 
 让人无语且可悲的人类自尊心。
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p13.jpg)
 
 
 
@@ -178,7 +167,7 @@ date: 2016-8-5
 
 只要熟悉它们，主人听叫声就可以知道情况，提前做好准备。
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p14.jpg)
 
 
 
@@ -193,7 +182,7 @@ date: 2016-8-5
 有过在乡村生活经历的朋友，你家的土狗是这样的吗？刚到家，它会一直冲你叫，但很快就熟悉了你；待你每次离家，它会追着车跑很远，让它回家，它却依然站在原地，直到再也看不见你……
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p15.jpg)
 
 
 3 土狗的坚强
@@ -203,7 +192,7 @@ date: 2016-8-5
 老话说得好，“爱哭的孩子有奶吃”，越挑食的越有好饭，越好养活的越凑合，谁让你贱！
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p16.jpg)
 
 
 4 土狗的高颜值
@@ -211,8 +200,9 @@ date: 2016-8-5
 对于“土狗都很丑”的说法，
 我认为应该做一个对比。
 
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p17.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p18.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p19.jpg)
 
 
 
@@ -222,17 +212,18 @@ date: 2016-8-5
 
 小时候走萌系▽
 
-
-
-
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p20.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p21.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p22.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p23.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p24.jpg)
 
 长大了走线条系▽
 
-
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/640.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p25.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p26.jpg)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p27.jpg)
 
 
 
@@ -240,36 +231,31 @@ date: 2016-8-5
 
 会撒娇▽
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p28.jpg)
 
 会勾搭主人▽
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p29.jpg)
 
 会谜之微笑▽
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p30.jpg)
 
 
 会装可怜▽
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p31.jpg)
 
 会释放让你无法拒绝的小眼神▽
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p32.jpg)
 
 会犯贱被蜜蜂蛰成这个Ｂ样儿▽
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p33.jpg)
 
 爱和“中国土猫”搞基▽
 
-
-
-偶尔也会欺负主人▽
-
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p34.jpg)
 
 其实，美与丑，好像跟狗并没多大关系。认为自己土，别人就很洋气；认为自己没那么土，别人也就没那么洋气了。
 
@@ -282,41 +268,39 @@ date: 2016-8-5
 藏人爱狗，布达拉宫前常有人把糌粑掰给狗吃；西藏没有“流浪狗”，只有“自由狗”。
 
 
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p35.jpg)
 
 
 满人因祖先被狗救过而不许吃狗肉。白族把狗分成一、二、三等，打猎归来，内脏先给头狗，回家后头狗和人一样能分单独到一份猎物。
 
-汉人呢？《三字经》：“马牛羊，鸡犬逐，此六畜，人所饲”。
+汉人呢？《三字经》：
+
+> “马牛羊，鸡犬逐，此六畜，人所饲”。
 
 会打猎的是田犬，会看家的是吠犬，啥也不会的是肉犬。
-
 汉人眼里，狗是畜生，是工具，不是伙伴。
 
-
-
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p36.jpg)
 
 人和狗，是平行于世的两个不同物种，人与狗之间，不应该有高低贵贱；狗与狗之间，也不该有。
-
 人类的评判标准和思想观念，应该仅限于在人类范围内使用。
-
 给土狗起个名字吧，它们值得。
 
-“柴门闻犬吠，风雨夜归人”，
+> “柴门闻犬吠，风雨夜归人”，
+
 多好。
 
-画作尾
-▽
+### 画作尾 ▽
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a1.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a2.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a3.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a4.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a5.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a6.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a7.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a8.png)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/paints/a9.png)
 
-
-
-
-
-
-
-
-
-
-
+> 原文: [《为什么我们瞧不起土狗？》](http://mp.weixin.qq.com/s?__biz=MjM5MTA2NDY4MA==&mid=2653081188&idx=1&sn=8c844359f1c76cdf046911fc39190019&scene=23&srcid=0804cUAW15I6sWGuFLGHFmik#rd)
+> ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/qrcode.bmp)
