@@ -48,4 +48,4 @@ Gecko很出色，而IE完全跟不上它，因此user agent探测规则变了，
 + 2008年9月2日：Chrome
 
 
-> source: http://www.ithome.com/html/soft/227827.htm
+> ![关于浏览器你不知道的事](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/user-agent.png)
