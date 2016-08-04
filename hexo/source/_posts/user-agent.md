@@ -4,8 +4,6 @@ tags: [web, user-agent, chrome, firefox, IE]
 date: 2016-06-24
 ---
 
-> source: http://www.ithome.com/html/soft/227827.htm
-
 你是否好奇标识浏览器身份的``User-Agent``，为什么每个浏览器都有Mozilla字样？
 
 ```vbnet
@@ -48,3 +46,6 @@ Gecko很出色，而IE完全跟不上它，因此user agent探测规则变了，
 + 1996年10月14日：Kongqueror
 + 2003年1月7日：Safari
 + 2008年9月2日：Chrome
+
+
+> source: http://www.ithome.com/html/soft/227827.htm

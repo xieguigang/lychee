@@ -4,8 +4,6 @@ tags: [note, VisualStudio, Compiler, MSDN]
 date: 2016-06-11
 ---
 
-> stackoverflow: http://stackoverflow.com/questions/516730/what-does-the-visual-studio-any-cpu-target-mean
-
 An ``AnyCPU`` assembly will ``JIT`` to ``64 bit`` code when loaded into ``64 bit`` process and ``32 bit`` when loaded into a ``32 bit`` process.
 By limiting the CPU you would be saying there is something being used by the assembly (something likely unmanaged) that requires 32 bits or 64 bits.
 I think most of the important stuff has been said, but I just thought I'd add one thing:
@@ -52,3 +50,5 @@ See [CLRImageType](https://msdn.microsoft.com/en-us/library/microsoft.visualstud
 ##### See Also
 [Setting Linker Options](https://msdn.microsoft.com/en-us/library/wk97ab1b.aspx)
 [Linker Options](https://msdn.microsoft.com/en-us/library/y0zzbyt4.aspx)
+
+> stackoverflow: http://stackoverflow.com/questions/516730/what-does-the-visual-studio-any-cpu-target-mean

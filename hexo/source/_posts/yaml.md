@@ -5,8 +5,6 @@ tags: [YAML,repost]
 date: 2016-06-08
 ---
 
-> source: http://docs.ansible.com/ansible/YAMLSyntax.html
-
 This page provides a basic overview of correct YAML syntax, which is how Ansible playbooks (our configuration management language) are expressed.
 
 We use YAML because it is easier for humans to read and write than other common data formats like XML or JSON. Further, there are libraries available in most programming languages for working with YAML.
@@ -150,3 +148,5 @@ Boolean conversion is helpful, but this can be a problem when you want a literal
 non_boolean: "yes"
 other_string: "False"
 ```
+
+> source: http://docs.ansible.com/ansible/YAMLSyntax.html
