@@ -385,4 +385,4 @@ wilcox.test(x,y)
 ```
 
 
-> source: 一只小桃子 - [R语言 假设检验（非参数） 学习笔记](http://my.oschina.net/u/1047640/blog/196546)
+> ![一只小桃子 - R语言 假设检验（非参数） 学习笔记](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/R_hypothesis_testing.png)

@@ -198,4 +198,4 @@ Row3	n1n3(1 - cosq) + n2sinq     n2n3(1 - cosq) - n1sinq     n32 + (1 - n32)cosq
 Row4	0                           0                           0                          1
 ```
 
-> source: [3D Rotation](https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation)
+> ![3D Rotation](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/3d_rotation.png)

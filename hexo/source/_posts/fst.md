@@ -176,4 +176,4 @@ Both ``FIS`` and ``Fs`` are, however, based on the ``observed`` heterozygosities
 + No excess or deficiency of heterozygotes over the total population (``FIT`` is nearly zero).
 
 
-> source: [Population Ecology, ZOO 4400/5400, Spring 2013](http://www.uwyo.edu/dbmcd/popecol/index.html)
+> ![Population Ecology, ZOO 4400/5400, Spring 2013](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/Calculating_F-statistics_from_genotypic_data.png)

@@ -45,4 +45,4 @@ date: 2016.07.30
 开源并不是完全免费的志愿活动。相反，从长期来看，它能让你渐渐地超越你的同龄人，它会成为一棵真正的摇钱树。
 你以前有没有参与过开源项目？你获得的经验？好处？欢迎和我们一起分享。
 
-> source: [程序员应该做开源项目的6个原因](http://buluo.qq.com/p/detail.html?bid=205506&pid=1336870-1469424935&from=grp_sub_obj)
+> ![程序员应该做开源项目的6个原因](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/6_reason_for_opensource.png)

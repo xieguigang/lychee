@@ -69,4 +69,4 @@ sudo apt-get install -y imagemagick
 convert /tmp/shot.xwd ~/Pictures/loginscreen.png
 ```
 
-> source: [Take screenshot of Login Screen in Ubuntu, Elementary & Pear OS](http://ubuntuhandbook.org/index.php/2013/11/capture-login-screen-ubuntu-elementary-pear-os/)
+> ![Take screenshot of Login Screen in Ubuntu, Elementary & Pear OS](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/take_screenshot_login_screen.png)
