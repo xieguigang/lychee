@@ -1,5 +1,6 @@
 ---
 title: Github contributions reach 4000 points
+sticky: 100
 tags: [github, check-point]
 date: 2016-07-31
 ---
