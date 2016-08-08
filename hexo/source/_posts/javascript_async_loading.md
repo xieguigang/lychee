@@ -282,4 +282,6 @@ RequireJS 、 CommonJS 以及 王保平(淘宝)的 SeaJS 及其博客 。
 + [Load Non-blocking JavaScript with HTML5 Async and Defer](http://www.sitepoint.com/non-blocking-async-defer/)
 + 2010年 Velocity China 上的两个讲义：
 	+ Steve Souders(Google)的 [Even Faster Web Sites](http://velocity.oreilly.com.cn/2010/ppts/velocity-efws-20101208SteveSoudersEvenFaster.pdf) (pdf)
-	+ 李穆(淘宝)的 [第三方广告代码稳定性和性能优化实战](http://velocity.oreilly.com.cn/2010/ppts/limufromTaobao.pdf) (pdf)]
+	+ 李穆(淘宝)的 [第三方广告代码稳定性和性能优化实战](http://velocity.oreilly.com.cn/2010/ppts/limufromTaobao.pdf) (pdf)
+	
+> ![Javascript 异步加载详解](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/javascript_async_loading.png)

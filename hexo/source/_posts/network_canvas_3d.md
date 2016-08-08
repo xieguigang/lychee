@@ -11,6 +11,8 @@ In this , there are two problem:
 + 3D rotation
 + 3D Projection
 
+<!--more-->
+
 ### Background: 3D rotation
 
 > [3D graphics tutorial - Rotating objects](https://petercollingridge.appspot.com/3D-tutorial/rotating-objects)
