@@ -4,6 +4,8 @@ tags: [vb.net, SVG, gdi+, 3D]
 date: 2016-8-7
 ---
 
+![3D network in movie '007 Skyfall (2012)'](https://github.com/xieguigang/xieguigang.github.io-hexo/raw/master/images/3D_rotation/daa-skayfoll-1080p.mkv_005301660.jpg)
+
 In this , there are two problem:
 
 + 3D rotation
@@ -122,6 +124,14 @@ Public Function RotateZ(angle As Double) As Point3D
 End Function
 ```
 
+Then we can creates a very basic cube model in 3D and makes rotation:
+
+```vbnet
+
+```
+
+![A rotated 3D cube](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/3D_rotation/an_actual_cube.bmp)
+
 ### Background: 3D Projection
 
 ### Project Point3D to Drawing.Point
@@ -151,6 +161,8 @@ End Function
 ```
 
 ### Network canvas in 3D
+
+![Network canvas in 3D](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/3D_rotation/network_canvas_3D.bmp)
 
 ### Additional: Export SVG
 
