@@ -18,8 +18,7 @@ End Function
 
 ## 我的github名片
 
-> {% githubCard xieguigang %}  
-
+{% githubCard xieguigang %}
 
 他自称是一名全栈开发人员，但是其实主要精通的是进行服务器后端的开发工作，对于前端的html5开发也略微精通。其从2011年开始学习编程，从2013年开始算起到现在已经有3年的服务器后端的开发经验了。他在位于美国的西雅图微软公司的雷德蒙德研究院有过为期1个月的学习实习经历。
 
@@ -30,8 +29,7 @@ End Function
 + 数据分析： Bioconductor, GCModeller
 + 数据可视化: d3js, Circos
 
->![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/create_svg.png)
-> VB.NET+d3js SVG canvas html5混合编程
+![VB.NET+d3js SVG canvas html5混合编程](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/create_svg.png)
 
 ## **私人科研项目**
 ### 1. GCModeller开放计算平台 (VB.NET)
@@ -43,6 +41,7 @@ End Function
 GCModeller主要提供了一系列的免费开源工具用于进行原核生物的全基因组的生物网络系统模块的注释建模以及计算数据分析。目前GCModeller主要为国内外的大学以及生物测序公司提供收费的服务支持和数据分析服务。
 
 当前已经开发完成的比较成熟的分析功能模块有：
+
 > 1.	基于序列特征模式以及比较基因组学的全基因组的基因表达调控网络的构建工具；
 > 2.	RNA-Seq数据分析套件；本工具主要应用于差异表达基因的功能富集注释以及TSSs转录起始位点注释
 > 3.	FBA细胞表型分析套件；在这个模块之中除了常规的FBA分析功能，还建立了一个自有的结合转录组测序数据以及代谢网络模型的遗传约束FBA计算模型
@@ -50,6 +49,7 @@ GCModeller主要提供了一系列的免费开源工具用于进行原核生物�
 > 5.	大规模序列比对LocalBLAST/Clustal分析套件；
 > 6.	生物数据挖掘分析组件。
 > 7.    基因组序列特性位点的注释工具套件，这个工具套件主要用来分析酶切位点，转录因子结合位点，SNP位点
+> 8.    宏基因组分析工具
 
 以及一些通用化的生物信息学数据库的读写模块，这些生物信息学数据库主要包括有NCBI genbank数据库（\*.gb, \*.gff, \*.ptt），对KEGG数据库的DBGET REST API的封装，桑格尔研究所的Xfam家族的Pfam， Rfam， iPfam等数据库的读取，MetaCyc生物模型数据库，对RegPrecise数据库的REST API的封装，等
 
@@ -84,7 +84,7 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 > **API 文档库**  http://framework-docs.xieguigang.me/
 
 **NuGet包安装**
->```
+```
 PM> Install-Package VB_AppFramework
 PM> Install-Package VB_AppFramework_40
 ```
@@ -127,4 +127,4 @@ PM> Install-Package VB_AppFramework_40
 20. [Generate Color Mappings on Circos plot for prokaryote comparative genomics [Technical Blog]](http://www.codeproject.com/Articles/1055851/Generate-Color-Mappings-on-Circos-plot-for-prokary)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
->![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/CIMG0452.JPG)
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/CIMG0452.JPG)
