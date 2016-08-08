@@ -10,6 +10,10 @@ You might have seen the implementation of ``Ajax`` based data loading system at 
 
 > You may also want to checkout similar tutorial [Auto Load More Data On Page Scroll](https://www.sanwebe.com/2013/05/auto-load-records-on-page-scroll). In my earlier post [Simple Ajax Pagination](https://www.sanwebe.com/2013/02/ajax-pagination-jquery-php-simple), I have explained how to create Ajax Pagination using jQuery. Here we will be doing precisely the same thing.
 
+![load more](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/ajax-loader.gif)
+
+<!--more-->
+
 ### Configuration
 We use this configuration file to store certain variables such as MySql username and password, which is required by our program..
 
@@ -128,7 +132,8 @@ End Function
 
 And then running the test, yes, it success!
 
-
+![httpd server console output for this test jquery post load more](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/httpd_console_on_post.png)
+![Google Chrome output](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/chrome_jquery_loadmore.png)
 
 ### Congratulations!
 That’s it! we should have a nifty ``jQuery`` based data loading page by now. Don’t forget to checkout the demo and download the whole thing in your computer, downloadable file includes loading image and jQuery file, required by the script. Good luck! If you want to make ``Ajax`` Pagination with Next-Previous buttons, you can checkout this updated article — [Ajax Pagination with jQuery &amp; PHP](https://www.sanwebe.com/2013/03/ajax-pagination-with-jquery-php).
