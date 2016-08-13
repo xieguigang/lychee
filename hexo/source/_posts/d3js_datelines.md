@@ -4,66 +4,68 @@ tags: [javascript, d3js]
 date: 2016-8-13
 ---
 
-### 一、引入文件：
+### 一、引入文件
 
 ```html
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
 ```
 
-### 二、创建容器：
+### 二、创建容器
 
 ```javascript
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
-             width = 590 - margin.left - margin.right,
-             height = 300 - margin.top - margin.bottom;
+    width = 590 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 var svg = d3.select("body").append("svg")
-             .attr("width", width + margin.left + margin.right)
-             .attr("height", height + margin.top + margin.bottom)
-             .append("g")
-             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 ```
 
-需要注意的几个尺寸：svg画布的尺寸、chart图片的尺寸、margin值，另外svg的坐标原点是左上角，向右为正，向下为正。这对之后的各种元素的transition很重要。
+需要注意的几个尺寸：svg画布的尺寸、chart图片的尺寸、margin值，另外svg的坐标原点是左上角，向右为正，向下为正。这对之后的各种元素的``transition``很重要。
 
-可以参考一下这篇文章：[Margin Convention]()
+可以参考一下这篇文章：[Margin Convention](http://bl.ocks.org/mbostock/3019563)
+<!--more-->
 
 ### 三、定义X轴与Y轴：
 
 ```javascript
- var parseDate = d3.time.format("%Y-%m-%d").parse;
-     var x = d3.time.scale()
-             .range([0, width]);
+var parseDate = d3.time.format("%Y-%m-%d").parse;
+var x = d3.time.scale()
+          .range([0, width]);
 
-     var y = d3.scale.linear()
-             .range([height, 0]);
+var y = d3.scale.linear()
+          .range([height, 0]);
 
-     var xAxis = d3.svg.axis()
-             .scale(x)
-             .orient("bottom")
-             .tickFormat(d3.time.format("%m.%d"));
+var xAxis = d3.svg.axis()
+              .scale(x)
+              .orient("bottom")
+              .tickFormat(d3.time.format("%m.%d"));
 
-     var yAxis = d3.svg.axis()
-             .scale(y)
-             .orient("left");
+var yAxis = d3.svg.axis()
+              .scale(y)
+              .orient("left");
 ```
 
-1. parseDate是个函数，类似于公式。 d3.time.format("%Y-%m-%d").parse 的作用是将"%Y-%m-%d"格式的字符串转成真正的日期对象（Date）。
-2. 规定xy轴的比例尺：d3.time.scale() 表示时间比例尺，d3.scale.linear()表示线性比例尺，domain(输入)和range(输出)分别定义比例尺的定义域和值域。
-3. 定义坐标轴：d3.svg.axis()生成坐标轴，.scale()表示坐标轴应用的比例尺，orient表示方位，tickFormat(d3.time.format("%m.%d"))表示刻度格式化，也就是输出日期格式为12.14的刻度；axis().ticks()可以用来设置刻度的数量。
+1. ``parseDate``是个函数，类似于公式。 ``d3.time.format("%Y-%m-%d").parse``的作用是将``%Y-%m-%d``格式的字符串转成真正的日期对象（Date）。
+2. 规定xy轴的比例尺：``d3.time.scale()``表示时间比例尺，``d3.scale.linear()``表示线性比例尺，domain(输入)和range(输出)分别定义比例尺的定义域和值域。
+3. 定义坐标轴：``d3.svg.axis()``生成坐标轴，.scale()表示坐标轴应用的比例尺，orient表示方位，``tickFormat(d3.time.format("%m.%d"))``表示刻度格式化，也就是输出日期格式为12.14的刻度；``axis().ticks()``可以用来设置刻度的数量。
 
 ### 四、读取文件：
 
 ```javascript
 d3.tsv("data.tsv", function(error, data) {
-        if (error) throw error;
+    if (error) throw error;
 
-        data.forEach(function(d) {
-            d.date = parseDate(d.date);
-            d.close = +d.close;
-        });
+    data.forEach(function(d) {
+        d.date = parseDate(d.date);
+        d.close = +d.close;
+    });
 
-        //在这里对读取的数据进行绘图处理
+    //在这里对读取的数据进行绘图处理
+
 });
 ```
 
@@ -76,8 +78,8 @@ d3.tsv("data.tsv", function(error, data) {
 ### 五、定义X轴和Y轴的输入域：
 
 ```javascript
-        x.domain(d3.extent(data, function(d) { return d.date; }));
-       y.domain(d3.extent(data, function(d) { return d.close; }));
+x.domain(d3.extent(data, function(d) { return d.date; }));
+y.domain(d3.extent(data, function(d) { return d.close; }));
 ```
 
 1. 通常情况下.domain()和.range()都是链式操作一起写的，当然也可以像我们一样先设置.range()再来设置.domain()；
@@ -87,42 +89,44 @@ d3.tsv("data.tsv", function(error, data) {
 
 ```javascript
 var line = d3.svg.line()
-                .x(function(d) { return x(d.date); })
-                .y(function(d) { return y(d.close); });
-        svg.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
-                .call(xAxis);
-        svg.append("g")
-                .attr("class", "y axis")
-                .call(yAxis)
-                .append("text")
-                .attr("transform", "rotate(0)")
-                .attr("y", 25)
-                .attr("x", 75)
-                .attr("dy", ".71em")
-                .style("text-anchor", "end")
-                .text("我的数据");
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.close); });
+
+svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis)
+    .append("text")
+    .attr("transform", "rotate(0)")
+    .attr("y", 25)
+    .attr("x", 75)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("我的数据");
 ```
 
-1. 定义线条：d3.svg.line()的功能也类似于一个公式，传入对象后返回对象的x坐标和y坐标。
+1. 定义线条：``d3.svg.line()``的功能也类似于一个公式，传入对象后返回对象的x坐标和y坐标。
 2. ``.call(xAxis)``把选择的数据应用到定义的坐标轴。
 
 ### 七、绘制网格线：
 
 ```javascript
-        //定义纵轴网格线
-        var yInner = d3.svg.axis()
-                .scale(y)
-                .tickSize(-width,0,0)
-                .tickFormat("")
-                .orient("left")
-                .ticks(5);
-        //添加纵轴网格线
-        var yInnerBar=svg.append("g")
-                .attr("class", "inner_line")
-                .attr("transform", "translate(0,-25)")
-                .call(yInner);
+//定义纵轴网格线
+var yInner = d3.svg.axis()
+     .scale(y)
+     .tickSize(-width,0,0)
+     .tickFormat("")
+     .orient("left")
+     .ticks(5);
+
+//添加纵轴网格线
+var yInnerBar=svg.append("g")
+     .attr("class", "inner_line")
+     .attr("transform", "translate(0,-25)")
+     .call(yInner);
 ```
 
 ``.tickSize()``设定了刻度线的长度和位置。
@@ -131,35 +135,35 @@ var line = d3.svg.line()
 
 ```javascript
 svg.append("path")
-                .datum(data)
-                .attr("class", "line")
-                .attr("d", line)
-                .attr("opacity", 0)
-                .transition()
-                .duration(2000)
-                .attr("opacity", 1);
+   .datum(data)
+   .attr("class", "line")
+   .attr("d", line)
+   .attr("opacity", 0)
+   .transition()
+   .duration(2000)
+   .attr("opacity", 1);
 ```
 
 ### 九、添加数据散点：
 
 ```javascript
 // 散点
-        var points = svg.selectAll(".MyCircle")
-                .data(data)
-                .enter()
-                .append("circle")
-                .attr("class","MyCircle")
-                .attr("transform","translate(0,0)")
-                .attr("r", 3)
-                .attr("opacity", 0)
-                .transition()
-                .duration(2000)
-                .attr("cx", function(d){ return x(d.date); })
-                .attr("opacity", 1)
-                .attr("cy", function(d){ return y(d.close); });
+var points = svg.selectAll(".MyCircle")
+     .data(data)
+     .enter()
+     .append("circle")
+     .attr("class","MyCircle")
+     .attr("transform","translate(0,0)")
+     .attr("r", 3)
+     .attr("opacity", 0)
+     .transition()
+     .duration(2000)
+     .attr("cx", function(d){ return x(d.date); })
+     .attr("opacity", 1)
+     .attr("cy", function(d){ return y(d.close); });
 ```
 
-附1：测试数据 data.tsv
+附1：测试数据 ``data.tsv``
 
 ```
 date    close
@@ -190,31 +194,29 @@ date    close
 
 ```css
 .axis path,
-        .axis line {
-            fill: none;
-            stroke: #F2E8DE;
-            shape-rendering: crispEdges;
-        }
-        .line {
-            fill: none;
-            stroke: #FCAD62;
-            stroke-width: 1.5px;
-        }
-        text{
-            fill:#999;
-        }
-        .inner_line line {
-            fill: none;
-            stroke:#E7E7E7;
-            shape-rendering: crispEdges;
-        }
-        .MyCircle {
-            fill: #FCAD62;
-        }
+.axis line {
+    fill: none;
+    stroke: #F2E8DE;
+    shape-rendering: crispEdges;
+}
+.line {
+    fill: none;
+    stroke: #FCAD62;
+    stroke-width: 1.5px;
+}
+text{
+    fill:#999;
+}
+.inner_line line {
+    fill: none;
+    stroke:#E7E7E7;
+    shape-rendering: crispEdges;
+}
+.MyCircle {
+    fill: #FCAD62;
+}
 ```
 
-附：最终效果：
+![最终效果](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/719779-20151106183107617-140974873.png)
 
-![]()
-
-> ![D3.js制作日期折线图]()
+> ![D3.js制作日期折线图](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/d3js_datelines.png)
