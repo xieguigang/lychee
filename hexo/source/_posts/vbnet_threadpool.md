@@ -1,7 +1,7 @@
 ---
 title: VB.NET 线程池
-tags: [vb.net, threadpool, threading, web server]
-date: 2016-8-10
+tags: [vb.net, threadpool, threading, web server, 线程池]
+date: 2016-8-13
 ---
 
 > 水是生命之源，计算机资源也一样。
@@ -668,4 +668,4 @@ End Namespace
 
 结果较长，同时播放视频时，就可明显感觉到视频有点卡顿，说明CPU有点忙不过来了：）
 
-> ![]()
+> ![VB.net学习笔记（三十）认识线程池](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/vbnet_threadpool.png)
