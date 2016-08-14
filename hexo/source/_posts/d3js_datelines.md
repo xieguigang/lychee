@@ -34,19 +34,19 @@ var svg = d3.select("body").append("svg")
 ```javascript
 var parseDate = d3.time.format("%Y-%m-%d").parse;
 var x = d3.time.scale()
-          .range([0, width]);
+    .range([0, width]);
 
 var y = d3.scale.linear()
-          .range([height, 0]);
+    .range([height, 0]);
 
 var xAxis = d3.svg.axis()
-              .scale(x)
-              .orient("bottom")
-              .tickFormat(d3.time.format("%m.%d"));
+    .scale(x)
+    .orient("bottom")
+    .tickFormat(d3.time.format("%m.%d"));
 
 var yAxis = d3.svg.axis()
-              .scale(y)
-              .orient("left");
+    .scale(y)
+    .orient("left");
 ```
 
 1. ``parseDate``是个函数，类似于公式。 ``d3.time.format("%Y-%m-%d").parse``的作用是将``%Y-%m-%d``格式的字符串转成真正的日期对象（Date）。
@@ -65,7 +65,6 @@ d3.tsv("data.tsv", function(error, data) {
     });
 
     //在这里对读取的数据进行绘图处理
-
 });
 ```
 
@@ -96,6 +95,7 @@ svg.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis);
+
 svg.append("g")
     .attr("class", "y axis")
     .call(yAxis)
@@ -116,17 +116,17 @@ svg.append("g")
 ```javascript
 //定义纵轴网格线
 var yInner = d3.svg.axis()
-     .scale(y)
-     .tickSize(-width,0,0)
-     .tickFormat("")
-     .orient("left")
-     .ticks(5);
+    .scale(y)
+    .tickSize(-width,0,0)
+    .tickFormat("")
+    .orient("left")
+    .ticks(5);
 
 //添加纵轴网格线
 var yInnerBar=svg.append("g")
-     .attr("class", "inner_line")
-     .attr("transform", "translate(0,-25)")
-     .call(yInner);
+    .attr("class", "inner_line")
+    .attr("transform", "translate(0,-25)")
+    .call(yInner);
 ```
 
 ``.tickSize()``设定了刻度线的长度和位置。
@@ -149,18 +149,18 @@ svg.append("path")
 ```javascript
 // 散点
 var points = svg.selectAll(".MyCircle")
-     .data(data)
-     .enter()
-     .append("circle")
-     .attr("class","MyCircle")
-     .attr("transform","translate(0,0)")
-     .attr("r", 3)
-     .attr("opacity", 0)
-     .transition()
-     .duration(2000)
-     .attr("cx", function(d){ return x(d.date); })
-     .attr("opacity", 1)
-     .attr("cy", function(d){ return y(d.close); });
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("class","MyCircle")
+    .attr("transform","translate(0,0)")
+    .attr("r", 3)
+    .attr("opacity", 0)
+    .transition()
+    .duration(2000)
+    .attr("cx", function(d){ return x(d.date); })
+    .attr("opacity", 1)
+    .attr("cy", function(d){ return y(d.close); });
 ```
 
 附1：测试数据 ``data.tsv``
