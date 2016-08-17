@@ -11,6 +11,7 @@ The concept behind Evolutionary Transcriptomics is to combine these gene age est
 data to quantify the average transcriptome age within a biological process of interest ([Drost et al., 2016, bioRxiv](http://biorxiv.org/content/early/2016/05/03/051565.abstract)).
 
 In particular, this approach allowed the quantification of transcriptome conservation of animal and plant embryos passing through embryogenesis by first individually estimating the gene ages of specific animal and plant genomes and combining these gene age estimates with transcriptome data covering several stages of embryo development ([Domazet-Loso and Tautz, 2010 _Nature_](http://www.nature.com/nature/journal/v468/n7325/full/nature09632.html) ; [Quint, Drost et al., 2012 _Nature_](http://www.nature.com/nature/journal/v490/n7418/full/nature11394.html) ; [Drost et al., 2015 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/32/5/1221) ; [Drost et al., 2016 _Mol. Biol. Evol._](http://mbe.oxfordjournals.org/content/early/2016/02/23/molbev.msw039.short?rss=1)).
+<!--more-->
 
 However, as intensely discussed in the past years ([Capra et al., 2013](http://www.sciencedirect.com/science/article/pii/S016895251300111X); [Altenhoff et al., 2016](http://www.nature.com/nmeth/journal/v13/n5/pdf/nmeth.3830.pdf); [Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)), gene age inference is not a trivial task and might be biased in some currently existing approaches ([Liebeskind et al., 2016](http://gbe.oxfordjournals.org/content/early/2016/06/03/gbe.evw113)).
 
@@ -807,5 +808,7 @@ head(Ccin_vs_Abisp.KaKsMap)
 
 Now you can use the `MatchMap()` function implemented in [myTAI](https://github.com/HajkD/myTAI) to match the `Phylostratigraphic Maps` and `KaKs Maps` of the aforementioned species from [Cheng et al., 2015](http://mbe.oxfordjournals.org/content/early/2015/05/08/molbev.msv047) to any gene expression set of your interest (see [Introduction to Phylotranscriptomics](https://github.com/HajkD/myTAI/blob/master/vignettes/Introduction.Rmd) for details).
 
-> github ![A Collection of Already Published Phylostratigraphic Maps and Divergence Maps](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/published_phylomaps.png)
+> Github: HajkD/published_phylomaps 
+> 
+> ![A Collection of Already Published Phylostratigraphic Maps and Divergence Maps](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/published_phylomaps.png)
 
