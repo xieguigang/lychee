@@ -42,42 +42,16 @@ MyHeatmap <- LDheatmap(CEUSNP, CEUDist, LDmeasure = "r",
     name = "myLDgrob", add.key = TRUE)
 ```
 
-Figure 1: Heat map of pairwise LD measurements for the 15 SNPs in CEUSNP produced by LDheatmap().
-Each colored rectangle represents the squared correlation r2 between a pair of SNPs (specified by LD.measure="r"). The vector CEUDist of physical map locations of the 15 SNPs provides the information on their relative positions, which are indicated on the diagonal line by line segments, and the total length of the genetic region indicated by the text "Physical Length:8.9kb" (all added by add.map=TRUE). Two of the SNPs are labeled by SNP.name = c("rs2283092", "rs6979287"). It is also possible to label selected SNPs without showing the other genetic information by specifying add.map=FALSE. The default grey-scale colorscheme is specified by color=grey.colors(20) and is indicated by the ‘Color Key’ on the bottom right corner of the plot (add.key=TRUE).
-When the function is called, a grid graphical object (grob) named LDheatmapGrob, representing the heat map, is created and the graphical output is produced from this grob. The grob is also one of the components of the LDheatmap object returned by the LDheatmap() function. In this example, the returned LDheatmap object is stored as MyHeatmap, and its LDheatmapGrob component has name "myLDgrob".
+![Figure 1: Heat map of pairwise LD measurements for the 15 SNPs in CEUSNP produced by LDheatmap().](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/R/LDheatmap/Figure1.png)
+
+Each colored rectangle represents the squared correlation r2 between a pair of SNPs (specified by ``LD.measure="r"``). The vector CEUDist of physical map locations of the 15 SNPs provides the information on their relative positions, which are indicated on the diagonal line by line segments, and the total length of the genetic region indicated by the text "Physical Length:8.9kb" (all added by ``add.map=TRUE``). Two of the SNPs are labeled by ``SNP.name = c("rs2283092", "rs6979287")``. It is also possible to label selected SNPs without showing the other genetic information by specifying add.map=FALSE. The default grey-scale colorscheme is specified by color=grey.colors(20) and is indicated by the ‘Color Key’ on the bottom right corner of the plot (``add.key=TRUE``).
+When the function is called, a grid graphical object (grob) named LDheatmapGrob, representing the heat map, is created and the graphical output is produced from this grob. The grob is also one of the components of the LDheatmap object returned by the ``LDheatmap()`` function. In this example, the returned LDheatmap object is stored as MyHeatmap, and its LDheatmapGrob component has name "myLDgrob".
 LDheatmapGrob is a gTree object (Murrell 2006a) and has a hierarchical structure as shown in Figure 2. The children of LDheatmapGrob represent the heat map ("heatMap"), optional line parallel to the diagonal of the image indicating the physical or genetic map positions of the SNPs ("geneMap"), and color-scale ("Key").
 The children of "heatMap" represent the region of colored rectangles ("heatmap") and main title ("title") of the heat map. When add.map=TRUE, "geneMap" is created with children representing the diagonal line ("diagonal"), line segments ("segments") and text reporting the total length of the candidate region ("title"). When the parameter SNP.name is specified to label one or more SNPs, as in our example, two additional children are created, representing the labels ("SNPnames") and the symbols plotted at the tips of the corresponding line segments
 ("symbols"). When add.map=FALSE and SNP.name is specified, only "SNPnames" is created. When add.key=TRUE, "Key" is created with children which represent the colored rectangles ("colorKey"), title ("title"), numeric labels ("labels"), ticks ("ticks") and box frame
-("box") of the color legend. These grobs can be used to modify a heat map produced by the
- LDheatmapGrob 
-(e.g., "myLDgrob") 
- 
- "heatMap" 
-  
-"heatmap"
-"title"
- 
- 
- 		 "geneMap" 
-  
- "diagonal" 
-"segments"
- "title"
- "SNPnames"  
- "symbols"  	 
- 
- 
- "SNPnames" 
- 
- 		 "Key"
-  
-"colorKey"
-"title"
-"labels"
-"ticks"
-"box" 
-Figure 2: Hierarchical structure of LDheatmapGrob, the grob created by ``LDheatmap()`` to produce an LD heat map.
-``LDheatmap()``. In the next section, we will show how to do this by examples.
+("box") of the color legend. These grobs can be used to modify a heat map produced by the ``LDheatmap()``. In the next section, we will show how to do this by examples.
+
+![Figure 2: Hierarchical structure of LDheatmapGrob, the grob created by LDheatmap() to produce an LD heat map.](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/R/LDheatmap/Figure2.png)
 
 ## 4. Modifying a heat map
 
@@ -113,7 +87,7 @@ grid.draw(LD.grob3)
 
 For more information on the functions ``grid.edit()``, ``editGrob()``, ``grid.newpage()`` and ``grid.draw()`` from the grid package, see their respective help files or Murrell (2006a). Figure 3 shows the resulting modified heat map.
 
-Figure 3: Heat map with modified colors and font sizes for "Pairwise LD in r^2" (main title), "Physical Length:8.9kb" (genetic length text) and "Color Key" (color-scale title).
+![Figure 3: Heat map with modified colors and font sizes for "Pairwise LD in r^2" (main title), "Physical Length:8.9kb" (genetic length text) and "Color Key" (color-scale title).](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/R/LDheatmap/Figure3.png)
 
 ## 5. Multiple heat maps on a single device
 
@@ -199,8 +173,9 @@ We would like to thank Nicholas Lewin-Koh for his suggestion to modify our origi
 + The International HapMap Consortium (2005). “A Haplotype Map of the Human Genome.” Nature, 437, 1299–1320.
 + Warnes G, Leisch F (2005). genetics: Population Genetics. R package version 1.2.0.
 
-Figure 4: Modified heat maps displayed together. The heat map on the left uses a ‘grey’ (grey.colors(20)) color-scale. The heat map on the right uses a ‘white-to-red’ (heat.colors(20)) color-scale. White grid-lines were added to the heat map on the left and the color of the text "Physical Length:8.9kb" was changed from black to blue in the heat map on the right.
+![Figure 4: Modified heat maps displayed together.](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/R/LDheatmap/Figure4.png)
+> Figure 4: Modified heat maps displayed together. The heat map on the left uses a ‘grey’ (grey.colors(20)) color-scale. The heat map on the right uses a ‘white-to-red’ (heat.colors(20)) color-scale. White grid-lines were added to the heat map on the left and the color of the text "Physical Length:8.9kb" was changed from black to blue in the heat map on the right.
 
-Figure 5: Lattice-like plot with LD heat maps in the panels.
+![Figure 5: Lattice-like plot with LD heat maps in the panels.](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/R/LDheatmap/Figure5.png)
 
-> ![]()
+> ![LDheatmap: An R Function for Graphical Display of Pairwise Linkage Disequilibria between Single Nucleotide Polymorphisms](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/LDheatmap.png)
