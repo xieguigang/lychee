@@ -9,8 +9,8 @@ date: 2016-8-22
 #### 1. SNPs概念
 SNPs(single nucleotide polymorphisms, SNPs) 指染色体 DNA 序列中的某个位点由于单个核苷酸的变化而引起的多态性，在群体中的频率``>1%``。
 
-![]()
-
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/SNP_linkage_disequilibrium_analysis/1.png)
+<!--more-->
 #### 2. SNPs的基本类型
 SNPs属于二等位基因,有两种基本类型：
 
@@ -33,6 +33,10 @@ SNPs属于二等位基因,有两种基本类型：
 人体除性染色体外，每个染色体都有两份，个体所拥有的一对等位基因的类型称作基因型。
 例如，一SNPs(A/G)，则个体在该位点的基因型则：
 
-![]()
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/SNP_linkage_disequilibrium_analysis/2.png)
 
 检定个体的基因型，被称作基因分型。
+
+#### 5. 基因型与表现型
+**表现型(表型)**：指由不同基因型与环境共同作用,而生物体可观测到的物理或生理性状（如疾病）。
+寻找_基因型与表现型_的关系是遗传学的基本目标。

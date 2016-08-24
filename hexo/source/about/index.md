@@ -77,6 +77,20 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 
 本混合编程环境是基于[R.NET](https://rdotnet.codeplex.com/)项目建立的R语言包函数对.NET语言的封装，其目的是为了更加方便快速的进行.NET语言对R语言的混合编程，从而极大的根据现有的R功能包来拓展.NET对数据进行计算分析以及可视化绘图的数据处理能力。GCModeller项目之中的相当一部分的RNA-seq转录组测序数据分析工具都是基于本混合编程的API环境而编写完成的。
 
+<!--
+
+## 前端设计
+### Surveillance of infectious diseases
+> **开发时间**   2016-08
+> **项目主页**   http://120.76.195.65/index.html (http://sklpb.org/)
+> **开发框架**  
+>    + Web后台服务器采用自主编写的WebApp Server平台，github: [https://github.com/SMRUCC/REST_Framework](https://github.com/SMRUCC/REST_Framework)
+>    + 数据前端采用jQuery+D3.js完成数据前端动态显示
+
+[Surveillance of infectious diseases](http://120.76.195.65/index.html)主要通过对全世界范围内当前流行的塞卡病毒，黄热病毒，西尼罗病毒，流感病毒，埃博拉病毒以及基孔肯亚病毒通过疫情的新闻报道进行监控，并提供实时的疾病疫情统计分析数据，以期帮助
+
+-->
+
 ## 个人编程框架环境
 ### Microsoft VisualBasic App运行时环境
 > **开发时间**   2015.11 - 至今
