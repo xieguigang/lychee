@@ -1,10 +1,11 @@
 ---
 title: ManhattanPlot
-tags: [vb.net, SNP, Manhattan Plot, 数据可视化]
+tags: [vb.net, SNP, Manhattan Plot, 数据可视化, github]
 date: 2016-8-25
 ---
 
-Manhattan plot in VisualBasic
+> Manhattan plot in VisualBasic
+> Github: https://github.com/xieguigang/ManhattanPlot
 
 ## [Manhattan plot](https://en.wikipedia.org/wiki/Manhattan_plot)
 
