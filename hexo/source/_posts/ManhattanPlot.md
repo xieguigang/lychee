@@ -73,18 +73,18 @@ Canvas.Plot(System.Collections.Generic.IEnumerable(Of ManhattanPlot.SNP), Intege
 Dim image As Bitmap = data.Plot(colorPattern:="chr")
 Call image.SaveAs("./manhattan_plot_test.png", ImageFormats.Png)
 ```
-![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test.png)
+![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_chr.png)
 
 
 ```vbnet
 Dim image As Bitmap = data.Plot(colorPattern:="sampleName")
 Call image.SaveAs("./manhattan_plot_test_sampleName.png", ImageFormats.Png)
 ```
-![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_sampleName.png)
+![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_sampleName.png)
 
 
 ```vbnet
 Dim image As Bitmap = data.Plot(colorPattern:="interval")
 Call image.SaveAs("./manhattan_plot_test_interval.png", ImageFormats.Png)
 ```
-![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_interval.png)
+![](https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_interval.png)
