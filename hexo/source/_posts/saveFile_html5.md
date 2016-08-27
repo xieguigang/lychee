@@ -4,6 +4,8 @@ tags: [html5, javascript]
 date: 2016-8-28
 ---
 
+> http://stackoverflow.com/questions/2897619/using-html5-javascript-to-generate-and-save-a-file
+
 Simple solution for HTML5 ready browsers...
 
 ```javascript
@@ -28,3 +30,4 @@ Usage
 ```javascript
 download('test.txt', 'Hello world!');
 ```
+
