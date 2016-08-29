@@ -33,15 +33,17 @@ Year    Adult   Day Precipitation
 输入代码：
 
 ```R
-library(mgcv)      #加载mgcv软件包，因为gam函数在这个包里
-Data <- read.delim("Rice_insect.txt")     #读取txt数据，存到Data变量中
-Data <- as.matrix(Data)     #转为矩阵形式
-#查看Data数据：Data，查看第2列：Data[,2]，第2行：Data[2,]<br>
+library(mgcv)                         # 加载mgcv软件包，因为gam函数在这个包里
+Data <- read.delim("Rice_insect.txt") # 读取txt数据，存到Data变量中
+Data <- as.matrix(Data)               # 转为矩阵形式
+
+# 查看Data数据：Data，查看第2列：Data[,2]，第2行：Data[2,]
 Adult<-Data[,2]
 Day<-Data[,3]
-Precipitation<-Data[,4]<br>
-result1 <- gam(log(Adult) ~ s(Day))     #此时，Adult为相应变量，Day为解释变量
-summary(result1)      #输出计算结果
+Precipitation<-Data[,4]
+
+result1 <- gam(log(Adult) ~ s(Day))   # 此时，Adult为相应变量，Day为解释变量
+summary(result1)                      # 输出计算结果
 ```
 
 此时可以看到：
@@ -109,6 +111,8 @@ GCV score = 2.0168 Scale est. = 1.342 n = 18
 plot(result2,se=T,resid=T,pch=16)
 ```
 
+![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/022114475621496.png)
+
 ``pch=16``这个是图标的序号，比如改成17就是三角形了。
 ``log(Adult)``中的``log``是什么意思呢?
 ``log``是数据变换，取对数可以把大范围的数变成小范围的数，这在将几组相差太大的数据画在同一个坐标轴时特别有用，比如一组数据范围是1～10，第二组数据范围是10～100000000，要是不对第二组取常用对数，第一组在坐标轴上只是一点点，都看不到，对第二组取常用对数后，第二组范围变成1～8了，这样两组数据都能看到了。
@@ -116,7 +120,7 @@ plot(result2,se=T,resid=T,pch=16)
 下面尝试将两个变量同时作为解释变量。
 
 ```R
-result3<-gam(log(Adult)~s(Precipitation)+s(Day))
+result3 <- gam(log(Adult)~s(Precipitation)+s(Day))
 ```
 
 出错：Model has more coefficients than data
@@ -124,7 +128,7 @@ result3<-gam(log(Adult)~s(Precipitation)+s(Day))
 解决办法：改成：
 
 ```
-result3<-gam(log(Adult)~s(Precipitation,k=9)+s(Day,k=9))
+result3 <- gam(log(Adult)~s(Precipitation,k=9)+s(Day,k=9))
 ```
 
 k是什么？
@@ -167,4 +171,4 @@ GCV score = 2.288 Scale est. = 1.4423 n = 18
 
 + R语言基础包函数中文帮助文档(中英文对照v10)   http://www.docin.com/p-585638419.html
 
-> ![R语言实现 广义加性模型 Generalized Additive Models(GAM) 入门]()
+> ![R语言实现 广义加性模型 Generalized Additive Models(GAM) 入门](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/mgcv_GAM.png)
