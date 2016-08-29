@@ -4,6 +4,16 @@ tags: [R, mgcv, GAM, 数据分析, 非线性拟合]
 date: 2016-8-30
 ---
 
+In statistics, a generalized additive model (GAM) is a generalized linear model in which the linear predictor depends linearly on unknown smooth functions of some predictor variables, and interest focuses on inference about these smooth functions. GAMs were originally developed by Trevor Hastie and Robert Tibshirani to blend properties of generalized linear models with additive models.
+
+The model relates a univariate response variable, ``Y``, to some predictor variables, ``xi``. An exponential family distribution is specified for ``Y`` (for example normal, binomial or Poisson distributions) along with a link function ``g`` (for example the identity or log functions) relating the expected value of ``Y`` to the predictor variables via a structure such as
+
+![GAM](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/GAM.png)
+
+The functions ``fi`` may be functions with a specified parametric form (for example a polynomial, or a spline depending on the levels of a factor variable) or may be specified non-parametrically, or semi-parametrically, simply as 'smooth functions', to be estimated by non-parametric means. So a typical GAM might use a scatterplot smoothing function, such as a locally weighted mean, for ``f1(x1)``, and then use a factor model for ``f2(x2)``. This flexibility to allow non-parametric fits with relaxed assumptions on the actual relationship between response and predictor, provides the potential for better fits to data than purely parametric models, but arguably with some loss of interpretability.
+
+<!--more-->
+
 先新建一个txt，叫做 ``Rice_insect.txt``，内容为：（用制表符``Tab``）
 
 ```
