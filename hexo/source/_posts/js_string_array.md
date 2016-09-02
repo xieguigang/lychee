@@ -6,15 +6,20 @@ date: 2016-9-2
 
 ## String对象
 
-|属性或者方法 | 说明|
-|-------------------------------------------|-------------------------------------------------------------------|
-|``length``属性  |获取字符串的字符个数。（无论中文字符还是英文字符都算1个字符。）|
-|``charAt(index)``方法|获取指定索引位置的字符。（索引从0开始）|
-|``indexOf(‘字符串’,startIndex)``方法 |获取指定字符串第一次出现的位置。``startIndex``表示从第几个开始搜索。|
-|``split(‘分隔符’,limit);``  |根据分隔符将一个字符串返回为一个数组。``limit``表示要返回的数组的最大长度（可自定义）。|
-|``substr(startIndex,len)`` |从``startIndex``开始，截取``len``个字符。|
-|``substring(startIndex,stopIndex)``|从``startIndex``开始，截取到``stopIndex``位置（不包括``stopIndex``所在的字符）。|
-|``match()``、``replace()``、``search()``方法|正则表达式相关。|
++ ``length``属性
+	获取字符串的字符个数。（无论中文字符还是英文字符都算1个字符。）
++ ``charAt(index)``方法
+	获取指定索引位置的字符。（索引从0开始）
++ ``indexOf(‘字符串’,startIndex)``方法
+	获取指定字符串第一次出现的位置。``startIndex``表示从第几个开始搜索。
++ ``split(‘分隔符’,limit);``
+	根据分隔符将一个字符串返回为一个数组。``limit``表示要返回的数组的最大长度（可自定义）。
++ ``substr(startIndex,len)``
+	从``startIndex``开始，截取``len``个字符。
++ ``substring(startIndex,stopIndex)``
+	从``startIndex``开始，截取到``stopIndex``位置（不包括``stopIndex``所在的字符）。
++ ``match()``、``replace()``、``search()``方法
+	正则表达式相关。
 
 <!--more-->
 
@@ -116,8 +121,8 @@ for in循环其实遍历的还是key。
 数组的其他几种声明方式：
 
 ```javascript
-new Array(); 
-new Array(size); 
+new Array();
+new Array(size);
 new Array(element0, element0, ..., elementn);
 
 var arr = ['China', 2008, true, 'Hello'];
@@ -180,7 +185,7 @@ var arr=[{“name”:”steve”,”age”:18},{“name”:”steve”,”age”
 
 JSON的一些其他写法：
 
-1. 
+##### 1
 
 ```javascript
 var personalInfo = { "name": "周杰伦", "age": 20, "address": { "city": "beijing", "country": "China"} };
@@ -191,7 +196,7 @@ alert(personalInfo.address.city);
 alert(personalInfo.address.country);
 ```
 
-2.
+##### 2
 
 ```javascript
 var students = [{ "id": "1001", "name": "james" }, { "id": "1002", "name": "bob"}];
@@ -211,8 +216,8 @@ Array.sort();//排序
 
 练习
 ====================
-1.求一个整数组中的最大值。定义成函数。
-2.将一个字符串数组输出为|分割的形式，比如“梅西|卡卡|郑大世”。不要使用JavaScript中的Join函数。arr1.join(“|”)将数组用分隔符连接成一个字符串。//自定义一个myJoin函数。
+1. 求一个整数组中的最大值。定义成函数。
+2. 将一个字符串数组输出为|分割的形式，比如“梅西|卡卡|郑大世”。不要使用JavaScript中的``Join``函数。``arr1.join(“|”)``将数组用分隔符连接成一个字符串。//自定义一个myJoin函数。
 3. 将一个字符串数组的元素的顺序进行反转。``{"3","a","8","haha"} {"haha","8","a","3"}``。不要使用JavaScript中的反转函数。提示：第i个和第length-i-1个进行交换。定义成函数。 myreverse数组同样是传递引用，js出错很麻烦。交换两个变量。（测试一下是否会交换）(作业)
 
 
@@ -224,7 +229,7 @@ alert(res);
 
 function GetMax(nums) {
 	var maxVal = nums[0];
-	
+
 	for (var i = 0; i < nums.length; i++) {
 		if (nums[i] > maxVal) {
 			maxVal = nums[i];
@@ -245,7 +250,7 @@ alert(str);
 
 function myJoin(sep, strArray) {
 	var result = '';
-	
+
 	for (var i = 0; i < strArray.length - 1; i++) {
 		result += strArray[i] + sep;
 	}
@@ -267,7 +272,7 @@ for (var i = 0; i < strArr.length; i++) {
 function myReverse(strArray) {
 	for (var i = 0; i < strArray.length / 2; i++) {
 		var tmp = strArray[i];
-		
+
 		strArray[i] = strArray[strArray.length - 1 - i];
 		strArray[strArray.length - 1 - i] = tmp;
 	}
