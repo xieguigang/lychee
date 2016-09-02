@@ -1,12 +1,12 @@
 ---
 title: 微软发布全新Power BI JavaScript API：智能双向交互
-tags: [javascript, BI, github]
+tags: [javascript, BI, PowerBI, github]
 time: 2016-9-3
 ---
 
 微软发布了全新Power BI JavaScript API，能提供在Power BI报告和你的应用之间的双向联系。它可以让你轻松地嵌入到你的应用程序中，并且以编程方式与报告进行交互，从而实现应用和报告集成度更高。你的应用可以正确的语境为你的用户打开报告，就算报告已经打开，也可以改变语境内容。例如您可以向一个特定的客户打开一个报表，用户与应用的其他部分进行交互后，用户信息将自动更新。
 
-![Power BI - Sample - Client - Javascript]()
+![Power BI - Sample - Client - Javascript](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/ms_powerBI_js.png)
 
 <!--more-->
 
