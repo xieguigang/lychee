@@ -26,7 +26,7 @@ While generally straightforward, that example leaves some open questions. For ex
 + Are all tags strings?
 
 When you're talking about a data format, you want to have metadata about what fields mean, and what valid inputs for those fields are. JSON schema is a specification for standardizing how to answer those questions for JSON data.
-
+<!--more-->
 ## Starting the schema
 To start a schema definition, let's begin with a basic JSON schema:
 ```json
@@ -244,4 +244,4 @@ And also, since JSON Schema defines a reference schema for a geographic location
 }
 ```
 
-> ![]()
+> ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/json_schema_example.png)
