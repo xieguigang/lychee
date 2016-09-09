@@ -72,83 +72,94 @@ Step-by-step explanation on converting 78310 to a binary number:
 29. The quotient is 0, the remainder is 1.
 30. Write the remainder: 1.
 31. Now, stop with dividing, because the quotient is 0.
-Read the sequence of remainders (1111000011) from right to left, then you read 1100001111. So, 11000011112 is 78310.
-Now, you can add/remove leading zeros. If your data type is a Int16, you need 16 bits. If you data type is an Int32, you need 32 bits. 783 is a Int16, so we add leading zeros until there're 16 bits: 0000001100001111.
+32. Read the sequence of remainders (1111000011) from right to left, then you read 1100001111. So, 11000011112 is 78310.
+33. Now, you can add/remove leading zeros. If your data type is a Int16, you need 16 bits. If you data type is an Int32, you need 32 bits. 783 is a Int16, so we add leading zeros until there're 16 bits: 0000001100001111.
+
 To convert a negative decimal number to binary (-783 for example):
 
-Take the binary form of 783: 0000001100001111.
-Invert it: 1111110011110000
-Add up 1111110011110000 with 1.
-So, -78310 is 11111100111100012
-How you can be sure this number is negative? It depends on the data type. If the data type is an Int16, then if the first bit is a 0, then the number is positive. If the first bit is a 1, the number is negative. So, 1111110011110000 (Int16) is -783, but for an unsigned number, UInt16 for example, the first number DOESN'T tell whether the number is negative or not. For an UInt16 for example, we can be sure it's positive because it's unsigned. So, 1111110011110000 as an UInt16 is 64752.
-From binary to decimal
+1. Take the binary form of 783: 0000001100001111.
+2. Invert it: 1111110011110000
+3. Add up 1111110011110000 with 1.
+4. So, -78310 is 11111100111100012
+5. How you can be sure this number is negative? It depends on the data type. If the data type is an Int16, then if the first bit is a 0, then the number is positive. If the first bit is a 1, the number is negative. So, 1111110011110000 (Int16) is -783, but for an unsigned number, UInt16 for example, the first number DOESN'T tell whether the number is negative or not. For an UInt16 for example, we can be sure it's positive because it's unsigned. So, 1111110011110000 as an UInt16 is 64752.
+
+#### From binary to decimal
 
 If you've a binary number 0000000100010110 (Int16 -> first number = 0, positive number), then reverse the order of the bits (then you get 0110100010000000), and use this method: 
 
-Bit b:	0	1	1	0	1	0	0	0	1	0	0	0	0	0	0	0
-b * 2n	0 * 20	1 * 21	1 * 22	0 * 23	1 * 24	0 * 25	0 * 26	0 * 27	1 * 28	0 * 29	0 * 210	0 * 211	0 * 212	0 * 213	0 * 214	0 * 215
-Result:	0	2	4	0	16	0	0	0	256	0	0	0	0	0	0	0
+|Bit b:	|0	|1	|1	|0	|1	|0	|0	|0	|1	|0	|0	|0	|0	|0	|0	|0|
+|-------|-----|--|---|---|---|---|---|--|---|---|---|----|---|---|---|-|
+|b * 2n	|0 * 20	|1 * 21	|1 * 22	|0 * 23	|1 * 24	|0 * 25	|0 * 26	|0 * 27	|1 * 28	|0 * 29	|0 * 210	|0 * 211	|0 * 212	|0 * 213	|0 * 214	|0 * 215|
+|Result:	|0	|2	|4	|0	|16	|0	|0	|0	|256	|0	|0	|0	|0	|0	|0	|0|
+
 Now, you have to add up all results:
 
-Hide   Copy Code
+```
 0 + 2 + 4 + 16 + 0 + 0 + 0 + 256 + 0 + 0 + 0 + 0 + 0 + 0 + 0 = 2 + 4 + 16 + 256 = 278
+```
+
 Step-by-step explanation on converting 00000001000101102 to a decimal number:
 
-Reverse the order of the bits in the binary number (also change the position of the first 0 (positive sign)): 0000000100010110 -> 0110100010000000.
-Take the first bit (of 0110100010000000): 0.
-0 * 20 is 0, so write 0
-Take the next bit: 1
-1 * 21 is 2, so write 2
-Take the next bit: 1
-1 * 22 is 4, so write 4
-Take the next bit: 0
-0 * 23 is 0, so write 0
-Take the next bit: 1
-1 * 24 is 16, so write 16
-Take the next bit: 0
-0 * 25 is 0, so write 0
-Take the next bit: 0
-0 * 26 is 0, so write 0
-Take the next bit: 0
-0 * 27 is 0, so write 0
-Take the next bit: 1
-1 * 28 is 256, so write 256
-Take the next bit: 0
-0 * 29 is 0, so write 0
-Take the next bit: 0
-0 * 210 is 0, so write 0
-Take the next bit: 0
-0 * 211 is 0, so write 0
-Take the next bit: 0
-0 * 212 is 0, so write 0
-Take the next bit: 0
-0 * 213 is 0, so write 0
-Take the next bit: 0
-0 * 214 is 0, so write 0
-Take the next bit: 0
-0 * 215 is 0, so write 0
-That was the last bit, now add up all numbers you've written: 0 + 2 + 4 + 0 + 16 + 0 + 0 + 0 + 256 + 0 = 2 + 4 + 16 + 256 = 278, so 1000101102 is 27810.
+1. Reverse the order of the bits in the binary number (also change the position of the first 0 (positive sign)): 0000000100010110 -> 0110100010000000.
+2. Take the first bit (of 0110100010000000): 0.
+3. 0 * 20 is 0, so write 0
+4. Take the next bit: 1
+5. 1 * 21 is 2, so write 2
+6. Take the next bit: 1
+7. 1 * 22 is 4, so write 4
+8. Take the next bit: 0
+9. 0 * 23 is 0, so write 0
+10. Take the next bit: 1
+11. 1 * 24 is 16, so write 16
+12. Take the next bit: 0
+13. 0 * 25 is 0, so write 0
+14. Take the next bit: 0
+15. 0 * 26 is 0, so write 0
+16. Take the next bit: 0
+17. 0 * 27 is 0, so write 0
+18. Take the next bit: 1
+19. 1 * 28 is 256, so write 256
+20. Take the next bit: 0
+21. 0 * 29 is 0, so write 0
+22. Take the next bit: 0
+23. 0 * 210 is 0, so write 0
+24. Take the next bit: 0
+25. 0 * 211 is 0, so write 0
+26. Take the next bit: 0
+27. 0 * 212 is 0, so write 0
+28. Take the next bit: 0
+29. 0 * 213 is 0, so write 0
+30. Take the next bit: 0
+31. 0 * 214 is 0, so write 0
+32. Take the next bit: 0
+33. 0 * 215 is 0, so write 0
+34. That was the last bit, now add up all numbers you've written: 0 + 2 + 4 + 0 + 16 + 0 + 0 + 0 + 256 + 0 = 2 + 4 + 16 + 256 = 278, so 1000101102 is 27810.
+
 The way to convert a negative binary number to decimal (1111111111010011 = Int16 -> first bit = 1, so negative):
 
-Invert the binary number: (1111111111010011 -> 0000000000101100)
-Convert 0000000000101100 to a decimal number: 44
-Add 44 up with 1: 45
-Make 45 negative: -45
-So, the negative binary number 1111111111010011 is the decimal number -45
-The OR operator (Inclusive OR)
-How the OR operator works
+1. Invert the binary number: (1111111111010011 -> 0000000000101100)
+2. Convert 0000000000101100 to a decimal number: 44
+3. Add 44 up with 1: 45
+4. Make 45 negative: -45
+5. So, the negative binary number 1111111111010011 is the decimal number -45
+
+## The OR operator (Inclusive OR)
+
+#### How the OR operator works
 
 If you've two numbers, 38 (Byte) and 53 (Byte) for example, then first we convert these numbers to binary:
 
-Hide   Copy Code
+```
 38 -> 00100110 
 53 -> 00110101
-Now, we take the first bit of 38 (A), and the first bit of 53 (B). A = 0 and B = 0
-If A is 1, B is 1 or if they're both 1, then write 1. If they're both 0, then write 0.
-A and B are both 0, so write 0
-Take the next bits. Now, A = 0 and B = 0
-A and B are both 0, so write 0
-Take the next bits. Now, A = 1 and B = 1
+```
+
+1. Now, we take the first bit of 38 (A), and the first bit of 53 (B). A = 0 and B = 0
+2. If A is 1, B is 1 or if they're both 1, then write 1. If they're both 0, then write 0.
+3. A and B are both 0, so write 0
+4. Take the next bits. Now, A = 0 and B = 0
+5. A and B are both 0, so write 0
+6. Take the next bits. Now, A = 1 and B = 1
 A and B are both 1, so write 1
 Take the next bits. Now, A = 0 and B = 1
 A is 0, but B is 1, so write 1
