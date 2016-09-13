@@ -21,49 +21,33 @@ For intuition it is important to think about how you could learn about variabili
 bootstrap是一种非参数估计方法，它用到蒙特卡洛方法。bootstrap算法如下：
 假设样本容量为N
 1. 有放回的从样本中随机抽取N次(所以可能x1..xn中有的值会被抽取多次)，每次抽取一个元素。并将抽到的元素放到集合S中；
-2. 重复**步骤1** B次（例如B=100），得到B个集合，记作S1,S2,...,SB;
+2. 重复``步骤1`` B次（例如B=100），得到B个集合，记作S1,S2,...,SB;
 3. 对每个S<sub>i</sub> （i=1,2,...,B），用蒙特卡洛方法估计随机变量的数字特征d，分别记作d1,d2,...,dB;
 4. 用d1,d2,...dB来近似d的分布；
 
 本质上，bootstrap算法是最大似然估计的一种实现，它和最大似然估计相比的优点在于，它不需要用参数来刻画总体分布。
 
-作者：xmqv
-链接：https://www.zhihu.com/question/22929263/answer/81333591
-来源：知乎
-著作权归作者所有，转载请联系作者获得授权。
+(1) 首先，Bootstrap并不是和Monte Carlo方法完全无关。
 
-作者：书牛
-链接：https://www.zhihu.com/question/22929263/answer/86314894
-来源：知乎
-著作权归作者所有，转载请联系作者获得授权。
+> The bootstrap procedure, developed by Bradley Efron(1979), is a Monte Carlo method that involves resampling -- that is, taking repeated samples of size n (with replacement) from the original sample data set.
+>
+> -- &lt;Statistics for Engineering and the Science>. Mendenhall
 
-（1）首先，Bootstrap并不是和Monte Carlo方法完全无关。
-The bootstrap procedure, developed by Bradley Efron(1979), is a Monte Carlo method that involves resampling -- that is, taking repeated samples of size n (with replacement) from the original sample data set.
+(2) 然后解释一下，bootstrap的简单使用方法。
+使用bootstrap 估测总体样本参数``θ``的 bootstrap confidence interval.
+样本参数``θ``可以是均值，方差等等。
+对于一个样本x1,x2,...xn. 其总体的概率分布中参数``θ``是未知的，想要利用有限的这个样本来得到一个估测值``θ‘``。
 
--- <Statistics for Engineering and the Science>. Mendenhall
-
-（2）然后解释一下，bootstrap的简单使用方法。
-使用bootstrap 估测总体样本参数θ的 bootstrap confidence interval. 
-样本参数θ可以是均值，方差等等。
-对于一个样本x1,x2,...xn. 其总体的概率分布中参数θ是未知的，想要利用有限的这个样本来得到一个估测值θ‘。
-
-Step1:选择一个resampling的次数i，1000或2000或3000等（取决于自己的需要）；
-Step2:然后每一次的重复计算程序是：从x1,x2,...xn中有放回的，抽取n次（所以可能x1..xn中有的值会被抽取多次）；
-Step3:重复上述抽取程序，一共i次（step1中已经选定的i值），利用每次抽取后的结果都计算出一个θ‘值 （一共i个θ‘值）；
-Step4：利用得到的θ‘1，θ‘2，θ‘3... ... θ‘i作为一个sample，计算其（α／2）100% 和（1-α）100％的百分位值，得到的就是近似出的，估测总体参数θ的，置信区间的最低和最高点［ x, y].
-
-作者：赵卿元
-链接：https://www.zhihu.com/question/22929263/answer/31090959
-来源：知乎
-著作权归作者所有，转载请联系作者获得授权。
++ Step1: 选择一个resampling的次数i，1000或2000或3000等（取决于自己的需要）；
++ Step2: 然后每一次的重复计算程序是：从x1,x2,...xn中有放回的，抽取n次（所以可能x1..xn中有的值会被抽取多次）；
++ Step3: 重复上述抽取程序，一共i次（step1中已经选定的i值），利用每次抽取后的结果都计算出一个θ‘值 （一共i个θ‘值）；
++ Step4: 利用得到的θ‘1，θ‘2，θ‘3... ... θ‘i作为一个sample，计算其（α／2）100% 和（1-α）100％的百分位值，得到的就是近似出的，估测总体参数θ的，置信区间的最低和最高点［ x, y].
 
 Monte Carlo是一个更基础的想法。在很多数学、物理或者工程问题种有很多无法写出closed form的表达式，为了能得到数值上的一个解，需要通过随机采样的方法去估计。
 
 Bootstrap是重新改变统计学的一个想法。统计推断的主体总是一个的随机变量分布。在这个分布很复杂无法假设合理的参数模型时，bootstrap提供了一种非参数的推断方法，依靠的是对观测到的样本的重新抽样（resampling），其实是用empirical distribution去近似真正的distribution。
 
 这两种方法从目的到用法都完全不同，有联系的话就是都涉及到计算机抽样。
-
-==============================================================
 
 @豆豆叶 觉得“bootstrap是对empirical distribution的monte carlo”的说法更合理，我保留意见。我认为monte carlo和sampling还是不能互为替换的。我认为Monte Carlo和Bootstrap更多的是两种思想，都是基于random sampling去近似某一目标。Monte Carlo的目标一般是一个难以计算的积分，bootstrap的目标一般是统计推断。
 

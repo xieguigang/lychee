@@ -22,7 +22,7 @@ All operators in this article:
 Bitwise operators are used for numbers. Bitwise operators perform an action on the bits of a number, so if you want to understand how bitwise operators work, then you should first learn to convert from decimal to binary and from binary to decimal. I tell you how to do that in Converting from decimal to binary and from binary to decimal. In this article, I give examples mostly with Bytes. But the examples will also work for other types, such as an Int32 or an Int16
 
 Bitwise operators are used in more languages than C# and VB.NET, but in this article, I give examples in C# and VB.NET.
-
+<!--more-->
 ## Converting from decimal to binary and from binary to decimal
 If you use a bitwise operator, there will be an action performed for each bit in the binary form of the integer. For example 110100112 is 21110 (the subscript numbers indicate the base of the number). And 14310 is 100011112. In this paragraph, I tell how to convert from decimal to binary and how to convert from binary to decimal.
 
