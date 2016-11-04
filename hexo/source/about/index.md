@@ -34,7 +34,8 @@ End Function
 + 数据分析： Bioconductor, GCModeller
 + 精通的数据可视化环境与工具: d3js, Circos, Cytoscape, Cytoscape.js
 
-![VB.NET+d3js SVG canvas html5混合编程](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/create_svg.png)
+## 参与的SCI论文发表
+
 
 ## **私人科研项目**
 ### 1. GCModeller 微生物基因组计算机辅助设计建模系统 (VB.NET)

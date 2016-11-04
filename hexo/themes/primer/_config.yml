@@ -1,0 +1,31 @@
+# Header
+menu:
+	Home: /
+	Open-Source: open-source/
+	Blog: blog/
+	Guestbook: guestbook/
+
+# Profile
+profile:
+	location: GuiLin, China
+	github: xieguigang	
+	organization: GCModeller.org
+
+#Widget
+sidebar: false
+navfixed: false
+
+#WidgetText
+excerpt_link: 继续阅读
+
+#Github(请务必配置github帐号)
+github:
+  popular_repos: ['ysale-sms','scude-answer','cordova-plugin-alipay']
+  contribute_repos: ['smrucc/GCModeller','yumemor/site']
+
+#Comments
+comments:
+	duoshuo_username: #yumemor
+
+#Source Code
+source_code: https://github.com/yumemor/yumemor.github.io
