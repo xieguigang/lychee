@@ -30,7 +30,7 @@ End Function
 + 2016年下半年他在位于北京的**国家蛋白质科学中心 凤凰中心**学习和生活，从事生物信息学软件的开发和系统生物学相关的生物动力学模型的建模分析工作，为接下来的2017年申请去美国攻读博士学位的``offer``做准备。
 
 ## 主要使用的开发语言和环境
-+ VisualBasic.NET, R, Perl, Bash, ShoalShell(自己开发的用于调试GCModeller计算引擎的脚本语言)
++ VisualBasic.NET, R, Perl, Bash, Shoal(自己开发的用于调试GCModeller计算引擎的脚本语言)
 + 数据分析： Bioconductor, GCModeller
 + 精通的数据可视化环境与工具: d3js, Circos, Cytoscape, Cytoscape.js
 
@@ -38,7 +38,8 @@ End Function
 
 
 ## **私人科研项目**
-### 1. GCModeller 微生物基因组计算机辅助设计建模系统 (VB.NET)
+### GCModeller 微生物基因组计算机辅助设计建模系统 (VB.NET)
+> **英文全稱**  genomics CAD(Computer Assistant Design) Modeller System
 > **开发时间**	2013.08 - 至今
 > **项目主页**	http://gcmodeller.org
 > **在线服务**	http://services.gcmodeller.org/
@@ -65,7 +66,23 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 **这里列出了基于GCModeller的数据分析服务的SCI论文列表：**
 >1. *__Niu XN etc__. Complete sequence and detailed analysis of the first indigenous plasmid from Xanthomonas oryzae pv. Oryzicola* (**doi:** [10.1186/s12866-015-0562-x](http://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-015-0562-x))
 
-### 2. GCModeller分布式计算服务器集群环境 (VB.NET)
+### sciBASIC_#_
+> **英文全稱**   Scientific BASIC sharp
+> **开发时间**   2015.11 - 至今
+> **Github项目**  https://github.com/xieguigang/VisualBasic_AppFramework
+> **API 文档库**  http://framework-docs.xieguigang.me/
+
+**NuGet包安装**
+```
+PM> Install-Package sciBASIC
+```
+
+本编程框架主要是针对VisualBasic语言在服务器端应用进行的拓展，本框架环境极大的拓展了VisualBasic语言的编程语法以及数据处理能力。本编程框架同时也是GCModeller分析套件的基础运行时环境。在本框架之中主要包括了一个完整的.NET程序的调试器系统，命令行解释器系统，大型计算任务多任务进程并行化拓展，SDK API文档自动编译系统，面向大型数据集合的数据框架以及数据挖掘分析套件。
+
+## 個人編程開發框架環境
+
+### 1. GCModeller分布式计算服务器集群环境 (VB.NET)
+> **分類**     雲計算環境
 > **开发时间**	2016.03 - 至今
 > **项目主页**  https://github.com/xieguigang/Microsoft.VisualBasic.Parallel
 > **CodeProject知识库文章** ["Easy Distribution Computing in VisualBasic"](http://www.codeproject.com/Articles/1076209/Easy-Distribution-Computing-in-VisualBasic)
@@ -76,18 +93,24 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 + 基于Linq脚本的RQL数据源查询系统，RQL语言项目是[http://linq.gcmodeller.org](http://linq.gcmodeller.org)平台的数据源驱动程序
 
 
-### 3. R语言混合编程API
+### 2. R语言混合编程API
+> **分類**      工程學&amp;科研
 > **开发时间**   2016.01 - 2016.03
 > **项目主页**   https://github.com/SMRUCC/R.Bioinformatics
 > **CodeProject文章**   ["R Statics Language API to VB.NET Language"](http://www.codeproject.com/Articles/1083875/R-Statics-Language-API-to-VB-NET-Language)
 
 本混合编程环境是基于[R.NET](https://rdotnet.codeplex.com/)项目建立的R语言包函数对.NET语言的封装，其目的是为了更加方便快速的进行.NET语言对R语言的混合编程，从而极大的根据现有的R功能包来拓展.NET对数据进行计算分析以及可视化绘图的数据处理能力。GCModeller项目之中的相当一部分的RNA-seq转录组测序数据分析工具都是基于本混合编程的API环境而编写完成的。
 
-### 4. SMRUCC Web Cloud
+### 3. SMRUCC Web Cloud
+> **分類**      服務器後臺
 > **开发时间**   2016-08
-> **Github**    https://github.com/SMRUCC/REST_Framework
+> **Github**    https://github.com/SMRUCC/SMRUCC.WebCloud
 
 自己独立完成开发的用于构建生物信息学相关的Web应用的服务器环境，不依赖于任何外部组件环境，采用简单易用的REST API的模式将服务器后台和Web前端的开发工作完全独立，同时包含有d3.js相关的拓展API，方便开发人员快速的构建出基于D3.js的用于向用户呈现数据的Web App.
+
+平臺特性：
++ 基於d3js混合編程的數據可視化WebApp數據後臺
++ GIS數據可視化的WebApp數據後臺
 
 <!--
 
@@ -103,24 +126,12 @@ GCModeller项目目前正在申请**美国微软公司Microsoft .NET Foundation�
 
 -->
 
-## 个人编程框架环境
-### Microsoft VisualBasic App运行时环境
-> **开发时间**   2015.11 - 至今
-> **Github项目**  https://github.com/xieguigang/VisualBasic_AppFramework
-> **API 文档库**  http://framework-docs.xieguigang.me/
-
-**NuGet包安装**
-```
-PM> Install-Package VB_AppFramework
-PM> Install-Package VB_AppFramework_40
-```
-
-本编程框架主要是针对VisualBasic语言在服务器端应用进行的拓展，本框架环境极大的拓展了VisualBasic语言的编程语法以及数据处理能力。本编程框架同时也是GCModeller分析套件的基础运行时环境。在本框架之中主要包括了一个完整的.NET程序的调试器系统，命令行解释器系统，大型计算任务多任务进程并行化拓展，SDK API文档自动编译系统，面向大型数据集合的数据框架以及数据挖掘分析套件。
-
 ![](https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/m.gif)
 
 ## 个人娱乐项目
+
 ### Zplay-Music
+> **分類**      UI前端開發
 > **开发时间**   2016.05
 > **Github项目**   https://github.com/xieguigang/Zplay-Music
 
