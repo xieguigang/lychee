@@ -1,3 +1,6 @@
 [submodule "framework/PHPExif"]
 	path = framework/PHPExif
 	url = https://github.com/LycheeOrg/php-exif.git
+[submodule "framework/php.NET"]
+	path = framework/php.NET
+	url = https://github.com/biocad-cloud/php-dotnet.git
