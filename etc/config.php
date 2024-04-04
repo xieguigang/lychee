@@ -21,7 +21,7 @@ return [
 
     // 自定义http错误页面的位置，例如404 500 403等
     "RFC7231"       => APP_PATH . "/views/http_errors/",
-    "CACHE"         => true,
+    "CACHE"         => false,
     "TEMP"          => "Z:/php/",
     "APP_NAME"      => "yilia",
 	"APP_VERSION"   => "0.222.58-alpha",
