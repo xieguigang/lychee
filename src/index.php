@@ -11,4 +11,12 @@ class App {
     public function index() {
         View::Display();
     }
+
+    /**
+     * @access *
+     * @uses view
+    */
+    public function album($id) {
+        View::Display();
+    }
 }
