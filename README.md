@@ -1,1 +1,1 @@
-# xieguigang.github.io-hexo
+# Mine Photo Gallery
