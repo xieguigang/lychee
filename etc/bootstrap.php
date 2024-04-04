@@ -4,7 +4,7 @@ define("APP_PATH", dirname(__DIR__));
 define("APP_UPLOAD", APP_PATH . "/data/raw");
 define("IMAGE_PUBLIC", APP_PATH . "/data/large");
 define("IMAGE_THUMBS", APP_PATH . "/data/thumbs");
-define("APP_DEBUG", true);
+define("APP_DEBUG", false);
 define("YEAR", date("Y"));
 
 session_start();
