@@ -40,13 +40,23 @@
 
     ${includes/head.html}
 
+    <style>
+        body,
+        html {
+            height: 100vh;
+        }
+    </style>
+
 </head>
 
-<body class=home>
+<body>
 
 
-    <div class="container-fluid main-page">
-        <div class="row justify-content-center hero-section">
+    <div class="container-fluid main-page" style="height:100vh;">
+        <div class="row justify-content-center hero-section" style="height:100vh;
+            background-image: url('/resources/images/default_splash.jpg'); 
+            background-repeat: no-repeat;
+            background-size: cover; /* or 'contain' */">
             <div class="col-lg-6 text-center">
                 <h1 class=main-title>lightGallery</h1>
                 <h4 class=sub-title>A lightweight, modular, JavaScript image and video lightbox gallery plugin.
