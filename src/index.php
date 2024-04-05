@@ -5,6 +5,8 @@ include __DIR__ . "/../etc/bootstrap.php";
 class App {
 
     /**
+     * Lychee
+     * 
      * @access *
      * @uses view
     */
@@ -21,6 +23,8 @@ class App {
     }
 
     /**
+     * Gallery
+     * 
      * @access *
      * @uses view
     */
