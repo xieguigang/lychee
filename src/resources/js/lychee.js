@@ -28,7 +28,9 @@ var pages;
             configurable: true
         });
         album.prototype.init = function () {
-            throw new Error("Method not implemented.");
+        };
+        album.prototype.create_onclick = function () {
+            modals.create_album();
         };
         return album;
     }(Bootstrap));
@@ -49,7 +51,9 @@ var pages;
             configurable: true
         });
         gallery.prototype.init = function () {
-            throw new Error("Method not implemented.");
+        };
+        gallery.prototype.create_onclick = function () {
+            modals.create_album();
         };
         return gallery;
     }(Bootstrap));
@@ -69,8 +73,41 @@ var app;
 $ts(app.run);
 var modals;
 (function (modals) {
+    function album_parent() {
+        console.log("try to get current album reference from url:");
+        console.log($ts.location);
+        if ($ts.location.path == "gallery") {
+            return "0";
+        }
+        else {
+            return $ts.location.url.getArgument("id");
+        }
+    }
     function create_album() {
+        var album_name = $ts.value("#album-name");
+        var desc = $ts.value("#desc-text");
+        var parent_id = album_parent();
+        var new_album = {
+            name: album_name,
+            description: desc,
+            parent_id: parent_id
+        };
+        console.log("view of the arguments for new album:");
+        console.log(new_album);
+        $ts.post("/album/new", new_album, function (result) {
+            if (result.code == 0) {
+                $goto("/album?id=".concat(result.info));
+            }
+            else {
+            }
+        });
     }
     modals.create_album = create_album;
+})(modals || (modals = {}));
+var modals;
+(function (modals) {
+    function upload_images() {
+    }
+    modals.upload_images = upload_images;
 })(modals || (modals = {}));
 //# sourceMappingURL=lychee.js.map

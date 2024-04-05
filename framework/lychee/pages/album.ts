@@ -7,8 +7,11 @@ namespace pages {
         }
 
         protected init(): void {
-            throw new Error("Method not implemented.");
+
         }
 
+        public create_onclick() {
+            modals.create_album();
+        }
     }
 }
