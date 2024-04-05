@@ -40,21 +40,32 @@
 
     ${includes/head.html}
 
+    <style>
+        .banner {
+            height: 100%;
+            background-image: url('/resources/images/default_splash.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
 </head>
 
-<body class=home>
+<body>
 
     ${includes/nav.html}
 
 
     <div class="container-fluid main-page">
-        <div class="row justify-content-center hero-section">
+        <div class="row justify-content-center hero-section banner">
             <div class="col-lg-6 text-center">
                 <h1 class=main-title>{$album_title}</h1>
                 <h4 class=sub-title>{$album_desc}</h4>
             </div>
         </div>
     </div>
+
+    <br />
+
     <div class=container-fluid>
         <div class="row justify-content-center clip-path-bg">
             <div class="col-lg-12 text-center clip-path-bg-inner">
