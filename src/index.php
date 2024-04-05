@@ -19,4 +19,12 @@ class App {
     public function album($id) {
         View::Display();
     }
+
+    /**
+     * @access *
+     * @uses view
+    */
+    public function gallery() {
+        View::Display();
+    }
 }
