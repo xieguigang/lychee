@@ -1,3 +1,6 @@
+///<reference path="./pages/album.ts" />
+///<reference path="./pages/gallery.ts" />
+
 namespace app {
 
     export function run() {

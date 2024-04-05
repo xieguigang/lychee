@@ -1,9 +1,3 @@
-declare namespace app {
-    function run(): void;
-}
-declare namespace modals {
-    function create_album(): void;
-}
 declare namespace pages {
     class album extends Bootstrap {
         get appName(): string;
@@ -15,4 +9,10 @@ declare namespace pages {
         get appName(): string;
         protected init(): void;
     }
+}
+declare namespace app {
+    function run(): void;
+}
+declare namespace modals {
+    function create_album(): void;
 }

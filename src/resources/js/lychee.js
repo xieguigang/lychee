@@ -13,22 +13,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var app;
-(function (app) {
-    function run() {
-        Router.AddAppHandler(new pages.album());
-        Router.AddAppHandler(new pages.gallery());
-        Router.RunApp();
-    }
-    app.run = run;
-})(app || (app = {}));
-$ts(app.run);
-var modals;
-(function (modals) {
-    function create_album() {
-    }
-    modals.create_album = create_album;
-})(modals || (modals = {}));
 var pages;
 (function (pages) {
     var album = /** @class */ (function (_super) {
@@ -71,4 +55,22 @@ var pages;
     }(Bootstrap));
     pages.gallery = gallery;
 })(pages || (pages = {}));
+///<reference path="./pages/album.ts" />
+///<reference path="./pages/gallery.ts" />
+var app;
+(function (app) {
+    function run() {
+        Router.AddAppHandler(new pages.album());
+        Router.AddAppHandler(new pages.gallery());
+        Router.RunApp();
+    }
+    app.run = run;
+})(app || (app = {}));
+$ts(app.run);
+var modals;
+(function (modals) {
+    function create_album() {
+    }
+    modals.create_album = create_album;
+})(modals || (modals = {}));
 //# sourceMappingURL=lychee.js.map
