@@ -74,13 +74,14 @@ $ts(app.run);
 var modals;
 (function (modals) {
     function album_parent() {
+        var url = $ts.location.url;
         console.log("try to get current album reference from url:");
-        console.log($ts.location);
-        if ($ts.location.path == "gallery") {
+        console.log(url);
+        if (url.path == "/gallery" || url.path == "/gallery/") {
             return "0";
         }
         else {
-            return $ts.location.url.getArgument("id");
+            return url.getArgument("id");
         }
     }
     function create_album() {
@@ -94,6 +95,8 @@ var modals;
         };
         console.log("view of the arguments for new album:");
         console.log(new_album);
+        if (Strings.Empty(album_name)) {
+        }
         $ts.post("/album/new", new_album, function (result) {
             if (result.code == 0) {
                 $goto("/album?id=".concat(result.info));
