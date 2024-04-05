@@ -6,7 +6,7 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "../dist",
-    "outFile": "../build/apps.js",
+    "outFile": "../../src/resources/js/lychee.js",
     "declaration": true
   },
   "exclude": [
