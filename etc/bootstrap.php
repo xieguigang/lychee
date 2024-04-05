@@ -7,6 +7,8 @@ define("IMAGE_THUMBS", APP_PATH . "/data/thumbs");
 define("APP_DEBUG", false);
 define("YEAR", date("Y"));
 
+define("slogan", "Capture moments, share memories, let life's moments flow in our memories.");
+
 session_start();
 
 include APP_PATH . "/framework/php.NET/package.php";
