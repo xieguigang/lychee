@@ -39,9 +39,58 @@ class image {
         // reader with Native adapter
         $reader = \PHPExif\Reader\Reader::factory(\PHPExif\Enum\ReaderType::NATIVE);
         $exif = $reader->read($raw);
-        $exif = new ReflectionClass($exif);
-        $exif = $exif->getProperties();
-        $exif = json_encode($exif);
+        $exif_tags = [
+            "Aperture",
+            "Author",
+            "Headline",
+            "Credit",
+            "Source",
+            "Jobtitle",
+            "Iso",
+            "Exposure",
+            "ExposureMilliseconds",
+            "FocusDistance",
+            "Width",
+            "Height",
+            "Title",
+            "Caption",
+            "Copyright",
+            "Keywords",
+            "Camera",
+            "HorizontalResolution",
+            "VerticalResolution",
+            "Software",
+            "FocalLength",
+            "CreationDate",
+            "ColorSpace",
+            "MimeType",
+            "FileSize",
+            "FileName",
+            "Orientation",
+            "GPS",
+            "Description",
+            "Make",
+            "Altitude",
+            "Longitude",
+            "Latitude",
+            "ImgDirection",
+            "Lens",
+            "ContentIdentifier",
+            "Framerate",
+            "Duration",
+            "MicroVideoOffset",
+            "Sublocation",
+            "City",
+            "State",
+            "Country"
+        ];
+        $exif_values = [];
+
+        foreach($exif_tags as $name) {
+            $exif_values[strtolower($name)] = $exif->{"get$name"}();
+        }
+
+        $exif = json_encode($exif_values);
 
         breakpoint($exif);
     }
