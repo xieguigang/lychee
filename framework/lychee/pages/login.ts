@@ -22,7 +22,7 @@ namespace pages {
                 return;
             }
 
-            $ts.post("", account_data, function (result) {
+            $ts.post("/access/login", account_data, function (result) {
                 if (result.code == 0) {
                     $goto("/gallery");
                 } else {
