@@ -39,6 +39,7 @@ class image {
         // reader with Native adapter
         $reader = \PHPExif\Reader\Reader::factory(\PHPExif\Enum\ReaderType::NATIVE);
         $exif = $reader->read($raw);
+        $exif = json_encode($exif);
 
         breakpoint($exif);
     }
