@@ -105,7 +105,7 @@ namespace modals {
 
         // write database
         $ts.post("/video/save/", info, function () {
-            page.hide_spinner();
+    
         });
     }
 
@@ -119,11 +119,9 @@ namespace modals {
         // Help.video_read();
 
         // location.href="http://www.xiaosan.com/tp5/public/index.php/index/backstage/vioshow";
-        page.hide_spinner();
     }
 
     function on_error(file: UploadFile) {
         $('#' + file.id).find('p.state').text('上传出错');
-        page.hide_spinner();
     }
 }
