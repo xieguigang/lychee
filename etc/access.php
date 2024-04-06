@@ -16,8 +16,12 @@ class accessController extends controller {
     public function accessControl() {       
         if ($this->AccessByEveryOne()) {
             return true;
+        } else {
+            return self::has_user_session();
         }
+    }
 
+    public static function has_user_session() {
         if (!empty($_SESSION)) {
             if (array_key_exists("user", $_SESSION)) {
                 return true;

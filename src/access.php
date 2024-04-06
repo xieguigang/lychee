@@ -15,7 +15,7 @@ class App {
     public function login($email, $passwd) {
         $settings = new Table("settings");
         $config = $settings->where(["name" => "user"])->find();
-        $passwd = md5("lychee" . $passwd);
+        $passwd = md5("lychee_" . $passwd);
 
         if (Strings::Empty($email) || Strings::Empty($passwd)) {
             controller::error("login email or password could not be empty!");
@@ -36,6 +36,9 @@ class App {
         if ($passwd != $config["passwd"] || strtolower($email) != strtolower($config["email"])) {
             controller::error("login email or password error!");
         } else {
+            include APP_PATH . "/scripts/session.php";
+
+            session::write_user_session($email);
             controller::success(1);
         }
     }
