@@ -181,11 +181,14 @@ var pages;
                 });
                 var link = $ts("<a>", {
                     class: "gallery-item",
-                    "data-src": "/gallery/image?id=".concat(img.id, "&q=large"),
+                    "href": "/gallery/image?id=".concat(img.id, "&q=large"),
                     "data-sub-html": img.desc
                 }).display(lbox);
                 div.appendElement(link);
             }
+            lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+                thumbnail: true
+            });
         };
         album.prototype.file_picker_onclick = function () {
             var inputs = $ts("$file");

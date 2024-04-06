@@ -55,12 +55,16 @@ namespace pages {
                 });
                 let link = $ts("<a>", {
                     class: "gallery-item",
-                    "data-src": `/gallery/image?id=${img.id}&q=large`,
+                    "href": `/gallery/image?id=${img.id}&q=large`,
                     "data-sub-html": img.desc
                 }).display(lbox);
 
                 div.appendElement(link);
             }
+
+            lightGallery(document.getElementById('animated-thumbnails-gallery'), {
+                thumbnail: true
+            });            
         }
 
         public file_picker_onclick() {
