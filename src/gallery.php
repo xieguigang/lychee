@@ -67,4 +67,21 @@ class App {
             controller::error(1);
         }
     }
+
+    /**
+     * @uses api
+     * @method GET
+    */
+    public function get_images($album_id) {
+        $album = new Table("photo_groups");
+        $images = $album
+            ->left_join("photo")
+            ->on(["photo" => "id", "photo_groups" => "photo_id"])
+            ->where(["album_id" => $album_id])
+            ->select([
+                "id","`description` as desc","name as alt"
+            ]);
+        
+        controller::success($images);
+    }
 }
