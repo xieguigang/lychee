@@ -59,13 +59,54 @@ var pages;
     }(Bootstrap));
     pages.gallery = gallery;
 })(pages || (pages = {}));
+var pages;
+(function (pages) {
+    var login = /** @class */ (function (_super) {
+        __extends(login, _super);
+        function login() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        Object.defineProperty(login.prototype, "appName", {
+            get: function () {
+                return "login";
+            },
+            enumerable: false,
+            configurable: true
+        });
+        login.prototype.init = function () {
+        };
+        login.prototype.login_onclick = function () {
+            var account_data = {
+                email: $ts.value("#email"),
+                passwd: $ts.value("#password")
+            };
+            if (Strings.Empty(account_data.email)) {
+                return;
+            }
+            else if (Strings.Empty(account_data.passwd)) {
+                return;
+            }
+            $ts.post("", account_data, function (result) {
+                if (result.code == 0) {
+                    $goto("/gallery");
+                }
+                else {
+                }
+            });
+        };
+        return login;
+    }(Bootstrap));
+    pages.login = login;
+})(pages || (pages = {}));
 ///<reference path="./pages/album.ts" />
 ///<reference path="./pages/gallery.ts" />
+///<reference path="./pages/login.ts" />
 var app;
 (function (app) {
     function run() {
         Router.AddAppHandler(new pages.album());
         Router.AddAppHandler(new pages.gallery());
+        Router.AddAppHandler(new pages.login());
         Router.RunApp();
     }
     app.run = run;

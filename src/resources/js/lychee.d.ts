@@ -12,6 +12,13 @@ declare namespace pages {
         create_onclick(): void;
     }
 }
+declare namespace pages {
+    class login extends Bootstrap {
+        get appName(): string;
+        protected init(): void;
+        login_onclick(): void;
+    }
+}
 declare namespace app {
     function run(): void;
 }
