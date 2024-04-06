@@ -30,7 +30,7 @@ namespace modals {
 
         }
 
-        $ts.post("/album/new", new_album, function (result) {
+        $ts.post("/gallery/new_album", new_album, function (result) {
             if (result.code == 0) {
                 $goto(`/album?id=${result.info}`);
             } else {

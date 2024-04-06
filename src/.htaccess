@@ -27,8 +27,8 @@ Header set Cache-Control: "max-age=0, no-store"
 
 # ErrorDocument 404 /index.php?app=custom_errors&error=404
 
-# access
 RewriteRule ^access/([a-zA-Z0-9_-]+)$ access.php?app=$1
+RewriteRule ^gallery/([a-zA-Z0-9_-]+)$ gallery.php?app=$1
 
 # index page
 RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?app=$1

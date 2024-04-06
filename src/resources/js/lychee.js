@@ -141,7 +141,7 @@ var modals;
         console.log(new_album);
         if (Strings.Empty(album_name)) {
         }
-        $ts.post("/album/new", new_album, function (result) {
+        $ts.post("/gallery/new_album", new_album, function (result) {
             if (result.code == 0) {
                 $goto("/album?id=".concat(result.info));
             }
