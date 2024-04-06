@@ -19,7 +19,18 @@ class App {
      * @uses view
     */
     public function album($id) {
-        View::Display();
+        $pool = new Table("album");
+        $album = $pool->where(["id" => $id])->find();
+
+        if (Utils::isDbNull($album)) {
+            RFC7231Error::err404("There is no album which its id equals to $id");
+        }
+
+        View::Display([
+            "title" => $album["name"],
+            "album_title" => $album["name"],
+            "album_desc" => $album["note"]
+        ]);
     }
 
     /**
