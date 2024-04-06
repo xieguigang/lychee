@@ -17,6 +17,10 @@ declare namespace modals {
     function on_complete(file: UploadFile): void;
     function on_error(file: UploadFile): void;
 }
+declare namespace modals {
+    function album_parent(): string;
+    function create_album(): void;
+}
 declare namespace pages {
     interface image_data {
         id: string;
@@ -53,8 +57,4 @@ declare namespace pages {
 }
 declare namespace app {
     function run(): void;
-}
-declare namespace modals {
-    function album_parent(): string;
-    function create_album(): void;
 }

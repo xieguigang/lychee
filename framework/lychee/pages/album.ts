@@ -1,4 +1,5 @@
 ///<reference path="../modals/upload_images.ts"/>
+///<reference path="../modals/create_album.ts"/>
 
 namespace pages {
 

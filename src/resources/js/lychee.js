@@ -94,7 +94,45 @@ var modals;
     }
     modals.on_error = on_error;
 })(modals || (modals = {}));
+var modals;
+(function (modals) {
+    function album_parent() {
+        var url = $ts.location.url;
+        console.log("try to get current album reference from url:");
+        console.log(url);
+        if (url.path == "/gallery" || url.path == "/gallery/") {
+            return "0";
+        }
+        else {
+            return url.getArgument("id");
+        }
+    }
+    modals.album_parent = album_parent;
+    function create_album() {
+        var album_name = $ts.value("#album-name");
+        var desc = $ts.value("#desc-text");
+        var parent_id = album_parent();
+        var new_album = {
+            name: album_name,
+            description: desc,
+            parent_id: parent_id
+        };
+        console.log("view of the arguments for new album:");
+        console.log(new_album);
+        if (Strings.Empty(album_name)) {
+        }
+        $ts.post("/gallery/new_album", new_album, function (result) {
+            if (result.code == 0) {
+                $goto("/album?id=".concat(result.info));
+            }
+            else {
+            }
+        });
+    }
+    modals.create_album = create_album;
+})(modals || (modals = {}));
 ///<reference path="../modals/upload_images.ts"/>
+///<reference path="../modals/create_album.ts"/>
 var pages;
 (function (pages) {
     var album = /** @class */ (function (_super) {
@@ -257,41 +295,4 @@ var app;
     app.run = run;
 })(app || (app = {}));
 $ts(app.run);
-var modals;
-(function (modals) {
-    function album_parent() {
-        var url = $ts.location.url;
-        console.log("try to get current album reference from url:");
-        console.log(url);
-        if (url.path == "/gallery" || url.path == "/gallery/") {
-            return "0";
-        }
-        else {
-            return url.getArgument("id");
-        }
-    }
-    modals.album_parent = album_parent;
-    function create_album() {
-        var album_name = $ts.value("#album-name");
-        var desc = $ts.value("#desc-text");
-        var parent_id = album_parent();
-        var new_album = {
-            name: album_name,
-            description: desc,
-            parent_id: parent_id
-        };
-        console.log("view of the arguments for new album:");
-        console.log(new_album);
-        if (Strings.Empty(album_name)) {
-        }
-        $ts.post("/gallery/new_album", new_album, function (result) {
-            if (result.code == 0) {
-                $goto("/album?id=".concat(result.info));
-            }
-            else {
-            }
-        });
-    }
-    modals.create_album = create_album;
-})(modals || (modals = {}));
 //# sourceMappingURL=lychee.js.map
