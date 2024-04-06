@@ -4,3 +4,6 @@
 [submodule "framework/php.NET"]
 	path = framework/php.NET
 	url = https://github.com/biocad-cloud/php-dotnet.git
+[submodule "framework/Safe"]
+	path = framework/Safe
+	url = https://github.com/thecodingmachine/safe.git

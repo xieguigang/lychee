@@ -27,7 +27,7 @@ class image {
         include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/Reader.php";
 
         // reader with Native adapter
-        $reader = \PHPExif\Reader\Reader::factory(\PHPExif\Enum\ReaderType::NATIVE);breakpoint($reader );
+        $reader = \PHPExif\Reader\Reader::factory(\PHPExif\Enum\ReaderType::NATIVE);
         $exif = $reader->read($raw);
 
         breakpoint($exif);
