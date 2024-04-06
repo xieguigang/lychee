@@ -1,6 +1,26 @@
+declare namespace modals {
+    const $: any;
+    interface WebUploader {
+        upload(): unknown;
+        on(evt: string, arg1: (file: UploadFile, arg2?: any) => void): unknown;
+    }
+    interface UploadFile {
+        size: number;
+        name: string;
+        id: string;
+        type: string;
+    }
+    function CreateWebUploaderUi(): WebUploader;
+    function showFileInfo(file: UploadFile): void;
+    function on_progress(file: UploadFile, percentage: number): void;
+    function on_success(file: UploadFile, response: any): void;
+    function on_complete(file: UploadFile): void;
+    function on_error(file: UploadFile): void;
+}
 declare namespace pages {
     class album extends Bootstrap {
         get appName(): string;
+        private uploader;
         protected init(): void;
         create_onclick(): void;
     }
@@ -27,19 +47,4 @@ declare namespace app {
 }
 declare namespace modals {
     function create_album(): void;
-}
-declare namespace modals {
-    const $: any;
-    interface WebUploader {
-        upload(): unknown;
-        on(evt: string, arg1: (file: UploadFile, arg2?: any) => void): unknown;
-    }
-    interface UploadFile {
-        size: number;
-        name: string;
-        id: string;
-        type: string;
-    }
-    function upload_images(): void;
-    function CreateWebUploaderUi(): WebUploader;
 }

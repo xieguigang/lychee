@@ -14,21 +14,6 @@ namespace modals {
         type: string;
     }
 
-    export function upload_images() {
-        this.uploader = this.create();
-
-        // 当有文件添加进来的时候
-        this.uploader.on('fileQueued', file => this.showFileInfo(file));
-        // 文件上传过程中创建进度条实时显示。
-        this.uploader.on('uploadProgress', (file, percentage) => this.on_progress(file, percentage));
-        // 文件上传成功，给item添加成功class, 用样式标记上传成功。
-        this.uploader.on('uploadSuccess', (file, response) => this.on_success(file, response));
-        // 文件上传失败，显示上传出错。
-        this.uploader.on('uploadError', file => this.on_error(file));
-        // 完成上传完了，成功或者失败，先删除进度条。
-        this.uploader.on('uploadComplete', file => this.on_complete(file));
-    }
-
     export function CreateWebUploaderUi(): WebUploader {
         return (<any>window).WebUploader.create({
             // 选完文件后，是否自动上传。
@@ -56,7 +41,7 @@ namespace modals {
         });
     }
 
-    function showFileInfo(file: UploadFile) {
+    export function showFileInfo(file: UploadFile) {
         var $list = $ts("#thelist");
         var info_str: string = `
             <div id="${file.id}" class="item">
@@ -72,7 +57,7 @@ namespace modals {
         $list.appendElement($ts("<div>").display(info_str));
     }
 
-    function on_progress(file: UploadFile, percentage: number) {
+    export function on_progress(file: UploadFile, percentage: number) {
         var $li = $('#' + file.id);
         var $percent = $li.find('.progress .progress-bar');
 
@@ -88,7 +73,7 @@ namespace modals {
         $percent.css('width', percentage * 100 + '%');
     }
 
-    function on_success(file: UploadFile, response: any) {
+    export function on_success(file: UploadFile, response: any) {
         let urls: { dir: string, name: string } = response.data;
         let info = {
             file: `${urls.dir}/${urls.name}`,
@@ -105,11 +90,11 @@ namespace modals {
 
         // write database
         $ts.post("/video/save/", info, function () {
-    
+
         });
     }
 
-    function on_complete(file: UploadFile) {
+    export function on_complete(file: UploadFile) {
         // alert(file.id)
         // alert(file);
         $('#' + file.id).find('.progress').remove();
@@ -121,7 +106,7 @@ namespace modals {
         // location.href="http://www.xiaosan.com/tp5/public/index.php/index/backstage/vioshow";
     }
 
-    function on_error(file: UploadFile) {
+    export function on_error(file: UploadFile) {
         $('#' + file.id).find('p.state').text('上传出错');
     }
 }
