@@ -59,6 +59,12 @@ class App {
         $upload = $upload . "/raw";
         $raw = $upload . "/" . $year . "/" . $file;
 
-        image::process_upload($raw);
+        $err = image::process_upload($raw, "/" . $year . "/" . $file, $name, $size, $type, $album_id);
+
+        if (Utils::isDbNull($err)) {
+            controller::success(1);
+        } else {
+            controller::error(1);
+        }
     }
 }

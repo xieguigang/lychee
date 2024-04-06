@@ -33,7 +33,7 @@ include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/Reader.php";
 
 class image {
 
-    public static function process_upload($raw) {
+    public static function process_upload($raw, $upload_raw, $name, $size, $type, $album_id) {
         include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/Reader.php";
 
         // reader with Native adapter
@@ -86,8 +86,8 @@ class image {
         ];
         $exif_values = [];
 
-        foreach($exif_tags as $name) {
-            $exif_values[strtolower($name)] = $exif->{"get$name"}();
+        foreach($exif_tags as $attr) {
+            $exif_values[strtolower($attr)] = $exif->{"get$attr"}();
         }
 
         $exif = json_encode($exif_values);
