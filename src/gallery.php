@@ -36,6 +36,21 @@ class App {
      * @method POST
     */
     public function upload() {
+        include APP_PATH . "/framework/php-webuploader/src/Upload.php";
+
+        $upload = APP_PATH . "/data/raw/";
+        $upload_temp = dotnet::getMyTempDirectory() . "/upload_temp/";
+
+        //调用
+        $demo = new Upload();
+        $demo->uploadVideo($upload, $upload_temp);
+    }
+
+    /**
+     * @uses api
+     * @method POST
+    */
+    public function save_image($file, $name, $size, $type, $album_id) {
 
     }
 }

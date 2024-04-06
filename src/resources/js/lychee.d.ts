@@ -48,5 +48,6 @@ declare namespace app {
     function run(): void;
 }
 declare namespace modals {
+    function album_parent(): string;
     function create_album(): void;
 }

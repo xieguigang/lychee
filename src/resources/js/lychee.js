@@ -21,11 +21,11 @@ var modals;
             // 选完文件后，是否自动上传。
             auto: false,
             // swf文件路径
-            swf: "/resources/js/webuploader/Uploader.swf",
+            swf: "/resources/vendor/webuploader/Uploader.swf",
             // 文件接收服务端。
-            server: "/video/upload/",
+            server: "/gallery/upload/",
             accept: {
-                title: "Video Files",
+                title: "Upload Image Files",
                 // extensions: "dat,asf,rm,ram,3gp,mov,m4v,dvix,dv,qt,divx,cpk,fli,flc,mod,mp4,wmv,flv,avi,mkv,vob,mpg,rmvb,mpeg,mov,mts",
             },
             // 选择文件的按钮。可选。
@@ -34,7 +34,7 @@ var modals;
             // mulitple:true,//选择多个
             chunked: true,
             chunkSize: 2 * 1024 * 1024,
-            threads: 3,
+            threads: 4,
             method: 'POST'
         });
     }
@@ -69,13 +69,13 @@ var modals;
             name: $ts.baseName(file.name),
             size: file.size,
             type: file.type,
-            collection: this.collection_id
+            album_id: modals.album_parent()
         };
         modals.$('#' + file.id).addClass('upload-state-done');
         console.log("video file upload success:");
         console.log(urls);
         // write database
-        $ts.post("/video/save/", info, function () {
+        $ts.post("/gallery/save_image/", info, function (result) {
         });
     }
     modals.on_success = on_success;
@@ -239,6 +239,7 @@ var modals;
             return url.getArgument("id");
         }
     }
+    modals.album_parent = album_parent;
     function create_album() {
         var album_name = $ts.value("#album-name");
         var desc = $ts.value("#desc-text");

@@ -20,12 +20,12 @@ namespace modals {
             auto: false,
 
             // swf文件路径
-            swf: "/resources/js/webuploader/Uploader.swf",
+            swf: "/resources/vendor/webuploader/Uploader.swf",
 
             // 文件接收服务端。
-            server: "/video/upload/",
+            server: "/gallery/upload/",
             accept: {
-                title: "Video Files",
+                title: "Upload Image Files",
                 // extensions: "dat,asf,rm,ram,3gp,mov,m4v,dvix,dv,qt,divx,cpk,fli,flc,mod,mp4,wmv,flv,avi,mkv,vob,mpg,rmvb,mpeg,mov,mts",
             },
 
@@ -35,7 +35,7 @@ namespace modals {
             // mulitple:true,//选择多个
             chunked: true,//开启分片上传
             chunkSize: 2 * 1024 * 1024,//分片大小，建议2M，其他可能需要设置
-            threads: 3,//上传并发数
+            threads: 4,//上传并发数
 
             method: 'POST'
         });
@@ -80,7 +80,7 @@ namespace modals {
             name: $ts.baseName(file.name),
             size: file.size,
             type: file.type,
-            collection: this.collection_id
+            album_id: album_parent()
         };
 
         $('#' + file.id).addClass('upload-state-done');
@@ -89,7 +89,7 @@ namespace modals {
         console.log(urls);
 
         // write database
-        $ts.post("/video/save/", info, function () {
+        $ts.post("/gallery/save_image/", info, function (result) {
 
         });
     }

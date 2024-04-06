@@ -1,6 +1,6 @@
 namespace modals {
 
-    function album_parent() {
+    export function album_parent() {
         const url = $ts.location.url;
 
         console.log("try to get current album reference from url:");
