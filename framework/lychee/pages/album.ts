@@ -23,6 +23,10 @@ namespace pages {
             this.uploader.on('uploadError', file => modals.on_error(file));
             // 完成上传完了，成功或者失败，先删除进度条。
             this.uploader.on('uploadComplete', file => modals.on_complete(file));
+
+            for (let menu of utils.getObsoletes()) {
+                utils.removeElement(menu);
+            }
         }
 
         public file_picker_onclick() {

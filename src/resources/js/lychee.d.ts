@@ -29,6 +29,7 @@ declare namespace pages {
 }
 declare namespace utils {
     function removeElement(node: HTMLElement): void;
+    function getObsoletes(): HTMLElement[];
 }
 declare namespace pages {
     class gallery extends Bootstrap {

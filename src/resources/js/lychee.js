@@ -121,6 +121,10 @@ var pages;
             this.uploader.on('uploadError', function (file) { return modals.on_error(file); });
             // 完成上传完了，成功或者失败，先删除进度条。
             this.uploader.on('uploadComplete', function (file) { return modals.on_complete(file); });
+            for (var _i = 0, _a = utils.getObsoletes(); _i < _a.length; _i++) {
+                var menu = _a[_i];
+                utils.removeElement(menu);
+            }
         };
         album.prototype.file_picker_onclick = function () {
             var inputs = $ts("$file");
@@ -144,6 +148,10 @@ var utils;
         node.parentNode.removeChild(node);
     }
     utils.removeElement = removeElement;
+    function getObsoletes() {
+        return $ts.select(".delete").ToArray();
+    }
+    utils.getObsoletes = getObsoletes;
 })(utils || (utils = {}));
 /// <reference path="../utils.ts" />
 var pages;
