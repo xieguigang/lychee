@@ -35,7 +35,7 @@ var modals;
             chunked: true,
             chunkSize: 2 * 1024 * 1024,
             threads: 3,
-            method: 'POST',
+            method: 'POST'
         });
     }
     modals.CreateWebUploaderUi = CreateWebUploaderUi;
@@ -121,6 +121,9 @@ var pages;
             this.uploader.on('uploadError', function (file) { return modals.on_error(file); });
             // 完成上传完了，成功或者失败，先删除进度条。
             this.uploader.on('uploadComplete', function (file) { return modals.on_complete(file); });
+        };
+        album.prototype.file_picker_onclick = function () {
+            $ts("$file").click();
         };
         album.prototype.create_onclick = function () {
             modals.create_album();

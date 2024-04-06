@@ -22,6 +22,7 @@ declare namespace pages {
         get appName(): string;
         private uploader;
         protected init(): void;
+        file_picker_onclick(): void;
         create_onclick(): void;
     }
 }

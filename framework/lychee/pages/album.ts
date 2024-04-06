@@ -25,6 +25,10 @@ namespace pages {
             this.uploader.on('uploadComplete', file => modals.on_complete(file));
         }
 
+        public file_picker_onclick() {
+            $ts("$file").click();
+        }
+
         public create_onclick() {
             modals.create_album();
         }

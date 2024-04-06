@@ -37,7 +37,7 @@ namespace modals {
             chunkSize: 2 * 1024 * 1024,//分片大小，建议2M，其他可能需要设置
             threads: 3,//上传并发数
 
-            method: 'POST',
+            method: 'POST'
         });
     }
 

@@ -5433,6 +5433,7 @@ var DOM;
          * + ``#`` by id
          * + ``.`` by class
          * + ``!`` by name
+         * + ``$`` by name(alias)
          * + ``&`` SINGLE NODE
          * + ``@`` read meta tag
          * + ``&lt;>`` create new tag
@@ -5524,6 +5525,7 @@ var DOM;
                 case "#": return this.getById(expr.substr(1));
                 case ".": return this.getByClass(expr.substr(1), isSingle);
                 case "!": return this.getByName(expr.substr(1), isSingle);
+                case "$": return this.getByName(expr.substr(1), isSingle);
                 case "<": return this.createElement(expr);
                 case "@": return this.queryMeta(expr.substr(1));
                 default: return this.getByTag(expr, isSingle);
@@ -5555,6 +5557,12 @@ var DOM;
          * ``<tag class="xxx">``
         */
         QueryTypes[QueryTypes["class"] = 10] = "class";
+        /**
+         * 表达式为 $xxx
+         * 按照节点的name属性值进行查询
+         *
+         * ``<tag name="xxx">``
+        */
         QueryTypes[QueryTypes["name"] = 100] = "name";
         /**
          * 表达式为 xxx

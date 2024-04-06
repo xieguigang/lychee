@@ -1919,6 +1919,7 @@ declare namespace DOM {
          * + ``#`` by id
          * + ``.`` by class
          * + ``!`` by name
+         * + ``$`` by name(alias)
          * + ``&`` SINGLE NODE
          * + ``@`` read meta tag
          * + ``&lt;>`` create new tag
@@ -1969,6 +1970,12 @@ declare namespace DOM {
          * ``<tag class="xxx">``
         */
         class = 10,
+        /**
+         * 表达式为 $xxx
+         * 按照节点的name属性值进行查询
+         *
+         * ``<tag name="xxx">``
+        */
         name = 100,
         /**
          * 表达式为 xxx
