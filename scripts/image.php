@@ -31,6 +31,8 @@ include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Mapper/Native.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/PhpExifReaderException.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/Reader.php";
 
+include_once APP_PATH . "/framework/SimpleImage.php";
+
 class image {
 
     public static function process_upload($raw, $upload_raw, $name, $size, $type, $album_id) {
@@ -91,6 +93,13 @@ class image {
         }
 
         $exif = json_encode($exif_values);
+        $filename = $exif_values["filename"];
+        $filename = "/" . date("Y") . "/" . substr($filename, 3, 3) . "/" . $filename;
+        $upload = DotNetRegistry::Read("UPLOAD_DATA");
+        $large = $upload . "/large" . $filename;
+        $small = $upload . "/thumbs" . $filename;
+
+        breakpoint([$upload_raw, $large, $small]);
 
         breakpoint($exif);
     }
