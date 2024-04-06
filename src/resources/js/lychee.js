@@ -23,7 +23,7 @@ var modals;
             // swf文件路径
             swf: "/resources/vendor/webuploader/Uploader.swf",
             // 文件接收服务端。
-            server: "/gallery/upload/",
+            server: "/gallery/upload",
             accept: {
                 title: "Upload Image Files",
                 // extensions: "dat,asf,rm,ram,3gp,mov,m4v,dvix,dv,qt,divx,cpk,fli,flc,mod,mp4,wmv,flv,avi,mkv,vob,mpg,rmvb,mpeg,mov,mts",
@@ -33,7 +33,7 @@ var modals;
             pick: '#picker',
             // mulitple:true,//选择多个
             chunked: true,
-            chunkSize: 2 * 1024 * 1024,
+            chunkSize: 1 * 1024 * 1024,
             threads: 4,
             method: 'POST'
         });
@@ -75,7 +75,7 @@ var modals;
         console.log("video file upload success:");
         console.log(urls);
         // write database
-        $ts.post("/gallery/save_image/", info, function (result) {
+        $ts.post("/gallery/save_image", info, function (result) {
         });
     }
     modals.on_success = on_success;
