@@ -18,7 +18,7 @@ class App {
      * @access *
      * @uses view
     */
-    public function album($id) {breakpoint(1);
+    public function album($id) {
         $pool = new Table("album");
         $album = $pool->where(["id" => $id])->find();
         $usr_session = accessController::has_user_session();
