@@ -37,11 +37,11 @@ namespace pages {
                 utils.removeElement(menu);
             }
 
-            $ts.get(`/gallery/get_images?album_id=${modals.album_parent()}`, function (result: IMsg<image_data[]>) {
-                if (result.code == 0) {
-                    vm.show_album(<image_data[]>result.info);
-                }
-            });
+            // $ts.get(`/gallery/get_images?album_id=${modals.album_parent()}`, function (result: IMsg<image_data[]>) {
+            //     if (result.code == 0) {
+            //         vm.show_album(<image_data[]>result.info);
+            //     }
+            // });
         }
 
         public show_album(list: image_data[]) {

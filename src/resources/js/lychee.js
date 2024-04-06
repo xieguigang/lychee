@@ -164,11 +164,11 @@ var pages;
                 var menu = _a[_i];
                 utils.removeElement(menu);
             }
-            $ts.get("/gallery/get_images?album_id=".concat(modals.album_parent()), function (result) {
-                if (result.code == 0) {
-                    vm.show_album(result.info);
-                }
-            });
+            // $ts.get(`/gallery/get_images?album_id=${modals.album_parent()}`, function (result: IMsg<image_data[]>) {
+            //     if (result.code == 0) {
+            //         vm.show_album(<image_data[]>result.info);
+            //     }
+            // });
         };
         album.prototype.show_album = function (list) {
             var div = $ts("#animated-thumbnails-gallery").clear();

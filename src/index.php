@@ -28,11 +28,20 @@ class App {
             RFC7231Error::err404("There is no album which its id equals to $id");
         }
 
+        $images = (new Table("photo_groups"))
+            ->left_join("photo")
+            ->on(["photo" => "id", "photo_groups" => "photo_id"])
+            ->where(["album_id" => $id])
+            ->select([
+                "`photo_id` as `id`","`description` as `desc`","`name`"
+            ]);
+
         View::Display([
             "title" => $album["name"],
             "album_title" => $album["name"],
             "album_desc" => $album["note"],
-            "usr_ss" => $usr_ss
+            "usr_ss" => $usr_ss,
+            "image" => $images
         ]);
     }
 

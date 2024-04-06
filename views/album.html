@@ -45,6 +45,16 @@
                 <div class="gallery-demo">
                     <div id="animated-thumbnails-gallery">
 
+
+                        <foreach @image>
+
+                            <a data-tweet-text='@image["name"]' class="gallery-item"
+                                data-src='/gallery/image?q=large&id=@image["id"]' data-sub-html='@image["desc"]'>
+                                <img class="img-responsive" src='/gallery/image?q=thumbnail&id=@image["id"]'>
+                            </a>
+
+                        </foreach>
+
                     </div>
                 </div>
 
