@@ -7,3 +7,6 @@
 [submodule "framework/Safe"]
 	path = framework/Safe
 	url = https://github.com/thecodingmachine/safe.git
+[submodule "framework/Utf8"]
+	path = framework/Utf8
+	url = https://github.com/Fylax/forceutf8.git

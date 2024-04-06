@@ -3,6 +3,7 @@
 include_once APP_PATH . "/framework/Safe/generated/fileinfo.php";
 include_once APP_PATH . "/framework/Safe/generated/filesystem.php";
 include_once APP_PATH . "/framework/Safe/generated/image.php";
+include_once APP_PATH . "/framework/Utf8/ForceUTF8/Encoding.php";
 
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/AdapterInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/HydratorInterface.php";
