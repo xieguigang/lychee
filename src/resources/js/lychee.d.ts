@@ -23,6 +23,7 @@ declare namespace pages {
         private uploader;
         protected init(): void;
         file_picker_onclick(): void;
+        upload_onclick(): void;
         create_onclick(): void;
     }
 }

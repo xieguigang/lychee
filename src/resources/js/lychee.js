@@ -123,7 +123,13 @@ var pages;
             this.uploader.on('uploadComplete', function (file) { return modals.on_complete(file); });
         };
         album.prototype.file_picker_onclick = function () {
-            $ts("$file").click();
+            var inputs = $ts("$file");
+            var file = inputs.First;
+            console.log(file);
+            file.click();
+        };
+        album.prototype.upload_onclick = function () {
+            this.uploader.upload();
         };
         album.prototype.create_onclick = function () {
             modals.create_album();

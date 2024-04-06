@@ -26,7 +26,14 @@ namespace pages {
         }
 
         public file_picker_onclick() {
-            $ts("$file").click();
+            let inputs: DOMEnumerator<HTMLInputElement> = <any>$ts("$file");
+            let file: HTMLInputElement = inputs.First;
+            console.log(file);
+            file.click();
+        }
+
+        public upload_onclick() {
+            this.uploader.upload();
         }
 
         public create_onclick() {
