@@ -1,15 +1,17 @@
 <?php
 
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/AbstractAdapter.php";
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/Exiftool.php";
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/FFprobe.php";
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/ImageMagick.php";
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/Native.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/AdapterInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/HydratorInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/MapperInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/ReaderInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Enum/ReaderType.php";
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Exif.php";
+
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/AbstractAdapter.php";
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/Exiftool.php";
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/FFprobe.php";
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/ImageMagick.php";
+include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Adapter/Native.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Hydrator/Mutator.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Mapper/AbstractMapper.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Mapper/Exiftool.php";
@@ -18,7 +20,6 @@ include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Mapper/ImageMagick.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Mapper/Native.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/PhpExifReaderException.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Reader/Reader.php";
-include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Exif.php";
 
 class image {
 
