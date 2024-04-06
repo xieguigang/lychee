@@ -31,4 +31,14 @@ class App {
     public function gallery() {
         View::Display();
     }
+
+    /**
+     * Login
+     * 
+     * @access *
+     * @uses view
+    */
+    public function login() {
+        View::Display();
+    }
 }
