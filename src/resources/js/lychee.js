@@ -177,11 +177,11 @@ var pages;
                 var lbox = $ts("<img>", {
                     class: "img-responsive",
                     alt: img.alt,
-                    src: "/gallery/image?id=".concat(img.id, "&q=large")
+                    src: "/gallery/image?id=".concat(img.id, "&q=thumbnail")
                 });
                 var link = $ts("<a>", {
                     class: "gallery-item",
-                    "data-src": "/gallery/image?id=".concat(img.id, "&q=thumbnail"),
+                    "data-src": "/gallery/image?id=".concat(img.id, "&q=large"),
                     "data-sub-html": img.desc
                 }).display(lbox);
                 div.appendElement(link);

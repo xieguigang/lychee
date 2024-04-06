@@ -51,11 +51,11 @@ namespace pages {
                 let lbox = $ts("<img>", {
                     class: "img-responsive",
                     alt: img.alt,
-                    src: `/gallery/image?id=${img.id}&q=large`
+                    src: `/gallery/image?id=${img.id}&q=thumbnail`
                 });
                 let link = $ts("<a>", {
                     class: "gallery-item",
-                    "data-src": `/gallery/image?id=${img.id}&q=thumbnail`,
+                    "data-src": `/gallery/image?id=${img.id}&q=large`,
                     "data-sub-html": img.desc
                 }).display(lbox);
 
