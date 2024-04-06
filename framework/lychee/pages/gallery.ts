@@ -1,3 +1,5 @@
+/// <reference path="../utils.ts" />
+
 namespace pages {
 
     export class gallery extends Bootstrap {
@@ -7,7 +9,7 @@ namespace pages {
         }
 
         protected init(): void {
-
+            utils.removeElement($ts("#menu_upload"));
         }
 
         public create_onclick() {

@@ -5,6 +5,9 @@ declare namespace pages {
         create_onclick(): void;
     }
 }
+declare namespace utils {
+    function removeElement(node: HTMLElement): void;
+}
 declare namespace pages {
     class gallery extends Bootstrap {
         get appName(): string;
@@ -26,5 +29,17 @@ declare namespace modals {
     function create_album(): void;
 }
 declare namespace modals {
+    const $: any;
+    interface WebUploader {
+        upload(): unknown;
+        on(evt: string, arg1: (file: UploadFile, arg2?: any) => void): unknown;
+    }
+    interface UploadFile {
+        size: number;
+        name: string;
+        id: string;
+        type: string;
+    }
     function upload_images(): void;
+    function CreateWebUploaderUi(): WebUploader;
 }
