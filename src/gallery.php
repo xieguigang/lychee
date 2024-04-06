@@ -38,7 +38,8 @@ class App {
     public function upload() {
         include APP_PATH . "/framework/php-webuploader/src/Upload.php";
 
-        $upload = APP_PATH . "/data/raw/";
+        $upload = DotNetRegistry::Read("UPLOAD_DATA");
+        $upload = $upload . "/raw";
         $upload_temp = dotnet::getMyTempDirectory() . "/upload_temp/";
 
         //调用
@@ -54,7 +55,8 @@ class App {
         include APP_PATH . "/scripts/image.php";
 
         $year = substr($file, 0, 4);
-        $upload = APP_PATH . "/data/raw/";
+        $upload = DotNetRegistry::Read("UPLOAD_DATA");
+        $upload = $upload . "/raw";
         $raw = $upload . "/" . $year . "/" . $file;
 
         image::process_upload($raw);
