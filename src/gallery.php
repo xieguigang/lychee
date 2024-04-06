@@ -86,6 +86,10 @@ class App {
     }
 
     public function image($id, $q = "large") {
-
+        # thumbnail
+        $photo = new Table("photo");
+        $img = $photo->where(["id" => $id])->find();
+        $filename = $img[$q];
+        breakpoint($filename);
     }
 }
