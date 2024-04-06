@@ -90,6 +90,8 @@ class App {
         $photo = new Table("photo");
         $img = $photo->where(["id" => $id])->find();
         $filename = $img[$q];
-        breakpoint($filename);
+        $filepath = DotNetRegistry::Read("UPLOAD_DATA") . "/" . $filename;
+        
+        Utils::PushDownload($filepath);
     }
 }
