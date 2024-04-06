@@ -1,5 +1,8 @@
 <?php
 
+include_once APP_PATH . "/framework/Safe/generated/fileinfo.php";
+include_once APP_PATH . "/framework/Safe/generated/filesystem.php";
+
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/AdapterInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/HydratorInterface.php";
 include_once APP_PATH . "/framework/PHPExif/lib/PHPExif/Contracts/MapperInterface.php";
