@@ -28,4 +28,14 @@ class App {
             controller::success($check["id"]);
         }
     }
+
+    /**
+     * upload image
+     * 
+     * @uses api
+     * @method POST
+    */
+    public function upload() {
+
+    }
 }
