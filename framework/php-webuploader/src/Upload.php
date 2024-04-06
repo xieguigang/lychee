@@ -46,7 +46,7 @@ class Upload {
         @set_time_limit(30 * 60);
 
         $targetDir = $upload_temp;             //切片保留路径(可自行修改["名称+_temp"])
-        $uploadDir = $upload. '/'.date('Ymd');     //最终上传路径(可自行修改)
+        $uploadDir = $upload. '/' . date('Y') .'/'.date('Ymd');     //最终上传路径(可自行修改)
 
         $cleanupTargetDir = true; // Remove old files
         $maxFileAge       = 5 * 3600; // Temp file age in seconds

@@ -51,6 +51,12 @@ class App {
      * @method POST
     */
     public function save_image($file, $name, $size, $type, $album_id) {
+        include APP_PATH . "/scripts/image.php";
 
+        $year = substr($file, 0, 4);
+        $upload = APP_PATH . "/data/raw/";
+        $raw = $upload . "/" . $year . "/" . $file;
+
+        image::process_upload($raw);
     }
 }
