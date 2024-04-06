@@ -92,15 +92,64 @@ class image {
             $exif_values[strtolower($attr)] = $exif->{"get$attr"}();
         }
 
-        $exif = json_encode($exif_values);
         $filename = $exif_values["filename"];
         $filename = "/" . date("Y") . "/" . substr($filename, 3, 3) . "/" . $filename;
         $upload = DotNetRegistry::Read("UPLOAD_DATA");
         $large = $upload . "/large" . $filename;
         $small = $upload . "/thumbs" . $filename;
 
-        breakpoint([$upload_raw, $large, $small]);
+        mkdir(dirname($large), 0777, true);
+        mkdir(dirname($small), 0777, true);
 
-        breakpoint($exif);
+        self::rescale_image($raw, $large, 1600);
+        self::rescale_image($raw, $small, 500);
+
+        $photo = new Table("photo");
+        $group = new Table("photo_groups");
+        $album = new Table("album");
+
+        $img_id = $photo->add([
+            "name" => $name,
+            "add_time" => Utils::Now(),
+            "config_id" => 0,
+            "raw" => $upload_raw,
+            "large" => "/large" . $filename,
+            "thumbnail" => "/thumbs" . $filename,
+            "description" => "",
+            "exif" => json_encode($exif_values)
+        ]);
+        $group->add([
+            "photo_id" => $img_id,
+            "album_id" => $album_id,
+            "add_time" => Utils::Now()
+        ]);
+        $album->where([
+            "id" => $album_id
+        ])->limit(1)
+          ->save([
+            "photos" => "~photos+1"
+          ])
+          ;
+
+        return null;
+    }
+
+    private static function rescale_image($raw, $scaled_file, $max_pixels) {
+        $img = new SimpleImage();
+        $img->load($raw);
+        $w = $img->getWidth();
+        $h = $img->getHeight();
+        $r = $w / $h;
+
+        if ($r >= 1) {
+            $w = $max_pixels;
+            $h = $max_pixels / $r;
+        } else {
+            $w = $max_pixels / $r;
+            $h = $max_pixels;
+        }
+
+        $img->resize($w, $h);
+        $img->save($scaled_file);
     }
 }
