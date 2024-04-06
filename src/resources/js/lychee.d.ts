@@ -18,10 +18,16 @@ declare namespace modals {
     function on_error(file: UploadFile): void;
 }
 declare namespace pages {
+    interface image_data {
+        id: string;
+        desc: string;
+        alt: string;
+    }
     class album extends Bootstrap {
         get appName(): string;
         private uploader;
         protected init(): void;
+        show_album(list: image_data[]): void;
         file_picker_onclick(): void;
         upload_onclick(): void;
         create_onclick(): void;

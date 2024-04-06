@@ -110,6 +110,7 @@ var pages;
             configurable: true
         });
         album.prototype.init = function () {
+            var vm = this;
             this.uploader = modals.CreateWebUploaderUi();
             // 当有文件添加进来的时候
             this.uploader.on('fileQueued', function (file) { return modals.showFileInfo(file); });
@@ -124,6 +125,28 @@ var pages;
             for (var _i = 0, _a = utils.getObsoletes(); _i < _a.length; _i++) {
                 var menu = _a[_i];
                 utils.removeElement(menu);
+            }
+            $ts.get("/gallery/get_images?album_id=".concat(modals.album_parent()), function (result) {
+                if (result.code == 0) {
+                    vm.show_album(result.info);
+                }
+            });
+        };
+        album.prototype.show_album = function (list) {
+            var div = $ts("#animated-thumbnails-gallery").clear();
+            for (var _i = 0, list_1 = list; _i < list_1.length; _i++) {
+                var img = list_1[_i];
+                var lbox = $ts("<img>", {
+                    class: "img-responsive",
+                    alt: img.alt,
+                    src: "/gallery/image?id=".concat(img.id, "&q=large")
+                });
+                var link = $ts("<a>", {
+                    class: "gallery-item",
+                    "data-src": "/gallery/image?id=".concat(img.id, "&q=thumbnail"),
+                    "data-sub-html": img.desc
+                }).display(lbox);
+                div.appendElement(link);
             }
         };
         album.prototype.file_picker_onclick = function () {

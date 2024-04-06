@@ -2,6 +2,12 @@
 
 namespace pages {
 
+    export interface image_data {
+        id: string;
+        desc: string;
+        alt: string;
+    }
+
     export class album extends Bootstrap {
 
         get appName(): string {
@@ -11,6 +17,8 @@ namespace pages {
         private uploader: modals.WebUploader;
 
         protected init(): void {
+            let vm = this;
+
             this.uploader = modals.CreateWebUploaderUi();
 
             // 当有文件添加进来的时候
@@ -26,6 +34,31 @@ namespace pages {
 
             for (let menu of utils.getObsoletes()) {
                 utils.removeElement(menu);
+            }
+
+            $ts.get(`/gallery/get_images?album_id=${modals.album_parent()}`, function (result: IMsg<image_data[]>) {
+                if (result.code == 0) {
+                    vm.show_album(<image_data[]>result.info);
+                }
+            });
+        }
+
+        public show_album(list: image_data[]) {
+            let div = $ts("#animated-thumbnails-gallery").clear();
+
+            for (let img of list) {
+                let lbox = $ts("<img>", {
+                    class: "img-responsive",
+                    alt: img.alt,
+                    src: `/gallery/image?id=${img.id}&q=large`
+                });
+                let link = $ts("<a>", {
+                    class: "gallery-item",
+                    "data-src": `/gallery/image?id=${img.id}&q=thumbnail`,
+                    "data-sub-html": img.desc
+                }).display(lbox);
+
+                div.appendElement(link);
             }
         }
 
