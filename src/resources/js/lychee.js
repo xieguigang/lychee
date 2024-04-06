@@ -86,7 +86,10 @@ var pages;
             else if (Strings.Empty(account_data.passwd)) {
                 return;
             }
-            $ts.post("", account_data, function (result) {
+            else {
+                account_data.passwd = md5(account_data.passwd);
+            }
+            $ts.post("/access/login", account_data, function (result) {
                 if (result.code == 0) {
                     $goto("/gallery");
                 }

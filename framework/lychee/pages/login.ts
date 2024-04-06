@@ -20,6 +20,8 @@ namespace pages {
                 return;
             } else if (Strings.Empty(account_data.passwd)) {
                 return;
+            } else {
+                account_data.passwd = md5(account_data.passwd);
             }
 
             $ts.post("/access/login", account_data, function (result) {
