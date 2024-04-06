@@ -79,7 +79,7 @@ class App {
             ->on(["photo" => "id", "photo_groups" => "photo_id"])
             ->where(["album_id" => $album_id])
             ->select([
-                "id","`description` as desc","name as alt"
+                "`id`","`description` as `desc`","`name` as `alt`"
             ]);
         
         controller::success($images);
