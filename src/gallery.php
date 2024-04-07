@@ -71,7 +71,6 @@ class App {
     /**
      * @uses api
      * @method GET
-     * @access *
     */
     public function get_images($album_id) {
         $album = new Table("photo_groups");
