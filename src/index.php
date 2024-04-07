@@ -33,8 +33,15 @@ class App {
             ->on(["photo" => "id", "photo_groups" => "photo_id"])
             ->where(["album_id" => $id])
             ->select([
-                "`photo_id` as `id`","`description` as `desc`","`name`"
+                "`photo_id` as `id`","`description` as `desc`","`name`","exif"
             ]);
+
+        for($i =0; $i < count($images); $i++) {
+            $exif = json_decode($images[$i]["exif"], true);
+            $w = $exif["width"];
+            $h = $exif["height"];
+            $images[$i]["size"] = "$w-$h";
+        }
 
         View::Display([
             "title" => $album["name"],
