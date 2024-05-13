@@ -1,6 +1,6 @@
 /*!
- * lightgallery | 2.8.0-beta.1 | November 27th 2023
- * http://www.lightgalleryjs.com/
+ * lightgallery | 2.0.0-beta.3 | May 4th 2021
+ * http://sachinchoolur.github.io/lightGallery/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
  */
@@ -8,7 +8,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.lgThumbnail = factory());
+    (global.lgThumbnail = factory());
 }(this, (function () { 'use strict';
 
     /*! *****************************************************************************
@@ -49,12 +49,9 @@
         toggleThumb: false,
         enableThumbDrag: true,
         enableThumbSwipe: true,
-        thumbnailSwipeThreshold: 10,
+        swipeThreshold: 10,
         loadYouTubeThumbnail: true,
         youTubeThumbSize: 1,
-        thumbnailPluginStrings: {
-            toggleThumbnails: 'Toggle thumbnails',
-        },
     };
 
     /**
@@ -82,13 +79,6 @@
         beforePrevSlide: 'lgBeforePrevSlide',
         beforeClose: 'lgBeforeClose',
         afterClose: 'lgAfterClose',
-        rotateLeft: 'lgRotateLeft',
-        rotateRight: 'lgRotateRight',
-        flipHorizontal: 'lgFlipHorizontal',
-        flipVertical: 'lgFlipVertical',
-        autoplay: 'lgAutoplay',
-        autoplayStart: 'lgAutoplayStart',
-        autoplayStop: 'lgAutoplayStop',
     };
 
     var Thumbnail = /** @class */ (function () {
@@ -100,11 +90,12 @@
             // get lightGallery core plugin instance
             this.core = instance;
             this.$LG = $LG;
+            // extend module default settings with lightGallery core settings
+            this.settings = __assign(__assign({}, thumbnailsSettings), this.core.settings);
+            this.init();
             return this;
         }
         Thumbnail.prototype.init = function () {
-            // extend module default settings with lightGallery core settings
-            this.settings = __assign(__assign({}, thumbnailsSettings), this.core.settings);
             this.thumbOuterWidth = 0;
             this.thumbTotalWidth =
                 this.core.galleryItems.length *
@@ -115,7 +106,7 @@
             if (!this.core.settings.allowMediaOverlap) {
                 this.settings.toggleThumb = false;
             }
-            if (this.settings.thumbnail) {
+            if (this.settings.thumbnail && this.core.galleryItems.length > 1) {
                 this.build();
                 if (this.settings.animateThumb) {
                     if (this.settings.enableThumbDrag) {
@@ -389,12 +380,12 @@
                 this.translateX = thumbDragUtils.newTranslateX;
             }
             if (Math.abs(thumbDragUtils.cords.endX - thumbDragUtils.cords.startX) <
-                this.settings.thumbnailSwipeThreshold) {
+                this.settings.swipeThreshold) {
                 this.thumbClickable = true;
             }
             return thumbDragUtils;
         };
-        Thumbnail.prototype.getThumbHtml = function (thumb, index, alt) {
+        Thumbnail.prototype.getThumbHtml = function (thumb, index) {
             var slideVideoInfo = this.core.galleryItems[index].__slideVideoInfo || {};
             var thumbImg;
             if (slideVideoInfo.youtube) {
@@ -413,13 +404,12 @@
             else {
                 thumbImg = thumb;
             }
-            var altAttr = alt ? 'alt="' + alt + '"' : '';
-            return "<div data-lg-item-id=\"" + index + "\" class=\"lg-thumb-item " + (index === this.core.index ? ' active' : '') + "\"\n        style=\"width:" + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + "px;\">\n            <img " + altAttr + " data-lg-item-id=\"" + index + "\" src=\"" + thumbImg + "\" />\n        </div>";
+            return "<div data-lg-item-id=\"" + index + "\" class=\"lg-thumb-item " + (index === this.core.index ? ' active' : '') + "\" \n        style=\"width:" + this.settings.thumbWidth + "px; height: " + this.settings.thumbHeight + ";\n            margin-right: " + this.settings.thumbMargin + "px;\">\n            <img data-lg-item-id=\"" + index + "\" src=\"" + thumbImg + "\" />\n        </div>";
         };
         Thumbnail.prototype.getThumbItemHtml = function (items) {
             var thumbList = '';
             for (var i = 0; i < items.length; i++) {
-                thumbList += this.getThumbHtml(items[i].thumb, i, items[i].alt);
+                thumbList += this.getThumbHtml(items[i].thumb, i);
             }
             return thumbList;
         };
@@ -448,9 +438,7 @@
             var _this = this;
             if (this.settings.toggleThumb) {
                 this.core.outer.addClass('lg-can-toggle');
-                this.core.$toolbar.append('<button type="button" aria-label="' +
-                    this.settings.thumbnailPluginStrings['toggleThumbnails'] +
-                    '" class="lg-toggle-thumb lg-icon"></button>');
+                this.core.$toolbar.append('<button type="button" aria-label="Toggle thumbnails" class="lg-toggle-thumb lg-icon"></button>');
                 this.core.outer
                     .find('.lg-toggle-thumb')
                     .first()
@@ -475,7 +463,7 @@
             });
         };
         Thumbnail.prototype.destroy = function () {
-            if (this.settings.thumbnail) {
+            if (this.settings.thumbnail && this.core.galleryItems.length > 1) {
                 this.$LG(window).off(".lg.thumb.global" + this.core.lgId);
                 this.core.LGel.off('.lg.thumb');
                 this.core.LGel.off('.thumb');

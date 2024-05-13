@@ -1,10 +1,10 @@
 .lg-outer .lg-thumb-outer {
   background-color: #0d0a0a;
+  display: inline-block;
   width: 100%;
   max-height: 350px;
-  overflow: hidden;
-  float: left;
 }
+
 .lg-outer .lg-thumb-outer.lg-grab .lg-thumb-item {
   cursor: -webkit-grab;
   cursor: -moz-grab;
@@ -12,6 +12,7 @@
   cursor: -ms-grab;
   cursor: grab;
 }
+
 .lg-outer .lg-thumb-outer.lg-grabbing .lg-thumb-item {
   cursor: move;
   cursor: -webkit-grabbing;
@@ -20,26 +21,29 @@
   cursor: -ms-grabbing;
   cursor: grabbing;
 }
+
 .lg-outer .lg-thumb-outer.lg-dragging .lg-thumb {
   -webkit-transition-duration: 0s !important;
   transition-duration: 0s !important;
 }
+
 .lg-outer .lg-thumb-outer.lg-rebuilding-thumbnails .lg-thumb {
   -webkit-transition-duration: 0s !important;
   transition-duration: 0s !important;
 }
+
 .lg-outer .lg-thumb-outer.lg-thumb-align-middle {
   text-align: center;
 }
+
 .lg-outer .lg-thumb-outer.lg-thumb-align-left {
   text-align: left;
 }
+
 .lg-outer .lg-thumb-outer.lg-thumb-align-right {
   text-align: right;
 }
-.lg-outer.lg-single-item .lg-thumb-outer {
-  display: none;
-}
+
 .lg-outer .lg-thumb {
   padding: 5px 0;
   height: 100%;
@@ -47,11 +51,13 @@
   display: inline-block;
   vertical-align: middle;
 }
+
 @media (min-width: 768px) {
   .lg-outer .lg-thumb {
     padding: 10px 0;
   }
 }
+
 .lg-outer .lg-thumb-item {
   cursor: pointer;
   float: left;
@@ -61,6 +67,7 @@
   margin-bottom: 5px;
   will-change: border-color;
 }
+
 @media (min-width: 768px) {
   .lg-outer .lg-thumb-item {
     border-radius: 4px;
@@ -70,24 +77,27 @@
     transition: border-color 0.25s ease;
   }
 }
+
 .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
-  border-color: rgb(169, 7, 7);
+  border-color: #a90707;
 }
+
 .lg-outer .lg-thumb-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .lg-outer.lg-can-toggle .lg-item {
   padding-bottom: 0;
 }
+
 .lg-outer .lg-toggle-thumb:after {
-  content: "\e1ff";
+  content: '\e1ff';
 }
+
 .lg-outer.lg-animate-thumb .lg-thumb {
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-
-/*# sourceMappingURL=lg-thumbnail.css.map */

@@ -1,6 +1,6 @@
 /*!
- * lightgallery | 2.8.0-beta.1 | November 27th 2023
- * http://www.lightgalleryjs.com/
+ * lightgallery | 2.0.0-beta.3 | May 4th 2021
+ * http://sachinchoolur.github.io/lightGallery/
  * Copyright (c) 2020 Sachin Neravath;
  * @license GPLv3
  */
@@ -8,7 +8,7 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
-    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.lightGallery = factory());
+    (global.lightGallery = factory());
 }(this, (function () { 'use strict';
 
     /*! *****************************************************************************
@@ -45,144 +45,24 @@
         return r;
     }
 
-    /**
-     * List of lightGallery events
-     * All events should be documented here
-     * Below interfaces are used to build the website documentations
-     * */
-    var lGEvents = {
-        afterAppendSlide: 'lgAfterAppendSlide',
-        init: 'lgInit',
-        hasVideo: 'lgHasVideo',
-        containerResize: 'lgContainerResize',
-        updateSlides: 'lgUpdateSlides',
-        afterAppendSubHtml: 'lgAfterAppendSubHtml',
-        beforeOpen: 'lgBeforeOpen',
-        afterOpen: 'lgAfterOpen',
-        slideItemLoad: 'lgSlideItemLoad',
-        beforeSlide: 'lgBeforeSlide',
-        afterSlide: 'lgAfterSlide',
-        posterClick: 'lgPosterClick',
-        dragStart: 'lgDragStart',
-        dragMove: 'lgDragMove',
-        dragEnd: 'lgDragEnd',
-        beforeNextSlide: 'lgBeforeNextSlide',
-        beforePrevSlide: 'lgBeforePrevSlide',
-        beforeClose: 'lgBeforeClose',
-        afterClose: 'lgAfterClose',
-        rotateLeft: 'lgRotateLeft',
-        rotateRight: 'lgRotateRight',
-        flipHorizontal: 'lgFlipHorizontal',
-        flipVertical: 'lgFlipVertical',
-        autoplay: 'lgAutoplay',
-        autoplayStart: 'lgAutoplayStart',
-        autoplayStop: 'lgAutoplayStop',
-    };
-
-    var lightGalleryCoreSettings = {
-        mode: 'lg-slide',
-        easing: 'ease',
-        speed: 400,
-        licenseKey: '0000-0000-000-0000',
-        height: '100%',
-        width: '100%',
-        addClass: '',
-        startClass: 'lg-start-zoom',
-        backdropDuration: 300,
-        container: '',
-        startAnimationDuration: 400,
-        zoomFromOrigin: true,
-        hideBarsDelay: 0,
-        showBarsAfter: 10000,
-        slideDelay: 0,
-        supportLegacyBrowser: true,
-        allowMediaOverlap: false,
-        videoMaxSize: '1280-720',
-        loadYouTubePoster: true,
-        defaultCaptionHeight: 0,
-        ariaLabelledby: '',
-        ariaDescribedby: '',
-        resetScrollPosition: true,
-        hideScrollbar: false,
-        closable: true,
-        swipeToClose: true,
-        closeOnTap: true,
-        showCloseIcon: true,
-        showMaximizeIcon: false,
-        loop: true,
-        escKey: true,
-        keyPress: true,
-        trapFocus: true,
-        controls: true,
-        slideEndAnimation: true,
-        hideControlOnEnd: false,
-        mousewheel: false,
-        getCaptionFromTitleOrAlt: true,
-        appendSubHtmlTo: '.lg-sub-html',
-        subHtmlSelectorRelative: false,
-        preload: 2,
-        numberOfSlideItemsInDom: 10,
-        selector: '',
-        selectWithin: '',
-        nextHtml: '',
-        prevHtml: '',
-        index: 0,
-        iframeWidth: '100%',
-        iframeHeight: '100%',
-        iframeMaxWidth: '100%',
-        iframeMaxHeight: '100%',
-        download: true,
-        counter: true,
-        appendCounterTo: '.lg-toolbar',
-        swipeThreshold: 50,
-        enableSwipe: true,
-        enableDrag: true,
-        dynamic: false,
-        dynamicEl: [],
-        extraProps: [],
-        exThumbImage: '',
-        isMobile: undefined,
-        mobileSettings: {
-            controls: false,
-            showCloseIcon: false,
-            download: false,
-        },
-        plugins: [],
-        strings: {
-            closeGallery: 'Close gallery',
-            toggleMaximize: 'Toggle maximize',
-            previousSlide: 'Previous slide',
-            nextSlide: 'Next slide',
-            download: 'Download',
-            playVideo: 'Play video',
-            mediaLoadingFailed: 'Oops... Failed to load content...',
-        },
-    };
-
-    function initLgPolyfills() {
-        (function () {
-            if (typeof window.CustomEvent === 'function')
-                return false;
-            function CustomEvent(event, params) {
-                params = params || {
-                    bubbles: false,
-                    cancelable: false,
-                    detail: null,
-                };
-                var evt = document.createEvent('CustomEvent');
-                evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-                return evt;
-            }
-            window.CustomEvent = CustomEvent;
-        })();
-        (function () {
-            if (!Element.prototype.matches) {
-                Element.prototype.matches =
-                    Element.prototype.msMatchesSelector ||
-                        Element.prototype.webkitMatchesSelector;
-            }
-        })();
-    }
+    (function () {
+        if (typeof window.CustomEvent === 'function')
+            return false;
+        function CustomEvent(event, params) {
+            params = params || { bubbles: false, cancelable: false, detail: null };
+            var evt = document.createEvent('CustomEvent');
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        }
+        window.CustomEvent = CustomEvent;
+    })();
+    (function () {
+        if (!Element.prototype.matches) {
+            Element.prototype.matches =
+                Element.prototype.msMatchesSelector ||
+                    Element.prototype.webkitMatchesSelector;
+        }
+    })();
     var lgQuery = /** @class */ (function () {
         function lgQuery(selector) {
             this.cssVenderPrefixes = [
@@ -315,9 +195,7 @@
             this._each(function (el) {
                 // IE doesn't support multiple arguments
                 classNames.split(' ').forEach(function (className) {
-                    if (className) {
-                        el.classList.add(className);
-                    }
+                    el.classList.add(className);
                 });
             });
             return this;
@@ -326,9 +204,7 @@
             this._each(function (el) {
                 // IE doesn't support multiple arguments
                 classNames.split(' ').forEach(function (className) {
-                    if (className) {
-                        el.classList.remove(className);
-                    }
+                    el.classList.remove(className);
                 });
             });
             return this;
@@ -416,10 +292,8 @@
         // Does not support IE
         lgQuery.prototype.load = function (url) {
             var _this = this;
-            fetch(url)
-                .then(function (res) { return res.text(); })
-                .then(function (html) {
-                _this.selector.innerHTML = html;
+            fetch(url).then(function (res) {
+                _this.selector.innerHTML = res;
             });
             return this;
         };
@@ -530,7 +404,6 @@
         return lgQuery;
     }());
     function $LG(selector) {
-        initLgPolyfills();
         return new lgQuery(selector);
     }
 
@@ -548,7 +421,6 @@
         'sizes',
         'iframe',
         'downloadUrl',
-        'download',
         'width',
         'facebookShareUrl',
         'tweetText',
@@ -619,9 +491,6 @@
                 return;
             }
             var LGel = $LG(el).find('img').first();
-            if (!LGel.get()) {
-                return;
-            }
             var containerRect = container.get().getBoundingClientRect();
             var wWidth = containerRect.width;
             // using innerWidth to include mobile safari bottom bar
@@ -654,13 +523,13 @@
                 ', 1)';
             return transform;
         },
-        getIframeMarkup: function (iframeWidth, iframeHeight, iframeMaxWidth, iframeMaxHeight, src, iframeTitle) {
+        getIframeMarkup: function (src, iframeWidth, iframeHeight, iframeTitle) {
             var title = iframeTitle ? 'title="' + iframeTitle + '"' : '';
-            return "<div class=\"lg-video-cont lg-has-iframe\" style=\"width:" + iframeWidth + "; max-width:" + iframeMaxWidth + "; height: " + iframeHeight + "; max-height:" + iframeMaxHeight + "\">\n                    <iframe class=\"lg-object\" frameborder=\"0\" " + title + " src=\"" + src + "\"  allowfullscreen=\"true\"></iframe>\n                </div>";
+            return "<div class=\"lg-video-cont lg-has-iframe\" style=\"width:" + iframeWidth + "; height: " + iframeHeight + "\">\n                    <iframe class=\"lg-object\" frameborder=\"0\" " + title + " src=\"" + src + "\"  allowfullscreen=\"true\"></iframe>\n                </div>";
         },
         getImgMarkup: function (index, src, altAttr, srcset, sizes, sources) {
-            var srcsetAttr = srcset ? "srcset=\"" + srcset + "\"" : '';
-            var sizesAttr = sizes ? "sizes=\"" + sizes + "\"" : '';
+            var srcsetAttr = srcset ? "srcset=" + srcset : '';
+            var sizesAttr = sizes ? "sizes=" + sizes : '';
             var imgMarkup = "<img " + altAttr + " " + srcsetAttr + "  " + sizesAttr + " class=\"lg-object lg-image\" data-index=\"" + index + "\" src=\"" + src + "\" />";
             var sourceTag = '';
             if (sources) {
@@ -717,7 +586,7 @@
             // No other way of checking: assume it’s ok.
             return true;
         },
-        getVideoPosterMarkup: function (_poster, dummyImg, videoContStyle, playVideoString, _isVideo) {
+        getVideoPosterMarkup: function (_poster, dummyImg, videoContStyle, _isVideo) {
             var videoClass = '';
             if (_isVideo && _isVideo.youtube) {
                 videoClass = 'lg-has-youtube';
@@ -728,15 +597,7 @@
             else {
                 videoClass = 'lg-has-html5';
             }
-            return "<div class=\"lg-video-cont " + videoClass + "\" style=\"" + videoContStyle + "\">\n                <div class=\"lg-video-play-button\">\n                <svg\n                    viewBox=\"0 0 20 20\"\n                    preserveAspectRatio=\"xMidYMid\"\n                    focusable=\"false\"\n                    aria-labelledby=\"" + playVideoString + "\"\n                    role=\"img\"\n                    class=\"lg-video-play-icon\"\n                >\n                    <title>" + playVideoString + "</title>\n                    <polygon class=\"lg-video-play-icon-inner\" points=\"1,0 20,10 1,20\"></polygon>\n                </svg>\n                <svg class=\"lg-video-play-icon-bg\" viewBox=\"0 0 50 50\" focusable=\"false\">\n                    <circle cx=\"50%\" cy=\"50%\" r=\"20\"></circle></svg>\n                <svg class=\"lg-video-play-icon-circle\" viewBox=\"0 0 50 50\" focusable=\"false\">\n                    <circle cx=\"50%\" cy=\"50%\" r=\"20\"></circle>\n                </svg>\n            </div>\n            " + (dummyImg || '') + "\n            <img class=\"lg-object lg-video-poster\" src=\"" + _poster + "\" />\n        </div>";
-        },
-        getFocusableElements: function (container) {
-            var elements = container.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-            var visibleElements = [].filter.call(elements, function (element) {
-                var style = window.getComputedStyle(element);
-                return style.display !== 'none' && style.visibility !== 'hidden';
-            });
-            return visibleElements;
+            return "<div class=\"lg-video-cont " + videoClass + "\" style=\"" + videoContStyle + "\">\n                <div class=\"lg-video-play-button\">\n                <svg\n                    viewBox=\"0 0 20 20\"\n                    preserveAspectRatio=\"xMidYMid\"\n                    focusable=\"false\"\n                    aria-labelledby=\"Play video\"\n                    role=\"img\"\n                    class=\"lg-video-play-icon\"\n                >\n                    <title>Play video</title>\n                    <polygon class=\"lg-video-play-icon-inner\" points=\"1,0 20,10 1,20\"></polygon>\n                </svg>\n                <svg class=\"lg-video-play-icon-bg\" viewBox=\"0 0 50 50\" focusable=\"false\">\n                    <circle cx=\"50%\" cy=\"50%\" r=\"20\"></circle></svg>\n                <svg class=\"lg-video-play-icon-circle\" viewBox=\"0 0 50 50\" focusable=\"false\">\n                    <circle cx=\"50%\" cy=\"50%\" r=\"20\"></circle>\n                </svg>\n            </div>\n            " + (dummyImg || '') + "\n            <img class=\"lg-object lg-video-poster\" src=\"" + _poster + "\" />\n        </div>";
         },
         /**
          * @desc Create dynamic elements array from gallery items when dynamic option is false
@@ -779,49 +640,108 @@
             return dynamicElements;
         },
         isMobile: function () {
-            return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            var isMobile = false;
+            (function (a) {
+                if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino|android|ipad|playbook|silk/i.test(a) ||
+                    /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0, 4)))
+                    isMobile = true;
+            })(navigator.userAgent || navigator.vendor || window.opera);
+            return isMobile;
         },
-        /**
-         * @desc Check the given src is video
-         * @param {String} src
-         * @return {Object} video type
-         * Ex:{ youtube  :  ["//www.youtube.com/watch?v=c0asJgSyxcY", "c0asJgSyxcY"] }
-         *
-         * @todo - this information can be moved to dynamicEl to avoid frequent calls
-         */
-        isVideo: function (src, isHTML5VIdeo, index) {
-            if (!src) {
-                if (isHTML5VIdeo) {
-                    return {
-                        html5: true,
-                    };
-                }
-                else {
-                    console.error('lightGallery :- data-src is not provided on slide item ' +
-                        (index + 1) +
-                        '. Please make sure the selector property is properly configured. More info - https://www.lightgalleryjs.com/demos/html-markup/');
-                    return;
-                }
-            }
-            var youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com|be-nocookie\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)([\&|?][\S]*)*/i);
-            var vimeo = src.match(/\/\/(?:www\.)?(?:player\.)?vimeo.com\/(?:video\/)?([0-9a-z\-_]+)(.*)?/i);
-            var wistia = src.match(/https?:\/\/(.+)?(wistia\.com|wi\.st)\/(medias|embed)\/([0-9a-z\-_]+)(.*)/);
-            if (youtube) {
-                return {
-                    youtube: youtube,
-                };
-            }
-            else if (vimeo) {
-                return {
-                    vimeo: vimeo,
-                };
-            }
-            else if (wistia) {
-                return {
-                    wistia: wistia,
-                };
-            }
+    };
+
+    var lightGallerySettings = {
+        mode: 'lg-slide',
+        easing: 'ease',
+        speed: 400,
+        height: '100%',
+        width: '100%',
+        addClass: '',
+        startClass: 'lg-start-zoom',
+        backdropDuration: 300,
+        container: document.body,
+        startAnimationDuration: 400,
+        zoomFromOrigin: true,
+        hideBarsDelay: 0,
+        showBarsAfter: 10000,
+        slideDelay: 0,
+        supportLegacyBrowser: true,
+        allowMediaOverlap: false,
+        videoMaxSize: '1280-720',
+        defaultCaptionHeight: 0,
+        ariaLabelledby: '',
+        ariaDescribedby: '',
+        closable: true,
+        swipeToClose: true,
+        closeOnTap: true,
+        showCloseIcon: true,
+        showMaximizeIcon: false,
+        loop: true,
+        escKey: true,
+        keyPress: true,
+        controls: true,
+        slideEndAnimation: true,
+        hideControlOnEnd: false,
+        mousewheel: false,
+        getCaptionFromTitleOrAlt: true,
+        appendSubHtmlTo: '.lg-sub-html',
+        subHtmlSelectorRelative: false,
+        preload: 2,
+        numberOfSlideItemsInDom: 10,
+        showAfterLoad: true,
+        selector: '',
+        selectWithin: '',
+        nextHtml: '',
+        prevHtml: '',
+        index: 0,
+        iframeWidth: '100%',
+        iframeHeight: '100%',
+        download: true,
+        counter: true,
+        appendCounterTo: '.lg-toolbar',
+        swipeThreshold: 50,
+        enableSwipe: true,
+        enableDrag: true,
+        dynamic: false,
+        dynamicEl: [],
+        extraProps: [],
+        galleryId: '1',
+        customSlideName: false,
+        exThumbImage: '',
+        isMobile: undefined,
+        mobileSettings: {
+            controls: false,
+            showCloseIcon: false,
+            download: false,
         },
+        plugins: [],
+    };
+
+    /**
+     * List of lightGallery events
+     * All events should be documented here
+     * Below interfaces are used to build the website documentations
+     * */
+    var lGEvents = {
+        afterAppendSlide: 'lgAfterAppendSlide',
+        init: 'lgInit',
+        hasVideo: 'lgHasVideo',
+        containerResize: 'lgContainerResize',
+        updateSlides: 'lgUpdateSlides',
+        afterAppendSubHtml: 'lgAfterAppendSubHtml',
+        beforeOpen: 'lgBeforeOpen',
+        afterOpen: 'lgAfterOpen',
+        slideItemLoad: 'lgSlideItemLoad',
+        beforeSlide: 'lgBeforeSlide',
+        afterSlide: 'lgAfterSlide',
+        posterClick: 'lgPosterClick',
+        dragStart: 'lgDragStart',
+        dragMove: 'lgDragMove',
+        dragEnd: 'lgDragEnd',
+        beforeNextSlide: 'lgBeforeNextSlide',
+        beforePrevSlide: 'lgBeforePrevSlide',
+        beforeClose: 'lgBeforeClose',
+        afterClose: 'lgAfterClose',
     };
 
     // @ref - https://stackoverflow.com/questions/3971841/how-to-resize-images-proportionally-keeping-the-aspect-ratio
@@ -830,6 +750,7 @@
     var lgId = 0;
     var LightGallery = /** @class */ (function () {
         function LightGallery(element, options) {
+            if (options === void 0) { options = {}; }
             this.lgOpened = false;
             this.index = 0;
             // lightGallery modules
@@ -841,70 +762,58 @@
             this.currentItemsInDom = [];
             // Scroll top value before lightGallery is opened
             this.prevScrollTop = 0;
-            this.bodyPaddingRight = 0;
             this.isDummyImageRemoved = false;
-            this.dragOrSwipeEnabled = false;
             this.mediaContainerPosition = {
                 top: 0,
                 bottom: 0,
             };
-            if (!element) {
-                return this;
-            }
             lgId++;
             this.lgId = lgId;
             this.el = element;
             this.LGel = $LG(element);
-            this.generateSettings(options);
-            this.buildModules();
+            // lightGallery settings
+            this.settings = __assign(__assign({}, lightGallerySettings), options);
+            if (this.settings.isMobile &&
+                typeof this.settings.isMobile === 'function'
+                ? this.settings.isMobile()
+                : utils.isMobile()) {
+                var mobileSettings = __assign(__assign({}, this.settings.mobileSettings), options.mobileSettings);
+                this.settings = __assign(__assign({}, this.settings), mobileSettings);
+            }
             // When using dynamic mode, ensure dynamicEl is an array
             if (this.settings.dynamic &&
                 this.settings.dynamicEl !== undefined &&
                 !Array.isArray(this.settings.dynamicEl)) {
                 throw 'When using dynamic mode, you must also define dynamicEl as an Array.';
             }
-            this.galleryItems = this.getItems();
-            this.normalizeSettings();
-            // Gallery items
-            this.init();
-            this.validateLicense();
-            return this;
-        }
-        LightGallery.prototype.generateSettings = function (options) {
-            // lightGallery settings
-            this.settings = __assign(__assign({}, lightGalleryCoreSettings), options);
-            if (this.settings.isMobile &&
-                typeof this.settings.isMobile === 'function'
-                ? this.settings.isMobile()
-                : utils.isMobile()) {
-                var mobileSettings = __assign(__assign({}, this.settings.mobileSettings), this.settings.mobileSettings);
-                this.settings = __assign(__assign({}, this.settings), mobileSettings);
-            }
-        };
-        LightGallery.prototype.normalizeSettings = function () {
             if (this.settings.slideEndAnimation) {
                 this.settings.hideControlOnEnd = false;
             }
             if (!this.settings.closable) {
                 this.settings.swipeToClose = false;
             }
+            // Need to disable zoomFromOrigin if gallery is opened from url (Hash plugin)
             // And reset it on close to get the correct value next time
             this.zoomFromOrigin = this.settings.zoomFromOrigin;
+            // Gallery items
+            this.galleryItems = this.getItems();
             // At the moment, Zoom from image doesn't support dynamic options
             // @todo add zoomFromOrigin support for dynamic images
             if (this.settings.dynamic) {
                 this.zoomFromOrigin = false;
             }
-            if (!this.settings.container) {
-                this.settings.container = document.body;
-            }
             // settings.preload should not be grater than $item.length
             this.settings.preload = Math.min(this.settings.preload, this.galleryItems.length);
-        };
+            this.init();
+            return this;
+        }
         LightGallery.prototype.init = function () {
             var _this = this;
             this.addSlideVideoInfo(this.galleryItems);
-            this.buildStructure();
+            var fromHash = this.buildFromHash();
+            if (!fromHash) {
+                this.buildStructure();
+            }
             this.LGel.trigger(lGEvents.init, {
                 instance: this,
             });
@@ -914,36 +823,33 @@
             setTimeout(function () {
                 _this.enableDrag();
                 _this.enableSwipe();
-                _this.triggerPosterClick();
             }, 50);
-            this.arrow();
-            if (this.settings.mousewheel) {
-                this.mousewheel();
+            if (this.galleryItems.length > 1) {
+                this.arrow();
+                if (this.settings.mousewheel) {
+                    this.mousewheel();
+                }
             }
             if (!this.settings.dynamic) {
-                this.openGalleryOnItemClick();
-            }
-        };
-        LightGallery.prototype.openGalleryOnItemClick = function () {
-            var _this = this;
-            var _loop_1 = function (index) {
-                var element = this_1.items[index];
-                var $element = $LG(element);
-                // Using different namespace for click because click event should not unbind if selector is same object('this')
-                // @todo manage all event listners - should have namespace that represent element
-                var uuid = lgQuery.generateUUID();
-                $element
-                    .attr('data-lg-id', uuid)
-                    .on("click.lgcustom-item-" + uuid, function (e) {
-                    e.preventDefault();
-                    var currentItemIndex = _this.settings.index || index;
-                    _this.openGallery(currentItemIndex, element);
-                });
-            };
-            var this_1 = this;
-            // Using for loop instead of using bubbling as the items can be any html element.
-            for (var index = 0; index < this.items.length; index++) {
-                _loop_1(index);
+                var _loop_1 = function (index) {
+                    var element = this_1.items[index];
+                    var $element = $LG(element);
+                    // Using different namespace for click because click event should not unbind if selector is same object('this')
+                    // @todo manage all event listners - should have namespace that represent element
+                    var uuid = lgQuery.generateUUID();
+                    $element
+                        .attr('data-lg-id', uuid)
+                        .on("click.lgcustom-item-" + uuid, function (e) {
+                        e.preventDefault();
+                        var currentItemIndex = _this.settings.index || index;
+                        _this.openGallery(currentItemIndex, element);
+                    });
+                };
+                var this_1 = this;
+                // Using for loop instead of using bubbling as the items can be any html element.
+                for (var index = 0; index < this.items.length; index++) {
+                    _loop_1(index);
+                }
             }
         };
         /**
@@ -954,17 +860,16 @@
          */
         LightGallery.prototype.buildModules = function () {
             var _this = this;
+            var numberOfModules = 0;
             this.settings.plugins.forEach(function (plugin) {
-                _this.plugins.push(new plugin(_this, $LG));
+                numberOfModules++;
+                (function (num) {
+                    setTimeout(function () {
+                        _this.plugins.push(new plugin(_this, $LG));
+                    }, 10 * num);
+                })(numberOfModules);
             });
-        };
-        LightGallery.prototype.validateLicense = function () {
-            if (!this.settings.licenseKey) {
-                console.error('Please provide a valid license key');
-            }
-            else if (this.settings.licenseKey === '0000-0000-000-0000') {
-                console.warn("lightGallery: " + this.settings.licenseKey + " license key is not valid for production use");
-            }
+            return numberOfModules * 10;
         };
         LightGallery.prototype.getSlideItem = function (index) {
             return $LG(this.getSlideItemId(index));
@@ -978,27 +883,19 @@
         LightGallery.prototype.getElementById = function (id) {
             return $LG("#" + this.getIdName(id));
         };
-        LightGallery.prototype.manageSingleSlideClassName = function () {
-            if (this.galleryItems.length < 2) {
-                this.outer.addClass('lg-single-item');
-            }
-            else {
-                this.outer.removeClass('lg-single-item');
-            }
-        };
         LightGallery.prototype.buildStructure = function () {
             var _this = this;
             var container = this.$container && this.$container.get();
             if (container) {
-                return;
+                return 0;
             }
             var controls = '';
             var subHtmlCont = '';
             // Create controls
-            if (this.settings.controls) {
-                controls = "<button type=\"button\" id=\"" + this.getIdName('lg-prev') + "\" aria-label=\"" + this.settings.strings['previousSlide'] + "\" class=\"lg-prev lg-icon\"> " + this.settings.prevHtml + " </button>\n                <button type=\"button\" id=\"" + this.getIdName('lg-next') + "\" aria-label=\"" + this.settings.strings['nextSlide'] + "\" class=\"lg-next lg-icon\"> " + this.settings.nextHtml + " </button>";
+            if (this.settings.controls && this.galleryItems.length > 1) {
+                controls = "<button type=\"button\" id=\"" + this.getIdName('lg-prev') + "\" aria-label=\"Previous slide\" class=\"lg-prev lg-icon\"> " + this.settings.prevHtml + " </button>\n                <button type=\"button\" id=\"" + this.getIdName('lg-next') + "\" aria-label=\"Next slide\" class=\"lg-next lg-icon\"> " + this.settings.nextHtml + " </button>";
             }
-            if (this.settings.appendSubHtmlTo !== '.lg-item') {
+            if (this.settings.appendSubHtmlTo === '.lg-sub-html') {
                 subHtmlCont =
                     '<div class="lg-sub-html" role="status" aria-live="polite"></div>';
             }
@@ -1015,38 +912,37 @@
                 : '';
             var containerClassName = "lg-container " + this.settings.addClass + " " + (document.body !== this.settings.container ? 'lg-inline' : '');
             var closeIcon = this.settings.closable && this.settings.showCloseIcon
-                ? "<button type=\"button\" aria-label=\"" + this.settings.strings['closeGallery'] + "\" id=\"" + this.getIdName('lg-close') + "\" class=\"lg-close lg-icon\"></button>"
+                ? "<button type=\"button\" aria-label=\"Close gallery\" id=\"" + this.getIdName('lg-close') + "\" class=\"lg-close lg-icon\"></button>"
                 : '';
             var maximizeIcon = this.settings.showMaximizeIcon
-                ? "<button type=\"button\" aria-label=\"" + this.settings.strings['toggleMaximize'] + "\" id=\"" + this.getIdName('lg-maximize') + "\" class=\"lg-maximize lg-icon\"></button>"
+                ? "<button type=\"button\" aria-label=\"Toggle maximize\" id=\"" + this.getIdName('lg-maximize') + "\" class=\"lg-maximize lg-icon\"></button>"
                 : '';
-            var template = "\n        <div class=\"" + containerClassName + "\" id=\"" + this.getIdName('lg-container') + "\" tabindex=\"-1\" aria-modal=\"true\" " + ariaLabelledby + " " + ariaDescribedby + " role=\"dialog\"\n        >\n            <div id=\"" + this.getIdName('lg-backdrop') + "\" class=\"lg-backdrop\"></div>\n\n            <div id=\"" + this.getIdName('lg-outer') + "\" class=\"lg-outer lg-use-css3 lg-css3 lg-hide-items " + addClasses + " \">\n\n              <div id=\"" + this.getIdName('lg-content') + "\" class=\"lg-content\">\n                <div id=\"" + this.getIdName('lg-inner') + "\" class=\"lg-inner\">\n                </div>\n                " + controls + "\n              </div>\n                <div id=\"" + this.getIdName('lg-toolbar') + "\" class=\"lg-toolbar lg-group\">\n                    " + maximizeIcon + "\n                    " + closeIcon + "\n                    </div>\n                    " + (this.settings.appendSubHtmlTo === '.lg-outer'
-                ? subHtmlCont
-                : '') + "\n                <div id=\"" + this.getIdName('lg-components') + "\" class=\"lg-components\">\n                    " + (this.settings.appendSubHtmlTo === '.lg-sub-html'
-                ? subHtmlCont
-                : '') + "\n                </div>\n            </div>\n        </div>\n        ";
-            $LG(this.settings.container).append(template);
-            if (document.body !== this.settings.container) {
-                $LG(this.settings.container).css('position', 'relative');
-            }
+            var template = "\n        <div class=\"" + containerClassName + "\" id=\"" + this.getIdName('lg-container') + "\" tabindex=\"-1\" aria-modal=\"true\" " + ariaLabelledby + " " + ariaDescribedby + " role=\"dialog\"\n        >\n            <div id=\"" + this.getIdName('lg-backdrop') + "\" class=\"lg-backdrop\"></div>\n\n            <div id=\"" + this.getIdName('lg-outer') + "\" class=\"lg-outer lg-hide-items " + addClasses + " \">\n                    <div id=\"" + this.getIdName('lg-content') + "\" class=\"lg\" style=\"width: " + this.settings.width + "; height:" + this.settings.height + "\">\n                        <div id=\"" + this.getIdName('lg-inner') + "\" class=\"lg-inner\"></div>\n                        <div id=\"" + this.getIdName('lg-toolbar') + "\" class=\"lg-toolbar lg-group\">\n                        " + maximizeIcon + "\n                        " + closeIcon + "\n                    </div>\n                    " + controls + "\n                    <div id=\"" + this.getIdName('lg-components') + "\" class=\"lg-components\">\n                        " + subHtmlCont + "\n                    </div>\n                </div> \n            </div>\n        </div>\n        ";
+            $LG(this.settings.container)
+                .css('position', 'relative')
+                .append(template);
             this.outer = this.getElementById('lg-outer');
+            this.$lgContent = this.getElementById('lg-content');
             this.$lgComponents = this.getElementById('lg-components');
             this.$backdrop = this.getElementById('lg-backdrop');
             this.$container = this.getElementById('lg-container');
             this.$inner = this.getElementById('lg-inner');
-            this.$content = this.getElementById('lg-content');
             this.$toolbar = this.getElementById('lg-toolbar');
             this.$backdrop.css('transition-duration', this.settings.backdropDuration + 'ms');
-            var outerClassNames = this.settings.mode + " ";
-            this.manageSingleSlideClassName();
-            if (this.settings.enableDrag) {
-                outerClassNames += 'lg-grab ';
+            this.outer.addClass('lg-use-css3');
+            // add Class for css support and transition mode
+            this.outer.addClass('lg-css3');
+            this.outer.addClass(this.settings.mode);
+            if (this.settings.enableDrag && this.galleryItems.length > 1) {
+                this.outer.addClass('lg-grab');
             }
-            this.outer.addClass(outerClassNames);
+            if (this.settings.showAfterLoad) {
+                this.outer.addClass('lg-show-after-load');
+            }
             this.$inner.css('transition-timing-function', this.settings.easing);
             this.$inner.css('transition-duration', this.settings.speed + 'ms');
             if (this.settings.download) {
-                this.$toolbar.append("<a id=\"" + this.getIdName('lg-download') + "\" target=\"_blank\" rel=\"noopener\" aria-label=\"" + this.settings.strings['download'] + "\" download class=\"lg-download lg-icon\"></a>");
+                this.$toolbar.append("<a id=\"" + this.getIdName('lg-download') + "\" target=\"_blank\" aria-label=\"Download\" download class=\"lg-download lg-icon\"></a>");
             }
             this.counter();
             $LG(window).on("resize.lg.global" + this.lgId + " orientationchange.lg.global" + this.lgId, function () {
@@ -1055,16 +951,15 @@
             this.hideBars();
             this.manageCloseGallery();
             this.toggleMaximize();
-            this.initModules();
+            return this.buildModules();
         };
         LightGallery.prototype.refreshOnResize = function () {
             if (this.lgOpened) {
                 var currentGalleryItem = this.galleryItems[this.index];
-                var __slideVideoInfo = currentGalleryItem.__slideVideoInfo;
-                this.mediaContainerPosition = this.getMediaContainerPosition();
-                var _a = this.mediaContainerPosition, top_1 = _a.top, bottom = _a.bottom;
-                this.currentImageSize = utils.getSize(this.items[this.index], this.outer, top_1 + bottom, __slideVideoInfo && this.settings.videoMaxSize);
-                if (__slideVideoInfo) {
+                var videoInfo = currentGalleryItem.__slideVideoInfo;
+                var _a = this.getMediaContainerPosition(), top_1 = _a.top, bottom = _a.bottom;
+                this.currentImageSize = utils.getSize(this.items[this.index], this.$lgContent, top_1 + bottom, videoInfo && this.settings.videoMaxSize);
+                if (videoInfo) {
                     this.resizeVideoSlide(this.index, this.currentImageSize);
                 }
                 if (this.zoomFromOrigin && !this.isDummyImageRemoved) {
@@ -1090,7 +985,6 @@
          * - Do not mutate existing lightGallery items directly.
          * - Always pass new list of gallery items
          * - You need to take care of thumbnails outside the gallery if any
-         * - user this method only if you want to update slides when the gallery is opened. Otherwise, use `refresh()` method.
          * @param items Gallery items
          * @param index After the update operation, which slide gallery should navigate to
          * @category lGPublicMethods
@@ -1136,8 +1030,8 @@
                 return;
             }
             var currentSrc = this.galleryItems[index].src;
+            this.addSlideVideoInfo(items);
             this.galleryItems = items;
-            this.updateControls();
             this.$inner.empty();
             this.currentItemsInDom = [];
             var _index = 0;
@@ -1154,6 +1048,7 @@
             this.getSlideItem(_index).addClass('lg-current');
             this.index = _index;
             this.updateCurrentCounter(_index);
+            this.updateCounterTotal();
             this.LGel.trigger(lGEvents.updateSlides);
         };
         // Get gallery items based on multiple conditions
@@ -1165,19 +1060,14 @@
                     this.items.push(this.el);
                 }
                 else if (this.settings.selector) {
-                    if (typeof this.settings.selector === 'string') {
-                        if (this.settings.selectWithin) {
-                            var selectWithin = $LG(this.settings.selectWithin);
-                            this.items = selectWithin
-                                .find(this.settings.selector)
-                                .get();
-                        }
-                        else {
-                            this.items = this.el.querySelectorAll(this.settings.selector);
-                        }
+                    if (this.settings.selectWithin) {
+                        var selectWithin = $LG(this.settings.selectWithin);
+                        this.items = selectWithin
+                            .find(this.settings.selector)
+                            .get();
                     }
                     else {
-                        this.items = this.settings.selector;
+                        this.items = this.el.querySelectorAll(this.settings.selector);
                     }
                 }
                 else {
@@ -1188,27 +1078,6 @@
             else {
                 return this.settings.dynamicEl || [];
             }
-        };
-        LightGallery.prototype.shouldHideScrollbar = function () {
-            return (this.settings.hideScrollbar &&
-                document.body === this.settings.container);
-        };
-        LightGallery.prototype.hideScrollbar = function () {
-            if (!this.shouldHideScrollbar()) {
-                return;
-            }
-            this.bodyPaddingRight = parseFloat($LG('body').style().paddingRight);
-            var bodyRect = document.documentElement.getBoundingClientRect();
-            var scrollbarWidth = window.innerWidth - bodyRect.width;
-            $LG(document.body).css('padding-right', scrollbarWidth + this.bodyPaddingRight + 'px');
-            $LG(document.body).addClass('lg-overlay-open');
-        };
-        LightGallery.prototype.resetScrollBar = function () {
-            if (!this.shouldHideScrollbar()) {
-                return;
-            }
-            $LG(document.body).css('padding-right', this.bodyPaddingRight + 'px');
-            $LG(document.body).removeClass('lg-overlay-open');
         };
         /**
          * Open lightGallery.
@@ -1245,8 +1114,8 @@
             if (this.lgOpened)
                 return;
             this.lgOpened = true;
+            this.outer.get().focus();
             this.outer.removeClass('lg-hide-items');
-            this.hideScrollbar();
             // Add display block, but still has opacity 0
             this.$container.addClass('lg-show');
             var itemsToBeInsertedToDom = this.getItemsToBeInsertedToDom(index, index);
@@ -1263,10 +1132,10 @@
             if (!this.settings.allowMediaOverlap) {
                 this.setMediaContainerPosition(top, bottom);
             }
-            var __slideVideoInfo = this.galleryItems[index].__slideVideoInfo;
             if (this.zoomFromOrigin && element) {
-                this.currentImageSize = utils.getSize(element, this.outer, top + bottom, __slideVideoInfo && this.settings.videoMaxSize);
-                transform = utils.getTransform(element, this.outer, top, bottom, this.currentImageSize);
+                this.currentImageSize = utils.getSize(element, this.$lgContent, top + bottom, this.galleryItems[this.index].__slideVideoInfo &&
+                    this.settings.videoMaxSize);
+                transform = utils.getTransform(element, this.$lgContent, top, bottom, this.currentImageSize);
             }
             if (!this.zoomFromOrigin || !transform) {
                 this.outer.addClass(this.settings.startClass);
@@ -1278,11 +1147,11 @@
             setTimeout(function () {
                 _this.outer.addClass('lg-components-open');
             }, timeout);
-            this.index = index;
             this.LGel.trigger(lGEvents.beforeOpen);
             // add class lg-current to remove initial transition
             this.getSlideItem(index).addClass('lg-current');
             this.lGalleryOn = false;
+            this.index = index;
             // Store the current scroll top value to scroll back after closing the gallery..
             this.prevScrollTop = $LG(window).scrollTop();
             setTimeout(function () {
@@ -1305,12 +1174,6 @@
                     _this.$backdrop.addClass('in');
                     _this.$container.addClass('lg-show-in');
                 }, 10);
-                setTimeout(function () {
-                    if (_this.settings.trapFocus &&
-                        document.body === _this.settings.container) {
-                        _this.trapFocus();
-                    }
-                }, _this.settings.backdropDuration + 50);
                 // lg-visible class resets gallery opacity to 1
                 if (!_this.zoomFromOrigin || !transform) {
                     setTimeout(function () {
@@ -1321,9 +1184,7 @@
                 _this.slide(index, false, false, false);
                 _this.LGel.trigger(lGEvents.afterOpen);
             });
-            if (document.body === this.settings.container) {
-                $LG('html').addClass('lg-on');
-            }
+            $LG(document.body).addClass('lg-on');
         };
         /**
          * Note - Changing the position of the media on every slide transition creates a flickering effect.
@@ -1339,10 +1200,8 @@
                 };
             }
             var top = this.$toolbar.get().clientHeight || 0;
-            var subHtml = this.outer.find('.lg-components .lg-sub-html').get();
             var captionHeight = this.settings.defaultCaptionHeight ||
-                (subHtml && subHtml.clientHeight) ||
-                0;
+                this.outer.find('.lg-sub-html').get().clientHeight;
             var thumbContainer = this.outer.find('.lg-thumb-outer').get();
             var thumbHeight = thumbContainer ? thumbContainer.clientHeight : 0;
             var bottom = thumbHeight + captionHeight;
@@ -1354,7 +1213,24 @@
         LightGallery.prototype.setMediaContainerPosition = function (top, bottom) {
             if (top === void 0) { top = 0; }
             if (bottom === void 0) { bottom = 0; }
-            this.$content.css('top', top + 'px').css('bottom', bottom + 'px');
+            this.$inner.css('top', top + 'px').css('bottom', bottom + 'px');
+        };
+        // Build Gallery if gallery id exist in the URL
+        LightGallery.prototype.buildFromHash = function () {
+            var _this = this;
+            // if dynamic option is enabled execute immediately
+            var _hash = window.location.hash;
+            if (_hash.indexOf('lg=' + this.settings.galleryId) > 0) {
+                // This class is used to remove the initial animation if galleryId present in the URL
+                $LG(document.body).addClass('lg-from-hash');
+                this.zoomFromOrigin = false;
+                var index_1 = this.getIndexFromUrl(_hash);
+                var openGalleryAfter = this.buildStructure();
+                setTimeout(function () {
+                    _this.openGallery(index_1);
+                }, openGalleryAfter);
+                return true;
+            }
         };
         LightGallery.prototype.hideBars = function () {
             var _this = this;
@@ -1392,7 +1268,7 @@
          */
         LightGallery.prototype.counter = function () {
             if (this.settings.counter) {
-                var counterHtml = "<div class=\"lg-counter\" role=\"status\" aria-live=\"polite\">\n                <span id=\"" + this.getIdName('lg-counter-current') + "\" class=\"lg-counter-current\">" + (this.index + 1) + " </span> /\n                <span id=\"" + this.getIdName('lg-counter-all') + "\" class=\"lg-counter-all\">" + this.galleryItems.length + " </span></div>";
+                var counterHtml = "<div class=\"lg-counter\" role=\"status\" aria-live=\"polite\">\n                <span id=\"" + this.getIdName('lg-counter-current') + "\" class=\"lg-counter-current\">" + (this.index + 1) + " </span> / \n                <span id=\"" + this.getIdName('lg-counter-all') + "\" class=\"lg-counter-all\">" + this.galleryItems.length + " </span></div>";
                 this.outer.find(this.settings.appendCounterTo).append(counterHtml);
             }
         };
@@ -1411,7 +1287,7 @@
             }
             if (!subHtmlUrl) {
                 if (subHtml) {
-                    // get first letter of sub-html
+                    // get first letter of subhtml
                     // if first letter starts with . or # get the html form the jQuery object
                     var fL = subHtml.substring(0, 1);
                     if (fL === '.' || fL === '#') {
@@ -1432,7 +1308,7 @@
                     subHtml = '';
                 }
             }
-            if (this.settings.appendSubHtmlTo !== '.lg-item') {
+            if (this.settings.appendSubHtmlTo === '.lg-sub-html') {
                 if (subHtmlUrl) {
                     this.outer.find('.lg-sub-html').load(subHtmlUrl);
                 }
@@ -1488,12 +1364,12 @@
         LightGallery.prototype.getDummyImgStyles = function (imageSize) {
             if (!imageSize)
                 return '';
-            return "width:" + imageSize.width + "px;\n                margin-left: -" + imageSize.width / 2 + "px;\n                margin-top: -" + imageSize.height / 2 + "px;\n                height:" + imageSize.height + "px";
+            return "width:" + imageSize.width + "px; \n                margin-left: -" + imageSize.width / 2 + "px;\n                margin-top: -" + imageSize.height / 2 + "px; \n                height:" + imageSize.height + "px";
         };
         LightGallery.prototype.getVideoContStyle = function (imageSize) {
             if (!imageSize)
                 return '';
-            return "width:" + imageSize.width + "px;\n                height:" + imageSize.height + "px";
+            return "width:" + imageSize.width + "px; \n                height:" + imageSize.height + "px";
         };
         LightGallery.prototype.getDummyImageContent = function ($currentSlide, index, alt) {
             var $currentItem;
@@ -1508,12 +1384,9 @@
                 else {
                     _dummyImgSrc = $currentItem.attr(this.settings.exThumbImage);
                 }
-                if (!_dummyImgSrc)
-                    return '';
                 var imgStyle = this.getDummyImgStyles(this.currentImageSize);
                 var dummyImgContent = "<img " + alt + " style=\"" + imgStyle + "\" class=\"lg-dummy-img\" src=\"" + _dummyImgSrc + "\" />";
                 $currentSlide.addClass('lg-first-slide');
-                this.outer.addClass('lg-first-slide-loading');
                 return dummyImgContent;
             }
             return '';
@@ -1525,7 +1398,7 @@
             // displayed on top of actual image
             var imgContent = '';
             var altAttr = alt ? 'alt="' + alt + '"' : '';
-            if (this.isFirstSlideWithZoomAnimation()) {
+            if (!this.lGalleryOn && this.zoomFromOrigin && this.currentImageSize) {
                 imgContent = this.getDummyImageContent($currentSlide, index, altAttr);
             }
             else {
@@ -1534,75 +1407,86 @@
             var imgMarkup = "<picture class=\"lg-img-wrap\"> " + imgContent + "</picture>";
             $currentSlide.prepend(imgMarkup);
         };
-        LightGallery.prototype.onSlideObjectLoad = function ($slide, isHTML5VideoWithoutPoster, onLoad, onError) {
-            var mediaObject = $slide.find('.lg-object').first();
-            if (utils.isImageLoaded(mediaObject.get()) ||
-                isHTML5VideoWithoutPoster) {
-                onLoad();
-            }
-            else {
-                mediaObject.on('load.lg error.lg', function () {
-                    onLoad && onLoad();
-                });
-                mediaObject.on('error.lg', function () {
-                    onError && onError();
-                });
-            }
-        };
-        /**
-         *
-         * @param $el Current slide item
-         * @param index
-         * @param delay Delay is 0 except first time
-         * @param speed Speed is same as delay, except it is 0 if gallery is opened via hash plugin
-         * @param isFirstSlide
-         */
-        LightGallery.prototype.onLgObjectLoad = function (currentSlide, index, delay, speed, isFirstSlide, isHTML5VideoWithoutPoster) {
+        LightGallery.prototype.onLgObjectLoad = function ($el, index, delay, speed, dummyImageLoaded) {
             var _this = this;
-            this.onSlideObjectLoad(currentSlide, isHTML5VideoWithoutPoster, function () {
-                _this.triggerSlideItemLoad(currentSlide, index, delay, speed, isFirstSlide);
-            }, function () {
-                currentSlide.addClass('lg-complete lg-complete_');
-                currentSlide.html('<span class="lg-error-msg">' +
-                    _this.settings.strings['mediaLoadingFailed'] +
-                    '</span>');
-            });
-        };
-        LightGallery.prototype.triggerSlideItemLoad = function ($currentSlide, index, delay, speed, isFirstSlide) {
-            var _this = this;
-            var currentGalleryItem = this.galleryItems[index];
-            // Adding delay for video slides without poster for better performance and user experience
-            // Videos should start playing once once the gallery is completely loaded
-            var _speed = isFirstSlide &&
-                this.getSlideType(currentGalleryItem) === 'video' &&
-                !currentGalleryItem.poster
-                ? speed
-                : 0;
-            setTimeout(function () {
-                $currentSlide.addClass('lg-complete lg-complete_');
-                _this.LGel.trigger(lGEvents.slideItemLoad, {
+            if (dummyImageLoaded) {
+                this.LGel.trigger(lGEvents.slideItemLoad, {
                     index: index,
                     delay: delay || 0,
-                    isFirstSlide: isFirstSlide,
                 });
-            }, _speed);
+            }
+            $el.find('.lg-object')
+                .first()
+                .on('load.lg', function () {
+                _this.handleLgObjectLoad($el, index, delay, speed, dummyImageLoaded);
+            });
+            setTimeout(function () {
+                $el.find('.lg-object')
+                    .first()
+                    .on('error.lg', function () {
+                    $el.addClass('lg-complete lg-complete_');
+                    $el.html('<span class="lg-error-msg">Oops... Failed to load content...</span>');
+                });
+            }, speed);
         };
-        LightGallery.prototype.isFirstSlideWithZoomAnimation = function () {
-            return !!(!this.lGalleryOn &&
-                this.zoomFromOrigin &&
-                this.currentImageSize);
+        LightGallery.prototype.handleLgObjectLoad = function ($el, index, delay, speed, dummyImageLoaded) {
+            var _this = this;
+            setTimeout(function () {
+                $el.addClass('lg-complete lg-complete_');
+                if (!dummyImageLoaded) {
+                    _this.LGel.trigger(lGEvents.slideItemLoad, {
+                        index: index,
+                        delay: delay || 0,
+                    });
+                }
+            }, speed);
+        };
+        /**
+         * @desc Check the given src is video
+         * @param {String} src
+         * @return {Object} video type
+         * Ex:{ youtube  :  ["//www.youtube.com/watch?v=c0asJgSyxcY", "c0asJgSyxcY"] }
+         *
+         * @todo - this information can be moved to dynamicEl to avoid frequent calls
+         */
+        LightGallery.prototype.isVideo = function (src, index) {
+            if (!src) {
+                if (this.galleryItems[index].video) {
+                    return {
+                        html5: true,
+                    };
+                }
+                else {
+                    console.error('lightGallery :- data-src is not provided on slide item ' +
+                        (index + 1) +
+                        '. Please make sure the selector property is properly configured. More info - http://sachinchoolur.github.io/lightGallery/demos/html-markup.html');
+                    return;
+                }
+            }
+            var youtube = src.match(/\/\/(?:www\.)?youtu(?:\.be|be\.com|be-nocookie\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i);
+            var vimeo = src.match(/\/\/(?:www\.)?(?:player\.)?vimeo.com\/(?:video\/)?([0-9a-z\-_]+)/i);
+            var wistia = src.match(/https?:\/\/(.+)?(wistia\.com|wi\.st)\/(medias|embed)\/([0-9a-z\-_]+)(.*)/);
+            if (youtube) {
+                return {
+                    youtube: youtube,
+                };
+            }
+            else if (vimeo) {
+                return {
+                    vimeo: vimeo,
+                };
+            }
+            else if (wistia) {
+                return {
+                    wistia: wistia,
+                };
+            }
         };
         // Add video slideInfo
         LightGallery.prototype.addSlideVideoInfo = function (items) {
             var _this = this;
             items.forEach(function (element, index) {
-                element.__slideVideoInfo = utils.isVideo(element.src, !!element.video, index);
-                if (element.__slideVideoInfo &&
-                    _this.settings.loadYouTubePoster &&
-                    !element.poster &&
-                    element.__slideVideoInfo.youtube) {
-                    element.poster = "//img.youtube.com/vi/" + element.__slideVideoInfo.youtube[1] + "/maxresdefault.jpg";
-                }
+                element.__slideVideoInfo = _this.isVideo(element.src, index);
             });
         };
         /**
@@ -1626,41 +1510,49 @@
             var videoInfo = currentGalleryItem.__slideVideoInfo;
             var lgVideoStyle = '';
             var iframe = !!currentGalleryItem.iframe;
-            var isFirstSlide = !this.lGalleryOn;
-            // delay for adding complete class. it is 0 except first time.
-            var delay = 0;
-            if (isFirstSlide) {
-                if (this.zoomFromOrigin && this.currentImageSize) {
-                    delay = this.settings.startAnimationDuration + 10;
-                }
-                else {
-                    delay = this.settings.backdropDuration + 10;
-                }
-            }
             if (!$currentSlide.hasClass('lg-loaded')) {
                 if (videoInfo) {
                     var _a = this.mediaContainerPosition, top_2 = _a.top, bottom = _a.bottom;
-                    var videoSize = utils.getSize(this.items[index], this.outer, top_2 + bottom, videoInfo && this.settings.videoMaxSize);
+                    var videoSize = utils.getSize(this.items[index], this.$lgContent, top_2 + bottom, videoInfo && this.settings.videoMaxSize);
                     lgVideoStyle = this.getVideoContStyle(videoSize);
                 }
                 if (iframe) {
-                    var markup = utils.getIframeMarkup(this.settings.iframeWidth, this.settings.iframeHeight, this.settings.iframeMaxWidth, this.settings.iframeMaxHeight, src, currentGalleryItem.iframeTitle);
+                    var markup = utils.getIframeMarkup(src, this.settings.iframeWidth, this.settings.iframeHeight, currentGalleryItem.iframeTitle);
                     $currentSlide.prepend(markup);
                 }
                 else if (poster) {
                     var dummyImg = '';
-                    var hasStartAnimation = isFirstSlide &&
+                    var isFirstSlide_1 = !this.lGalleryOn;
+                    var hasStartAnimation = !this.lGalleryOn &&
                         this.zoomFromOrigin &&
                         this.currentImageSize;
                     if (hasStartAnimation) {
                         dummyImg = this.getDummyImageContent($currentSlide, index, '');
                     }
-                    var markup = utils.getVideoPosterMarkup(poster, dummyImg || '', lgVideoStyle, this.settings.strings['playVideo'], videoInfo);
+                    var markup = utils.getVideoPosterMarkup(poster, dummyImg || '', lgVideoStyle, videoInfo);
                     $currentSlide.prepend(markup);
+                    var delay_1 = (hasStartAnimation
+                        ? this.settings.startAnimationDuration
+                        : this.settings.backdropDuration) + 100;
+                    setTimeout(function () {
+                        _this.LGel.trigger(lGEvents.hasVideo, {
+                            index: index,
+                            src: src,
+                            html5Video: _html5Video,
+                            hasPoster: true,
+                            isFirstSlide: isFirstSlide_1,
+                        });
+                    }, delay_1);
                 }
                 else if (videoInfo) {
                     var markup = "<div class=\"lg-video-cont \" style=\"" + lgVideoStyle + "\"></div>";
                     $currentSlide.prepend(markup);
+                    this.LGel.trigger(lGEvents.hasVideo, {
+                        index: index,
+                        src: src,
+                        html5Video: _html5Video,
+                        hasPoster: false,
+                    });
                 }
                 else {
                     this.setImgMarkup(src, $currentSlide, index);
@@ -1669,29 +1561,31 @@
                         this.initPictureFill($img);
                     }
                 }
-                if (poster || videoInfo) {
-                    this.LGel.trigger(lGEvents.hasVideo, {
-                        index: index,
-                        src: src,
-                        html5Video: _html5Video,
-                        hasPoster: !!poster,
-                    });
-                }
                 this.LGel.trigger(lGEvents.afterAppendSlide, { index: index });
                 if (this.lGalleryOn &&
-                    this.settings.appendSubHtmlTo === '.lg-item') {
+                    this.settings.appendSubHtmlTo !== '.lg-sub-html') {
                     this.addHtml(index);
                 }
             }
             // For first time add some delay for displaying the start animation.
             var _speed = 0;
+            // delay for adding complete class. it is 0 except first time.
+            var delay = 0;
+            if (!this.lGalleryOn) {
+                if (this.zoomFromOrigin && this.currentImageSize) {
+                    delay = this.settings.startAnimationDuration + 10;
+                }
+                else {
+                    delay = this.settings.backdropDuration + 10;
+                }
+            }
             // Do not change the delay value because it is required for zoom plugin.
             // If gallery opened from direct url (hash) speed value should be 0
             if (delay && !$LG(document.body).hasClass('lg-from-hash')) {
                 _speed = delay;
             }
-            // Only for first slide and zoomFromOrigin is enabled
-            if (this.isFirstSlideWithZoomAnimation()) {
+            // Only for first slide
+            if (!this.lGalleryOn && this.zoomFromOrigin && this.currentImageSize) {
                 setTimeout(function () {
                     $currentSlide
                         .removeClass('lg-start-end-progress lg-start-progress')
@@ -1699,26 +1593,23 @@
                 }, this.settings.startAnimationDuration + 100);
                 if (!$currentSlide.hasClass('lg-loaded')) {
                     setTimeout(function () {
-                        if (_this.getSlideType(currentGalleryItem) === 'image') {
-                            var alt = currentGalleryItem.alt;
-                            var altAttr = alt ? 'alt="' + alt + '"' : '';
-                            $currentSlide
-                                .find('.lg-img-wrap')
-                                .append(utils.getImgMarkup(index, src, altAttr, srcset, sizes, currentGalleryItem.sources));
-                            if (srcset || sources) {
-                                var $img = $currentSlide.find('.lg-object');
-                                _this.initPictureFill($img);
-                            }
+                        $currentSlide
+                            .find('.lg-img-wrap')
+                            .append(utils.getImgMarkup(index, src, '', srcset, sizes, currentGalleryItem.sources));
+                        if (srcset || sources) {
+                            var $img = $currentSlide.find('.lg-object');
+                            _this.initPictureFill($img);
                         }
-                        if (_this.getSlideType(currentGalleryItem) === 'image' ||
-                            (_this.getSlideType(currentGalleryItem) === 'video' &&
-                                poster)) {
-                            _this.onLgObjectLoad($currentSlide, index, delay, _speed, true, false);
-                            // load remaining slides once the slide is completely loaded
-                            _this.onSlideObjectLoad($currentSlide, !!(videoInfo && videoInfo.html5 && !poster), function () {
-                                _this.loadContentOnFirstSlideLoad(index, $currentSlide, _speed);
-                            }, function () {
-                                _this.loadContentOnFirstSlideLoad(index, $currentSlide, _speed);
+                        _this.onLgObjectLoad($currentSlide, index, delay, _speed, true);
+                        var mediaObject = $currentSlide
+                            .find('.lg-object')
+                            .first();
+                        if (utils.isImageLoaded(mediaObject.get())) {
+                            _this.loadContentOnLoad(index, $currentSlide, _speed);
+                        }
+                        else {
+                            mediaObject.on('load.lg error.lg', function () {
+                                _this.loadContentOnLoad(index, $currentSlide, _speed);
                             });
                         }
                     }, this.settings.startAnimationDuration + 100);
@@ -1726,9 +1617,10 @@
             }
             // SLide content has been added to dom
             $currentSlide.addClass('lg-loaded');
-            if (!this.isFirstSlideWithZoomAnimation() ||
-                (this.getSlideType(currentGalleryItem) === 'video' && !poster)) {
-                this.onLgObjectLoad($currentSlide, index, delay, _speed, isFirstSlide, !!(videoInfo && videoInfo.html5 && !poster));
+            this.onLgObjectLoad($currentSlide, index, delay, _speed, false);
+            // @todo check load state for html5 videos
+            if (videoInfo && videoInfo.html5 && !poster) {
+                $currentSlide.addClass('lg-complete lg-complete_');
             }
             // When gallery is opened once content is loaded (second time) need to add lg-complete class for css styling
             if ((!this.zoomFromOrigin || !this.currentImageSize) &&
@@ -1755,19 +1647,11 @@
                 }
             }
         };
-        /**
-         * @desc Remove dummy image content and load next slides
-         * Called only for the first time if zoomFromOrigin animation is enabled
-         * @param index
-         * @param $currentSlide
-         * @param speed
-         */
-        LightGallery.prototype.loadContentOnFirstSlideLoad = function (index, $currentSlide, speed) {
+        LightGallery.prototype.loadContentOnLoad = function (index, $currentSlide, speed) {
             var _this = this;
             setTimeout(function () {
                 $currentSlide.find('.lg-dummy-img').remove();
                 $currentSlide.removeClass('lg-first-slide');
-                _this.outer.removeClass('lg-first-slide-loading');
                 _this.isDummyImageRemoved = true;
                 _this.preload(index);
             }, speed + 300);
@@ -1853,19 +1737,10 @@
         LightGallery.prototype.setDownloadValue = function (index) {
             if (this.settings.download) {
                 var currentGalleryItem = this.galleryItems[index];
-                var hideDownloadBtn = currentGalleryItem.downloadUrl === false ||
-                    currentGalleryItem.downloadUrl === 'false';
-                if (hideDownloadBtn) {
-                    this.outer.addClass('lg-hide-download');
-                }
-                else {
-                    var $download = this.getElementById('lg-download');
-                    this.outer.removeClass('lg-hide-download');
-                    $download.attr('href', currentGalleryItem.downloadUrl ||
-                        currentGalleryItem.src);
-                    if (currentGalleryItem.download) {
-                        $download.attr('download', currentGalleryItem.download);
-                    }
+                var src = currentGalleryItem.downloadUrl !== false &&
+                    (currentGalleryItem.downloadUrl || currentGalleryItem.src);
+                if (src && !currentGalleryItem.iframe) {
+                    this.getElementById('lg-download').attr('href', src);
                 }
             }
         };
@@ -1897,7 +1772,7 @@
                     // reset all transitions
                     _this.outer.removeClass('lg-no-trans');
                 }, 50);
-            }, this.lGalleryOn ? this.settings.slideDelay : 0);
+            }, this.settings.slideDelay);
         };
         /**
          * Goto a specific slide.
@@ -1933,7 +1808,7 @@
                 this.setDownloadValue(index);
                 if (videoInfo) {
                     var _a = this.mediaContainerPosition, top_3 = _a.top, bottom = _a.bottom;
-                    var videoSize = utils.getSize(this.items[index], this.outer, top_3 + bottom, videoInfo && this.settings.videoMaxSize);
+                    var videoSize = utils.getSize(this.items[index], this.$lgContent, top_3 + bottom, videoInfo && this.settings.videoMaxSize);
                     this.resizeVideoSlide(index, videoSize);
                 }
                 this.LGel.trigger(lGEvents.beforeSlide, {
@@ -1993,15 +1868,15 @@
                 if (!this.lGalleryOn) {
                     this.loadContent(index, true);
                 }
-                else {
-                    setTimeout(function () {
+                setTimeout(function () {
+                    if (_this.lGalleryOn) {
                         _this.loadContent(index, true);
-                        // Add title if this.settings.appendSubHtmlTo === lg-sub-html
-                        if (_this.settings.appendSubHtmlTo !== '.lg-item') {
-                            _this.addHtml(index);
-                        }
-                    }, this.settings.speed + 50 + (fromTouch ? 0 : this.settings.slideDelay));
-                }
+                    }
+                    // Add title if this.settings.appendSubHtmlTo === lg-sub-html
+                    if (_this.settings.appendSubHtmlTo === '.lg-sub-html') {
+                        _this.addHtml(index);
+                    }
+                }, (this.lGalleryOn ? this.settings.speed + 50 : 50) + (fromTouch ? 0 : this.settings.slideDelay));
                 setTimeout(function () {
                     _this.lgBusy = false;
                     previousSlideItem_1.removeClass('lg-slide-progress');
@@ -2032,7 +1907,7 @@
                 return 'image';
             }
         };
-        LightGallery.prototype.touchMove = function (startCoords, endCoords, e) {
+        LightGallery.prototype.touchMove = function (startCoords, endCoords) {
             var distanceX = endCoords.pageX - startCoords.pageX;
             var distanceY = endCoords.pageY - startCoords.pageY;
             var allowSwipe = false;
@@ -2054,7 +1929,6 @@
             }
             var $currentSlide = this.getSlideItem(this.index);
             if (this.swipeDirection === 'horizontal') {
-                e === null || e === void 0 ? void 0 : e.preventDefault();
                 // reset opacity and transition duration
                 this.outer.addClass('lg-dragging');
                 // move current slide
@@ -2068,7 +1942,6 @@
             }
             else if (this.swipeDirection === 'vertical') {
                 if (this.settings.swipeToClose) {
-                    e === null || e === void 0 ? void 0 : e.preventDefault();
                     this.$container.addClass('lg-dragging-vertical');
                     var opacity = 1 - Math.abs(distanceY) / window.innerHeight;
                     this.$backdrop.css('opacity', opacity);
@@ -2149,31 +2022,32 @@
             var isSwiping = false;
             if (this.settings.enableSwipe) {
                 this.$inner.on('touchstart.lg', function (e) {
-                    _this.dragOrSwipeEnabled = true;
+                    e.preventDefault();
                     var $item = _this.getSlideItem(_this.index);
                     if (($LG(e.target).hasClass('lg-item') ||
                         $item.get().contains(e.target)) &&
                         !_this.outer.hasClass('lg-zoomed') &&
                         !_this.lgBusy &&
-                        e.touches.length === 1) {
+                        e.targetTouches.length === 1) {
                         isSwiping = true;
                         _this.touchAction = 'swipe';
                         _this.manageSwipeClass();
                         startCoords = {
-                            pageX: e.touches[0].pageX,
-                            pageY: e.touches[0].pageY,
+                            pageX: e.targetTouches[0].pageX,
+                            pageY: e.targetTouches[0].pageY,
                         };
                     }
                 });
                 this.$inner.on('touchmove.lg', function (e) {
+                    e.preventDefault();
                     if (isSwiping &&
                         _this.touchAction === 'swipe' &&
-                        e.touches.length === 1) {
+                        e.targetTouches.length === 1) {
                         endCoords = {
-                            pageX: e.touches[0].pageX,
-                            pageY: e.touches[0].pageY,
+                            pageX: e.targetTouches[0].pageX,
+                            pageY: e.targetTouches[0].pageY,
                         };
-                        _this.touchMove(startCoords, endCoords, e);
+                        _this.touchMove(startCoords, endCoords);
                         isMoved = true;
                     }
                 });
@@ -2203,7 +2077,6 @@
             var isMoved = false;
             if (this.settings.enableDrag) {
                 this.outer.on('mousedown.lg', function (e) {
-                    _this.dragOrSwipeEnabled = true;
                     var $item = _this.getSlideItem(_this.index);
                     if ($LG(e.target).hasClass('lg-item') ||
                         $item.get().contains(e.target)) {
@@ -2259,15 +2132,6 @@
                     }
                 });
             }
-        };
-        LightGallery.prototype.triggerPosterClick = function () {
-            var _this = this;
-            this.$inner.on('click.lg', function (event) {
-                if (!_this.dragOrSwipeEnabled &&
-                    _this.isPosterElement($LG(event.target))) {
-                    _this.LGel.trigger(lGEvents.posterClick);
-                }
-            });
         };
         LightGallery.prototype.manageSwipeClass = function () {
             var _touchNext = this.index + 1;
@@ -2411,19 +2275,42 @@
             if (!this.settings.loop && this.settings.hideControlOnEnd) {
                 var $prev = this.getElementById('lg-prev');
                 var $next = this.getElementById('lg-next');
-                if (index + 1 === this.galleryItems.length) {
-                    $next.attr('disabled', 'disabled').addClass('disabled');
-                }
-                else {
-                    $next.removeAttr('disabled').removeClass('disabled');
-                }
-                if (index === 0) {
-                    $prev.attr('disabled', 'disabled').addClass('disabled');
-                }
-                else {
+                if (index + 1 < this.galleryItems.length) {
                     $prev.removeAttr('disabled').removeClass('disabled');
                 }
+                else {
+                    $prev.attr('disabled', 'disabled').addClass('disabled');
+                }
+                if (index > 0) {
+                    $next.removeAttr('disabled').removeClass('disabled');
+                }
+                else {
+                    $next.attr('disabled', 'disabled').addClass('disabled');
+                }
             }
+        };
+        /**
+         * Get index of the slide from custom slideName. Has to be a public method. Used in hash plugin
+         * @param {String} hash
+         * @returns {Number} Index of the slide.
+         */
+        LightGallery.prototype.getIndexFromUrl = function (hash) {
+            if (hash === void 0) { hash = window.location.hash; }
+            var slideName = hash.split('&slide=')[1];
+            var _idx = 0;
+            if (this.settings.customSlideName) {
+                for (var index = 0; index < this.galleryItems.length; index++) {
+                    var dynamicEl = this.galleryItems[index];
+                    if (dynamicEl.slideName === slideName) {
+                        _idx = index;
+                        break;
+                    }
+                }
+            }
+            else {
+                _idx = parseInt(slideName, 10);
+            }
+            return isNaN(_idx) ? 0 : _idx;
         };
         LightGallery.prototype.setTranslate = function ($el, xValue, yValue, scaleX, scaleY) {
             if (scaleX === void 0) { scaleX = 1; }
@@ -2440,23 +2327,17 @@
         };
         LightGallery.prototype.mousewheel = function () {
             var _this = this;
-            var lastCall = 0;
-            this.outer.on('wheel.lg', function (e) {
-                if (!e.deltaY || _this.galleryItems.length < 2) {
+            this.outer.on('mousewheel.lg', function (e) {
+                if (!e.deltaY) {
                     return;
                 }
-                e.preventDefault();
-                var now = new Date().getTime();
-                if (now - lastCall < 1000) {
-                    return;
-                }
-                lastCall = now;
                 if (e.deltaY > 0) {
-                    _this.goToNextSlide();
-                }
-                else if (e.deltaY < 0) {
                     _this.goToPrevSlide();
                 }
+                else {
+                    _this.goToNextSlide();
+                }
+                e.preventDefault();
             });
         };
         LightGallery.prototype.isSlideElement = function (target) {
@@ -2481,43 +2362,6 @@
             this.getElementById('lg-maximize').on('click.lg', function () {
                 _this.$container.toggleClass('lg-inline');
                 _this.refreshOnResize();
-            });
-        };
-        LightGallery.prototype.invalidateItems = function () {
-            for (var index = 0; index < this.items.length; index++) {
-                var element = this.items[index];
-                var $element = $LG(element);
-                $element.off("click.lgcustom-item-" + $element.attr('data-lg-id'));
-            }
-        };
-        LightGallery.prototype.trapFocus = function () {
-            var _this = this;
-            this.$container.get().focus({
-                preventScroll: true,
-            });
-            $LG(window).on("keydown.lg.global" + this.lgId, function (e) {
-                if (!_this.lgOpened) {
-                    return;
-                }
-                var isTabPressed = e.key === 'Tab' || e.keyCode === 9;
-                if (!isTabPressed) {
-                    return;
-                }
-                var focusableEls = utils.getFocusableElements(_this.$container.get());
-                var firstFocusableEl = focusableEls[0];
-                var lastFocusableEl = focusableEls[focusableEls.length - 1];
-                if (e.shiftKey) {
-                    if (document.activeElement === firstFocusableEl) {
-                        lastFocusableEl.focus();
-                        e.preventDefault();
-                    }
-                }
-                else {
-                    if (document.activeElement === lastFocusableEl) {
-                        firstFocusableEl.focus();
-                        e.preventDefault();
-                    }
-                }
             });
         };
         LightGallery.prototype.manageCloseGallery = function () {
@@ -2570,16 +2414,14 @@
                 return 0;
             }
             this.LGel.trigger(lGEvents.beforeClose);
-            if (this.settings.resetScrollPosition && !this.settings.hideScrollbar) {
-                $LG(window).scrollTop(this.prevScrollTop);
-            }
+            $LG(window).scrollTop(this.prevScrollTop);
             var currentItem = this.items[this.index];
             var transform;
             if (this.zoomFromOrigin && currentItem) {
                 var _a = this.mediaContainerPosition, top_4 = _a.top, bottom = _a.bottom;
-                var _b = this.galleryItems[this.index], __slideVideoInfo = _b.__slideVideoInfo, poster = _b.poster;
-                var imageSize = utils.getSize(currentItem, this.outer, top_4 + bottom, __slideVideoInfo && poster && this.settings.videoMaxSize);
-                transform = utils.getTransform(currentItem, this.outer, top_4, bottom, imageSize);
+                var imageSize = utils.getSize(currentItem, this.$lgContent, top_4 + bottom, this.galleryItems[this.index].__slideVideoInfo &&
+                    this.settings.videoMaxSize);
+                transform = utils.getTransform(currentItem, this.$lgContent, top_4, bottom, imageSize);
             }
             if (this.zoomFromOrigin && transform) {
                 this.outer.addClass('lg-closing lg-zoom-from-image');
@@ -2603,7 +2445,7 @@
             this.zoomFromOrigin = this.settings.zoomFromOrigin;
             clearTimeout(this.hideBarTimeout);
             this.hideBarTimeout = false;
-            $LG('html').removeClass('lg-on');
+            $LG(document.body).removeClass('lg-on lg-from-hash');
             this.outer.removeClass('lg-visible lg-components-open');
             // Resetting opacity to 0 isd required as  vertical swipe to close function adds inline opacity.
             this.$backdrop.removeClass('in').css('opacity', 0);
@@ -2617,8 +2459,6 @@
                     _this.outer.removeClass('lg-zoom-from-image');
                 }
                 _this.$container.removeClass('lg-show');
-                // Reset scrollbar
-                _this.resetScrollBar();
                 // Need to remove inline opacity as it is used in the stylesheet as well
                 _this.$backdrop
                     .removeAttr('style')
@@ -2631,22 +2471,10 @@
                         instance: _this,
                     });
                 }
-                if (_this.$container.get()) {
-                    _this.$container.get().blur();
-                }
+                _this.LGel.get().focus();
                 _this.lgOpened = false;
             }, removeTimeout + 100);
             return removeTimeout + 100;
-        };
-        LightGallery.prototype.initModules = function () {
-            this.plugins.forEach(function (module) {
-                try {
-                    module.init();
-                }
-                catch (err) {
-                    console.warn("lightGallery:- make sure lightGallery module is properly initiated");
-                }
-            });
         };
         LightGallery.prototype.destroyModules = function (destroy) {
             this.plugins.forEach(function (module) {
@@ -2662,56 +2490,28 @@
                     console.warn("lightGallery:- make sure lightGallery module is properly destroyed");
                 }
             });
-        };
-        /**
-         * Refresh lightGallery with new set of children.
-         *
-         * @description This is useful to update the gallery when the child elements are changed without calling destroy method.
-         *
-         * If you are using dynamic mode, you can pass the modified array of dynamicEl as the first parameter to refresh the dynamic gallery
-         * @see <a href="/demos/dynamic-mode/">Demo</a>
-         * @category lGPublicMethods
-         * @example
-         *  const plugin = lightGallery();
-         *  // Delete or add children, then call
-         *  plugin.refresh();
-         *
-         */
-        LightGallery.prototype.refresh = function (galleryItems) {
-            if (!this.settings.dynamic) {
-                this.invalidateItems();
+            for (var key in this.plugins) {
+                if (this.plugins[key]) {
+                    try {
+                        if (destroy) {
+                            this.plugins[key].destroy();
+                        }
+                        else {
+                            this.plugins[key].closeGallery &&
+                                this.plugins[key].closeGallery();
+                        }
+                    }
+                    catch (err) {
+                        console.warn("lightGallery:- make sure lightGallery " + key + " module is properly destroyed");
+                    }
+                }
             }
-            if (galleryItems) {
-                this.galleryItems = galleryItems;
-            }
-            else {
-                this.galleryItems = this.getItems();
-            }
-            this.updateControls();
-            this.openGalleryOnItemClick();
-            this.LGel.trigger(lGEvents.updateSlides);
-        };
-        LightGallery.prototype.updateControls = function () {
-            this.addSlideVideoInfo(this.galleryItems);
-            this.updateCounterTotal();
-            this.manageSingleSlideClassName();
-        };
-        LightGallery.prototype.destroyGallery = function () {
-            this.destroyModules(true);
-            if (!this.settings.dynamic) {
-                this.invalidateItems();
-            }
-            $LG(window).off(".lg.global" + this.lgId);
-            this.LGel.off('.lg');
-            this.$container.remove();
         };
         /**
          * Destroy lightGallery.
          * Destroy lightGallery and its plugin instances completely
          *
-         * @description This method also calls CloseGallery function internally. Returns the time takes to completely close and destroy the instance.
-         * In case if you want to re-initialize lightGallery right after destroying it, initialize it only once the destroy process is completed.
-         * You can use refresh method most of the times.
+         * @description This method also calls CloseGallery function internally
          * @category lGPublicMethods
          * @example
          *  const plugin = lightGallery();
@@ -2719,20 +2519,35 @@
          *
          */
         LightGallery.prototype.destroy = function () {
+            var _this = this;
             var closeTimeout = this.closeGallery(true);
-            if (closeTimeout) {
-                setTimeout(this.destroyGallery.bind(this), closeTimeout);
-            }
-            else {
-                this.destroyGallery();
-            }
-            return closeTimeout;
+            setTimeout(function () {
+                _this.destroyModules(true);
+                if (!_this.settings.dynamic) {
+                    for (var index = 0; index < _this.items.length; index++) {
+                        var element = _this.items[index];
+                        var $element = $LG(element);
+                        $element.off("click.lgcustom-item-" + $element.attr('data-lg-id'));
+                    }
+                }
+                $LG(window).off(".lg.global" + _this.lgId);
+                _this.LGel.off('.lg');
+                _this.$container.remove();
+            }, closeTimeout);
         };
         return LightGallery;
     }());
 
     function lightGallery(el, options) {
-        return new LightGallery(el, options);
+        if (!el) {
+            return;
+        }
+        try {
+            return new LightGallery(el, options);
+        }
+        catch (err) {
+            console.error('lightGallery has not initiated properly', err);
+        }
     }
 
     return lightGallery;
