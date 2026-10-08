@@ -184,6 +184,11 @@ Module Smoke
 
         Call bmp.Save(path, ImageFormats.Png)
 
+        ' the main window of this application references its own copy of the
+        ' sample image, so both of them can be rendered without any repository
+        ' asset
+        Call File.Copy(path, System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lychee-form1-img.png"), True)
+
         Return path
     End Function
 
