@@ -25,5 +25,20 @@ Namespace My
 
     Partial Friend Class MyApplication
 
+        ''' <summary>
+        ''' the unattended smoke test is started before the main window of this
+        ''' application is created.
+        ''' </summary>
+        ''' <param name="sender"></param>
+        ''' <param name="e"></param>
+        Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
+            If e.CommandLine.Any(Function(arg) arg = "--smoke" OrElse arg = "-smoke") Then
+                Dim code As Integer = Smoke.Run()
+
+                e.Cancel = True
+                Environment.Exit(code)
+            End If
+        End Sub
+
     End Class
 End Namespace
