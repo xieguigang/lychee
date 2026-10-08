@@ -64,7 +64,7 @@ Namespace Layout
         ''' <returns></returns>
         Public ReadOnly Property Bounds As RectangleF
             Get
-                Return Source.Bounds
+                Return Source.PaintBounds
             End Get
         End Property
 
@@ -264,6 +264,15 @@ Namespace Layout
             End If
 
             For Each child As CssBox In box.Boxes
+                ' a box that owns an html tag is a real element of the ui
+                ' declaration: the text of it belongs to the element itself and
+                ' must not be painted a second time by its container. only the
+                ' anonymous boxes (the ones without an html tag) carry the text
+                ' of their parent element.
+                If child.HtmlTag IsNot Nothing Then
+                    Continue For
+                End If
+
                 Call walkText(child, text)
             Next
         End Sub

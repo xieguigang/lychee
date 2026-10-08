@@ -130,6 +130,11 @@ Namespace Layout
             page.MarginRight = "0"
             page.Width = viewport.Width & "px"
             page.Height = viewport.Height & "px"
+
+            ' the default stylesheet of the html renderer only gives the block
+            ' display mode to the known html tags, so the display mode is
+            ' forced at here to make a custom root tag of a ui declaration work
+            page.Display = CssConstants.Block
         End Sub
 
         Private Sub walk(box As CssBox, depth As Integer)
@@ -143,6 +148,14 @@ Namespace Layout
 
             For Each child As CssBox In box.Boxes
                 If child Is Nothing Then
+                    Continue For
+                End If
+
+                ' an anonymous box carries nothing but the text of its parent
+                ' element, that text is drawn by the renderer of the parent
+                ' element itself with the text alignment of it, so the
+                ' anonymous box is not painted on its own
+                If child.HtmlTag Is Nothing Then
                     Continue For
                 End If
 

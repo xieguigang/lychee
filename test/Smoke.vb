@@ -12,7 +12,9 @@ Imports std = System.Math
 ''' The unattended smoke test of the ui engine: it builds a host window that
 ''' declares its user interface with the xml literal syntax, waits for the very
 ''' first directx frame, asserts the layout of the declared controls and then
-''' simulates a mouse click on each of them.
+''' simulates a mouse click on each of them. the main window of this
+''' application (<see cref="Form1"/>) is rendered as well, so that a
+''' regression of the real test case is caught too.
 ''' </summary>
 ''' <remarks>
 ''' The host window of this test writes the click results into a list instead of
@@ -28,7 +30,8 @@ Imports std = System.Math
 Module Smoke
 
     ''' <summary>
-    ''' The host window of the smoke test.
+    ''' The host window of the smoke test: its user interface declaration
+    ''' covers the whole feature set of the engine.
     ''' </summary>
     Public Class SmokeHost : Inherits Form
 
@@ -39,8 +42,47 @@ Module Smoke
 
         ReadOnly UI As XElement =
             <form style="background-color: gray;" title="lychee smoke">
+                <!-- the container element: background, border shorthand, rounded corners and padding -->
+                <div id="box" style="left:16px;top:16px;width:320px;height:180px;
+                                     background-color:lightblue;
+                                     border:2px solid navy;
+                                     border-radius:14px;
+                                     padding:10px">
+                    <label id="lbl" style="display:block;left:10px;top:12px;width:280px;height:24px;
+                                          color:darkblue;font-size:15px;text-align:center">nested label</label>
+                    <button id="inbox" style="left:10px;top:80px;width:160px;height:38px;
+                                              background-color:seagreen;color:white;
+                                              border-radius:6px;text-align:center"
+                            onclick="nested('from div')">in div</button>
+                </div>
+                <!-- z-index: the second box overlaps the first one and is painted on top of it -->
+                <div id="z1" style="left:370px;top:16px;width:120px;height:110px;
+                                    background-color:forestgreen;color:white;
+                                    text-align:center;z-index:1">z=1</div>
+                <div id="z2" style="left:430px;top:56px;width:120px;height:110px;
+                                    background-color:darkorange;color:white;
+                                    text-align:center;z-index:2">z=2</div>
+                <!-- a long paragraph verifies the word wrapping, the span inside of it is an inline element -->
+                <p id="para" style="left:16px;top:306px;width:320px;height:60px;
+                                    font-size:12px;color:#333333">
+                    lychee renders a html and css user interface declaration with
+                    the <span id="word" style="font-weight:bold;color:crimson">directx</span>
+                    api onto any windows forms control, this paragraph is long
+                    enough to verify the automatic word wrapping of the layout engine.
+                </p>
+                <!-- the original two buttons of the test case -->
                 <button id="hello" style="text-align:center; left:50%;top: 50%; width: 200px;height: 60px; color: blue; background-color: red" onclick="clickButton()">hello</button>
                 <button id="hello2" style="text-align:center; right:0;bottom: 0; width: 200px;height: 60px; color: blue; background-color: yellow" onclick="click2('aa+bb+cc')">hello</button>
+                <!-- the event binding: a number, two arguments and a literal that contains a comma -->
+                <button id="bnum" style="left:210px;top:378px;width:110px;height:30px;
+                                         background-color:steelblue;color:white;text-align:center"
+                        onclick="onCount(42)">number</button>
+                <button id="bargs" style="left:330px;top:378px;width:110px;height:30px;
+                                          background-color:mediumpurple;color:white;text-align:center"
+                        onclick="onMulti('items', 7)">two args</button>
+                <button id="blit" style="left:450px;top:378px;width:130px;height:30px;
+                                         background-color:dimgray;color:white;text-align:center"
+                        onclick="onSpecial('a, b (c)')">literal</button>
             </form>
 
         Dim WithEvents renderer As FormRender
@@ -62,14 +104,30 @@ Module Smoke
             End Get
         End Property
 
-        ' both of the click handlers are private on purpose: the engine must
-        ' find them with a non public reflection lookup
+        ' every click handler is private on purpose: the engine must find them
+        ' with a non public reflection lookup
         Private Sub clickButton()
             Clicks.Add("clickButton")
         End Sub
 
         Private Sub click2(text As String)
             Clicks.Add("click2:" & text)
+        End Sub
+
+        Private Sub nested(text As String)
+            Clicks.Add("nested:" & text)
+        End Sub
+
+        Private Sub onCount(n As Integer)
+            Clicks.Add("onCount:" & n)
+        End Sub
+
+        Private Sub onMulti(name As String, count As Integer)
+            Clicks.Add($"onMulti:{name}/{count}")
+        End Sub
+
+        Private Sub onSpecial(text As String)
+            Clicks.Add("onSpecial:" & text)
         End Sub
     End Class
 
@@ -92,73 +150,67 @@ Module Smoke
         Next
 
         Dim boxes As IReadOnlyList(Of UiBox) = host.Engine.UiLayout.Boxes
-        Dim buttons As New List(Of UiBox)
-
-        For Each box As UiBox In boxes
-            If box.Tag = "button" Then
-                buttons.Add(box)
-            End If
-        Next
-
-        If buttons.Count <> 2 Then
-            errors.Add($"expected 2 buttons on the top level, but {buttons.Count} was found.")
-        End If
-
-        If buttons.Count >= 1 Then
-            Call expectBox(errors, "button[0]", buttons(0), 400, 225, 200, 60)
-        End If
-
-        If buttons.Count >= 2 Then
-            Call expectBox(errors, "button[1]", buttons(1), 600, 390, 200, 60)
-        End If
-
-        ' the click events are raised through the onclick expression of the
-        ' element, which is resolved with a reflection lookup on the host window
-        If buttons.Count >= 1 Then
-            Dim b As RectangleF = buttons(0).Bounds
-
-            If Not host.Engine.SimulateClick(CInt(b.Left + b.Width / 2), CInt(b.Top + b.Height / 2)) Then
-                errors.Add("the click of button[0] has not been resolved: " & host.Engine.LastError)
-            End If
-        End If
-
-        If buttons.Count >= 2 Then
-            Dim b As RectangleF = buttons(1).Bounds
-
-            If Not host.Engine.SimulateClick(CInt(b.Left + b.Width / 2), CInt(b.Top + b.Height / 2)) Then
-                errors.Add("the click of button[1] has not been resolved: " & host.Engine.LastError)
-            End If
-        End If
-
-        If Not host.Clicks.Contains("clickButton") Then
-            errors.Add("the host method 'clickButton' has not been invoked.")
-        End If
-
-        If Not host.Clicks.Contains("click2:aa+bb+cc") Then
-            errors.Add("the host method 'click2' has not been invoked with the argument 'aa+bb+cc'.")
-        End If
-
-        Try
-            Dim surface = TryCast(host.Engine.RenderSurface, DxCanvasSurface)
-
-            If surface IsNot Nothing Then
-                Call surface.CanvasControl.Invalidate()
-
-                For i As Integer = 0 To 10
-                    Call Application.DoEvents()
-                    Call Threading.Thread.Sleep(20)
-                Next
-
-                Call surface.CanvasControl.SaveImage("./lychee-smoke.png", ImageFormats.Png)
-                Console.WriteLine("[smoke] the frame has been saved to ./lychee-smoke.png")
-            End If
-        Catch ex As Exception
-            errors.Add("the frame can not be saved: " & ex.Message)
-        End Try
 
         For Each box As UiBox In boxes
             Console.WriteLine($"[smoke] {box}")
         Next
+
+        ' the geometry of the declared controls
+        Call expectBox(errors, "hello", findById(boxes, "hello"), 400, 225, 200, 60)
+        Call expectBox(errors, "hello2", findById(boxes, "hello2"), 600, 390, 200, 60)
+        Call expectBox(errors, "div#box", findById(boxes, "box"), 16, 16, 320, 180)
+        ' the nested button is placed against the padding box of its container:
+        ' 16 + border 2 + padding 10 = 28, plus the declared offset of the button
+        Call expectBox(errors, "button#inbox", findById(boxes, "inbox"), 38, 108, 160, 38)
+        Call expectBox(errors, "div#z1", findById(boxes, "z1"), 370, 16, 120, 110)
+        Call expectBox(errors, "div#z2", findById(boxes, "z2"), 430, 56, 120, 110)
+        Call expectBox(errors, "p#para", findById(boxes, "para"), 16, 306, 320, 60)
+
+        ' the rounded corners of the container element
+        Dim box1 As UiBox = findById(boxes, "box")
+
+        If box1 IsNot Nothing Then
+            If Not box1.IsRounded Then
+                errors.Add("div#box should be painted with rounded corners.")
+            End If
+            If std.Abs(box1.Radius - 14) > 0.5 Then
+                errors.Add($"div#box has a corner radius of {box1.Radius}, but 14 was expected.")
+            End If
+            ' a container element must not paint the text of its child elements
+            If box1.Text.Length > 0 Then
+                errors.Add($"div#box should not aggregate the text of its child elements, but '{box1.Text}' was found.")
+            End If
+        End If
+
+        ' the paint order of the two overlapping boxes
+        Dim z1 As Integer = indexOf(boxes, "z1")
+        Dim z2 As Integer = indexOf(boxes, "z2")
+
+        If z1 < 0 OrElse z2 < 0 Then
+            errors.Add("the two overlapping boxes are missing from the paint order.")
+        ElseIf z2 <= z1 Then
+            errors.Add("the box with z-index 2 must be painted after the box with z-index 1.")
+        End If
+
+        ' an inline element gets its geometry from the line box that hosts it
+        Dim span As UiBox = findById(boxes, "word")
+
+        If span Is Nothing Then
+            errors.Add("the inline span element is missing.")
+        ElseIf span.Bounds.Width <= 0 OrElse span.Bounds.Height <= 0 Then
+            errors.Add("the inline span element has an empty paint rectangle.")
+        End If
+
+        ' every form of the click expression
+        Call expectClick(host, errors, "hello", "clickButton")
+        Call expectClick(host, errors, "hello2", "click2:aa+bb+cc")
+        Call expectClick(host, errors, "inbox", "nested:from div")
+        Call expectClick(host, errors, "bnum", "onCount:42")
+        Call expectClick(host, errors, "bargs", "onMulti:items/7")
+        Call expectClick(host, errors, "blit", "onSpecial:a, b (c)")
+
+        Call saveFrame(host.Engine, "./lychee-smoke.png", errors)
+        Call renderMainWindow(errors)
 
         For Each line As String In host.Clicks
             Console.WriteLine($"[smoke] click -> {line}")
@@ -179,7 +231,140 @@ Module Smoke
         Return 0
     End Function
 
+    ''' <summary>
+    ''' Renders the real main window of this application and saves its frame, so
+    ''' that a regression of the test case itself is caught as well.
+    ''' </summary>
+    ''' <param name="errors"></param>
+    Private Sub renderMainWindow(errors As List(Of String))
+        Dim main As Form1 = Nothing
+
+        Try
+            main = New Form1()
+
+            Call main.Show()
+
+            For i As Integer = 0 To 20
+                Call Application.DoEvents()
+                Call Threading.Thread.Sleep(20)
+            Next
+
+            Dim canvases As New List(Of DxCanvas)()
+
+            Call collectCanvas(main, canvases)
+
+            If canvases.Count < 2 Then
+                errors.Add($"the main window should host two directx canvases (the form and the panel), but {canvases.Count} was found.")
+            End If
+
+            For Each canvas As DxCanvas In canvases
+                Call canvas.Invalidate()
+            Next
+
+            For i As Integer = 0 To 10
+                Call Application.DoEvents()
+                Call Threading.Thread.Sleep(20)
+            Next
+
+            For Each canvas As DxCanvas In canvases
+                ' the canvas of the form itself and the canvas of the panel host
+                ' are saved as two separate frames
+                Dim file As String = If(TypeOf canvas.Parent Is Form, "./lychee-form1.png", "./lychee-form1-panel.png")
+
+                Call canvas.SaveImage(file, ImageFormats.Png)
+                Console.WriteLine($"[smoke] the frame of {canvas.Parent.GetType().Name} has been saved to {file}")
+            Next
+        Catch ex As Exception
+            errors.Add("the main window can not be rendered: " & ex.Message)
+        Finally
+            If main IsNot Nothing Then
+                Call main.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub collectCanvas(host As Control, result As List(Of DxCanvas))
+        For Each child As Control In host.Controls
+            If TypeOf child Is DxCanvas Then
+                result.Add(DirectCast(child, DxCanvas))
+            End If
+
+            Call collectCanvas(child, result)
+        Next
+    End Sub
+
+    Private Sub saveFrame(engine As FormRender, file As String, errors As List(Of String))
+        Try
+            Dim surface = TryCast(engine.RenderSurface, DxCanvasSurface)
+
+            If surface IsNot Nothing Then
+                Call surface.CanvasControl.Invalidate()
+
+                For i As Integer = 0 To 10
+                    Call Application.DoEvents()
+                    Call Threading.Thread.Sleep(20)
+                Next
+
+                Call surface.CanvasControl.SaveImage(file, ImageFormats.Png)
+                Console.WriteLine($"[smoke] the frame has been saved to {file}")
+            End If
+        Catch ex As Exception
+            errors.Add("the frame can not be saved: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Function findById(boxes As IReadOnlyList(Of UiBox), id As String) As UiBox
+        For Each box As UiBox In boxes
+            If box.Attribute("id") = id Then
+                Return box
+            End If
+        Next
+
+        Return Nothing
+    End Function
+
+    Private Function indexOf(boxes As IReadOnlyList(Of UiBox), id As String) As Integer
+        For i As Integer = 0 To boxes.Count - 1
+            If boxes(i).Attribute("id") = id Then
+                Return i
+            End If
+        Next
+
+        Return -1
+    End Function
+
+    ''' <summary>
+    ''' Simulates a mouse click in the middle of the given control and verifies
+    ''' that the host method of its onclick expression has been invoked.
+    ''' </summary>
+    Private Sub expectClick(host As SmokeHost, errors As List(Of String), id As String, result As String)
+        Dim box As UiBox = findById(host.Engine.UiLayout.Boxes, id)
+
+        If box Is Nothing Then
+            errors.Add($"the control #{id} is missing.")
+            Return
+        End If
+
+        Dim b As RectangleF = box.Bounds
+        Dim x As Integer = CInt(b.Left + b.Width / 2)
+        Dim y As Integer = CInt(b.Top + b.Height / 2)
+
+        If Not host.Engine.SimulateClick(x, y) Then
+            errors.Add($"the click of #{id} has not been resolved: {host.Engine.LastError}")
+            Return
+        End If
+
+        If Not host.Clicks.Contains(result) Then
+            errors.Add($"the click of #{id} should have raised '{result}'.")
+        End If
+    End Sub
+
     Private Sub expectBox(errors As List(Of String), name As String, box As UiBox, x As Single, y As Single, w As Single, h As Single)
+        If box Is Nothing Then
+            errors.Add($"the control {name} is missing.")
+            Return
+        End If
+
         Dim b As RectangleF = box.Bounds
 
         If std.Abs(b.Left - x) > 1 OrElse std.Abs(b.Top - y) > 1 Then
