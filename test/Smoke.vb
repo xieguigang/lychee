@@ -1,4 +1,5 @@
 Imports System.Drawing
+Imports System.IO
 Imports System.Windows.Forms
 Imports System.Xml.Linq
 Imports LycheeUI
@@ -6,6 +7,7 @@ Imports LycheeUI.Layout
 Imports LycheeUI.Render
 Imports Microsoft.VisualBasic.Drawing.DirectX
 Imports Microsoft.VisualBasic.Imaging
+Imports Bitmap = Microsoft.VisualBasic.Imaging.Bitmap
 Imports std = System.Math
 
 ''' <summary>
@@ -83,6 +85,27 @@ Module Smoke
                 <button id="blit" style="left:450px;top:378px;width:130px;height:30px;
                                          background-color:dimgray;color:white;text-align:center"
                         onclick="onSpecial('a, b (c)')">literal</button>
+                <!-- the input controls -->
+                <input type="text" id="name" style="display:block;left:610px;top:170px;width:180px;height:26px;
+                                     background-color:white;border:1px solid gray;color:black"
+                       value="lychee" placeholder="user name"/>
+                <input type="password" id="pwd" style="display:block;left:610px;top:204px;width:180px;height:26px;
+                                       background-color:white;border:1px solid gray;color:black"
+                       value="1234"/>
+                <input type="radio" id="optA" name="choice" style="display:block;left:610px;top:238px;width:180px;height:24px;
+                                      color:black" checked="checked" onchange="onCheck('A', true)" label="option A"/>
+                <input type="radio" id="optB" name="choice" style="display:block;left:610px;top:266px;width:180px;height:24px;
+                                      color:black" onchange="onCheck('B', true)" label="option B"/>
+                <input type="checkbox" id="cb1" style="display:block;left:610px;top:294px;width:180px;height:24px;
+                                       color:black" checked="checked" onchange="onToggle('cb1', true)" label="remember me"/>
+                <input type="checkbox" id="cb2" style="display:block;left:610px;top:322px;width:180px;height:24px;
+                                       color:black" onchange="onToggle('cb2', true)" label="auto start"/>
+                <!-- an image with a declared size and an image that uses its natural size -->
+                <img id="logo" src="./lychee-smoke-img.png" alt="lychee"
+                     style="display:block;left:360px;top:340px;width:80px;height:100px;
+                            background-color:#e0e0e0;border:1px solid silver"/>
+                <img id="logo2" src="./lychee-smoke-img.png" alt="lychee"
+                     style="display:block;left:220px;top:60px"/>
             </form>
 
         Dim WithEvents renderer As FormRender
@@ -129,13 +152,44 @@ Module Smoke
         Private Sub onSpecial(text As String)
             Clicks.Add("onSpecial:" & text)
         End Sub
+
+        Private Sub onCheck(letter As String, state As Boolean)
+            Clicks.Add($"onCheck:{letter}/{state}")
+        End Sub
+
+        Private Sub onToggle(id As String, state As Boolean)
+            Clicks.Add($"onToggle:{id}/{state}")
+        End Sub
     End Class
 
     ''' <summary>
     ''' Runs the smoke test.
     ''' </summary>
     ''' <returns>0 when every assertion has passed, 1 otherwise.</returns>
+    ''' <summary>
+    ''' Writes the sample image that is referenced by the ``img`` elements of
+    ''' the test declaration, so that the repository does not have to carry a
+    ''' binary asset.
+    ''' </summary>
+    ''' <returns>the path of the generated png file.</returns>
+    Private Function MakeSampleImage() As String
+        Dim path As String = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lychee-smoke-img.png")
+        Dim bmp As New Bitmap(64, 64)
+
+        For y As Integer = 0 To 63
+            For x As Integer = 0 To 63
+                Call bmp.SetPixel(x, y, Color.DarkOrange)
+            Next
+        Next
+
+        Call bmp.Save(path, ImageFormats.Png)
+
+        Return path
+    End Function
+
     Public Function Run() As Integer
+        Call MakeSampleImage()
+
         Dim host As New SmokeHost()
         Dim errors As New List(Of String)
 
@@ -208,6 +262,62 @@ Module Smoke
         Call expectClick(host, errors, "bnum", "onCount:42")
         Call expectClick(host, errors, "bargs", "onMulti:items/7")
         Call expectClick(host, errors, "blit", "onSpecial:a, b (c)")
+
+        ' the initial state of the input controls is read out of the declaration
+        If host.Engine.GetValue("name") <> "lychee" Then
+            errors.Add($"the text box #name should be 'lychee', but '{host.Engine.GetValue("name")}' was found.")
+        End If
+        If host.Engine.GetValue("pwd") <> "1234" Then
+            errors.Add("the password box #pwd should be '1234'.")
+        End If
+        If Not host.Engine.GetChecked("optA") OrElse host.Engine.GetChecked("optB") Then
+            errors.Add("the initial radio state is wrong: optA should be selected and optB should not.")
+        End If
+        If Not host.Engine.GetChecked("cb1") OrElse host.Engine.GetChecked("cb2") Then
+            errors.Add("the initial checkbox state is wrong: #cb1 should be checked and #cb2 should not.")
+        End If
+
+        ' the image elements
+        Call expectBox(errors, "img#logo", findById(boxes, "logo"), 360, 340, 80, 100)
+        ' the natural size of the png file is written back to the undeclared box
+        Call expectBox(errors, "img#logo2", findById(boxes, "logo2"), 248, 88, 64, 64)
+
+        ' the keyboard: the focus is moved to the text box and a text is typed into it
+        If Not host.Engine.FocusById("name") Then
+            errors.Add("the text box #name can not be focused.")
+        ElseIf host.Engine.GetFocusedId() <> "name" Then
+            errors.Add($"the focused control should be #name, but #{host.Engine.GetFocusedId()} was focused.")
+        ElseIf Not host.Engine.SimulateType("abc") Then
+            errors.Add("the text can not be typed into the focused control.")
+        ElseIf host.Engine.GetValue("name") <> "lycheeabc" Then
+            errors.Add($"the text box should contain 'lycheeabc', but '{host.Engine.GetValue("name")}' was found.")
+        End If
+
+        ' the radio buttons of the same group are mutually exclusive
+        Call clickCenter(host, "optB")
+
+        If Not host.Engine.GetChecked("optB") Then
+            errors.Add("the radio button #optB should be selected after a click on it.")
+        End If
+        If host.Engine.GetChecked("optA") Then
+            errors.Add("the radio button #optA should have been unselected by the click on #optB.")
+        End If
+        If Not host.Clicks.Contains("onCheck:B/True") Then
+            errors.Add("the change of #optB should have raised 'onCheck:B/True'.")
+        End If
+
+        ' the check box is toggled by every click
+        Call clickCenter(host, "cb2")
+
+        If Not host.Engine.GetChecked("cb2") Then
+            errors.Add("the check box #cb2 should be checked after the first click on it.")
+        End If
+
+        Call clickCenter(host, "cb2")
+
+        If host.Engine.GetChecked("cb2") Then
+            errors.Add("the check box #cb2 should be unchecked after the second click on it.")
+        End If
 
         Call saveFrame(host.Engine, "./lychee-smoke.png", errors)
         Call renderMainWindow(errors)
@@ -357,6 +467,21 @@ Module Smoke
         If Not host.Clicks.Contains(result) Then
             errors.Add($"the click of #{id} should have raised '{result}'.")
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Simulates a mouse click in the middle of the given control.
+    ''' </summary>
+    Private Sub clickCenter(host As SmokeHost, id As String)
+        Dim box As UiBox = findById(host.Engine.UiLayout.Boxes, id)
+
+        If box Is Nothing Then
+            Return
+        End If
+
+        Dim b As RectangleF = box.Bounds
+
+        Call host.Engine.SimulateClick(CInt(b.Left + b.Width / 2), CInt(b.Top + b.Height / 2))
     End Sub
 
     Private Sub expectBox(errors As List(Of String), name As String, box As UiBox, x As Single, y As Single, w As Single, h As Single)

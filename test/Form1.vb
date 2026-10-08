@@ -67,6 +67,30 @@ Public Class Form1
             <button style="left:450px;top:378px;width:130px;height:30px;
                            background-color:dimgray;color:white;text-align:center"
                     onclick="onSpecial('a, b (c)')">literal</button>
+
+            <!-- the input controls: a text box, a password box, two radio buttons
+                 that share the same group name, and two check boxes -->
+            <label style="display:block;left:610px;top:146px;width:180px;height:20px;
+                          color:darkslategray;font-size:13px">input controls</label>
+            <input type="text" id="name" style="display:block;left:610px;top:170px;width:180px;height:26px;
+                               background-color:white;border:1px solid gray;color:black"
+                   value="lychee" placeholder="user name"/>
+            <input type="password" id="pwd" style="display:block;left:610px;top:204px;width:180px;height:26px;
+                                   background-color:white;border:1px solid gray;color:black"
+                   value="1234"/>
+            <input type="radio" id="optA" name="choice" style="display:block;left:610px;top:238px;width:180px;height:24px;
+                                  color:black" checked="checked" onchange="onCheck('A', true)" label="option A"/>
+            <input type="radio" id="optB" name="choice" style="display:block;left:610px;top:266px;width:180px;height:24px;
+                                  color:black" onchange="onCheck('B', true)" label="option B"/>
+            <input type="checkbox" id="cb1" style="display:block;left:610px;top:294px;width:180px;height:24px;
+                                   color:black" checked="checked" onchange="onToggle('cb1', true)" label="remember me"/>
+            <input type="checkbox" id="cb2" style="display:block;left:610px;top:322px;width:180px;height:24px;
+                                   color:black" onchange="onToggle('cb2', true)" label="auto start"/>
+
+            <!-- an image element: the natural size is used when no width or height is declared -->
+            <img id="logo" src="./lychee-form1-img.png" alt="lychee"
+                 style="display:block;left:360px;top:340px;width:110px;height:100px;
+                        background-color:#e0e0e0;border:1px solid silver"/>
         </form>
 
     ''' <summary>
@@ -132,5 +156,19 @@ Public Class Form1
 
     Private Sub panelClick(text As String)
         MessageBox.Show(text, "panelClick")
+    End Sub
+
+    ''' <summary>
+    ''' 由引擎在单选按钮被选中之后回调
+    ''' </summary>
+    Private Sub onCheck(letter As String, state As Boolean)
+        MessageBox.Show($"option {letter} = {state}", "onCheck")
+    End Sub
+
+    ''' <summary>
+    ''' 由引擎在复选框状态翻转之后回调
+    ''' </summary>
+    Private Sub onToggle(id As String, state As Boolean)
+        MessageBox.Show($"{id} = {state}", "onToggle")
     End Sub
 End Class
