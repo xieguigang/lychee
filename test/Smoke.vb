@@ -171,6 +171,10 @@ Module Smoke
         Private Sub onToggle(id As String, state As Boolean)
             Clicks.Add($"onToggle:{id}/{state}")
         End Sub
+
+        Private Sub openHelp(topic As String)
+            Clicks.Add("openHelp:" & topic)
+        End Sub
     End Class
 
     ''' <summary>
