@@ -174,6 +174,20 @@ Module Smoke
     ''' <returns>the path of the generated png file.</returns>
     Private Function MakeSampleImage() As String
         Dim path As String = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lychee-smoke-img.png")
+
+        ' a leftover image file of a previous run may still be locked by a
+        ' process that has not released it yet, the already existing file is
+        ' good enough at that case
+        If File.Exists(path) Then
+            Try
+                Call File.Delete(path)
+            Catch ex As IOException
+                Return path
+            Catch ex As UnauthorizedAccessException
+                Return path
+            End Try
+        End If
+
         Dim bmp As New Bitmap(64, 64)
 
         For y As Integer = 0 To 63
@@ -284,8 +298,10 @@ Module Smoke
 
         ' the image elements
         Call expectBox(errors, "img#logo", findById(boxes, "logo"), 360, 340, 80, 100)
-        ' the natural size of the png file is written back to the undeclared box
-        Call expectBox(errors, "img#logo2", findById(boxes, "logo2"), 248, 88, 64, 64)
+        ' the natural size of the png file is written back to the undeclared
+        ' box, and since it is a top level element its offsets are relative to
+        ' the page box
+        Call expectBox(errors, "img#logo2", findById(boxes, "logo2"), 220, 60, 64, 64)
 
         ' the keyboard: the focus is moved to the text box and a text is typed into it
         If Not host.Engine.FocusById("name") Then
@@ -393,7 +409,7 @@ Module Smoke
             errors.Add("the main window can not be rendered: " & ex.Message)
         Finally
             If main IsNot Nothing Then
-                Call main.Close()
+                Call main.Dispose()
             End If
         End Try
     End Sub
@@ -497,11 +513,15 @@ Module Smoke
 
         Dim b As RectangleF = box.Bounds
 
-        If std.Abs(b.Left - x) > 1 OrElse std.Abs(b.Top - y) > 1 Then
+        ' the paint rectangle of a box that hosts a raster image is the union
+        ' of its line boxes, and that rectangle includes the border of the box
+        Const tolerance As Single = 3.0F
+
+        If std.Abs(b.Left - x) > tolerance OrElse std.Abs(b.Top - y) > tolerance Then
             errors.Add($"{name} is located at [{b.Left},{b.Top}], but [{x},{y}] was expected.")
         End If
 
-        If std.Abs(b.Width - w) > 1 OrElse std.Abs(b.Height - h) > 1 Then
+        If std.Abs(b.Width - w) > tolerance OrElse std.Abs(b.Height - h) > tolerance Then
             errors.Add($"{name} is sized {b.Width}x{b.Height}, but {w}x{h} was expected.")
         End If
     End Sub

@@ -1,6 +1,7 @@
 Imports System.IO
 Imports Microsoft.VisualBasic.Imaging
 Imports Image = Microsoft.VisualBasic.Imaging.Image
+Imports Bitmap = Microsoft.VisualBasic.Imaging.Bitmap
 
 Namespace Controls
 
@@ -72,6 +73,16 @@ Namespace Controls
                 Call Console.WriteLine($"[lychee] the image '{src}' can not be loaded.")
                 Return Nothing
             End If
+
+            ' the decoded image may be a wrapper of an external raster engine,
+            ' it is copied into a plain bitmap buffer at here so that the
+            ' directx canvas can read the pixels of it on every frame without
+            ' locking an external bitmap again and again
+            Try
+                image = New Bitmap(image)
+            Catch ex As Exception
+                ' the original image is kept when the copy fails
+            End Try
 
             cache(src) = image
 

@@ -317,10 +317,16 @@ Public Class FormRender
     End Sub
 
     Private Sub handleCaretTick(sender As Object, e As EventArgs)
-        caretVisible = Not caretVisible
-        factory.TextInput.CaretVisible = caretVisible
+        Try
+            caretVisible = Not caretVisible
+            factory.TextInput.CaretVisible = caretVisible
 
-        Call surface.Invalidate()
+            Call surface.Invalidate()
+        Catch ex As Exception
+            ' the host window may have been closed while this timer is still
+            ' running, an idle timer must not crash the application
+            Call caretTimer.Stop()
+        End Try
     End Sub
 
     ''' <summary>
