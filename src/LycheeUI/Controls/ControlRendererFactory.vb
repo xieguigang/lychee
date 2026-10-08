@@ -9,7 +9,9 @@ Namespace Controls
     ''' </summary>
     Public NotInheritable Class ControlRendererFactory
 
-        Private ReadOnly renderers As New Dictionary(Of String, IControlRenderer)()
+        Private ReadOnly renderers As New Dictionary(Of String, IControlRenderer)() From {
+            {"a", link}
+        }
         Private ReadOfallback As IControlRenderer = New DivRenderer()
 
         ' the input elements: a single tag name covers a text box, a password
@@ -19,6 +21,7 @@ Namespace Controls
         Private ReadOnly radio As New RadioRenderer()
         Private ReadOnly checkbox As New CheckboxRenderer()
         Private ReadOnly image As New ImageRenderer()
+        Private ReadOnly link As New LinkRenderer()
 
         ''' <summary>
         ''' The renderer that paints the elements without a registered renderer.

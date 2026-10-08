@@ -191,6 +191,58 @@ Namespace Layout
         End Property
 
         ''' <summary>
+        ''' Is this element a hyperlink?
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsLink As Boolean
+            Get
+                Return Tag = "a"
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The ``href`` attribute of a hyperlink: it is either a web address
+        ''' that should be opened by the default browser, or a script expression
+        ''' that should be resolved against the host object.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Href As String
+            Get
+                Return Source.GetAttribute("href")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The rich text of the tooltip of this control, it is a small html
+        ''' fragment like ``&lt;b&gt;title&lt;/b&gt;&lt;br/&gt;text``.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Tooltip As String
+            Get
+                Return Source.GetAttribute("tooltip")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The drop shadow of this control, it is parsed from the css
+        ''' ``box-shadow`` property only once and is then cached.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Shadow As CssShadow
+            Get
+                If Not shadowResolved Then
+                    shadowValue = CssShadow.Parse(Source.BoxShadow)
+                    shadowResolved = True
+                End If
+
+                Return shadowValue
+            End Get
+        End Property
+
+        Private shadowValue As CssShadow
+        Private shadowResolved As Boolean = False
+
+        ''' <summary>
         ''' Is this element disabled? a disabled control is painted in a gray
         ''' color and it does not react on the mouse at all.
         ''' </summary>
@@ -413,7 +465,7 @@ Namespace Layout
                     Return False
                 End If
 
-                Return Tag = "button" OrElse Tag = "input" OrElse
+                Return Tag = "button" OrElse Tag = "input" OrElse Tag = "a" OrElse
                     Not String.IsNullOrEmpty(OnClick) OrElse
                     Not String.IsNullOrEmpty(OnChange)
             End Get

@@ -5,6 +5,7 @@ Imports LycheeUI.Layout
 Imports Font = Microsoft.VisualBasic.Imaging.Font
 Imports Pen = Microsoft.VisualBasic.Imaging.Pen
 Imports SolidBrush = Microsoft.VisualBasic.Imaging.SolidBrush
+Imports std = System.Math
 
 Namespace Controls
 
@@ -15,6 +16,56 @@ Namespace Controls
     ''' back to a plain rectangle on any other graphics driver.
     ''' </summary>
     Public Module BoxPainter
+
+        ''' <summary>
+        ''' Paints the drop shadow of a control: the blur of the shadow is
+        ''' approximated by a stack of rounded rectangles that grow outwards
+        ''' while their opacity falls off, so that no blurred bitmap has to be
+        ''' rendered on every frame.
+        ''' </summary>
+        ''' <param name="g"></param>
+        ''' <param name="box"></param>
+        ''' <param name="bounds">the outer rectangle of the control.</param>
+        Public Sub DrawShadow(g As IGraphics, box As UiBox, bounds As RectangleF)
+            Dim shadow As CssShadow = box.Shadow
+
+            If shadow.IsEmpty OrElse shadow.Color.A = 0 Then
+                Return
+            End If
+
+            ' the number of the layers is derived from the blur radius so that
+            ' a hard shadow is drawn as a single rectangle
+            Dim layers As Integer = std.Min(8, std.Max(1, CInt(std.Abs(shadow.Blur) / 1.5F)))
+            Dim dx As DxGraphics = TryCast(g, DxGraphics)
+            Dim baseAlpha As Single = shadow.Color.A / 255.0F
+
+            For i As Integer = layers - 1 To 0 Step -1
+                Dim spread As Single = shadow.Blur * i / layers
+                Dim alpha As Single = baseAlpha * (1.0F - i / (layers + 1.0F))
+
+                If alpha <= 0 Then
+                    Continue For
+                End If
+
+                Dim layer As New RectangleF(
+                    bounds.Left + shadow.OffsetX - spread,
+                    bounds.Top + shadow.OffsetY - spread,
+                    bounds.Width + spread * 2,
+                    bounds.Height + spread * 2)
+
+                Dim color As Color = Color.FromArgb(
+                    CInt(std.Min(255, alpha * 255)),
+                    shadow.Color.R, shadow.Color.G, shadow.Color.B)
+
+                Dim radius As Single = box.Radius + spread
+
+                If dx IsNot Nothing Then
+                    Call dx.FillRoundedRectangle(New SolidBrush(color), layer, radius)
+                Else
+                    Call g.FillRectangle(New SolidBrush(color), layer)
+                End If
+            Next
+        End Sub
 
         ''' <summary>
         ''' Paints the interior of the box.

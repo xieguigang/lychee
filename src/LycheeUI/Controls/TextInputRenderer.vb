@@ -61,6 +61,7 @@ Namespace Controls
                 border = FocusColor
             End If
 
+            Call BoxPainter.DrawShadow(g, box, bounds)
             Call BoxPainter.FillBox(g, box, bounds, background)
 
             ' the default border color of the css box model is transparent, an

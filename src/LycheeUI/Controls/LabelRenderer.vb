@@ -16,6 +16,7 @@ Namespace Controls
                 Return
             End If
 
+            Call BoxPainter.DrawShadow(g, box, bounds)
             Call BoxPainter.FillBox(g, box, bounds, box.Background)
             Call BoxPainter.DrawBorder(g, box, bounds, box.BorderWidth, box.BorderColor)
             Call BoxPainter.DrawText(g, box, box.Text, box.ForeColor)

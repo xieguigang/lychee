@@ -39,6 +39,7 @@ Namespace Controls
                 background = BoxPainter.Shade(background, HoverFactor)
             End If
 
+            Call BoxPainter.DrawShadow(g, box, bounds)
             Call BoxPainter.FillBox(g, box, bounds, background)
             Call BoxPainter.DrawBorder(g, box, bounds, box.BorderWidth, box.BorderColor)
             Call BoxPainter.DrawText(g, box, box.Text, box.ForeColor)
