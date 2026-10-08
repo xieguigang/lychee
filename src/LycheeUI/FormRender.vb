@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing
+Imports System.Diagnostics
 Imports System.Windows.Forms
 Imports System.Xml.Linq
 Imports Microsoft.VisualBasic.Drawing.DirectX
@@ -65,6 +66,67 @@ Public Class FormRender
     ''' </summary>
     Private caretTimer As Timer
     Private caretVisible As Boolean = True
+
+    ''' <summary>
+    ''' delays the tooltip until the mouse stops moving over a control
+    ''' </summary>
+    Private tooltipTimer As Timer
+    Private tooltipShown As Boolean = False
+    Private tooltipContent As String = Nothing
+    Private tooltipPoint As Point
+    Private pointer As Point
+
+    ''' <summary>
+    ''' Should a ``href`` that points to a web address be opened by the default
+    ''' browser? a host application that does not want to leave the canvas can
+    ''' turn this off, the click is then passed to the host method instead.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property OpenLinks As Boolean = True
+
+    ''' <summary>
+    ''' The number of the milliseconds that the mouse has to rest on a control
+    ''' before its tooltip is shown.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property TooltipDelay As Integer
+        Get
+            Return tooltipTimer.Interval
+        End Get
+        Set
+            tooltipTimer.Interval = std.Max(0, Value)
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Is the tooltip of a control visible right now?
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property TooltipVisible As Boolean
+        Get
+            Return tooltipVisible
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' The rich text of the tooltip that is currently visible.
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property TooltipText As String
+        Get
+            Return tooltipText
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' The position where the tooltip panel is drawn.
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property TooltipLocation As Point
+        Get
+            Return tooltipPoint
+        End Get
+    End Property
 
     ''' <summary>
     ''' The layout engine of this user interface.
@@ -134,6 +196,9 @@ Public Class FormRender
 
         caretTimer = New Timer With {.Interval = 500}
         AddHandler caretTimer.Tick, AddressOf handleCaretTick
+
+        tooltipTimer = New Timer With {.Interval = 600}
+        AddHandler tooltipTimer.Tick, AddressOf handleTooltipTick
 
         AddHandler surface.Frame, AddressOf handleFrame
         AddHandler surface.PointerMove, AddressOf handlePointerMove
@@ -211,6 +276,18 @@ Public Class FormRender
                     Call Console.WriteLine($"[lychee] render <{box.Tag}> error: {ex.Message}")
                 End Try
             Next
+
+            ' the tooltip is painted on the top of every control of the user
+            ' interface, it is not a box of the layout and is never hit tested
+            If tooltipShown AndAlso Not String.IsNullOrEmpty(tooltipContent) Then
+                Try
+                    Call TooltipRenderer.Render(g, tooltipContent,
+                                                If(hovered?.Font, New Font(FontFace.SegoeUI, 12)),
+                                                tooltipPoint, viewport)
+                Catch ex As Exception
+                    Call Console.WriteLine("[lychee] tooltip error: " & ex.Message)
+                End Try
+            End If
         Catch ex As Exception
             Call Console.WriteLine("[lychee] layout error: " & ex.Message)
         End Try
@@ -219,18 +296,33 @@ Public Class FormRender
     Private Sub handlePointerMove(sender As Object, e As PointerEventArgs)
         Dim hit As UiBox = layout.HitTest(e.X, e.Y)
 
-        If hit Is hovered Then
-            Return
+        ' the tooltip follows the mouse, so its position has to be tracked even
+        ' when the hovered control does not change at all
+        pointer = New Point(e.X, e.Y)
+
+        If hit IsNot hovered Then
+            If hovered IsNot Nothing Then
+                hovered.Hover = False
+            End If
+
+            hovered = hit
+
+            If hovered IsNot Nothing Then
+                hovered.Hover = True
+            End If
+
+            Call ResetTooltip()
         End If
 
-        If hovered IsNot Nothing Then
-            hovered.Hover = False
-        End If
-
-        hovered = hit
-
-        If hovered IsNot Nothing Then
-            hovered.Hover = True
+        ' the tooltip is only shown when the mouse stops moving over a control
+        ' that declares a tooltip
+        If hovered IsNot Nothing AndAlso Not String.IsNullOrEmpty(hovered.Tooltip) Then
+            If Not tooltipTimer.Enabled Then
+                Call tooltipTimer.Start()
+            End If
+        ElseIf tooltipTimer.Enabled Then
+            Call tooltipTimer.Stop()
+            Call HideTooltip()
         End If
 
         Call surface.Invalidate()
@@ -314,6 +406,68 @@ Public Class FormRender
             ' caret that is not visible at all
             Call caretTimer.Stop()
         End If
+    End Sub
+
+    Private Sub handleTooltipTick(sender As Object, e As EventArgs)
+        Try
+            Call tooltipTimer.Stop()
+
+            If hovered Is Nothing OrElse String.IsNullOrEmpty(hovered.Tooltip) Then
+                Return
+            End If
+
+            ' the tooltip is shown a little bit below of the mouse pointer
+            tooltipPoint = New Point(pointer.X + 12, pointer.Y + 16)
+            tooltipContent = hovered.Tooltip
+            tooltipShown = True
+
+            Call surface.Invalidate()
+        Catch ex As Exception
+            ' the host window may have been closed while this timer is still
+            ' running, an idle timer must not crash the application
+            Call tooltipTimer.Stop()
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Hides the tooltip and stops its timer.
+    ''' </summary>
+    Public Sub HideTooltip()
+        tooltipShown = False
+        tooltipContent = Nothing
+
+        If tooltipTimer.Enabled Then
+            Call tooltipTimer.Stop()
+        End If
+
+        Call surface.Invalidate()
+    End Sub
+
+    Private Sub ResetTooltip()
+        tooltipShown = False
+        tooltipContent = Nothing
+
+        If tooltipTimer.Enabled Then
+            Call tooltipTimer.Stop()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Simulates a mouse move over the canvas: it is used by the automated
+    ''' smoke test to place the mouse pointer on a control.
+    ''' </summary>
+    ''' <param name="x"></param>
+    ''' <param name="y"></param>
+    Public Sub SimulateHover(x As Integer, y As Integer)
+        Call handlePointerMove(Me, New PointerEventArgs(x, y))
+    End Sub
+
+    ''' <summary>
+    ''' Shows the tooltip of the control that is currently hovered, without
+    ''' waiting for the delay: it is used by the automated smoke test.
+    ''' </summary>
+    Public Sub ShowTooltipNow()
+        Call handleTooltipTick(Me, EventArgs.Empty)
     End Sub
 
     Private Sub handleCaretTick(sender As Object, e As EventArgs)
@@ -554,8 +708,8 @@ Public Class FormRender
     End Function
 
     ''' <summary>
-    ''' Runs the script expression of the ``onclick`` attribute of the given
-    ''' control.
+    ''' Runs the action of the given control: the ``href`` of a hyperlink or
+    ''' the script expression of its ``onclick`` attribute.
     ''' </summary>
     ''' <param name="box"></param>
     ''' <returns>
@@ -563,11 +717,73 @@ Public Class FormRender
     ''' has been invoked.
     ''' </returns>
     Public Function RaiseClick(box As UiBox) As Boolean
-        If box Is Nothing OrElse String.IsNullOrEmpty(box.OnClick) Then
+        If box Is Nothing Then
             Return False
         End If
 
-        If Not binder.Invoke(box.OnClick) Then
+        Call HideTooltip()
+
+        ' a hyperlink may point to a web address or to a host method
+        If box.IsLink AndAlso Not String.IsNullOrEmpty(box.Href) Then
+            Dim href As String = box.Href.Trim()
+
+            If href.StartsWith("javascript:", StringComparison.OrdinalIgnoreCase) Then
+                href = href.Substring("javascript:".Length).Trim()
+            End If
+
+            If isOpenUrl(href) Then
+                If Not OpenLinks Then
+                    Call Console.WriteLine($"[lychee] the link '{href}' is not opened, OpenLinks is off.")
+                    RaiseEvent OnClick(box, EventArgs.Empty)
+                    Return False
+                End If
+
+                If OpenBrowser(href) Then
+                    RaiseEvent OnClick(box, EventArgs.Empty)
+                    Return True
+                End If
+
+                Return False
+            End If
+
+            If href.Length > 0 Then
+                Return InvokeScript(box, href)
+            End If
+        End If
+
+        If String.IsNullOrEmpty(box.OnClick) Then
+            Return False
+        End If
+
+        Return InvokeScript(box, box.OnClick)
+    End Function
+
+    Private Shared Function isOpenUrl(href As String) As Boolean
+        Return href.StartsWith("http://", StringComparison.OrdinalIgnoreCase) OrElse
+            href.StartsWith("https://", StringComparison.OrdinalIgnoreCase)
+    End Function
+
+    ''' <summary>
+    ''' Opens the given web address in the default browser of the system.
+    ''' </summary>
+    ''' <param name="url"></param>
+    ''' <returns></returns>
+    ''' <remarks>
+    ''' ``Process.Start(url)`` fails on .net core because the shell execute is
+    ''' turned off by default there, so the flag has to be set explicitly.
+    ''' </remarks>
+    Private Shared Function OpenBrowser(url As String) As Boolean
+        Try
+            Call Process.Start(New ProcessStartInfo(url) With {.UseShellExecute = True})
+            Return True
+        Catch ex As Exception
+            Call Console.WriteLine($"[lychee] the link '{url}' can not be opened: {ex.Message}")
+            Return False
+        End Try
+    End Function
+
+    Private Function InvokeScript(box As UiBox, expression As String) As Boolean
+        If Not binder.Invoke(expression) Then
             Call Console.WriteLine($"[lychee] {binder.LastError}")
             Return False
         End If
@@ -790,6 +1006,13 @@ Public Class FormRender
                     Call caretTimer.Stop()
                     Call caretTimer.Dispose()
                     caretTimer = Nothing
+                End If
+
+                If tooltipTimer IsNot Nothing Then
+                    RemoveHandler tooltipTimer.Tick, AddressOf handleTooltipTick
+                    Call tooltipTimer.Stop()
+                    Call tooltipTimer.Dispose()
+                    tooltipTimer = Nothing
                 End If
 
                 Call surface.Dispose()
