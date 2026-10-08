@@ -2,6 +2,7 @@ Imports System.Drawing
 Imports Microsoft.VisualBasic.Drawing.DirectX
 Imports Microsoft.VisualBasic.Imaging
 Imports LycheeUI.Layout
+Imports Font = Microsoft.VisualBasic.Imaging.Font
 Imports Pen = Microsoft.VisualBasic.Imaging.Pen
 Imports SolidBrush = Microsoft.VisualBasic.Imaging.SolidBrush
 

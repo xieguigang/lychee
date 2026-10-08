@@ -27,7 +27,7 @@ Namespace Render
         ''' The underlying directx canvas control of this surface.
         ''' </summary>
         ''' <returns></returns>
-        Public ReadOnly Property Canvas As DxCanvas
+        Public ReadOnly Property CanvasControl As DxCanvas
             Get
                 Return canvas
             End Get
@@ -90,7 +90,7 @@ Namespace Render
             RaiseEvent PointerUp(Me, New PointerEventArgs(e.X, e.Y, e.Button))
         End Sub
 
-        Protected Overridable Sub Dispose(disposing As Boolean)
+        Private Sub Dispose(disposing As Boolean)
             If Not disposedValue Then
                 If disposing Then
                     RemoveHandler canvas.Render, AddressOf handleRender

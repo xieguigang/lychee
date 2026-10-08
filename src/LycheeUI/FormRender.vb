@@ -57,7 +57,7 @@ Public Class FormRender
     ''' The layout engine of this user interface.
     ''' </summary>
     ''' <returns></returns>
-    Public ReadOnly Property Layout As UiLayoutEngine
+    Public ReadOnly Property UiLayout As UiLayoutEngine
         Get
             Return layout
         End Get
@@ -67,7 +67,7 @@ Public Class FormRender
     ''' The drawing surface that hosts this user interface.
     ''' </summary>
     ''' <returns></returns>
-    Public ReadOnly Property Surface As IRenderSurface
+    Public ReadOnly Property RenderSurface As IRenderSurface
         Get
             Return surface
         End Get

@@ -166,7 +166,7 @@ Namespace Render
             End Sub
         End Class
 
-        Protected Overridable Sub Dispose(disposing As Boolean)
+        Private Sub Dispose(disposing As Boolean)
             If Not disposedValue Then
                 If disposing Then
                     If host IsNot Nothing Then
