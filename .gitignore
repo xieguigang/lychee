@@ -2,3 +2,9 @@
 .vs/xieguigang.github.io-hexo/v17/.wsuo
 *.sqlite
 etc/config.php
+
+bin/
+obj/
+
+.vs/
+*.user
