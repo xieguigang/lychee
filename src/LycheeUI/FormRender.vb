@@ -114,7 +114,7 @@ Public Class FormRender
     ''' <returns></returns>
     Public ReadOnly Property TooltipText As String
         Get
-            Return tooltipText
+            Return tooltipContent
         End Get
     End Property
 

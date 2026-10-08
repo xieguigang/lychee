@@ -216,10 +216,15 @@ Namespace Layout
         ''' The rich text of the tooltip of this control, it is a small html
         ''' fragment like ``&lt;b&gt;title&lt;/b&gt;&lt;br/&gt;text``.
         ''' </summary>
-        ''' <returns></returns>
+        ''' <returns>
+        ''' the html entities of the declaration are decoded, the ``&amp;lt;``
+        ''' of the xml literal has been turned back into a ``&lt;`` character.
+        ''' </returns>
         Public ReadOnly Property Tooltip As String
             Get
-                Return Source.GetAttribute("tooltip")
+                Dim text As String = Source.GetAttribute("tooltip")
+
+                Return If(String.IsNullOrEmpty(text), "", System.Net.WebUtility.HtmlDecode(text))
             End Get
         End Property
 
