@@ -7,7 +7,9 @@
     <Project Path="../GCModeller/src/runtime/sciBASIC#/vs_solutions/dev/VisualStudio/VisualStudio.NET5.vbproj">
       <Platform Solution="*|x64" Project="x64" />
     </Project>
-    <Project Path="../GCModeller/src/runtime/sciBASIC#/vs_solutions/JavaScript/LiteJs.vbproj" />
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/vs_solutions/JavaScript/LiteJs.vbproj">
+      <Platform Solution="Release|x64" Project="x64" />
+    </Project>
   </Folder>
   <Folder Name="/framework/base/">
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/Math/Math.NET5.vbproj">
