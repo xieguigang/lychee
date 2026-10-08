@@ -273,7 +273,7 @@ Public Class FormRender
                     Call factory.GetRenderer(box).Render(g, box)
                 Catch ex As Exception
                     ' a broken control must not break the whole frame
-                    Call Console.WriteLine($"[lychee] render <{box.Tag}> error: {ex.Message}")
+                    Call Console.WriteLine($"[lychee] render <{box.Tag}> error: {ex.ToString()}")
                 End Try
             Next
 

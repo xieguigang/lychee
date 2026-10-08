@@ -32,6 +32,12 @@ Imports std = System.Math
 Module Smoke
 
     ''' <summary>
+    ''' the rich text of the tooltip that is declared on the hyperlink
+    ''' </summary>
+    Public Const TOOLTIP_TEXT As String = "<b>docs</b><br/><font color='gray'>user guide</font>"
+
+
+    ''' <summary>
     ''' The host window of the smoke test: its user interface declaration
     ''' covers the whole feature set of the engine.
     ''' </summary>
@@ -49,7 +55,8 @@ Module Smoke
                                      background-color:lightblue;
                                      border:2px solid navy;
                                      border-radius:14px;
-                                     padding:10px">
+                                     padding:10px;
+                                     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45)">
                     <label id="lbl" style="display:block;left:10px;top:12px;width:280px;height:24px;
                                           color:darkblue;font-size:15px;text-align:center">nested label</label>
                     <button id="inbox" style="left:10px;top:80px;width:160px;height:38px;
@@ -106,6 +113,10 @@ Module Smoke
                             background-color:#e0e0e0;border:1px solid silver"/>
                 <img id="logo2" src="./lychee-smoke-img.png" alt="lychee"
                      style="display:block;left:220px;top:60px"/>
+                <!-- a hyperlink with a rich text tooltip -->
+                <a id="link" href="openHelp('docs')"
+                   style="display:block;left:500px;top:340px;width:120px;height:22px"
+                   tooltip="&lt;b&gt;docs&lt;/b&gt;&lt;br/&gt;&lt;font color='gray'&gt;user guide&lt;/font&gt;">documentation</a>
             </form>
 
         Dim WithEvents renderer As FormRender
@@ -340,7 +351,53 @@ Module Smoke
             errors.Add("the check box #cb2 should be unchecked after the second click on it.")
         End If
 
+        ' the css box shadow is parsed into a shadow structure
+        Dim shadow As CssShadow = findById(boxes, "box").Shadow
+
+        If shadow.IsEmpty Then
+            errors.Add("the box shadow of div#box has not been parsed.")
+        Else
+            If std.Abs(shadow.OffsetX - 4) > 0.01 OrElse std.Abs(shadow.OffsetY - 4) > 0.01 Then
+                errors.Add($"the shadow offset should be 4x4, but {shadow.OffsetX}x{shadow.OffsetY} was parsed.")
+            End If
+            If std.Abs(shadow.Blur - 8) > 0.01 Then
+                errors.Add($"the shadow blur should be 8, but {shadow.Blur} was parsed.")
+            End If
+            If std.Abs(shadow.Color.A - 114) > 1 Then
+                errors.Add($"the shadow alpha should be 114, but {shadow.Color.A} was parsed.")
+            End If
+        End If
+
+        ' the hyperlink resolves its script expression against the host object
+        Call expectClick(host, errors, "link", "openHelp:docs")
+
+        ' the rich text tooltip: the delay is shortened so that the unattended
+        ' test does not have to wait for it
+        host.Engine.TooltipDelay = 1
+
+        Dim link As UiBox = findById(boxes, "link")
+        Dim linkRect As RectangleF = link.Bounds
+
+        Call host.Engine.SimulateHover(CInt(linkRect.Left + linkRect.Width / 2), CInt(linkRect.Top + linkRect.Height / 2))
+        Call host.Engine.ShowTooltipNow()
+
+        If Not host.Engine.TooltipVisible Then
+            errors.Add("the tooltip of the link is not visible.")
+        ElseIf host.Engine.TooltipText <> TOOLTIP_TEXT Then
+            errors.Add($"the tooltip should be '{TOOLTIP_TEXT}', but '{host.Engine.TooltipText}' was found.")
+        End If
+
+        ' the tooltip is painted on the top of everything, so the saved frame
+        ' shows it and its colors can be verified with a pixel sampling
         Call saveFrame(host.Engine, "./lychee-smoke.png", errors)
+
+        ' the tooltip is hidden as soon as the mouse leaves the control
+        Call host.Engine.SimulateHover(5, 440)
+
+        If host.Engine.TooltipVisible Then
+            errors.Add("the tooltip should be hidden after the mouse has left the control.")
+        End If
+
         Call renderMainWindow(errors)
 
         For Each line As String In host.Clicks

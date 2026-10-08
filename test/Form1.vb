@@ -91,6 +91,23 @@ Public Class Form1
             <img id="logo" src="./lychee-form1-img.png" alt="lychee"
                  style="display:block;left:360px;top:340px;width:110px;height:100px;
                         background-color:#e0e0e0;border:1px solid silver"/>
+
+            <!-- a hyperlink: a web address is opened by the browser, a script
+                 expression is resolved against the host object -->
+            <a id="help" href="openHelp('docs')"
+               style="display:block;left:610px;top:352px;width:180px;height:22px"
+               tooltip="&lt;b&gt;Documentation&lt;/b&gt;&lt;br/&gt;&lt;font color='gray'&gt;opens the user guide&lt;/font&gt;">documentation</a>
+            <a id="site" href="https://github.com/" style="display:block;left:610px;top:378px;width:180px;height:22px"
+               tooltip="external &lt;i&gt;web site&lt;/i&gt;">lychee on the web</a>
+
+            <!-- the css drop shadow -->
+            <div id="card" style="left:360px;top:150px;width:200px;height:110px;
+                                 background-color:white;border:1px solid silver;
+                                 border-radius:8px;padding:8px;
+                                 box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45)"
+                 tooltip="&lt;b&gt;shadow&lt;/b&gt;&lt;br/&gt;css box-shadow demo">
+                <label style="display:block;color:dimgray;font-size:13px">shadow demo</label>
+            </div>
         </form>
 
     ''' <summary>
@@ -170,5 +187,9 @@ Public Class Form1
     ''' </summary>
     Private Sub onToggle(id As String, state As Boolean)
         MessageBox.Show($"{id} = {state}", "onToggle")
+    End Sub
+
+    Private Sub openHelp(topic As String)
+        MessageBox.Show(topic, "openHelp")
     End Sub
 End Class

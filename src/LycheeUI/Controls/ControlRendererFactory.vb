@@ -9,9 +9,7 @@ Namespace Controls
     ''' </summary>
     Public NotInheritable Class ControlRendererFactory
 
-        Private ReadOnly renderers As New Dictionary(Of String, IControlRenderer)() From {
-            {"a", link}
-        }
+        Private ReadOnly renderers As New Dictionary(Of String, IControlRenderer)()
         Private ReadOfallback As IControlRenderer = New DivRenderer()
 
         ' the input elements: a single tag name covers a text box, a password
@@ -44,6 +42,7 @@ Namespace Controls
             renderers("span") = New LabelRenderer()
             renderers("p") = New LabelRenderer()
             renderers("div") = New DivRenderer()
+            renderers("a") = New LinkRenderer()
             renderers("button") = New ButtonRenderer()
             renderers("input") = New ButtonRenderer()
         End Sub
