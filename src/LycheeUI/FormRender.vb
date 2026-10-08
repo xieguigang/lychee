@@ -104,7 +104,7 @@ Public Class FormRender
     ''' <returns></returns>
     Public ReadOnly Property TooltipVisible As Boolean
         Get
-            Return tooltipVisible
+            Return tooltipShown
         End Get
     End Property
 
@@ -467,12 +467,6 @@ Public Class FormRender
     ''' waiting for the delay: it is used by the automated smoke test.
     ''' </summary>
     Public Sub ShowTooltipNow()
-        If hovered?.Source.HtmlTag IsNot Nothing Then
-            For Each att As String In hovered.Source.HtmlTag.Attributes.Keys
-                Call Console.WriteLine($"[lychee]   attr {att} = '{hovered.Source.HtmlTag.Attributes(att)}'")
-            Next
-        End If
-
         Call handleTooltipTick(Me, EventArgs.Empty)
     End Sub
 
