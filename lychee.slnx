@@ -3,7 +3,12 @@
     <Platform Name="Any CPU" />
     <Platform Name="x64" />
   </Configurations>
-  <Folder Name="/framework/" />
+  <Folder Name="/framework/">
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/vs_solutions/dev/VisualStudio/VisualStudio.NET5.vbproj">
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="../GCModeller/src/runtime/sciBASIC#/vs_solutions/JavaScript/LiteJs.vbproj" />
+  </Folder>
   <Folder Name="/framework/base/">
     <Project Path="../GCModeller/src/runtime/sciBASIC#/Data_science/Mathematica/Math/Math/Math.NET5.vbproj">
       <Platform Solution="*|x64" Project="x64" />
