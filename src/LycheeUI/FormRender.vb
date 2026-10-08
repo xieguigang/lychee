@@ -7,6 +7,8 @@ Imports LycheeUI.Controls
 Imports LycheeUI.Events
 Imports LycheeUI.Layout
 Imports LycheeUI.Render
+Imports Font = Microsoft.VisualBasic.Imaging.Font
+Imports std = System.Math
 
 ''' <summary>
 ''' The ui engine: it renders a html + css user interface declaration on a
@@ -49,9 +51,20 @@ Public Class FormRender
     Private disposedValue As Boolean
 
     ''' <summary>
-    ''' the directx graphics driver is registered only once per process
+    ''' the graphics drivers are registered only once per process
     ''' </summary>
-    Private Shared dxRegistered As Boolean = False
+    Private Shared driversReady As Boolean = False
+
+    ''' <summary>
+    ''' the control that holds the keyboard focus of the canvas
+    ''' </summary>
+    Private focused As UiBox = Nothing
+
+    ''' <summary>
+    ''' toggles the visibility of the caret of the focused text input control
+    ''' </summary>
+    Private caretTimer As Timer
+    Private caretVisible As Boolean = True
 
     ''' <summary>
     ''' The layout engine of this user interface.
@@ -112,17 +125,22 @@ Public Class FormRender
             Throw New ArgumentNullException(NameOf(container))
         End If
 
-        Call EnsureDirectX()
+        Call EnsureDrivers()
 
         host = container
         layout = New UiLayoutEngine(ui)
         binder = New MethodBinder(container)
         surface = If(backend, New DxCanvasSurface(layout.BackgroundColor))
 
+        caretTimer = New Timer With {.Interval = 500}
+        AddHandler caretTimer.Tick, AddressOf handleCaretTick
+
         AddHandler surface.Frame, AddressOf handleFrame
         AddHandler surface.PointerMove, AddressOf handlePointerMove
         AddHandler surface.PointerDown, AddressOf handlePointerDown
         AddHandler surface.PointerUp, AddressOf handlePointerUp
+        AddHandler surface.KeyDown, AddressOf handleKeyDown
+        AddHandler surface.TextInput, AddressOf handleTextInput
 
         ' the title of the root element of the declaration is applied to the
         ' text of the host window
@@ -134,15 +152,27 @@ Public Class FormRender
     End Sub
 
     ''' <summary>
-    ''' Registers the directx graphics device as the backend of the drawing
-    ''' primitives and of the text metrics of the layout engine.
+    ''' Registers the graphics device and the raster image decoder of the
+    ''' drawing primitives.
     ''' </summary>
-    Private Shared Sub EnsureDirectX()
-        If dxRegistered Then
+    ''' <remarks>
+    ''' The order of the two registrations matters: both of them claim the
+    ''' ``GDI`` slot of the driver loader, so the gdi+ raster image decoder has
+    ''' to be registered first and the directx device driver overwrites it
+    ''' afterwards, otherwise the gdi+ canvas would replace the directx one.
+    ''' </remarks>
+    Private Shared Sub EnsureDrivers()
+        If driversReady Then
             Return
         End If
 
-        dxRegistered = True
+        driversReady = True
+
+        Try
+            Call Microsoft.VisualBasic.Imaging.Driver.ImageDriver.Register()
+        Catch ex As Exception
+            Call Console.WriteLine("[lychee] the raster image driver can not be registered: " & ex.Message)
+        End Try
 
         Try
             Call Dx2DDriver.RegisterDx2D()
@@ -175,7 +205,7 @@ Public Class FormRender
                 End If
 
                 Try
-                    Call factory.GetRenderer(box.Tag).Render(g, box)
+                    Call factory.GetRenderer(box).Render(g, box)
                 Catch ex As Exception
                     ' a broken control must not break the whole frame
                     Call Console.WriteLine($"[lychee] render <{box.Tag}> error: {ex.Message}")
@@ -213,8 +243,18 @@ Public Class FormRender
 
         pressed = layout.HitTest(e.X, e.Y)
 
+        ' only one control can hold the keyboard focus, a click on the empty
+        ' area of the canvas releases it
+        Call SetFocus(If(pressed IsNot Nothing AndAlso pressed.IsTextInput, pressed, Nothing))
+
         If pressed IsNot Nothing Then
             pressed.Pressed = True
+
+            If pressed.IsTextInput Then
+                pressed.Caret = CaretFromPoint(pressed, e.X)
+                pressed.SelectionLength = 0
+            End If
+
             Call surface.Invalidate()
         End If
     End Sub
@@ -237,9 +277,275 @@ Public Class FormRender
             Return
         End If
 
+        If release.IsCheckable Then
+            Call ToggleChecked(release)
+        End If
+
         Call surface.Invalidate()
         Call RaiseClick(release)
     End Sub
+
+    ''' <summary>
+    ''' Moves the keyboard focus to the given control.
+    ''' </summary>
+    ''' <param name="box">
+    ''' nothing releases the focus of the current control.
+    ''' </param>
+    Public Sub SetFocus(box As UiBox)
+        If focused Is box Then
+            Return
+        End If
+
+        If focused IsNot Nothing Then
+            focused.Focused = False
+        End If
+
+        focused = box
+
+        If focused IsNot Nothing Then
+            focused.Focused = True
+            caretVisible = True
+
+            If Not caretTimer.Enabled Then
+                Call caretTimer.Start()
+            End If
+        ElseIf caretTimer.Enabled Then
+            ' an idle canvas must not be repainted again and again just for a
+            ' caret that is not visible at all
+            Call caretTimer.Stop()
+        End If
+    End Sub
+
+    Private Sub handleCaretTick(sender As Object, e As EventArgs)
+        caretVisible = Not caretVisible
+        factory.TextInput.CaretVisible = caretVisible
+
+        Call surface.Invalidate()
+    End Sub
+
+    ''' <summary>
+    ''' Flips the checked state of a checkbox or of a radio button.
+    ''' </summary>
+    ''' <param name="box"></param>
+    ''' <remarks>
+    ''' The radio buttons that share the same ``name`` attribute are mutually
+    ''' exclusive, so every other radio button of the same group is unchecked
+    ''' when one of them has been selected.
+    ''' </remarks>
+    Public Sub ToggleChecked(box As UiBox)
+        If box Is Nothing OrElse Not box.IsCheckable Then
+            Return
+        End If
+
+        If box.InputType = "radio" Then
+            box.Checked = True
+
+            Dim group As String = box.GroupName
+
+            If String.IsNullOrEmpty(group) Then
+                group = Nothing
+            End If
+
+            For Each other As UiBox In layout.Boxes
+                If other Is box OrElse Not other.IsCheckable Then
+                    Continue For
+                End If
+                If other.InputType <> "radio" Then
+                    Continue For
+                End If
+
+                Dim sameGroup As Boolean
+
+                If group Is Nothing Then
+                    sameGroup = String.IsNullOrEmpty(other.GroupName)
+                Else
+                    sameGroup = (other.GroupName = group)
+                End If
+
+                If sameGroup Then
+                    other.Checked = False
+                End If
+            Next
+        Else
+            box.Checked = Not box.Checked
+        End If
+
+        ' the change event is raised after the state has been settled
+        If Not String.IsNullOrEmpty(box.ChangeScript) Then
+            If Not binder.Invoke(box.ChangeScript) Then
+                Call Console.WriteLine($"[lychee] {binder.LastError}")
+            Else
+                RaiseEvent OnClick(box, EventArgs.Empty)
+            End If
+        End If
+    End Sub
+
+    Private Sub handleKeyDown(sender As Object, e As CanvasKeyEventArgs)
+        Dim target As UiBox = focused
+
+        If target Is Nothing OrElse Not target.IsTextInput Then
+            Return
+        End If
+
+        Dim text As String = If(target.Value, "")
+        Dim caret As Integer = std.Min(std.Max(target.Caret, 0), text.Length)
+
+        Select Case e.KeyCode
+            Case Keys.Left
+                target.Caret = std.Max(0, caret - 1)
+                target.SelectionLength = 0
+            Case Keys.Right
+                target.Caret = std.Min(text.Length, caret + 1)
+                target.SelectionLength = 0
+            Case Keys.Home
+                target.Caret = 0
+                target.SelectionLength = 0
+            Case Keys.End
+                target.Caret = text.Length
+                target.SelectionLength = 0
+            Case Keys.Back
+                If caret > 0 Then
+                    target.Value = text.Remove(caret - 1, 1)
+                    target.Caret = caret - 1
+                End If
+
+                target.SelectionLength = 0
+            Case Keys.Delete
+                If caret < text.Length Then
+                    target.Value = text.Remove(caret, 1)
+                    target.Caret = caret
+                End If
+
+                target.SelectionLength = 0
+            Case Keys.V
+                If e.Control Then
+                    Call InsertText(target, Clipboard.GetText())
+                    e.Handled = True
+                    Return
+                Else
+                    Return
+                End If
+            Case Keys.A
+                If e.Control Then
+                    target.SelectionStart = 0
+                    target.SelectionLength = If(target.Value, "").Length
+                    e.Handled = True
+                End If
+            Case Keys.Tab, Keys.Enter, Keys.Escape
+                ' the focus is released so that the host window may use these
+                ' keys for its own navigation
+                Call SetFocus(Nothing)
+                Return
+            Case Else
+                Return
+        End Select
+
+        e.Handled = True
+        caretVisible = True
+        factory.TextInput.CaretVisible = True
+
+        Call surface.Invalidate()
+    End Sub
+
+    Private Sub handleTextInput(sender As Object, e As CanvasTextEventArgs)
+        Dim target As UiBox = focused
+
+        If target Is Nothing OrElse Not target.IsTextInput Then
+            Return
+        End If
+
+        ' the control characters are editing keys, they are handled by the key
+        ' down event instead of being appended to the text
+        If Char.IsControl(e.Character) Then
+            Return
+        End If
+
+        Call InsertText(target, e.Character.ToString())
+
+        e.Handled = True
+    End Sub
+
+    ''' <summary>
+    ''' Inserts the given text at the caret of a text input control.
+    ''' </summary>
+    ''' <param name="box"></param>
+    ''' <param name="text"></param>
+    Public Sub InsertText(box As UiBox, text As String)
+        If box Is Nothing OrElse Not box.IsTextInput OrElse String.IsNullOrEmpty(text) Then
+            Return
+        End If
+
+        Dim source As String = If(box.Value, "")
+        Dim caret As Integer = std.Min(std.Max(box.Caret, 0), source.Length)
+
+        ' an existing selection is replaced by the inserted text
+        If box.SelectionLength > 0 Then
+            Dim start As Integer = std.Min(std.Max(box.SelectionStart, 0), source.Length)
+            Dim length As Integer = std.Min(box.SelectionLength, source.Length - start)
+
+            source = source.Remove(start, length)
+            caret = start
+            box.SelectionLength = 0
+        End If
+
+        text = text.Replace(vbCr, "").Replace(vbLf, "")
+
+        box.Value = source.Insert(caret, text)
+        box.Caret = caret + text.Length
+        caretVisible = True
+        factory.TextInput.CaretVisible = True
+
+        Call surface.Invalidate()
+    End Sub
+
+    ''' <summary>
+    ''' Finds the caret offset that is the nearest one to the given horizontal
+    ''' position of a text input control.
+    ''' </summary>
+    ''' <param name="box"></param>
+    ''' <param name="x">the horizontal position inside of the canvas.</param>
+    ''' <returns></returns>
+    Public Function CaretFromPoint(box As UiBox, x As Integer) As Integer
+        If box Is Nothing Then
+            Return 0
+        End If
+
+        Dim text As String = If(box.Value, "")
+
+        If text.Length = 0 Then
+            Return 0
+        End If
+
+        Dim g As IGraphics = Nothing
+
+        Try
+            If TypeOf surface Is DxCanvasSurface Then
+                g = DirectCast(surface, DxCanvasSurface).CanvasControl.Graphics
+            End If
+        Catch ex As Exception
+            g = Nothing
+        End Try
+
+        If g Is Nothing Then
+            Return text.Length
+        End If
+
+        Dim font As Font = box.Font
+        Dim start As Single = box.ContentBounds.Left - x
+        Dim best As Integer = 0
+        Dim bestDelta As Single = Single.MaxValue
+
+        For i As Integer = 0 To text.Length
+            Dim delta As Single = std.Abs(g.MeasureString(text.Substring(0, i), font).Width + start)
+
+            If delta < bestDelta Then
+                bestDelta = delta
+                best = i
+            End If
+        Next
+
+        Return best
+    End Function
 
     ''' <summary>
     ''' Runs the script expression of the ``onclick`` attribute of the given
@@ -298,7 +604,162 @@ Public Class FormRender
     Public Function SimulateClick(x As Integer, y As Integer) As Boolean
         Dim hit As UiBox = layout.HitTest(x, y)
 
+        If hit Is Nothing Then
+            Return False
+        End If
+
+        If hit.IsCheckable Then
+            Call ToggleChecked(hit)
+            Call surface.Invalidate()
+        End If
+
         Return RaiseClick(hit)
+    End Function
+
+    ''' <summary>
+    ''' Finds the control with the given ``id`` attribute.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function FindById(id As String) As UiBox
+        Return layout.FindById(id)
+    End Function
+
+    ''' <summary>
+    ''' Reads the value of the control with the given ``id``: the text of a
+    ''' text input control, or the "True"/"False" literal of the checked state
+    ''' of a checkbox and of a radio button.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function GetValue(id As String) As String
+        Dim box As UiBox = layout.FindById(id)
+
+        If box Is Nothing Then
+            Return Nothing
+        End If
+        If box.IsCheckable Then
+            Return If(box.Checked, "True", "False")
+        End If
+
+        Return If(box.Value, "")
+    End Function
+
+    ''' <summary>
+    ''' Sets the value of the control with the given ``id``.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="value">
+    ''' a "True"/"False" literal is understood as the checked state of a
+    ''' checkbox and of a radio button.
+    ''' </param>
+    Public Sub SetValue(id As String, value As String)
+        Dim box As UiBox = layout.FindById(id)
+
+        If box Is Nothing Then
+            Return
+        End If
+
+        If box.IsCheckable Then
+            Call SetChecked(id, value = "True" OrElse value = "true" OrElse value = "1")
+        ElseIf box.IsTextInput Then
+            box.Value = If(value, "")
+            box.Caret = box.Value.Length
+            box.SelectionLength = 0
+
+            Call surface.Invalidate()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Reads the checked state of the checkbox or of the radio button with the
+    ''' given ``id``.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function GetChecked(id As String) As Boolean
+        Dim box As UiBox = layout.FindById(id)
+
+        Return box IsNot Nothing AndAlso box.Checked
+    End Function
+
+    ''' <summary>
+    ''' Sets the checked state of the checkbox or of the radio button with the
+    ''' given ``id``.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="checked"></param>
+    Public Sub SetChecked(id As String, checked As Boolean)
+        Dim box As UiBox = layout.FindById(id)
+
+        If box Is Nothing OrElse Not box.IsCheckable Then
+            Return
+        End If
+
+        If box.Checked = checked Then
+            Return
+        End If
+
+        If checked AndAlso box.InputType = "radio" Then
+            Call ToggleChecked(box)
+        Else
+            box.Checked = checked
+        End If
+
+        Call surface.Invalidate()
+    End Sub
+
+    ''' <summary>
+    ''' The ``id`` of the control that holds the keyboard focus, nothing when
+    ''' no control is focused.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetFocusedId() As String
+        If focused Is Nothing Then
+            Return Nothing
+        End If
+
+        Return focused.Attribute("id")
+    End Function
+
+    ''' <summary>
+    ''' Types the given text into the control that holds the keyboard focus: it
+    ''' is used by the automated smoke test.
+    ''' </summary>
+    ''' <param name="text"></param>
+    ''' <returns>true when a text input control has been focused.</returns>
+    Public Function SimulateType(text As String) As Boolean
+        If focused Is Nothing OrElse Not focused.IsTextInput Then
+            Return False
+        End If
+
+        For Each c As Char In If(text, "")
+            If Char.IsControl(c) Then
+                Continue For
+            End If
+
+            Call InsertText(focused, c.ToString())
+        Next
+
+        Return True
+    End Function
+
+    ''' <summary>
+    ''' Moves the keyboard focus to the control with the given ``id``.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns>true when such a control exists.</returns>
+    Public Function FocusById(id As String) As Boolean
+        Dim box As UiBox = layout.FindById(id)
+
+        If box Is Nothing Then
+            Return False
+        End If
+
+        Call SetFocus(box)
+        Call surface.Invalidate()
+
+        Return True
     End Function
 
     ''' <summary>
@@ -315,6 +776,15 @@ Public Class FormRender
                 RemoveHandler surface.PointerMove, AddressOf handlePointerMove
                 RemoveHandler surface.PointerDown, AddressOf handlePointerDown
                 RemoveHandler surface.PointerUp, AddressOf handlePointerUp
+                RemoveHandler surface.KeyDown, AddressOf handleKeyDown
+                RemoveHandler surface.TextInput, AddressOf handleTextInput
+
+                If caretTimer IsNot Nothing Then
+                    RemoveHandler caretTimer.Tick, AddressOf handleCaretTick
+                    Call caretTimer.Stop()
+                    Call caretTimer.Dispose()
+                    caretTimer = Nothing
+                End If
 
                 Call surface.Dispose()
             End If

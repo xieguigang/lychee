@@ -37,6 +37,8 @@ Namespace Render
         Public Event PointerDown As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerDown
         Public Event PointerMove As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerMove
         Public Event PointerUp As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerUp
+        Public Event KeyDown As EventHandler(Of CanvasKeyEventArgs) Implements IRenderSurface.KeyDown
+        Public Event TextInput As EventHandler(Of CanvasTextEventArgs) Implements IRenderSurface.TextInput
 
         Sub New(Optional backgroundColor As Color = Nothing, Optional vsync As Boolean = True)
             canvas = New DxCanvas With {
@@ -50,6 +52,8 @@ Namespace Render
             AddHandler canvas.MouseDown, AddressOf handleMouseDown
             AddHandler canvas.MouseMove, AddressOf handleMouseMove
             AddHandler canvas.MouseUp, AddressOf handleMouseUp
+            AddHandler canvas.KeyDown, AddressOf handleKeyDown
+            AddHandler canvas.KeyPress, AddressOf handleKeyPress
         End Sub
 
         Public ReadOnly Property Size As Size Implements IRenderSurface.Size
@@ -79,6 +83,12 @@ Namespace Render
         End Sub
 
         Private Sub handleMouseDown(sender As Object, e As MouseEventArgs)
+            ' the canvas has to take the keyboard focus on a mouse click, so
+            ' that a text input control of the user interface can be edited
+            If Not canvas.Focused Then
+                Call canvas.Focus()
+            End If
+
             RaiseEvent PointerDown(Me, New PointerEventArgs(e.X, e.Y, e.Button))
         End Sub
 
@@ -90,6 +100,27 @@ Namespace Render
             RaiseEvent PointerUp(Me, New PointerEventArgs(e.X, e.Y, e.Button))
         End Sub
 
+        Private Sub handleKeyDown(sender As Object, e As KeyEventArgs)
+            Dim args As New CanvasKeyEventArgs(e.KeyCode, e.Alt, e.Control, e.Shift)
+
+            RaiseEvent KeyDown(Me, args)
+
+            If args.Handled Then
+                e.Handled = True
+                e.SuppressKeyPress = True
+            End If
+        End Sub
+
+        Private Sub handleKeyPress(sender As Object, e As KeyPressEventArgs)
+            Dim args As New CanvasTextEventArgs(e.KeyChar)
+
+            RaiseEvent TextInput(Me, args)
+
+            If args.Handled Then
+                e.Handled = True
+            End If
+        End Sub
+
         Private Sub Dispose(disposing As Boolean)
             If Not disposedValue Then
                 If disposing Then
@@ -97,6 +128,8 @@ Namespace Render
                     RemoveHandler canvas.MouseDown, AddressOf handleMouseDown
                     RemoveHandler canvas.MouseMove, AddressOf handleMouseMove
                     RemoveHandler canvas.MouseUp, AddressOf handleMouseUp
+                    RemoveHandler canvas.KeyDown, AddressOf handleKeyDown
+                    RemoveHandler canvas.KeyPress, AddressOf handleKeyPress
 
                     Call canvas.Dispose()
                 End If

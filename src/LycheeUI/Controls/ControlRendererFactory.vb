@@ -12,6 +12,14 @@ Namespace Controls
         Private ReadOnly renderers As New Dictionary(Of String, IControlRenderer)()
         Private ReadOfallback As IControlRenderer = New DivRenderer()
 
+        ' the input elements: a single tag name covers a text box, a password
+        ' box, a radio button and a check box, so they are dispatched by the
+        ' type attribute of the element instead of by its tag name
+        Friend ReadOnly textInput As New TextInputRenderer()
+        Private ReadOnly radio As New RadioRenderer()
+        Private ReadOnly checkbox As New CheckboxRenderer()
+        Private ReadOnly image As New ImageRenderer()
+
         ''' <summary>
         ''' The renderer that paints the elements without a registered renderer.
         ''' </summary>
@@ -36,6 +44,38 @@ Namespace Controls
             renderers("button") = New ButtonRenderer()
             renderers("input") = New ButtonRenderer()
         End Sub
+
+        ''' <summary>
+        ''' The renderer that paints the text input controls of the ui.
+        ''' </summary>
+        ''' <returns></returns>
+        ''' <summary>
+        ''' Gets the renderer of the given control.
+        ''' </summary>
+        ''' <param name="box"></param>
+        ''' <returns></returns>
+        ''' <remarks>
+        ''' The state of the control wins over its tag name here: the
+        ''' ``input`` tag maps to four different renderers, and they are told
+        ''' apart by the ``type`` attribute of the element.
+        ''' </remarks>
+        Public Function GetRenderer(box As UiBox) As IControlRenderer
+            If box Is Nothing Then
+                Return Fallback
+            End If
+
+            If box.IsImage Then
+                Return image
+            End If
+            If box.IsCheckable Then
+                Return If(box.InputType = "radio", DirectCast(radio, IControlRenderer), checkbox)
+            End If
+            If box.IsTextInput Then
+                Return textInput
+            End If
+
+            Return GetRenderer(box.Tag)
+        End Function
 
         ''' <summary>
         ''' Gets the renderer of the given tag name.

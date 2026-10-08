@@ -34,6 +34,8 @@ Namespace Render
         Public Event PointerDown As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerDown
         Public Event PointerMove As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerMove
         Public Event PointerUp As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerUp
+        Public Event KeyDown As EventHandler(Of CanvasKeyEventArgs) Implements IRenderSurface.KeyDown
+        Public Event TextInput As EventHandler(Of CanvasTextEventArgs) Implements IRenderSurface.TextInput
 
         Sub New(Optional vsync As Boolean = True)
             listener = New WindowListener(Me)
@@ -68,6 +70,8 @@ Namespace Render
             AddHandler container.MouseDown, AddressOf handleMouseDown
             AddHandler container.MouseMove, AddressOf handleMouseMove
             AddHandler container.MouseUp, AddressOf handleMouseUp
+            AddHandler container.KeyDown, AddressOf handleKeyDown
+            AddHandler container.KeyPress, AddressOf handleKeyPress
 
             Call listener.AssignHandle(container.Handle)
         End Sub
@@ -135,6 +139,27 @@ Namespace Render
             RaiseEvent PointerUp(Me, New PointerEventArgs(e.X, e.Y, e.Button))
         End Sub
 
+        Private Sub handleKeyDown(sender As Object, e As KeyEventArgs)
+            Dim args As New CanvasKeyEventArgs(e.KeyCode, e.Alt, e.Control, e.Shift)
+
+            RaiseEvent KeyDown(Me, args)
+
+            If args.Handled Then
+                e.Handled = True
+                e.SuppressKeyPress = True
+            End If
+        End Sub
+
+        Private Sub handleKeyPress(sender As Object, e As KeyPressEventArgs)
+            Dim args As New CanvasTextEventArgs(e.KeyChar)
+
+            RaiseEvent TextInput(Me, args)
+
+            If args.Handled Then
+                e.Handled = True
+            End If
+        End Sub
+
         ''' <summary>
         ''' The native window subclass of the host control.
         ''' </summary>
@@ -173,6 +198,8 @@ Namespace Render
                         RemoveHandler host.MouseDown, AddressOf handleMouseDown
                         RemoveHandler host.MouseMove, AddressOf handleMouseMove
                         RemoveHandler host.MouseUp, AddressOf handleMouseUp
+                        RemoveHandler host.KeyDown, AddressOf handleKeyDown
+                        RemoveHandler host.KeyPress, AddressOf handleKeyPress
                     End If
 
                     If listener.Handle <> IntPtr.Zero Then

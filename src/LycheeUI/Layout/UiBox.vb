@@ -51,11 +51,161 @@ Namespace Layout
         ''' <returns></returns>
         Public Property Pressed As Boolean
 
+        ''' <summary>
+        ''' The text of a text input control; it is the "True"/"False" literal of
+        ''' the checked state for a checkbox and a radio button.
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property Value As String
+
+        ''' <summary>
+        ''' Is this checkbox or radio button selected?
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property Checked As Boolean
+
+        ''' <summary>
+        ''' Does this control hold the keyboard focus of the canvas?
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property Focused As Boolean
+
+        ''' <summary>
+        ''' The offset of the caret inside of <see cref="Value"/>.
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property Caret As Integer
+
+        ''' <summary>
+        ''' The offset where the selected range of the text starts.
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property SelectionStart As Integer
+
+        ''' <summary>
+        ''' The number of the characters that are selected, zero means that there
+        ''' is no selection at all.
+        ''' </summary>
+        ''' <returns></returns>
+        Public Property SelectionLength As Integer
+
         Sub New(source As CssBox, tag As String, order As Integer)
             Me.Source = source
             Me.Tag = tag
             Me.Order = order
         End Sub
+
+        ''' <summary>
+        ''' The ``type`` attribute of an input element: ``text``, ``password``,
+        ''' ``radio`` or ``checkbox``.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property InputType As String
+            Get
+                Dim type As String = Source.GetAttribute("type")
+
+                Return If(String.IsNullOrEmpty(type), "text", type.ToLower().Trim())
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The ``name`` attribute of an input element: the radio buttons that
+        ''' share the same group name are mutually exclusive.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property GroupName As String
+            Get
+                Return Source.GetAttribute("name")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The ``src`` attribute of an image element.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Src As String
+            Get
+                Return Source.GetAttribute("src")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The hint text that is drawn inside of an empty text input control.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Placeholder As String
+            Get
+                Return Source.GetAttribute("placeholder")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The label text of a checkbox or a radio button: it is taken from the
+        ''' ``label`` attribute, or from the text of the element itself.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property LabelText As String
+            Get
+                Dim text As String = Source.GetAttribute("label")
+
+                Return If(String.IsNullOrEmpty(text), Text, text)
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Is this element a text input control?
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsTextInput As Boolean
+            Get
+                If Tag <> "input" Then
+                    Return False
+                End If
+
+                Return InputType = "text" OrElse InputType = "password"
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Is this element a checkbox or a radio button?
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsCheckable As Boolean
+            Get
+                If Tag <> "input" Then
+                    Return False
+                End If
+
+                Return InputType = "checkbox" OrElse InputType = "radio"
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Is this element an image?
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsImage As Boolean
+            Get
+                Return Tag = "img"
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Is this element disabled? a disabled control is painted in a gray
+        ''' color and it does not react on the mouse at all.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsDisabled As Boolean
+            Get
+                Dim flag As String = Source.GetAttribute("disabled")
+
+                If String.IsNullOrEmpty(flag) Then
+                    Return False
+                End If
+
+                Return Not (flag = "false" OrElse flag = "0")
+            End Get
+        End Property
 
         ''' <summary>
         ''' The outer rectangle of the box, in the pixel coordinate space of the
@@ -215,6 +365,34 @@ Namespace Layout
         End Property
 
         ''' <summary>
+        ''' The script expression of the ``onchange`` attribute of the element:
+        ''' it is raised by a checkbox and a radio button after its checked
+        ''' state has been changed.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property OnChange As String
+            Get
+                Return Source.GetAttribute("onchange")
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' The script expression of the ``onchange`` attribute, the
+        ''' ``onclick`` attribute is used as the fallback of it so that a
+        ''' checkbox may be declared with the very same attribute as a button.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property ChangeScript As String
+            Get
+                If Not String.IsNullOrEmpty(OnChange) Then
+                    Return OnChange
+                End If
+
+                Return OnClick
+            End Get
+        End Property
+
+        ''' <summary>
         ''' The value of a custom attribute of the html element.
         ''' </summary>
         ''' <param name="name"></param>
@@ -231,7 +409,13 @@ Namespace Layout
         ''' <returns></returns>
         Public ReadOnly Property IsInteractive As Boolean
             Get
-                Return Not String.IsNullOrEmpty(OnClick) OrElse Tag = "button"
+                If IsDisabled Then
+                    Return False
+                End If
+
+                Return Tag = "button" OrElse Tag = "input" OrElse
+                    Not String.IsNullOrEmpty(OnClick) OrElse
+                    Not String.IsNullOrEmpty(OnChange)
             End Get
         End Property
 

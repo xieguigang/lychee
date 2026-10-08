@@ -43,6 +43,18 @@ Namespace Render
         Event PointerUp As EventHandler(Of PointerEventArgs)
 
         ''' <summary>
+        ''' Raised when a key is pressed down while the canvas holds the keyboard
+        ''' focus: the navigation keys and the editing keys are delivered here.
+        ''' </summary>
+        Event KeyDown As EventHandler(Of CanvasKeyEventArgs)
+
+        ''' <summary>
+        ''' Raised for every printable character that has been typed into the
+        ''' canvas while it holds the keyboard focus.
+        ''' </summary>
+        Event TextInput As EventHandler(Of CanvasTextEventArgs)
+
+        ''' <summary>
         ''' Mounts this drawing surface on the given host control.
         ''' </summary>
         ''' <param name="container">

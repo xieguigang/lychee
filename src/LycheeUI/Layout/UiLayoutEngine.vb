@@ -1,8 +1,10 @@
 Imports System.Drawing
 Imports System.Xml.Linq
 Imports Microsoft.VisualBasic.Imaging
+Imports LycheeUI.Controls
 Imports Microsoft.VisualBasic.MIME.Html.Render
 Imports Microsoft.VisualBasic.MIME.Html.Render.CSS
+Imports Image = Microsoft.VisualBasic.Imaging.Image
 
 Namespace Layout
 
@@ -89,6 +91,7 @@ Namespace Layout
             End If
 
             Call ApplyViewport(viewport)
+            Call ApplyImageSizes()
             Call root.SetBounds(New RectangleF(0, 0, viewport.Width, viewport.Height))
             Call root.MeasureBounds(g)
 
@@ -136,6 +139,60 @@ Namespace Layout
             ' forced at here to make a custom root tag of a ui declaration work
             page.Display = CssConstants.Block
         End Sub
+
+        ''' <summary>
+        ''' An image element does not carry any text, so a box that does not
+        ''' declare a width or a height collapses into an empty rectangle. the
+        ''' natural size of the image is written back to such a box at here,
+        ''' before the layout of the whole document is measured.
+        ''' </summary>
+        Private Sub ApplyImageSizes()
+            If root.Boxes Is Nothing Then
+                Return
+            End If
+
+            Call applyImageSizes(root)
+        End Sub
+
+        Private Sub applyImageSizes(box As CssBox)
+            If box.Boxes Is Nothing Then
+                Return
+            End If
+
+            For Each child As CssBox In box.Boxes
+                If child Is Nothing Then
+                    Continue For
+                End If
+
+                applyImageSizes(child)
+
+                If child.HtmlTag Is Nothing Then
+                    Continue For
+                End If
+                If Not child.HtmlTag.TagName.Equals("img", StringComparison.OrdinalIgnoreCase) Then
+                    Continue For
+                End If
+
+                Dim src As String = child.GetAttribute("src")
+                Dim image As Image = UiImages.GetOrLoad(src)
+
+                If image Is Nothing Then
+                    Continue For
+                End If
+
+                If isAutoSize(child.Width) Then
+                    child.Width = image.Width & "px"
+                End If
+                If isAutoSize(child.Height) Then
+                    child.Height = image.Height & "px"
+                End If
+            Next
+        End Sub
+
+        Private Shared Function isAutoSize(css As String) As Boolean
+            Return String.IsNullOrEmpty(css) OrElse
+                css.Trim().Equals(CssConstants.Auto, StringComparison.OrdinalIgnoreCase)
+        End Function
 
         Private Sub walk(box As CssBox, depth As Integer)
             If box Is Nothing OrElse box.Display = CssConstants.None Then
@@ -189,9 +246,54 @@ Namespace Layout
 
             Dim view As New UiBox(box, tag.ToLower(), views.Count)
 
+            Call initState(view)
+
             views(box) = view
 
             Return view
+        End Function
+
+        ''' <summary>
+        ''' Reads the initial state of an input control out of its declaration.
+        ''' </summary>
+        ''' <param name="view"></param>
+        ''' <remarks>
+        ''' The state is only initialized once, so a value that has been typed
+        ''' into a text input control by the user is not overwritten by a
+        ''' relayout of the user interface.
+        ''' </remarks>
+        Private Shared Sub initState(view As UiBox)
+            If view.IsTextInput Then
+                view.Value = If(view.Source.GetAttribute("value"), "")
+                view.Caret = view.Value.Length
+            ElseIf view.IsCheckable Then
+                Dim flag As String = view.Source.GetAttribute("checked")
+
+                view.Checked = Not String.IsNullOrEmpty(flag) AndAlso
+                    Not (flag = "false" OrElse flag = "0")
+            End If
+        End Sub
+
+        ''' <summary>
+        ''' Finds the control with the given ``id`` attribute.
+        ''' </summary>
+        ''' <param name="id"></param>
+        ''' <returns>
+        ''' nothing is returned when the declaration does not contain an element
+        ''' with such an id, or when the layout has not been calculated yet.
+        ''' </returns>
+        Public Function FindById(id As String) As UiBox
+            If String.IsNullOrEmpty(id) Then
+                Return Nothing
+            End If
+
+            For Each box As UiBox In paintOrder
+                If box.Attribute("id") = id Then
+                    Return box
+                End If
+            Next
+
+            Return Nothing
         End Function
 
         ''' <summary>
