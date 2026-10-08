@@ -3,9 +3,9 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>LycheeUI.Form1</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
