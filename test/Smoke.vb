@@ -91,7 +91,7 @@ Module Smoke
             Call Threading.Thread.Sleep(20)
         Next
 
-        Dim boxes As IReadOnlyList(Of UiBox) = host.Engine.UiLayout.TopLevel
+        Dim boxes As IReadOnlyList(Of UiBox) = host.Engine.UiLayout.Boxes
         Dim buttons As New List(Of UiBox)
 
         For Each box As UiBox In boxes

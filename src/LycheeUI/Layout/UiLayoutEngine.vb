@@ -168,6 +168,17 @@ Namespace Layout
         End Property
 
         ''' <summary>
+        ''' Every control of the ui, sorted by their paint order (the z-index
+        ''' first and the document order second).
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Boxes As IReadOnlyList(Of UiBox)
+            Get
+                Return paintOrder
+            End Get
+        End Property
+
+        ''' <summary>
         ''' Finds the view object of the css box that contains the given point.
         ''' </summary>
         ''' <param name="x"></param>
