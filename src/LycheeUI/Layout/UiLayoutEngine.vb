@@ -88,6 +88,7 @@ Namespace Layout
                 Return paintOrder
             End If
 
+            Call ApplyViewport(viewport)
             Call root.SetBounds(New RectangleF(0, 0, viewport.Width, viewport.Height))
             Call root.MeasureBounds(g)
 
@@ -107,6 +108,29 @@ Namespace Layout
 
             Return paintOrder
         End Function
+
+        ''' <summary>
+        ''' The root element of a user interface declaration always fills the
+        ''' whole canvas: the default stylesheet of the html renderer gives a
+        ''' document margin to the root element and it grows the element by its
+        ''' own content only, while a user interface needs a full size page box
+        ''' so that the percentage offsets of its controls can be resolved.
+        ''' </summary>
+        ''' <param name="viewport"></param>
+        Private Sub ApplyViewport(viewport As Size)
+            If root.Boxes Is Nothing OrElse root.Boxes.Count = 0 Then
+                Return
+            End If
+
+            Dim page As CssBox = root.Boxes(0)
+
+            page.MarginTop = "0"
+            page.MarginBottom = "0"
+            page.MarginLeft = "0"
+            page.MarginRight = "0"
+            page.Width = viewport.Width & "px"
+            page.Height = viewport.Height & "px"
+        End Sub
 
         Private Sub walk(box As CssBox, depth As Integer)
             If box Is Nothing OrElse box.Display = CssConstants.None Then
