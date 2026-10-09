@@ -32,8 +32,7 @@ Imports std = System.Math
 ''' <see cref="Panel"/> or a <see cref="PictureBox"/>, the layout of the user
 ''' interface is recalculated whenever the size of the host has been changed.
 ''' </remarks>
-Public Class FormRender
-    Implements IDisposable
+Public Class FormRender : Implements IDisposable
 
     ''' <summary>
     ''' Raised after the script expression of a clicked control has been
@@ -179,7 +178,7 @@ Public Class FormRender
     ''' <see cref="DxWindowSurface"/> paints on the window handle of the host
     ''' control itself.
     ''' </param>
-    Sub New(ui As XElement, container As Control, Optional backend As IRenderSurface = Nothing)
+    Sub New(ui As XElement, container As Control, Optional backend As IRenderSurface = Nothing, Optional theme As Theme = Nothing)
         If ui Is Nothing Then
             Throw New ArgumentNullException(NameOf(ui))
         End If
