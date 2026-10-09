@@ -848,6 +848,18 @@ Public Class FormRender
     End Function
 
     ''' <summary>
+    ''' Returns the user-interface element whose ``id`` attribute equals the given
+    ''' value, or nothing when no such element exists. Mirrors the DOM
+    ''' ``document.getElementById`` lookup and exposes the box so callers can read
+    ''' its <see cref="UiBox.Value"/>, attributes, etc.
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <returns></returns>
+    Public Function GetElementById(id As String) As UiBox
+        Return layout.FindById(id)
+    End Function
+
+    ''' <summary>
     ''' Reads the value of the control with the given ``id``: the text of a
     ''' text input control, or the "True"/"False" literal of the checked state
     ''' of a checkbox and of a radio button.

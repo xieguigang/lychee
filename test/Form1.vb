@@ -18,7 +18,7 @@ Public Class Form1
                 <button style="left:10px;top:80px;width:160px;height:38px;
                                background-color:seagreen;color:white;
                                border-radius:6px;text-align:center"
-                        onclick="nested('from div')">in div</button>
+                    onclick="nested('from div')">in div</button>
             </div>
 
             <!-- z-index: the second box overlaps the first one and is painted on top of it -->
@@ -51,7 +51,7 @@ Public Class Form1
                            margin:4px;padding:8px;border:3px solid darkred;
                            border-radius:10px;
                            background-color:gold;color:darkred;text-align:center"
-                    onclick="clickButton()">box model</button>
+                onclick="clickButton()">box model</button>
 
             <!-- the original two buttons of this test case -->
             <button id="hello" style="text-align:center; left:50%;top: 50%; width: 200px;height: 60px; color: blue; background-color: red" onclick="clickButton()">hello</button>
@@ -60,13 +60,13 @@ Public Class Form1
             <!-- the event binding: no argument, a number, two arguments and a literal that contains a comma -->
             <button style="left:210px;top:378px;width:110px;height:30px;
                            background-color:steelblue;color:white;text-align:center"
-                    onclick="onCount(42)">number</button>
+                onclick="onCount(42)">number</button>
             <button style="left:330px;top:378px;width:110px;height:30px;
                            background-color:mediumpurple;color:white;text-align:center"
-                    onclick="onMulti('items', 7)">two args</button>
+                onclick="onMulti('items', 7)">two args</button>
             <button style="left:450px;top:378px;width:130px;height:30px;
                            background-color:dimgray;color:white;text-align:center"
-                    onclick="onSpecial('a, b (c)')">literal</button>
+                onclick="onSpecial('a, b (c)')">literal</button>
 
             <!-- the input controls: a text box, a password box, two radio buttons
                  that share the same group name, and two check boxes -->
@@ -74,10 +74,13 @@ Public Class Form1
                           color:darkslategray;font-size:13px">input controls</label>
             <input type="text" id="name" style="display:block;left:610px;top:170px;width:180px;height:26px;
                                background-color:white;border:1px solid gray;color:black"
-                   value="lychee" placeholder="user name"/>
+                value="lychee" placeholder="user name"/>
             <input type="password" id="pwd" style="display:block;left:610px;top:204px;width:180px;height:26px;
                                    background-color:white;border:1px solid gray;color:black"
-                   value="1234"/>
+                value="1234"/>
+
+            <button style="left:0px, button:0px; width:130px;height:30px;background-color:dimgray;color:white;text-align:center;" onclick="login()">Login</button>
+
             <input type="radio" id="optA" name="choice" style="display:block;left:610px;top:238px;width:180px;height:24px;
                                   color:black" checked="checked" onchange="onCheck('A', true)" label="option A"/>
             <input type="radio" id="optB" name="choice" style="display:block;left:610px;top:266px;width:180px;height:24px;
@@ -89,23 +92,23 @@ Public Class Form1
 
             <!-- an image element: the natural size is used when no width or height is declared -->
             <img id="logo" src="./lychee-form1-img.png" alt="lychee"
-                 style="display:block;left:360px;top:340px;width:110px;height:100px;
+                style="display:block;left:360px;top:340px;width:110px;height:100px;
                         background-color:#e0e0e0;border:1px solid silver"/>
 
             <!-- a hyperlink: a web address is opened by the browser, a script
                  expression is resolved against the host object -->
             <a id="help" href="openHelp('docs')"
-               style="display:block;left:610px;top:352px;width:180px;height:22px"
-               tooltip="&lt;b&gt;Documentation&lt;/b&gt;&lt;br/&gt;&lt;font color='gray'&gt;opens the user guide&lt;/font&gt;">documentation</a>
+                style="display:block;left:610px;top:352px;width:180px;height:22px"
+                tooltip="&lt;b&gt;Documentation&lt;/b&gt;&lt;br/&gt;&lt;font color='gray'&gt;opens the user guide&lt;/font&gt;">documentation</a>
             <a id="site" href="https://github.com/" style="display:block;left:610px;top:378px;width:180px;height:22px"
-               tooltip="external &lt;i&gt;web site&lt;/i&gt;">lychee on the web</a>
+                tooltip="external &lt;i&gt;web site&lt;/i&gt;">lychee on the web</a>
 
             <!-- the css drop shadow -->
             <div id="card" style="left:360px;top:150px;width:200px;height:110px;
                                  background-color:white;border:1px solid silver;
                                  border-radius:8px;padding:8px;
                                  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.45)"
-                 tooltip="&lt;b&gt;shadow&lt;/b&gt;&lt;br/&gt;css box-shadow demo">
+                tooltip="&lt;b&gt;shadow&lt;/b&gt;&lt;br/&gt;css box-shadow demo">
                 <label style="display:block;color:dimgray;font-size:13px">shadow demo</label>
             </div>
         </form>
@@ -145,6 +148,13 @@ Public Class Form1
         Call panel.BringToFront()
 
         panelUi = New FormRender(PANEL_UI, panel)
+    End Sub
+
+    Private Sub login()
+        Dim name = form.GetElementById("name").Value
+        Dim pwd = form.GetElementById("pwd").Value
+
+        MessageBox.Show($"name={name}, password={pwd}", "login()")
     End Sub
 
     Private Sub clickButton()
