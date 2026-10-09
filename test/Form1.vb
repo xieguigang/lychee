@@ -111,6 +111,8 @@ Public Class Form1
                 tooltip="&lt;b&gt;shadow&lt;/b&gt;&lt;br/&gt;css box-shadow demo">
                 <label style="display:block;color:dimgray;font-size:13px">shadow demo</label>
             </div>
+
+            <button id="no-css">apply default theme</button>
         </form>
 
     ''' <summary>
