@@ -1,7 +1,6 @@
 Imports System
 Imports System.Collections.Generic
 Imports System.Globalization
-Imports System.Linq
 Imports System.Reflection
 Imports System.Windows.Forms
 Imports Microsoft.VisualBasic.ApplicationServices.VM.JavaScript
@@ -99,7 +98,12 @@ Namespace Events
                 Call _engine.Run(program)
                 Return True
             Catch ex As Exception
-                LastError = If(ex.InnerException?.Message, ex.Message)
+                If ex.InnerException IsNot Nothing Then
+                    LastError = ex.InnerException.Message
+                Else
+                    LastError = ex.Message
+                End If
+
                 Return False
             End Try
         End Function
@@ -129,7 +133,7 @@ Namespace Events
                 If method.IsGenericMethodDefinition Then
                     Continue For
                 End If
-                If method.GetParameters().Any(Function(p) p.ParameterType.IsByRef) Then
+                If HasByRefParameter(method) Then
                     Continue For
                 End If
 
@@ -141,18 +145,59 @@ Namespace Events
 
                 _registered.Add(name)
 
-                Dim capturedTarget As Object = target
-                Dim overloads As MethodInfo() = methods _
-                    .Where(Function(m) m.Name = name AndAlso Not m.IsSpecialName) _
-                    .ToArray()
-                Dim closure As Func(Of Object(), Object) =
-                    Function(args As Object()) As Object
-                        Return InvokeHost(capturedTarget, overloads, args)
-                    End Function
+                Dim overloads As MethodInfo() = CollectOverloads(methods, name)
+                Dim hostFn As New HostFunction(target, overloads)
 
-                Call _engine.DefineGlobal(name, closure)
+                Call _engine.DefineGlobal(name, New Func(Of Object(), Object)(AddressOf hostFn.Invoke))
             Next
         End Sub
+
+        ''' <summary>
+        ''' True when any parameter of the method is passed by reference.
+        ''' </summary>
+        Private Shared Function HasByRefParameter(method As MethodInfo) As Boolean
+            For Each p As ParameterInfo In method.GetParameters()
+                If p.ParameterType.IsByRef Then
+                    Return True
+                End If
+            Next
+
+            Return False
+        End Function
+
+        ''' <summary>
+        ''' Collects every overload of a given method name from a method list.
+        ''' </summary>
+        Private Shared Function CollectOverloads(methods As MethodInfo(), name As String) As MethodInfo()
+            Dim list As New List(Of MethodInfo)()
+
+            For Each m As MethodInfo In methods
+                If m.Name = name AndAlso Not m.IsSpecialName Then
+                    list.Add(m)
+                End If
+            Next
+
+            Return list.ToArray()
+        End Function
+
+        ''' <summary>
+        ''' Adapter that turns a set of host method overloads into a
+        ''' <see cref="Func(Of Object(), Object)"/> callable from the interpreter.
+        ''' </summary>
+        Private NotInheritable Class HostFunction
+
+            Private ReadOnly _target As Object
+            Private ReadOnly _methods As MethodInfo()
+
+            Public Sub New(target As Object, methods As MethodInfo())
+                _target = target
+                _methods = methods
+            End Sub
+
+            Public Function Invoke(args As Object()) As Object
+                Return MethodBinder.InvokeHost(_target, _methods, args)
+            End Function
+        End Class
 
         ''' <summary>
         ''' Dispatches a script call to the best matching overload of a host
@@ -164,7 +209,7 @@ Namespace Events
 
             If method Is Nothing Then
                 Throw New InvalidOperationException(
-                    $"no overload of '{overloads(0).Name}' accepts {args.Length} argument(s).")
+                    "no overload of '" & overloads(0).Name & "' accepts " & args.Length & " argument(s).")
             End If
 
             Dim parameters As ParameterInfo() = method.GetParameters()
@@ -185,19 +230,37 @@ Namespace Events
         ''' argument count, preferring an exact match.
         ''' </summary>
         Private Shared Function PickOverload(overloads As MethodInfo(), args As Object()) As MethodInfo
-            Dim exact As MethodInfo = overloads.FirstOrDefault(Function(m) m.GetParameters().Length = args.Length)
+            Dim exact As MethodInfo = Nothing
+
+            For Each m As MethodInfo In overloads
+                If m.GetParameters().Length = args.Length Then
+                    exact = m
+                    Exit For
+                End If
+            Next
 
             If exact IsNot Nothing Then
                 Return exact
             End If
 
-            Dim fit As MethodInfo = overloads _
-                .Where(Function(m) m.GetParameters().Length <= args.Length) _
-                .OrderBy(Function(m) System.Math.Abs(m.GetParameters().Length - args.Length)) _
-                .FirstOrDefault()
+            Dim best As MethodInfo = Nothing
+            Dim bestDiff As Integer = Integer.MaxValue
 
-            If fit IsNot Nothing Then
-                Return fit
+            For Each m As MethodInfo In overloads
+                Dim n As Integer = m.GetParameters().Length
+
+                If n <= args.Length Then
+                    Dim diff As Integer = System.Math.Abs(n - args.Length)
+
+                    If diff < bestDiff Then
+                        bestDiff = diff
+                        best = m
+                    End If
+                End If
+            Next
+
+            If best IsNot Nothing Then
+                Return best
             End If
 
             Return overloads(0)
