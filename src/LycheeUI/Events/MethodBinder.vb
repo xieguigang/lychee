@@ -144,15 +144,15 @@ Namespace Events
 
                 _registered.Add(name)
 
-                Dim [overloads] As New List(Of MethodInfo)()
+                Dim overloadSet As New List(Of MethodInfo)()
 
                 For Each m As MethodInfo In methods
                     If m.Name = name AndAlso Not m.IsSpecialName Then
-                        [overloads].Add(m)
+                        overloadSet.Add(m)
                     End If
                 Next
 
-                Dim hostFn As New HostFunction(target, [overloads])
+                Dim hostFn As New HostFunction(target, overloadSet)
 
                 Call _engine.DefineGlobal(name, hostFn.InvokeDelegate)
             Next
@@ -197,12 +197,12 @@ Namespace Events
         ''' method, converting the javascript arguments to the .NET signature and
         ''' the return value back to a javascript value.
         ''' </summary>
-        Private Shared Function InvokeHost(target As Object, [overloads] As List(Of MethodInfo), args As Object()) As Object
-            Dim method As MethodInfo = PickOverload([overloads], args)
+        Private Shared Function InvokeHost(target As Object, overloadSet As List(Of MethodInfo), args As Object()) As Object
+            Dim method As MethodInfo = PickOverload(overloadSet, args)
 
             If method Is Nothing Then
                 Throw New InvalidOperationException(
-                    "no overload of '" & [overloads](0).Name & "' accepts " & args.Length & " argument(s).")
+                    "no overload of '" & overloadSet(0).Name & "' accepts " & args.Length & " argument(s).")
             End If
 
             Dim parameters As ParameterInfo() = method.GetParameters()
@@ -222,10 +222,10 @@ Namespace Events
         ''' Selects the overload whose parameter count best matches the script
         ''' argument count, preferring an exact match.
         ''' </summary>
-        Private Shared Function PickOverload([overloads] As List(Of MethodInfo), args As Object()) As MethodInfo
+        Private Shared Function PickOverload(overloadSet As List(Of MethodInfo), args As Object()) As MethodInfo
             Dim exact As MethodInfo = Nothing
 
-            For Each m As MethodInfo In [overloads]
+            For Each m As MethodInfo In overloadSet
                 If m.GetParameters().Length = args.Length Then
                     exact = m
                     Exit For
@@ -239,7 +239,7 @@ Namespace Events
             Dim best As MethodInfo = Nothing
             Dim bestDiff As Integer = Integer.MaxValue
 
-            For Each m As MethodInfo In [overloads]
+            For Each m As MethodInfo In overloadSet
                 Dim n As Integer = m.GetParameters().Length
 
                 If n <= args.Length Then
@@ -256,7 +256,7 @@ Namespace Events
                 Return best
             End If
 
-            Return [overloads](0)
+            Return overloadSet(0)
         End Function
 
         ''' <summary>
