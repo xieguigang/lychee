@@ -119,8 +119,7 @@ Namespace Events
                 Return
             End If
 
-            Dim type As Type = target.GetType()
-            Dim methods As MethodInfo() = type.GetMethods(flags)
+            Dim methods As New List(Of MethodInfo)(target.GetType().GetMethods(flags))
 
             For Each method As MethodInfo In methods
                 ' skip Object base methods and compiler/property/event accessors
@@ -145,10 +144,17 @@ Namespace Events
 
                 _registered.Add(name)
 
-                Dim overloads As MethodInfo() = CollectOverloads(methods, name)
-                Dim hostFn As New HostFunction(target, overloads)
+                Dim [overloads] As New List(Of MethodInfo)()
 
-                Call _engine.DefineGlobal(name, New Func(Of Object(), Object)(AddressOf hostFn.Invoke))
+                For Each m As MethodInfo In methods
+                    If m.Name = name AndAlso Not m.IsSpecialName Then
+                        [overloads].Add(m)
+                    End If
+                Next
+
+                Dim hostFn As New HostFunction(target, [overloads])
+
+                Call _engine.DefineGlobal(name, hostFn.InvokeDelegate)
             Next
         End Sub
 
@@ -166,32 +172,19 @@ Namespace Events
         End Function
 
         ''' <summary>
-        ''' Collects every overload of a given method name from a method list.
-        ''' </summary>
-        Private Shared Function CollectOverloads(methods As MethodInfo(), name As String) As MethodInfo()
-            Dim list As New List(Of MethodInfo)()
-
-            For Each m As MethodInfo In methods
-                If m.Name = name AndAlso Not m.IsSpecialName Then
-                    list.Add(m)
-                End If
-            Next
-
-            Return list.ToArray()
-        End Function
-
-        ''' <summary>
         ''' Adapter that turns a set of host method overloads into a
-        ''' <see cref="Func(Of Object(), Object)"/> callable from the interpreter.
+        ''' <c>Func(Of Object(), Object)</c> callable from the interpreter.
         ''' </summary>
         Private NotInheritable Class HostFunction
 
             Private ReadOnly _target As Object
-            Private ReadOnly _methods As MethodInfo()
+            Private ReadOnly _methods As List(Of MethodInfo)
+            Public ReadOnly InvokeDelegate As Func(Of Object(), Object)
 
-            Public Sub New(target As Object, methods As MethodInfo())
+            Public Sub New(target As Object, methods As List(Of MethodInfo))
                 _target = target
                 _methods = methods
+                InvokeDelegate = AddressOf Invoke
             End Sub
 
             Public Function Invoke(args As Object()) As Object
@@ -204,12 +197,12 @@ Namespace Events
         ''' method, converting the javascript arguments to the .NET signature and
         ''' the return value back to a javascript value.
         ''' </summary>
-        Private Shared Function InvokeHost(target As Object, overloads As MethodInfo(), args As Object()) As Object
-            Dim method As MethodInfo = PickOverload(overloads, args)
+        Private Shared Function InvokeHost(target As Object, [overloads] As List(Of MethodInfo), args As Object()) As Object
+            Dim method As MethodInfo = PickOverload([overloads], args)
 
             If method Is Nothing Then
                 Throw New InvalidOperationException(
-                    "no overload of '" & overloads(0).Name & "' accepts " & args.Length & " argument(s).")
+                    "no overload of '" & [overloads](0).Name & "' accepts " & args.Length & " argument(s).")
             End If
 
             Dim parameters As ParameterInfo() = method.GetParameters()
@@ -229,10 +222,10 @@ Namespace Events
         ''' Selects the overload whose parameter count best matches the script
         ''' argument count, preferring an exact match.
         ''' </summary>
-        Private Shared Function PickOverload(overloads As MethodInfo(), args As Object()) As MethodInfo
+        Private Shared Function PickOverload([overloads] As List(Of MethodInfo), args As Object()) As MethodInfo
             Dim exact As MethodInfo = Nothing
 
-            For Each m As MethodInfo In overloads
+            For Each m As MethodInfo In [overloads]
                 If m.GetParameters().Length = args.Length Then
                     exact = m
                     Exit For
@@ -246,7 +239,7 @@ Namespace Events
             Dim best As MethodInfo = Nothing
             Dim bestDiff As Integer = Integer.MaxValue
 
-            For Each m As MethodInfo In overloads
+            For Each m As MethodInfo In [overloads]
                 Dim n As Integer = m.GetParameters().Length
 
                 If n <= args.Length Then
@@ -263,7 +256,7 @@ Namespace Events
                 Return best
             End If
 
-            Return overloads(0)
+            Return [overloads](0)
         End Function
 
         ''' <summary>
