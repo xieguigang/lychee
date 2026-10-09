@@ -1,25 +1,37 @@
+Imports System
+Imports System.Collections.Generic
 Imports System.Globalization
+Imports System.Linq
 Imports System.Reflection
 Imports System.Windows.Forms
+Imports Microsoft.VisualBasic.ApplicationServices.VM.JavaScript
+Imports Microsoft.VisualBasic.ApplicationServices.VM.JavaScript.Runtime
 
 Namespace Events
 
     ''' <summary>
-    ''' Binds the script expression of an event attribute to a method of the
-    ''' host control: the method is looked up on the host control itself and
+    ''' Binds the script expression of an event attribute to the methods of the
+    ''' host control: the methods are looked up on the host control itself and
     ''' then on every parent of it, so the click handler of a button may live on
     ''' the form even when the ui is rendered inside of a panel.
+    '''
+    ''' The javascript code of the event attribute is parsed and executed by the
+    ''' LiteJs interpreter; the host methods are exposed to that interpreter as
+    ''' global functions (one per method name, bound through reflection), so the
+    ''' script may call them like any other javascript function and pass arbitrary
+    ''' javascript values as arguments.
     ''' </summary>
     Public NotInheritable Class MethodBinder
 
         Private Const flags As BindingFlags = BindingFlags.Instance Or BindingFlags.Public Or BindingFlags.NonPublic
 
-        Private ReadOnly targets As New List(Of Object)()
-        Private ReadOnly cache As New Dictionary(Of String, MethodInfo)()
+        Private ReadOnly _targets As New List(Of Object)()
+        Private ReadOnly _registered As New HashSet(Of String)()
+        Private ReadOnly _engine As Interpreter
 
         ''' <summary>
         ''' The message of the last binding failure, nothing means that every
-        ''' call has been resolved successfully.
+        ''' call has been resolved and executed successfully.
         ''' </summary>
         ''' <returns></returns>
         Public Property LastError As String
@@ -32,156 +44,243 @@ Namespace Events
             Dim host As Control = container
 
             While host IsNot Nothing
-                targets.Add(host)
+                _targets.Add(host)
                 host = host.Parent
             End While
+
+            _engine = New Interpreter()
+
+            For Each target As Object In _targets
+                Call RegisterHost(target)
+            Next
         End Sub
 
         ''' <summary>
-        ''' Adds an additional object to the lookup list of this binder.
+        ''' Adds an additional object to the lookup list of this binder and
+        ''' exposes its instance methods to the interpreter as well.
         ''' </summary>
         ''' <param name="target"></param>
         Public Sub AddTarget(target As Object)
-            If target IsNot Nothing AndAlso Not targets.Contains(target) Then
-                targets.Add(target)
+            If target IsNot Nothing AndAlso Not _targets.Contains(target) Then
+                _targets.Add(target)
+                Call RegisterHost(target)
             End If
         End Sub
 
         ''' <summary>
-        ''' Invokes the host method of the given script expression.
+        ''' Invokes the javascript expression of the given event attribute through
+        ''' the LiteJs interpreter. Host methods are reachable from the script as
+        ''' global functions.
         ''' </summary>
         ''' <param name="expression">the value of the event attribute.</param>
         ''' <returns>
-        ''' true when the method has been found and invoked, false when the
-        ''' expression is empty or when the host does not declare such a method.
+        ''' true when the script has been parsed and executed without error,
+        ''' false when the expression is empty or when the script failed.
         ''' </returns>
         Public Function Invoke(expression As String) As Boolean
-            Dim script As ScriptCall = ScriptCall.Parse(expression)
-
-            If script Is Nothing Then
-                Return False
-            End If
-
-            Return Invoke(script)
-        End Function
-
-        ''' <summary>
-        ''' Invokes the host method of the given script call.
-        ''' </summary>
-        ''' <param name="script"></param>
-        ''' <returns></returns>
-        Public Function Invoke(script As ScriptCall) As Boolean
             LastError = Nothing
 
-            If script Is Nothing OrElse String.IsNullOrEmpty(script.MethodName) Then
+            If String.IsNullOrEmpty(expression) Then
                 Return False
             End If
 
-            Dim method As MethodInfo = Resolve(script)
+            Dim expr As String = expression.Trim()
 
-            If method Is Nothing Then
-                LastError = $"the host object does not declare a method that is named as '{script.MethodName}' with {script.Arguments.Length} argument(s)."
-                Return False
+            If expr.StartsWith("javascript:", StringComparison.OrdinalIgnoreCase) Then
+                expr = expr.Substring("javascript:".Length).Trim()
             End If
 
-            Dim args As Object() = Nothing
-
-            If Not TryConvertArguments(method, script.Arguments, args) Then
-                LastError = $"the arguments of the call '{script}' can not be converted to the signature of the method '{script.MethodName}'."
+            If expr.Length = 0 Then
                 Return False
             End If
-
-            Dim target As Object = method.DeclaringType
-
-            For Each host As Object In targets
-                If method.DeclaringType.IsInstanceOfType(host) Then
-                    target = host
-                    Exit For
-                End If
-            Next
 
             Try
-                Call method.Invoke(target, args)
+                Dim program As Program = Parser.Parse(expr)
+                Call _engine.Run(program)
                 Return True
             Catch ex As Exception
-                LastError = ex.InnerException?.Message
-                If LastError Is Nothing Then
-                    LastError = ex.Message
-                End If
-
+                LastError = If(ex.InnerException?.Message, ex.Message)
                 Return False
             End Try
         End Function
 
         ''' <summary>
-        ''' Finds the method of the host objects that matches the given script
-        ''' call, the result is cached because a control is clicked very often.
+        ''' Exposes every instance method of the given host object to the
+        ''' interpreter as a global function. The first (closest) host that
+        ''' declares a given name wins, mirroring the old resolver behaviour.
         ''' </summary>
-        ''' <param name="script"></param>
-        ''' <returns></returns>
-        Private Function Resolve(script As ScriptCall) As MethodInfo
-            Dim key As String = $"{script.MethodName.ToLower()}/{script.Arguments.Length}"
-
-            If cache.ContainsKey(key) Then
-                Return cache(key)
+        ''' <param name="target"></param>
+        Private Sub RegisterHost(target As Object)
+            If target Is Nothing Then
+                Return
             End If
 
-            For Each host As Object In targets
-                Dim type As Type = host.GetType()
-                Dim methods As MethodInfo() = type.GetMethods(flags)
+            Dim type As Type = target.GetType()
+            Dim methods As MethodInfo() = type.GetMethods(flags)
 
-                For Each method As MethodInfo In methods
-                    If Not method.Name.Equals(script.MethodName, StringComparison.OrdinalIgnoreCase) Then
-                        Continue For
-                    End If
-                    If method.GetParameters().Length <> script.Arguments.Length Then
-                        Continue For
-                    End If
+            For Each method As MethodInfo In methods
+                ' skip Object base methods and compiler/property/event accessors
+                If method.DeclaringType Is GetType(Object) Then
+                    Continue For
+                End If
+                If method.IsSpecialName Then
+                    Continue For
+                End If
+                If method.IsGenericMethodDefinition Then
+                    Continue For
+                End If
+                If method.GetParameters().Any(Function(p) p.ParameterType.IsByRef) Then
+                    Continue For
+                End If
 
-                    cache(key) = method
+                Dim name As String = method.Name
 
-                    Return method
-                Next
+                If _registered.Contains(name) Then
+                    Continue For
+                End If
+
+                _registered.Add(name)
+
+                Dim capturedTarget As Object = target
+                Dim overloads As MethodInfo() = methods _
+                    .Where(Function(m) m.Name = name AndAlso Not m.IsSpecialName) _
+                    .ToArray()
+                Dim closure As Func(Of Object(), Object) =
+                    Function(args As Object()) As Object
+                        Return InvokeHost(capturedTarget, overloads, args)
+                    End Function
+
+                Call _engine.DefineGlobal(name, closure)
+            Next
+        End Sub
+
+        ''' <summary>
+        ''' Dispatches a script call to the best matching overload of a host
+        ''' method, converting the javascript arguments to the .NET signature and
+        ''' the return value back to a javascript value.
+        ''' </summary>
+        Private Shared Function InvokeHost(target As Object, overloads As MethodInfo(), args As Object()) As Object
+            Dim method As MethodInfo = PickOverload(overloads, args)
+
+            If method Is Nothing Then
+                Throw New InvalidOperationException(
+                    $"no overload of '{overloads(0).Name}' accepts {args.Length} argument(s).")
+            End If
+
+            Dim parameters As ParameterInfo() = method.GetParameters()
+            Dim clrArgs(parameters.Length - 1) As Object
+
+            For i As Integer = 0 To parameters.Length - 1
+                Dim jsValue As Object = If(i < args.Length, args(i), JsRuntime.Undef)
+                clrArgs(i) = ConvertJsToClr(jsValue, parameters(i).ParameterType)
             Next
 
-            cache(key) = Nothing
+            Dim result As Object = method.Invoke(target, clrArgs)
 
-            Return Nothing
+            Return ConvertClrToJs(result)
         End Function
 
         ''' <summary>
-        ''' Converts the literal arguments of a script call to the parameter
-        ''' types of the resolved method.
+        ''' Selects the overload whose parameter count best matches the script
+        ''' argument count, preferring an exact match.
         ''' </summary>
-        ''' <param name="method"></param>
-        ''' <param name="literals"></param>
-        ''' <param name="args"></param>
-        ''' <returns></returns>
-        Private Shared Function TryConvertArguments(method As MethodInfo, literals As String(), ByRef args As Object()) As Boolean
-            Dim parameters As ParameterInfo() = method.GetParameters()
+        Private Shared Function PickOverload(overloads As MethodInfo(), args As Object()) As MethodInfo
+            Dim exact As MethodInfo = overloads.FirstOrDefault(Function(m) m.GetParameters().Length = args.Length)
 
-            args = New Object(parameters.Length - 1) {}
+            If exact IsNot Nothing Then
+                Return exact
+            End If
 
-            For i As Integer = 0 To parameters.Length - 1
-                Dim parameterType As Type = parameters(i).ParameterType
-                Dim literal As String = literals(i)
+            Dim fit As MethodInfo = overloads _
+                .Where(Function(m) m.GetParameters().Length <= args.Length) _
+                .OrderBy(Function(m) System.Math.Abs(m.GetParameters().Length - args.Length)) _
+                .FirstOrDefault()
 
-                Try
-                    If parameterType Is GetType(String) Then
-                        args(i) = literal
-                    Else
-                        args(i) = Convert.ChangeType(literal, parameterType, CultureInfo.InvariantCulture)
-                    End If
-                Catch ex As Exception
-                    args(i) = literal
+            If fit IsNot Nothing Then
+                Return fit
+            End If
 
-                    If parameterType.IsValueType Then
-                        Return False
-                    End If
-                End Try
-            Next
+            Return overloads(0)
+        End Function
 
-            Return True
+        ''' <summary>
+        ''' Converts a javascript value (number/string/boolean/array/object/undefined)
+        ''' to the expected .NET parameter type.
+        ''' </summary>
+        Private Shared Function ConvertJsToClr(value As Object, targetType As Type) As Object
+            If value Is Nothing OrElse value Is JsRuntime.Undef Then
+                If targetType.IsValueType Then
+                    Return Activator.CreateInstance(targetType)
+                End If
+                Return Nothing
+            End If
+
+            If targetType Is GetType(Object) Then
+                Return value
+            End If
+
+            Dim valueType As Type = value.GetType()
+
+            If targetType.IsAssignableFrom(valueType) Then
+                Return value
+            End If
+
+            Try
+                If targetType Is GetType(String) Then
+                    Return JsRuntime.JsStr(value)
+                ElseIf targetType Is GetType(Boolean) Then
+                    Return JsRuntime.JsTruthy(value)
+                ElseIf targetType Is GetType(Double) Then
+                    Return JsRuntime.JsNum(value)
+                ElseIf targetType Is GetType(Single) Then
+                    Return CSng(JsRuntime.JsNum(value))
+                ElseIf targetType Is GetType(Decimal) Then
+                    Return CDec(JsRuntime.JsNum(value))
+                ElseIf targetType.IsPrimitive Then
+                    Dim d As Double = JsRuntime.JsNum(value)
+                    If targetType Is GetType(Integer) Then Return CInt(System.Math.Truncate(d))
+                    If targetType Is GetType(Long) Then Return CLng(System.Math.Truncate(d))
+                    If targetType Is GetType(Short) Then Return CShort(System.Math.Truncate(d))
+                    If targetType Is GetType(Byte) Then Return CByte(System.Math.Truncate(d))
+                    If targetType Is GetType(SByte) Then Return CSByte(System.Math.Truncate(d))
+                    If targetType Is GetType(UInteger) Then Return CUInt(System.Math.Truncate(d))
+                    If targetType Is GetType(ULong) Then Return CULng(System.Math.Truncate(d))
+                    If targetType Is GetType(UShort) Then Return CUShort(System.Math.Truncate(d))
+                    If targetType Is GetType(Char) Then Return CChar(ChrW(CInt(System.Math.Truncate(d))))
+                    Return Convert.ChangeType(d, targetType, CultureInfo.InvariantCulture)
+                End If
+            Catch
+            End Try
+
+            Try
+                Return Convert.ChangeType(value, targetType, CultureInfo.InvariantCulture)
+            Catch
+                Return value
+            End Try
+        End Function
+
+        ''' <summary>
+        ''' Converts a .NET return value into a javascript value understood by the
+        ''' interpreter. A null / void result becomes <see cref="JsRuntime.Undef"/>.
+        ''' </summary>
+        Private Shared Function ConvertClrToJs(value As Object) As Object
+            If value Is Nothing Then
+                Return JsRuntime.Undef
+            End If
+            If value Is JsRuntime.Undef Then
+                Return value
+            End If
+
+            Dim t As Type = value.GetType()
+
+            If t Is GetType(Double) OrElse t Is GetType(String) OrElse t Is GetType(Boolean) Then
+                Return value
+            End If
+            If t Is GetType(Single) OrElse t Is GetType(Decimal) OrElse t.IsPrimitive Then
+                Return Convert.ToDouble(value, CultureInfo.InvariantCulture)
+            End If
+
+            Return value
         End Function
     End Class
 End Namespace
