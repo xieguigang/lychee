@@ -193,7 +193,7 @@ Public Class FormRender : Implements IDisposable
         Call EnsureDrivers()
 
         host = container
-        layout = New UiLayoutEngine(ui)
+        layout = New UiLayoutEngine(ui, theme)
         binder = New MethodBinder(container)
         surface = If(backend, New DxCanvasSurface(layout.BackgroundColor))
 

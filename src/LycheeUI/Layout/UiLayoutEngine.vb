@@ -69,8 +69,21 @@ Namespace Layout
             End Get
         End Property
 
-        Sub New(ui As XElement)
-            root = New InitialContainer(ui)
+        ''' <param name="theme">
+        ''' the default styles of the controls: nothing means that the ui
+        ''' document is parsed as-is, otherwise the theme styles are merged
+        ''' into the ``style`` attributes of the document before the layout.
+        ''' </param>
+        Sub New(ui As XElement, Optional theme As Theme = Nothing)
+            If theme IsNot Nothing Then
+                ' a deep copy keeps the ui document of the caller untouched
+                Dim doc As New XElement(ui)
+
+                Call theme.Apply(doc)
+                root = New InitialContainer(doc)
+            Else
+                root = New InitialContainer(ui)
+            End If
         End Sub
 
         ''' <summary>
