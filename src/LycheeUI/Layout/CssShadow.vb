@@ -19,25 +19,21 @@ Namespace Layout
         ''' <summary>
         ''' The horizontal offset of the shadow.
         ''' </summary>
-        ''' <returns></returns>
         Public OffsetX As Single
 
         ''' <summary>
         ''' The vertical offset of the shadow.
         ''' </summary>
-        ''' <returns></returns>
         Public OffsetY As Single
 
         ''' <summary>
         ''' The blur radius of the shadow, zero means a hard shadow.
         ''' </summary>
-        ''' <returns></returns>
         Public Blur As Single
 
         ''' <summary>
         ''' The color of the shadow.
         ''' </summary>
-        ''' <returns></returns>
         Public Color As Color
 
         ''' <summary>

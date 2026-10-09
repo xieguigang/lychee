@@ -49,9 +49,6 @@ Namespace Controls
 
         ''' <summary>
         ''' The renderer that paints the text input controls of the ui.
-        ''' </summary>
-        ''' <returns></returns>
-        ''' <summary>
         ''' Gets the renderer of the given control.
         ''' </summary>
         ''' <param name="box"></param>
