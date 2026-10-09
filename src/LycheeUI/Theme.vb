@@ -6,6 +6,12 @@
 
 End Class
 
+''' <summary>
+''' 
+''' </summary>
+''' <remarks>
+''' all property element is the css style string
+''' </remarks>
 Public Class ElementTheme
 
     Public Property background As String
