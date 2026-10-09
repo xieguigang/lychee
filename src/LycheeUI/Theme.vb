@@ -4,6 +4,10 @@
     Public Property anchor As Theme
     Public Property textbox As Theme
 
+    Public Shared Function DefaultTheme() As Theme
+
+    End Function
+
 End Class
 
 ''' <summary>

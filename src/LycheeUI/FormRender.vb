@@ -178,12 +178,16 @@ Public Class FormRender : Implements IDisposable
     ''' <see cref="DxWindowSurface"/> paints on the window handle of the host
     ''' control itself.
     ''' </param>
+    ''' <param name="theme">
+    ''' default nothing means use the <see cref="Theme.DefaultTheme()"/>.
+    ''' </param>
     Sub New(ui As XElement, container As Control, Optional backend As IRenderSurface = Nothing, Optional theme As Theme = Nothing)
         If ui Is Nothing Then
             Throw New ArgumentNullException(NameOf(ui))
-        End If
-        If container Is Nothing Then
+        ElseIf container Is Nothing Then
             Throw New ArgumentNullException(NameOf(container))
+        Else
+            theme = If(theme, Theme.DefaultTheme)
         End If
 
         Call EnsureDrivers()
