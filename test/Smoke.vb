@@ -5,6 +5,7 @@ Imports System.Xml.Linq
 Imports LycheeUI
 Imports LycheeUI.Layout
 Imports LycheeUI.Render
+Imports LycheeUI.Tabs
 Imports Microsoft.VisualBasic.Drawing.DirectX
 Imports Microsoft.VisualBasic.Imaging
 Imports Bitmap = Microsoft.VisualBasic.Imaging.Bitmap
@@ -115,8 +116,17 @@ Module Smoke
                      style="display:block;left:220px;top:60px"/>
                 <!-- a hyperlink with a rich text tooltip -->
                 <a id="link" href="openHelp('docs')"
-                   style="display:block;left:500px;top:340px;width:120px;height:22px"
+                   style="display:block;left:500px;top:150px;width:120px;height:22px"
                    tooltip="&lt;b&gt;docs&lt;/b&gt;&lt;br/&gt;&lt;font color='gray'&gt;user guide&lt;/font&gt;">documentation</a>
+                <!-- a browser like tab control -->
+                <tabcontrol id="tabs" style="left:360px;top:295px;width:230px;height:78px">
+                    <page id="t1" title="first" favicon="./lychee-smoke-img.png">
+                        <label style="display:block;left:10px;top:6px;color:white">page one</label>
+                    </page>
+                    <page id="t2" title="second">
+                        <label style="display:block;left:10px;top:6px;color:white">page two</label>
+                    </page>
+                </tabcontrol>
             </form>
 
         Dim WithEvents renderer As FormRender
@@ -402,6 +412,9 @@ Module Smoke
             errors.Add("the tooltip should be hidden after the mouse has left the control.")
         End If
 
+        ' the browser like tab strip
+        Call expectTabStrip(host, errors)
+
         Call renderMainWindow(errors)
 
         For Each line As String In host.Clicks
@@ -548,6 +561,90 @@ Module Smoke
 
         If Not host.Clicks.Contains(result) Then
             errors.Add($"the click of #{id} should have raised '{result}'.")
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Asserts the state machine and the events of the declared tab strip.
+    ''' </summary>
+    Private Sub expectTabStrip(host As SmokeHost, errors As List(Of String))
+        If host.Engine.UiLayout.TabStrips.Count = 0 Then
+            errors.Add("no tab strip has been created out of the tabcontrol element.")
+            Return
+        End If
+
+        Dim strip As Tabs.TabStrip = Nothing
+
+        For Each kvp As KeyValuePair(Of String, Tabs.TabStrip) In host.Engine.UiLayout.TabStrips
+            strip = kvp.Value
+            Exit For
+        Next
+
+        If strip Is Nothing Then
+            errors.Add("no tab strip instance was found.")
+            Return
+        End If
+
+        ' the welcome page that is shown when every tab has been closed
+        strip.WelcomeContent =
+            <page>
+                <label style="display:block;left:16px;top:16px;color:silver">no page is open</label>
+            </page>
+
+        If strip.Count <> 2 Then
+            errors.Add($"the tab strip should own 2 pages, but {strip.Count} was found.")
+            Return
+        End If
+        If strip.ActiveId <> "t1" Then
+            errors.Add($"the page #t1 should be active, but #{strip.ActiveId} was found.")
+        End If
+
+        Dim activated As New List(Of String)
+
+        AddHandler strip.TabActivated, Sub(tab As Tabs.UiTab) activated.Add(tab.Id)
+
+        ' switching to another page
+        Call strip.Activate("t2")
+
+        If strip.ActiveId <> "t2" Then
+            errors.Add("the page #t2 should be active after Activate.")
+        End If
+        If Not activated.Contains("t2") Then
+            errors.Add("the activation of #t2 should have raised TabActivated.")
+        End If
+
+        ' the pages are kept in order until they are moved
+        Call strip.MoveTab("t1", 1)
+
+        If strip.TabList(0).Id <> "t2" OrElse strip.TabList(1).Id <> "t1" Then
+            errors.Add("the pages have not been reordered by MoveTab.")
+        End If
+
+        ' closing a page that is not the active one keeps the active page
+        Call strip.CloseTab("t1")
+
+        If strip.Count <> 1 OrElse strip.ActiveId <> "t2" Then
+            errors.Add("the page #t2 should survive the close of #t1.")
+        End If
+
+        ' closing the last page shows the welcome page
+        Call strip.CloseTab("t2")
+
+        If Not strip.IsEmpty OrElse strip.ActiveId IsNot Nothing Then
+            errors.Add("the tab strip should be empty after its last page has been closed.")
+        End If
+        If strip.WelcomeContent Is Nothing Then
+            errors.Add("the tab strip should declare a welcome page.")
+        End If
+
+        ' a new page is created and activated in one step
+        Dim created As Tabs.UiTab = strip.NewTab("created", Nothing)
+
+        If strip.ActiveId <> created.Id Then
+            errors.Add("the new page should have been activated.")
+        End If
+        If Not activated.Contains(created.Id) Then
+            errors.Add("the creation of a page should have raised TabActivated.")
         End If
     End Sub
 
