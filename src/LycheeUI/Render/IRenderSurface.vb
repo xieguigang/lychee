@@ -43,6 +43,11 @@ Namespace Render
         Event PointerUp As EventHandler(Of PointerEventArgs)
 
         ''' <summary>
+        ''' Raised when the mouse wheel is turned over the canvas.
+        ''' </summary>
+        Event PointerWheel As EventHandler(Of PointerEventArgs)
+
+        ''' <summary>
         ''' Raised when a key is pressed down while the canvas holds the keyboard
         ''' focus: the navigation keys and the editing keys are delivered here.
         ''' </summary>

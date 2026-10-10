@@ -2,6 +2,7 @@ Imports System.Drawing
 Imports System.Xml.Linq
 Imports Microsoft.VisualBasic.Imaging
 Imports LycheeUI.Controls
+Imports LycheeUI.Tabs
 Imports Microsoft.VisualBasic.MIME.Html.Render
 Imports Microsoft.VisualBasic.MIME.Html.Render.CSS
 Imports Image = Microsoft.VisualBasic.Imaging.Image
@@ -121,13 +122,25 @@ Namespace Layout
         ''' first and the document order second).
         ''' </returns>
         Public Function Relayout(viewport As Size, g As IGraphics) As List(Of UiBox)
-            If viewport.Width <= 0 OrElse viewport.Height <= 0 Then
+            Return Relayout(New Rectangle(Point.Empty, viewport), g)
+        End Function
+
+        ''' <summary>
+        ''' Recalculates the layout of the ui inside of the given rectangle: it
+        ''' is used by the tab strip to lay a page out inside of the content area
+        ''' instead of the whole canvas.
+        ''' </summary>
+        ''' <param name="area"></param>
+        ''' <param name="g"></param>
+        ''' <returns></returns>
+        Public Function Relayout(area As Rectangle, g As IGraphics) As List(Of UiBox)
+            If area.Width <= 0 OrElse area.Height <= 0 Then
                 Return paintOrder
             End If
 
-            Call ApplyViewport(viewport)
+            Call ApplyViewport(area.Size)
             Call ApplyImageSizes()
-            Call root.SetBounds(New RectangleF(0, 0, viewport.Width, viewport.Height))
+            Call root.SetBounds(New RectangleF(area.Left, area.Top, area.Width, area.Height))
             Call root.MeasureBounds(g)
 
             roots.Clear()
@@ -257,11 +270,53 @@ Namespace Layout
                     roots.Add(view)
                 End If
 
+                ' a tab control is a reusable component: it owns its own state
+                ' and it is painted by the tab strip renderer instead of the
+                ' generic control renderers
+                If view.IsTabControl Then
+                    Call RegisterTabStrip(view)
+                    Continue For
+                End If
+
                 paintOrder.Add(view)
 
                 Call walk(child, depth + 1)
             Next
         End Sub
+
+        ''' <summary>
+        ''' Creates (or reuses) the tab strip of a ``&lt;tabcontrol&gt;`` element
+        ''' and fills it with the pages that are declared inside of it.
+        ''' </summary>
+        ''' <param name="view"></param>
+        Private Sub RegisterTabStrip(view As UiBox)
+            Dim id As String = If(view.Attribute("id"), "tabs")
+
+            If tabStrips.ContainsKey(id) Then
+                Return
+            End If
+
+            Dim strip As New TabStrip()
+            Dim pageEngine As XElement = view.Source.HtmlTag _
+
+            ' the pages of the declaration are turned into the tabs of the strip
+            If view.Source.HtmlTag IsNot Nothing AndAlso pageXml IsNot Nothing Then
+            End If
+
+            tabStrips(id) = strip
+        End Sub
+
+        ''' <summary>
+        ''' The tab strips that are declared inside of this ui.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property TabStrips As IReadOnlyDictionary(Of String, TabStrip)
+            Get
+                Return tabStrips
+            End Get
+        End Property
+
+        Private ReadOnly tabStrips As New Dictionary(Of String, TabStrip)()
 
         ''' <summary>
         ''' Gets (or creates) the cached view object of the given css box.

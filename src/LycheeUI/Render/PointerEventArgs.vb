@@ -30,6 +30,14 @@ Namespace Render
         Public ReadOnly Property Button As MouseButtons
 
         ''' <summary>
+        ''' The number of the notches that the wheel has been turned, it is only
+        ''' set by the wheel events: a positive value means that the wheel has
+        ''' been turned away from the user.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property Delta As Integer
+
+        ''' <summary>
         ''' The location of the mouse inside the canvas.
         ''' </summary>
         ''' <returns></returns>
@@ -39,10 +47,14 @@ Namespace Render
             End Get
         End Property
 
-        Sub New(x As Integer, y As Integer, Optional button As MouseButtons = MouseButtons.None)
+        Sub New(x As Integer, y As Integer,
+                Optional button As MouseButtons = MouseButtons.None,
+                Optional delta As Integer = 0)
+
             Me.X = x
             Me.Y = y
             Me.Button = button
+            Me.Delta = delta
         End Sub
     End Class
 End Namespace

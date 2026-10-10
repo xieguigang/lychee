@@ -37,6 +37,7 @@ Namespace Render
         Public Event PointerDown As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerDown
         Public Event PointerMove As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerMove
         Public Event PointerUp As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerUp
+        Public Event PointerWheel As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerWheel
         Public Event KeyDown As EventHandler(Of CanvasKeyEventArgs) Implements IRenderSurface.KeyDown
         Public Event TextInput As EventHandler(Of CanvasTextEventArgs) Implements IRenderSurface.TextInput
 
@@ -52,6 +53,7 @@ Namespace Render
             AddHandler canvas.MouseDown, AddressOf handleMouseDown
             AddHandler canvas.MouseMove, AddressOf handleMouseMove
             AddHandler canvas.MouseUp, AddressOf handleMouseUp
+            AddHandler canvas.MouseWheel, AddressOf handleMouseWheel
             AddHandler canvas.KeyDown, AddressOf handleKeyDown
             AddHandler canvas.KeyPress, AddressOf handleKeyPress
         End Sub
@@ -100,6 +102,10 @@ Namespace Render
             RaiseEvent PointerUp(Me, New PointerEventArgs(e.X, e.Y, e.Button))
         End Sub
 
+        Private Sub handleMouseWheel(sender As Object, e As MouseEventArgs)
+            RaiseEvent PointerWheel(Me, New PointerEventArgs(e.X, e.Y, e.Button, e.Delta))
+        End Sub
+
         Private Sub handleKeyDown(sender As Object, e As KeyEventArgs)
             Dim args As New CanvasKeyEventArgs(e.KeyCode, e.Alt, e.Control, e.Shift)
 
@@ -128,6 +134,7 @@ Namespace Render
                     RemoveHandler canvas.MouseDown, AddressOf handleMouseDown
                     RemoveHandler canvas.MouseMove, AddressOf handleMouseMove
                     RemoveHandler canvas.MouseUp, AddressOf handleMouseUp
+                    RemoveHandler canvas.MouseWheel, AddressOf handleMouseWheel
                     RemoveHandler canvas.KeyDown, AddressOf handleKeyDown
                     RemoveHandler canvas.KeyPress, AddressOf handleKeyPress
 

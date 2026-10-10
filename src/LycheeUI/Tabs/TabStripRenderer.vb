@@ -8,6 +8,7 @@ Imports Font = Microsoft.VisualBasic.Imaging.Font
 Imports Image = Microsoft.VisualBasic.Imaging.Image
 Imports Pen = Microsoft.VisualBasic.Imaging.Pen
 Imports SolidBrush = Microsoft.VisualBasic.Imaging.SolidBrush
+Imports FontStyle = Microsoft.VisualBasic.Imaging.FontStyle
 Imports std = System.Math
 
 Namespace Tabs
@@ -86,7 +87,7 @@ Namespace Tabs
         ''' <returns></returns>
         Public Function Layout(g As IGraphics, strip As TabStrip, bounds As RectangleF,
                                hoverPoint As Point, scrollOffset As Single) As TabStripLayout
-            Dim layout As New TabStripLayout With {
+            Dim geo As New TabStripLayout With {
                 .StripRect = New RectangleF(bounds.Left, bounds.Top, bounds.Width, strip.StripHeight)
             }
 
@@ -94,8 +95,8 @@ Namespace Tabs
             Dim iconSize As Single = strip.StripHeight - 12.0F
 
             ' the icon of the window at the left side of the strip
-            layout.IconRect = New RectangleF(x + 8, bounds.Top + (strip.StripHeight - iconSize) / 2, iconSize, iconSize)
-            x = layout.IconRect.Right + 8
+            geo.IconRect = New RectangleF(x + 8, bounds.Top + (strip.StripHeight - iconSize) / 2, iconSize, iconSize)
+            x = geo.IconRect.Right + 8
 
             Dim tabsRight As Single = bounds.Right - CaptionButtonWidth * 3 - 8
             Dim available As Single = std.Max(60.0F, tabsRight - x - NewTabWidth())
@@ -109,8 +110,8 @@ Namespace Tabs
                 Dim rect As New RectangleF(cursor, bounds.Top + 3, tabWidth, strip.StripHeight - 3)
                 Dim closeRect As RectangleF = CloseRectOf(rect)
 
-                layout.TabRects.Add(rect)
-                layout.CloseRects.Add(closeRect)
+                geo.TabRects.Add(rect)
+                geo.CloseRects.Add(closeRect)
 
                 cursor = rect.Right
 
@@ -122,39 +123,39 @@ Namespace Tabs
             ' the tabs that are scrolled out of the visible area are not hit
             ' testable and their rectangles are collapsed
             For i As Integer = 0 To count - 1
-                If layout.TabRects(i).Right < x OrElse layout.TabRects(i).Left > tabsRight Then
-                    layout.TabRects(i) = New RectangleF(-1000, -1000, 0, 0)
-                    layout.CloseRects(i) = RectangleF.Empty
+                If geo.TabRects(i).Right < x OrElse geo.TabRects(i).Left > tabsRight Then
+                    geo.TabRects(i) = New RectangleF(-1000, -1000, 0, 0)
+                    geo.CloseRects(i) = RectangleF.Empty
                 End If
             Next
 
             ' the scroll range: the total width of the tabs minus the visible width
-            Dim total As Single = If(count > 0, layout.TabRects(count - 1).Right - x + NewTabWidth(), 0)
-            layout.ScrollMax = std.Max(0, total - available)
+            Dim total As Single = If(count > 0, geo.TabRects(count - 1).Right - x + NewTabWidth(), 0)
+            geo.ScrollMax = std.Max(0, total - available)
 
-            layout.NewTabRect = New RectangleF(tabsRight, bounds.Top + 4, NewTabWidth(), strip.StripHeight - 8)
+            geo.NewTabRect = New RectangleF(tabsRight, bounds.Top + 4, NewTabWidth(), strip.StripHeight - 8)
 
             For i As Integer = 0 To 2
-                layout.Buttons.Add(New RectangleF(
+                geo.Buttons.Add(New RectangleF(
                     bounds.Right - CaptionButtonWidth * (3 - i),
                     bounds.Top,
                     CaptionButtonWidth,
                     strip.StripHeight))
             Next
 
-            layout.ContentRect = New RectangleF(
+            geo.ContentRect = New RectangleF(
                 bounds.Left, bounds.Top + strip.StripHeight,
                 bounds.Width, std.Max(0, bounds.Height - strip.StripHeight))
 
             If hoverPoint <> Point.Empty Then
-                Dim hit As TabHitResult = HitTest(layout, strip, hoverPoint)
+                Dim hit As TabHitResult = HitTest(geo, strip, hoverPoint)
 
                 If hit.Kind = TabHitKind.Tab Then
-                    layout.HoverIndex = hit.Index
+                    geo.HoverIndex = hit.Index
                 End If
             End If
 
-            Return layout
+            Return geo
         End Function
 
         Private Function CloseRectOf(tabRect As RectangleF) As RectangleF
