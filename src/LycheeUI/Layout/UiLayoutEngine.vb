@@ -296,6 +296,8 @@ Namespace Layout
         Private Sub RegisterTabStrip(view As UiBox)
             Dim id As String = If(view.Attribute("id"), "tabs")
 
+            Call Console.WriteLine($"[lychee] tabcontrol registered: id='{id}'")
+
             tabBoxes(id) = view
 
             If Not strips.ContainsKey(id) Then
