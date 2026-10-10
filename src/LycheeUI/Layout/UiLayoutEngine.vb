@@ -24,6 +24,7 @@ Namespace Layout
     Public NotInheritable Class UiLayoutEngine
 
         Private ReadOnly root As InitialContainer
+        Private ReadOnly source As XElement
         Private ReadOnly views As New Dictionary(Of CssBox, UiBox)()
         Private ReadOnly roots As New List(Of UiBox)()
         Private ReadOnly paintOrder As New List(Of UiBox)()
@@ -98,6 +99,8 @@ Namespace Layout
         ''' into the ``style`` attributes of the document before the layout.
         ''' </param>
         Sub New(ui As XElement, Optional theme As Theme = Nothing)
+            source = ui
+
             If theme IsNot Nothing Then
                 ' a deep copy keeps the ui document of the caller untouched
                 Dim doc As New XElement(ui)
@@ -147,6 +150,7 @@ Namespace Layout
             paintOrder.Clear()
 
             Call walk(root, depth:=0)
+            Call BuildTabStrips()
 
             ' the paint order is the z-index first and the document order
             ' second, a stable sort is required to keep the document order of
@@ -285,29 +289,67 @@ Namespace Layout
         End Sub
 
         ''' <summary>
-        ''' Creates (or reuses) the tab strip of a ``&lt;tabcontrol&gt;`` element
-        ''' and fills it with the pages that are declared inside of it.
+        ''' Registers the box of a ``&lt;tabcontrol&gt;`` element, the tab strip
+        ''' itself is built from the declaration by <see cref="BuildTabStrips"/>.
         ''' </summary>
         ''' <param name="view"></param>
         Private Sub RegisterTabStrip(view As UiBox)
             Dim id As String = If(view.Attribute("id"), "tabs")
 
-            If tabStrips.ContainsKey(id) Then
-                Return
+            tabBoxes(id) = view
+
+            If Not tabStrips.ContainsKey(id) Then
+                tabStrips(id) = New TabStrip()
             End If
-
-            Dim strip As New TabStrip()
-            Dim pageEngine As XElement = view.Source.HtmlTag _
-
-            ' the pages of the declaration are turned into the tabs of the strip
-            If view.Source.HtmlTag IsNot Nothing AndAlso pageXml IsNot Nothing Then
-            End If
-
-            tabStrips(id) = strip
         End Sub
 
         ''' <summary>
-        ''' The tab strips that are declared inside of this ui.
+        ''' Builds the tab strips out of the ``&lt;tabcontrol&gt;`` elements of
+        ''' the declaration: every ``&lt;page&gt;`` child becomes a tab whose
+        ''' content is laid out by its own layout engine, so the state of the
+        ''' input controls of a page survives a switch to another tab.
+        ''' </summary>
+        ''' <remarks>
+        ''' The strips are built only once, the pages that are added at runtime
+        ''' through the <see cref="TabStrip.NewTab"/> method are not touched.
+        ''' </remarks>
+        Private Sub BuildTabStrips()
+            If source Is Nothing OrElse stripsBuilt Then
+                Return
+            End If
+
+            stripsBuilt = True
+
+            For Each control As XElement In source.Descendants("tabcontrol")
+                Dim id As String = If(CStr(control.Attribute("id")), "tabs")
+
+                If Not tabStrips.ContainsKey(id) Then
+                    tabStrips(id) = New TabStrip()
+                End If
+
+                Dim strip As TabStrip = tabStrips(id)
+
+                If strip.Count > 0 Then
+                    Continue For
+                End If
+
+                For Each page As XElement In control.Elements("page")
+                    Call strip.NewTab(
+                        If(CStr(page.Attribute("title")), "page"),
+                        page,
+                        CStr(page.Attribute("favicon")),
+                        id:=CStr(page.Attribute("id")))
+                Next
+
+                If strip.Count = 0 Then
+                    Call strip.NewTab("welcome", Nothing)
+                End If
+            Next
+        End Sub
+
+        ''' <summary>
+        ''' The tab strips of this ui, keyed by the id of their
+        ''' ``&lt;tabcontrol&gt;`` element.
         ''' </summary>
         ''' <returns></returns>
         Public ReadOnly Property TabStrips As IReadOnlyDictionary(Of String, TabStrip)
@@ -316,7 +358,20 @@ Namespace Layout
             End Get
         End Property
 
+        ''' <summary>
+        ''' The boxes of the ``&lt;tabcontrol&gt;`` elements, keyed by their id:
+        ''' they provide the rectangle of the component on the canvas.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property TabControlBoxes As IReadOnlyDictionary(Of String, UiBox)
+            Get
+                Return tabBoxes
+            End Get
+        End Property
+
         Private ReadOnly tabStrips As New Dictionary(Of String, TabStrip)()
+        Private ReadOnly tabBoxes As New Dictionary(Of String, UiBox)()
+        Private stripsBuilt As Boolean = False
 
         ''' <summary>
         ''' Gets (or creates) the cached view object of the given css box.

@@ -201,6 +201,16 @@ Namespace Layout
         End Property
 
         ''' <summary>
+        ''' Is this element a browser like tab control?
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property IsTabControl As Boolean
+            Get
+                Return Tag = "tabcontrol"
+            End Get
+        End Property
+
+        ''' <summary>
         ''' The ``href`` attribute of a hyperlink: it is either a web address
         ''' that should be opened by the default browser, or a script expression
         ''' that should be resolved against the host object.
