@@ -272,6 +272,7 @@ Namespace Layout
 
                 If depth = 0 Then
                     roots.Add(view)
+                    Call Console.WriteLine($"[lychee] top-level tag: '{view.Tag}' id='{view.Attribute("id")}'")
                 End If
 
                 ' a tab control is a reusable component: it owns its own state
