@@ -21,7 +21,9 @@ Imports LycheeUI.Chrome
 ''' the shadow, the resize borders and the snap at once.
 ''' </para>
 ''' </remarks>
-Public Class ChromeForm : Inherits Form
+Namespace Chrome
+
+    Public Class ChromeForm : Inherits Form
 
     Private captionRegionValue As Rectangle = Rectangle.Empty
     Private chromeReady As Boolean = False
@@ -196,3 +198,5 @@ Public Class ChromeForm : Inherits Form
         Call MyBase.WndProc(m)
     End Sub
 End Class
+
+End Namespace

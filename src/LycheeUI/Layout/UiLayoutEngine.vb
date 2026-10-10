@@ -298,8 +298,8 @@ Namespace Layout
 
             tabBoxes(id) = view
 
-            If Not tabStrips.ContainsKey(id) Then
-                tabStrips(id) = New TabStrip()
+            If Not strips.ContainsKey(id) Then
+                strips(id) = New TabStrip()
             End If
         End Sub
 
@@ -323,11 +323,11 @@ Namespace Layout
             For Each control As XElement In source.Descendants("tabcontrol")
                 Dim id As String = If(CStr(control.Attribute("id")), "tabs")
 
-                If Not tabStrips.ContainsKey(id) Then
-                    tabStrips(id) = New TabStrip()
+                If Not strips.ContainsKey(id) Then
+                    strips(id) = New TabStrip()
                 End If
 
-                Dim strip As TabStrip = tabStrips(id)
+                Dim strip As TabStrip = strips(id)
 
                 If strip.Count > 0 Then
                     Continue For
@@ -354,7 +354,7 @@ Namespace Layout
         ''' <returns></returns>
         Public ReadOnly Property TabStrips As IReadOnlyDictionary(Of String, TabStrip)
             Get
-                Return tabStrips
+                Return strips
             End Get
         End Property
 
@@ -369,7 +369,7 @@ Namespace Layout
             End Get
         End Property
 
-        Private ReadOnly tabStrips As New Dictionary(Of String, TabStrip)()
+        Private ReadOnly strips As New Dictionary(Of String, TabStrip)()
         Private ReadOnly tabBoxes As New Dictionary(Of String, UiBox)()
         Private stripsBuilt As Boolean = False
 

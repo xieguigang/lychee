@@ -207,6 +207,7 @@ Public Class FormRender : Implements IDisposable
         AddHandler surface.PointerMove, AddressOf handlePointerMove
         AddHandler surface.PointerDown, AddressOf handlePointerDown
         AddHandler surface.PointerUp, AddressOf handlePointerUp
+        AddHandler surface.PointerWheel, AddressOf handlePointerWheel
         AddHandler surface.KeyDown, AddressOf handleKeyDown
         AddHandler surface.TextInput, AddressOf handleTextInput
 
@@ -291,13 +292,27 @@ Public Class FormRender : Implements IDisposable
                     Call Console.WriteLine("[lychee] tooltip error: " & ex.Message)
                 End Try
             End If
+
+            ' the tab strips are painted on the very top: the strip and the
+            ' content of its active page are drawn by their own renderer
+            For Each strip As Tabs.TabStrip In TabStrips
+                Try
+                    Call RenderTabStrip(g, strip, viewport)
+                Catch ex As Exception
+                    Call Console.WriteLine("[lychee] tab strip error: " & ex.Message)
+                End Try
+            Next
         Catch ex As Exception
             Call Console.WriteLine("[lychee] layout error: " & ex.Message)
         End Try
     End Sub
 
     Private Sub handlePointerMove(sender As Object, e As PointerEventArgs)
-        Dim hit As UiBox = layout.HitTest(e.X, e.Y)
+        pointer = New Point(e.X, e.Y)
+
+        Call handleTabDrag(e.X, e.Y)
+
+        Dim hit As UiBox = HitTestAll(e.X, e.Y)
 
         ' the tooltip follows the mouse, so its position has to be tracked even
         ' when the hovered control does not change at all
@@ -336,7 +351,16 @@ Public Class FormRender : Implements IDisposable
             Return
         End If
 
-        pressed = layout.HitTest(e.X, e.Y)
+        Call HideTooltip()
+
+        ' the tab strip owns the strip area and the empty part of it drags the
+        ' window, so it is asked first
+        If RoutePointerToTabs(e.X, e.Y, pressed:=True) Then
+            Call surface.Invalidate()
+            Return
+        End If
+
+        pressed = HitTestAll(e.X, e.Y)
 
         ' only one control can hold the keyboard focus, a click on the empty
         ' area of the canvas releases it
@@ -356,14 +380,23 @@ Public Class FormRender : Implements IDisposable
 
     Private Sub handlePointerUp(sender As Object, e As PointerEventArgs)
         Dim release As UiBox = pressed
+        Dim wasDragging As Boolean = tabDragging
 
         pressed = Nothing
+        tabDragStrip = Nothing
+        tabDragId = Nothing
+        tabDragging = False
 
         If release Is Nothing Then
             Return
         End If
 
         release.Pressed = False
+
+        If wasDragging Then
+            Call surface.Invalidate()
+            Return
+        End If
 
         ' a click is only raised when the mouse is released on the very same
         ' control that has been pressed down
@@ -797,7 +830,8 @@ Public Class FormRender : Implements IDisposable
     End Function
 
     ''' <summary>
-    ''' Finds the control that is located at the given point of the canvas.
+    ''' Finds the control that is located at the given point of the canvas: the
+    ''' content areas of the tab strips are searched as well.
     ''' </summary>
     ''' <param name="x"></param>
     ''' <param name="y"></param>
@@ -806,7 +840,34 @@ Public Class FormRender : Implements IDisposable
     ''' the point is not on a control.
     ''' </returns>
     Public Function HitTest(x As Integer, y As Integer) As UiBox
-        Return layout.HitTest(x, y)
+        Return HitTestAll(x, y)
+    End Function
+
+    ''' <summary>
+    ''' Searches the main layout and then the content area of every tab strip.
+    ''' </summary>
+    Private Function HitTestAll(x As Integer, y As Integer) As UiBox
+        Dim box As UiBox = layout.HitTest(x, y)
+
+        If box IsNot Nothing Then
+            Return box
+        End If
+
+        For Each strip As Tabs.TabStrip In TabStrips
+            Dim active As Tabs.UiTab = strip.ActiveTab
+
+            If active?.Layout Is Nothing Then
+                Continue For
+            End If
+
+            box = active.Layout.HitTest(x, y)
+
+            If box IsNot Nothing Then
+                Return box
+            End If
+        Next
+
+        Return Nothing
     End Function
 
     ''' <summary>
@@ -1006,6 +1067,339 @@ Public Class FormRender : Implements IDisposable
         Call surface.Invalidate()
     End Sub
 
+    ' /********************************************************************************/
+    '  browser like tab strips
+    ' /********************************************************************************/
+
+    Private ReadOnly manualStrips As New List(Of Tabs.TabStrip)()
+    Private ReadOnly tabLayouts As New Dictionary(Of Tabs.TabStrip, Tabs.TabStripLayout)()
+    Private ReadOnly tabScroll As New Dictionary(Of Tabs.TabStrip, Single)()
+
+    Private tabDragStrip As Tabs.TabStrip = Nothing
+    Private tabDragId As String = Nothing
+    Private tabDragStart As Point
+    Private tabDragging As Boolean = False
+
+    ''' <summary>
+    ''' Registers a tab strip that has been created by the host application: it
+    ''' is painted on the top of the user interface and its pointer events are
+    ''' routed to it.
+    ''' </summary>
+    ''' <param name="strip"></param>
+    Public Sub AddTabStrip(strip As Tabs.TabStrip)
+        If strip IsNot Nothing AndAlso Not manualStrips.Contains(strip) Then
+            manualStrips.Add(strip)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Every tab strip of this user interface: the declared ones and the ones
+    ''' that have been registered by the host.
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property TabStrips As IReadOnlyList(Of Tabs.TabStrip)
+        Get
+            Dim all As New List(Of Tabs.TabStrip)(manualStrips)
+
+            For Each kvp As KeyValuePair(Of String, Tabs.TabStrip) In layout.TabStrips
+                If Not all.Contains(kvp.Value) Then
+                    all.Add(kvp.Value)
+                End If
+            Next
+
+            Return all
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Finds the tab strip whose box covers the given point.
+    ''' </summary>
+    Private Function StripAt(x As Integer, y As Integer) As Tabs.TabStrip
+        For Each strip As Tabs.TabStrip In TabStrips
+            Dim box As UiBox = TabBoxOf(strip)
+
+            If box IsNot Nothing AndAlso box.Bounds.Contains(x, y) Then
+                Return strip
+            End If
+        Next
+
+        Return Nothing
+    End Function
+
+    Private Function TabBoxOf(strip As Tabs.TabStrip) As UiBox
+        For Each kvp As KeyValuePair(Of String, Tabs.TabStrip) In layout.TabStrips
+            If kvp.Value Is strip Then
+                Return layout.TabControlBoxes(kvp.Key)
+            End If
+        Next
+
+        Return Nothing
+    End Function
+
+    Private Function ScrollOf(strip As Tabs.TabStrip) As Single
+        Return If(tabScroll.ContainsKey(strip), tabScroll(strip), 0)
+    End Function
+
+    ''' <summary>
+    ''' Paints a tab strip and mounts the windows forms control of its active
+    ''' page into the content area.
+    ''' </summary>
+    Private Sub RenderTabStrip(g As IGraphics, strip As Tabs.TabStrip, viewport As Size)
+        Dim box As UiBox = TabBoxOf(strip)
+
+        If box Is Nothing OrElse box.Bounds.Width <= 0 OrElse box.Bounds.Height <= 0 Then
+            Return
+        End If
+
+        Dim bounds As RectangleF = box.Bounds
+        Dim scroll As Single = ScrollOf(strip)
+        Dim geo As Tabs.TabStripLayout = Tabs.TabStripRenderer.Layout(
+            g, strip, bounds, pointer, scroll)
+
+        tabLayouts(strip) = geo
+
+        Call Tabs.TabStripRenderer.Render(g, strip, bounds, geo, pointer, scroll)
+        Call MountHost(strip, geo)
+        Call UpdateCaptionRegion(strip, geo)
+    End Sub
+
+    ''' <summary>
+    ''' Puts the windows forms control of the active page on the top of the
+    ''' canvas and resizes it to the content area.
+    ''' </summary>
+    Private Sub MountHost(strip As Tabs.TabStrip, geo As Tabs.TabStripLayout)
+        Dim canvas As DxCanvas = Nothing
+
+        If TypeOf surface Is DxCanvasSurface Then
+            canvas = DirectCast(surface, DxCanvasSurface).CanvasControl
+        End If
+
+        If canvas Is Nothing Then
+            Return
+        End If
+
+        For Each tab As Tabs.UiTab In strip.TabList
+            If Not tab.HasHost Then
+                Continue For
+            End If
+
+            If Not canvas.Controls.Contains(tab.Host) Then
+                Call canvas.Controls.Add(tab.Host)
+            End If
+
+            Dim visible As Boolean = (strip.ActiveId = tab.Id)
+
+            If visible Then
+                Dim area As RectangleF = geo.ContentRect
+
+                tab.Host.Bounds = New Rectangle(CInt(area.Left), CInt(area.Top),
+                                                CInt(area.Width), CInt(area.Height))
+            End If
+
+            tab.Host.Visible = visible
+        Next
+
+        For Each tab As Tabs.UiTab In strip.TabList
+            If tab.HasHost AndAlso tab.Host.Visible Then
+                Call tab.Host.BringToFront()
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' The empty part of the tab strip behaves like a title bar: the region is
+    ''' reported to the host form so that its <c>WM_NCHITTEST</c> returns
+    ''' <c>HTCAPTION</c> for it and the window can be dragged.
+    ''' </summary>
+    Private Sub UpdateCaptionRegion(strip As Tabs.TabStrip, geo As Tabs.TabStripLayout)
+        Dim chrome As Global.LycheeUI.Chrome.ChromeForm = TryCast(host, Global.LycheeUI.Chrome.ChromeForm)
+
+        If chrome Is Nothing OrElse geo.Buttons.Count = 0 Then
+            Return
+        End If
+
+        Dim left As Single = If(geo.NewTabRect.Width > 0, geo.NewTabRect.Right, geo.StripRect.Left + 8)
+        Dim rightEdge As Single = geo.Buttons(0).Left
+        Dim stripTop As Integer = CInt(geo.StripRect.Top)
+        Dim height As Integer = CInt(geo.StripRect.Height)
+
+        If rightEdge <= left Then
+            chrome.CaptionRegion = Rectangle.Empty
+        Else
+            chrome.CaptionRegion = New Rectangle(CInt(left), stripTop,
+                                                 CInt(rightEdge - left), height)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Routes a pointer event to the tab strip that covers the given point.
+    ''' </summary>
+    ''' <returns>true when the tab strip has consumed the event.</returns>
+    Private Function RoutePointerToTabs(x As Integer, y As Integer,
+                                        Optional pressed As Boolean = False) As Boolean
+        Dim strip As Tabs.TabStrip = StripAt(x, y)
+
+        If strip Is Nothing Then
+            Return False
+        End If
+
+        If Not tabLayouts.ContainsKey(strip) Then
+            Return False
+        End If
+
+        Dim geo As Tabs.TabStripLayout = tabLayouts(strip)
+        Dim hit As Tabs.TabHitResult = Tabs.TabStripRenderer.HitTest(geo, strip, New Point(x, y))
+
+        Select Case hit.Kind
+            Case Tabs.TabHitKind.Tab
+                If pressed Then
+                    tabDragStrip = strip
+                    tabDragId = hit.Tab.Id
+                    tabDragStart = New Point(x, y)
+                    tabDragging = False
+                End If
+
+                Return False    ' the tab itself is not a blocking element
+
+            Case Tabs.TabHitKind.Close
+                If pressed Then
+                    Call CloseTab(strip, hit.Tab)
+                End If
+
+                Return True
+
+            Case Tabs.TabHitKind.NewTab
+                If pressed Then
+                    Call CreateTab(strip)
+                End If
+
+                Return True
+
+            Case Tabs.TabHitKind.WindowButton
+                If pressed Then
+                    Call HandleWindowButton(hit.WindowButton)
+                End If
+
+                Return True
+
+            Case Tabs.TabHitKind.Caption, Tabs.TabHitKind.Icon
+                If pressed Then
+                    Call Global.LycheeUI.Chrome.NativeMethods.DragWindow(host.Handle)
+                End If
+
+                Return True
+        End Select
+
+        Return False
+    End Function
+
+    Private Sub HandleWindowButton(index As Integer)
+        Dim window As Form = TryCast(host, Form)
+
+        If window Is Nothing Then
+            Return
+        End If
+
+        Select Case index
+            Case 0 : window.WindowState = FormWindowState.Minimized
+            Case 1 : window.WindowState = If(window.WindowState = FormWindowState.Maximized,
+                                             FormWindowState.Normal, FormWindowState.Maximized)
+            Case Else : window.Close()
+        End Select
+    End Sub
+
+    ''' <summary>
+    ''' Creates a new empty page on the given strip and activates it.
+    ''' </summary>
+    ''' <param name="strip"></param>
+    ''' <returns></returns>
+    Public Function CreateTab(strip As Tabs.TabStrip) As Tabs.UiTab
+        Dim title As String = $"page {strip.Count + 1}"
+        Dim content As New XElement("page",
+            New XElement("label",
+                New XAttribute("style",
+                    "display:block;left:20px;top:20px;color:silver;font-size:14px"),
+                title))
+
+        Return strip.NewTab(title, content)
+    End Function
+
+    ''' <summary>
+    ''' Closes a page of the given strip.
+    ''' </summary>
+    ''' <param name="strip"></param>
+    ''' <param name="tab"></param>
+    Public Sub CloseTab(strip As Tabs.TabStrip, tab As Tabs.UiTab)
+        If tab?.Host IsNot Nothing Then
+            Call tab.Host.Dispose()
+        End If
+
+        Call strip.CloseTab(tab.Id)
+        Call surface.Invalidate()
+    End Sub
+
+    Private Sub handleTabDrag(x As Integer, y As Integer)
+        If tabDragStrip Is Nothing Then
+            Return
+        End If
+
+        If Not tabDragging Then
+            If std.Abs(x - tabDragStart.X) > 6 Then
+                tabDragging = True
+            Else
+                Return
+            End If
+        End If
+
+        If Not tabLayouts.ContainsKey(tabDragStrip) Then
+            Return
+        End If
+
+        Dim geo As Tabs.TabStripLayout = tabLayouts(tabDragStrip)
+        Dim index As Integer = tabDragStrip.IndexOf(tabDragId)
+
+        If index < 0 Then
+            Return
+        End If
+
+        For i As Integer = 0 To geo.TabRects.Count - 1
+            Dim rect As RectangleF = geo.TabRects(i)
+
+            If rect.Width <= 0 Then
+                Continue For
+            End If
+
+            Dim target As Integer = If(x < rect.Left + rect.Width / 2, i, i + 1)
+
+            If target <> index AndAlso target <> index + 1 Then
+                Call tabDragStrip.MoveTab(tabDragId, If(target > index, target - 1, target))
+                Call surface.Invalidate()
+                Exit For
+            End If
+        Next
+    End Sub
+
+    Private Sub handlePointerWheel(sender As Object, e As PointerEventArgs)
+        Dim strip As Tabs.TabStrip = StripAt(e.X, e.Y)
+
+        If strip Is Nothing OrElse Not tabLayouts.ContainsKey(strip) Then
+            Return
+        End If
+
+        Dim geo As Tabs.TabStripLayout = tabLayouts(strip)
+
+        If geo.ScrollMax <= 0 Then
+            Return
+        End If
+
+        Dim scroll As Single = std.Max(0, std.Min(geo.ScrollMax,
+            ScrollOf(strip) - Math.Sign(e.Delta) * 40))
+
+        tabScroll(strip) = scroll
+
+        Call surface.Invalidate()
+    End Sub
+
     Protected Overridable Sub Dispose(disposing As Boolean)
         If Not disposedValue Then
             If disposing Then
@@ -1013,6 +1407,7 @@ Public Class FormRender : Implements IDisposable
                 RemoveHandler surface.PointerMove, AddressOf handlePointerMove
                 RemoveHandler surface.PointerDown, AddressOf handlePointerDown
                 RemoveHandler surface.PointerUp, AddressOf handlePointerUp
+                RemoveHandler surface.PointerWheel, AddressOf handlePointerWheel
                 RemoveHandler surface.KeyDown, AddressOf handleKeyDown
                 RemoveHandler surface.TextInput, AddressOf handleTextInput
 

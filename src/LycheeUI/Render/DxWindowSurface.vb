@@ -34,6 +34,7 @@ Namespace Render
         Public Event PointerDown As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerDown
         Public Event PointerMove As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerMove
         Public Event PointerUp As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerUp
+        Public Event PointerWheel As EventHandler(Of PointerEventArgs) Implements IRenderSurface.PointerWheel
         Public Event KeyDown As EventHandler(Of CanvasKeyEventArgs) Implements IRenderSurface.KeyDown
         Public Event TextInput As EventHandler(Of CanvasTextEventArgs) Implements IRenderSurface.TextInput
 
