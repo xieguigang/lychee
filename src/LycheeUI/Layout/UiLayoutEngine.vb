@@ -43,17 +43,39 @@ Namespace Layout
         ''' <returns></returns>
         Public ReadOnly Property BackgroundColor As Color
             Get
-                Dim box As CssBox = root
-
-                ' the root element of the ui declaration is the first child box
-                ' of the initial container
-                If box.Boxes IsNot Nothing AndAlso box.Boxes.Count > 0 Then
-                    box = box.Boxes(0)
-                End If
+                Dim box As CssBox = PageBox
 
                 Return box.ActualBackgroundColor
             End Get
         End Property
+
+        ''' <summary>
+        ''' The root element of the ui declaration, it fills the whole canvas.
+        ''' </summary>
+        ''' <returns></returns>
+        Public ReadOnly Property PageBox As CssBox
+            Get
+                If root.Boxes IsNot Nothing AndAlso root.Boxes.Count > 0 Then
+                    Return root.Boxes(0)
+                End If
+
+                Return root
+            End Get
+        End Property
+
+        ''' <summary>
+        ''' Overrides the background color of the root element: it is used by the
+        ''' tab strip renderer to paint the content of a page with the very same
+        ''' color as the active tab.
+        ''' </summary>
+        ''' <param name="color"></param>
+        Public Sub SetPageBackground(color As Color)
+            If color.IsEmpty Then
+                Return
+            End If
+
+            Call PageBox.SetBackgroundColor(color)
+        End Sub
 
         ''' <summary>
         ''' The title that is declared on the root element of the ui.
