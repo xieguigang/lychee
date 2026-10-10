@@ -1,6 +1,7 @@
 ﻿Imports LycheeUI
+Imports LycheeUI.Chrome
 
-Public Class Form1 : Inherits ChromeForm
+Public Class Form1
 
     ''' <summary>
     ''' 主界面的 html + css 申明
