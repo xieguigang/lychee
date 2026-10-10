@@ -1,12 +1,14 @@
 ﻿Imports LycheeUI
 
-Public Class Form1
+Public Class Form1 : Inherits ChromeForm
 
     ''' <summary>
     ''' 主界面的 html + css 申明
     ''' </summary>
     ReadOnly UI As XElement =
-        <form style="background-color: gray;" title="test direct-x form">
+        <form style="background-color: #202020;" title="lychee browser tabs">
+            <tabcontrol id="main" style="left:0;top:0;width:800px;height:450px">
+                <page id="p1" title="controls" favicon="./lychee-form1-img.png">
             <!-- a container element: background, border shorthand, rounded corners and padding -->
             <div id="box" style="left:16px;top:16px;width:320px;height:180px;
                                 background-color:lightblue;
@@ -112,7 +114,19 @@ Public Class Form1
                 <label style="display:block;color:dimgray;font-size:13px">shadow demo</label>
             </div>
 
-            <button id="no-css">apply default theme</button>
+                </page>
+                <page id="p2" title="about" favicon="./lychee-form1-img.png">
+                    <label style="display:block;left:24px;top:24px;color:white;font-size:20px">
+                        the second page
+                    </label>
+                    <label style="display:block;left:24px;top:56px;color:silver;font-size:13px">
+                        every page is laid out by its own layout engine
+                    </label>
+                    <button style="left:24px;top:88px;width:160px;height:32px;
+                                   background-color:seagreen;color:white;text-align:center"
+                            onclick="clickButton()">a button of page 2</button>
+                </page>
+            </tabcontrol>
         </form>
 
     ''' <summary>
