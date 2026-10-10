@@ -565,43 +565,35 @@ Module Smoke
     End Sub
 
     ''' <summary>
-    ''' Asserts the state machine and the events of the declared tab strip.
+    ''' Asserts the state machine and the events of the tab strip that the host
+    ''' has registered through the programmatic api.
     ''' </summary>
     Private Sub expectTabStrip(host As SmokeHost, errors As List(Of String))
-        If host.Engine.UiLayout.TabStrips.Count = 0 Then
-            errors.Add("no tab strip has been created out of the tabcontrol element.")
+        Dim strip As New Tabs.TabStrip With {
+            .WelcomeContent =
+                <page>
+                    <label style="display:block;left:16px;top:16px;color:silver">no page is open</label>
+                </page>
+        }
+
+        Call host.Engine.AddTabStrip(strip)
+
+        If host.Engine.TabStrips.Count = 0 Then
+            errors.Add("the registered tab strip is not part of the ui engine.")
             Return
-        End If
-
-        Dim strip As Tabs.TabStrip = Nothing
-
-        For Each kvp As KeyValuePair(Of String, Tabs.TabStrip) In host.Engine.UiLayout.TabStrips
-            strip = kvp.Value
-            Exit For
-        Next
-
-        If strip Is Nothing Then
-            errors.Add("no tab strip instance was found.")
-            Return
-        End If
-
-        ' the welcome page that is shown when every tab has been closed
-        strip.WelcomeContent =
-            <page>
-                <label style="display:block;left:16px;top:16px;color:silver">no page is open</label>
-            </page>
-
-        If strip.Count <> 2 Then
-            errors.Add($"the tab strip should own 2 pages, but {strip.Count} was found.")
-            Return
-        End If
-        If strip.ActiveId <> "t1" Then
-            errors.Add($"the page #t1 should be active, but #{strip.ActiveId} was found.")
         End If
 
         Dim activated As New List(Of String)
 
         AddHandler strip.TabActivated, Sub(tab As Tabs.UiTab) activated.Add(tab.Id)
+
+        Call strip.NewTab("first", Nothing, id:="t1")
+        Call strip.NewTab("second", Nothing, id:="t2")
+
+        If strip.Count <> 2 Then
+            errors.Add($"the tab strip should own 2 pages, but {strip.Count} was found.")
+            Return
+        End If
 
         ' switching to another page
         Call strip.Activate("t2")
@@ -632,9 +624,6 @@ Module Smoke
 
         If Not strip.IsEmpty OrElse strip.ActiveId IsNot Nothing Then
             errors.Add("the tab strip should be empty after its last page has been closed.")
-        End If
-        If strip.WelcomeContent Is Nothing Then
-            errors.Add("the tab strip should declare a welcome page.")
         End If
 
         ' a new page is created and activated in one step

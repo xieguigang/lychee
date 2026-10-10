@@ -1129,7 +1129,15 @@ Public Class FormRender : Implements IDisposable
     Private Function TabBoxOf(strip As Tabs.TabStrip) As UiBox
         For Each kvp As KeyValuePair(Of String, Tabs.TabStrip) In layout.TabStrips
             If kvp.Value Is strip Then
-                Return layout.TabControlBoxes(kvp.Key)
+                Dim box As UiBox = Nothing
+
+                ' a strip that has been declared inside of a nested element may
+                ' have no box of its own on the canvas
+                If layout.TabControlBoxes.TryGetValue(kvp.Key, box) Then
+                    Return box
+                End If
+
+                Return Nothing
             End If
         Next
 

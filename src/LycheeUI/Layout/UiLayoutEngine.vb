@@ -101,15 +101,37 @@ Namespace Layout
         Sub New(ui As XElement, Optional theme As Theme = Nothing)
             source = ui
 
-            If theme IsNot Nothing Then
-                ' a deep copy keeps the ui document of the caller untouched
-                Dim doc As New XElement(ui)
+            ' a deep copy keeps the ui document of the caller untouched
+            Dim doc As New XElement(ui)
 
+            Call NormalizeTabControl(doc)
+
+            If theme IsNot Nothing Then
                 Call theme.Apply(doc)
-                root = New InitialContainer(doc)
-            Else
-                root = New InitialContainer(ui)
             End If
+
+            root = New InitialContainer(doc)
+        End Sub
+
+        ''' <summary>
+        ''' A ``&lt;tabcontrol&gt;`` element is not a known html tag, so the
+        ''' default stylesheet does not give it the block display mode and the
+        ''' layout engine would shrink it to the size of its text content. it is
+        ''' forced at here, on the document itself.
+        ''' </summary>
+        ''' <param name="doc"></param>
+        Private Shared Sub NormalizeTabControl(doc As XElement)
+            For Each control As XElement In doc.Descendants("tabcontrol")
+                Dim style As String = If(CStr(control.Attribute("style")), "")
+
+                If style.ToLower().Contains("display:") Then
+                    Continue For
+                End If
+
+                style = If(style.Length > 0, style.TrimEnd() & ";", "") & "display:block"
+
+                Call control.SetAttributeValue("style", style)
+            Next
         End Sub
 
         ''' <summary>
@@ -141,7 +163,7 @@ Namespace Layout
                 Return paintOrder
             End If
 
-            Call ApplyViewport(area.Size)
+            Call ApplyViewport(area)
             Call ApplyImageSizes()
             Call root.SetBounds(New RectangleF(area.Left, area.Top, area.Width, area.Height))
             Call root.MeasureBounds(g)
@@ -171,20 +193,23 @@ Namespace Layout
         ''' own content only, while a user interface needs a full size page box
         ''' so that the percentage offsets of its controls can be resolved.
         ''' </summary>
-        ''' <param name="viewport"></param>
-        Private Sub ApplyViewport(viewport As Size)
+        ''' <param name="area"></param>
+        Private Sub ApplyViewport(area As Rectangle)
             If root.Boxes Is Nothing OrElse root.Boxes.Count = 0 Then
                 Return
             End If
 
             Dim page As CssBox = root.Boxes(0)
 
-            page.MarginTop = "0"
+            ' the offset of the area is applied through the margins of the page
+            ' box, the layout engine recomputes the location of a block box from
+            ' the margin and the containing block on every measure
+            page.MarginTop = area.Top & "px"
+            page.MarginLeft = area.Left & "px"
             page.MarginBottom = "0"
-            page.MarginLeft = "0"
             page.MarginRight = "0"
-            page.Width = viewport.Width & "px"
-            page.Height = viewport.Height & "px"
+            page.Width = area.Width & "px"
+            page.Height = area.Height & "px"
 
             ' the default stylesheet of the html renderer only gives the block
             ' display mode to the known html tags, so the display mode is
@@ -272,7 +297,6 @@ Namespace Layout
 
                 If depth = 0 Then
                     roots.Add(view)
-                    Call Console.WriteLine($"[lychee] top-level tag: '{view.Tag}' id='{view.Attribute("id")}'")
                 End If
 
                 ' a tab control is a reusable component: it owns its own state
@@ -296,8 +320,6 @@ Namespace Layout
         ''' <param name="view"></param>
         Private Sub RegisterTabStrip(view As UiBox)
             Dim id As String = If(view.Attribute("id"), "tabs")
-
-            Call Console.WriteLine($"[lychee] tabcontrol registered: id='{id}'")
 
             tabBoxes(id) = view
 
@@ -346,6 +368,9 @@ Namespace Layout
 
                 If strip.Count = 0 Then
                     Call strip.NewTab("welcome", Nothing)
+                Else
+                    ' a browser activates the first page of a restored session
+                    Call strip.Activate(strip.TabList(0).Id)
                 End If
             Next
         End Sub
